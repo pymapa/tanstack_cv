@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(/sbxenv.yaml)",
+      "Edit(/kits/**)",
+      "Read(./.env*)"
+    ]
+  }
+}

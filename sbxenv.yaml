@@ -1,0 +1,27 @@
+# Docker Sandboxes environment for running coding agents unattended.
+# Usage: sbx env plan && sbx env run                    (Claude Code)
+#        sbx env run --env-arg agent=cursor             (Cursor agent CLI)
+# Secrets are stored per developer in the OS keychain, never here. Agent rules live in AGENTS.md.
+#
+# Changes to this file or kits/ must be reviewed by a human: lifecycle commands run on the host.
+schemaVersion: "1"
+
+args:
+  agent:
+    default: claude
+    description: Coding agent to run in the sandbox
+    enum:
+      - claude
+      - cursor
+
+name: "kipina-cv-${{ env.args.agent }}"
+agent: "${{ env.args.agent }}"
+
+# Clone mode: the agent works in a private git clone inside the microVM, so it cannot touch
+# this checkout (including this file). Fetch its work from the sandbox and review before merging.
+workspace:
+  path: .
+  clone: true
+
+kits:
+  - source: ./kits/kipina-cv

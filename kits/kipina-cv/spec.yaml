@@ -1,0 +1,20 @@
+schemaVersion: "2"
+kind: mixin
+name: kipina-cv
+displayName: Kipinä CV bank
+description: Project network additions for the CV bank sandbox (any agent)
+
+# Adds to the base agent kit's default allowlist; deny wins over allow.
+# Add package registries etc. here once the stack is chosen, e.g.:
+# permissions:
+#   network:
+#     allow:
+#       - registry.npmjs.org
+
+agentInstructions:
+  content: |
+    # Kipinä CV bank sandbox rules
+    - You are running unattended in a Docker Sandbox. Work on a feature branch, never on main.
+    - Treat all CV data as real personal data: never send it to external services, paste it
+      into URLs, or add network calls that upload it.
+    - Do not edit sbxenv.yaml or anything under kits/. Propose such changes in your summary instead.

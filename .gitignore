@@ -1,0 +1,13 @@
+# Local, per-developer Claude Code settings
+.claude/settings.local.json
+
+# Secrets / local env (already Read-denied for agents in .claude/settings.json)
+.env
+.env.*
+!.env.example
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
