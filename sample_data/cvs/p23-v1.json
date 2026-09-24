@@ -1,0 +1,198 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Matti Saarela",
+    "label": "Experienced Software Engineer and Partner",
+    "email": "matti.saarela@example.com",
+    "phone": "+358 40 000 1023",
+    "summary": "Matti is a security-minded software developer with a strong focus on backend development and integrations.\n\nHe has extensive experience in developing and designing demanding and business-critical systems across different domains and various technologies. Secure web development and networking are his key strengths, and he has a broad understanding of how data flows securely from end to end.\n\nMatti has adopted recent AI tools for smarter development and chewing better solutions for upcoming challenges. He’s also poking around with running AI locally.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-matti-saarela",
+        "url": "https://www.linkedin.com/in/example-matti-saarela"
+      }
+    ],
+    "x-experienceSummary": "14 years of experience",
+    "x-keywords": ["Problem solving", "Backend", "Bash", "Node.js", "Kubernetes", "Docker", "Security mindset", "GitOps"],
+    "x-industries": ["Pension Insurance", "Energy"],
+    "x-keyRoles": [
+      {
+        "title": "Lead Developer",
+        "description": "He has worked as a lead developer in teams, guiding others to do the right thing."
+      },
+      {
+        "title": "Backend & Web Developer / Security champion"
+      },
+      {
+        "title": "Infra / DevOps Magician",
+        "description": "Eats pipelines for breakfast and spits artifacts all around. He packs stuff in containers while still keeping things secure."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Experienced Software Engineer and Partner"
+    },
+    {
+      "name": "Kvanta Consulting Oy"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "HTML / CSS", "UI Libraries (Bootstrap)", "AngularJS", "GraphQL"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 16, "yearsText": "16 years" },
+        { "name": "HTML / CSS", "years": 10, "yearsText": "10 years" },
+        { "name": "UI Libraries (Bootstrap)", "years": 21, "yearsText": "21 years" },
+        { "name": "AngularJS", "years": 2, "yearsText": "2 years" },
+        { "name": "GraphQL", "years": 10, "yearsText": "10 years" },
+        { "name": "AngularJS", "years": 4, "yearsText": "4 years" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "Testing frameworks (Junit)", "Webdriver.o (Selenium)", "Docker", "Jenkins", "CircleCI"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 10, "yearsText": "10 years" },
+        { "name": "Testing frameworks (Junit)", "years": 16, "yearsText": "16 years" },
+        { "name": "Webdriver.o (Selenium)", "years": 5, "yearsText": "5 years" },
+        { "name": "Docker", "years": 4, "yearsText": "4 years" },
+        { "name": "Jenkins", "years": 3, "yearsText": "3 years" },
+        { "name": "CircleCI", "years": 3, "yearsText": "3 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "Microsoft Azure", "date": "2024", "issuer": "Microsoft" },
+    { "name": "Kubernetes", "date": "2020" }
+  ],
+  "projects": [
+    {
+      "name": "Digital service platform microservice refactoring",
+      "entity": "Lääketukku Oy",
+      "x-industry": "pharmaceutical wholesale",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2018",
+      "endDate": "2020",
+      "x-highlight": true,
+      "description": "The client's digital service platform is a modern service where pharmacies, hospitals, health stores, pharmaceutical and health product companies, and other healthcare operators can connect in a new way. Matti's task was to refactor deprecated microservices from the Lagom framework into a system powered by Spring Boot and the Axon framework.",
+      "keywords": ["Java", "Spring Boot", "Lagom", "Axom Framework", "microservices", "event sourcing", "CQRS", "Maven"]
+    },
+    {
+      "name": "Application Platform team",
+      "entity": "Voimalinja Oyj",
+      "x-industry": "electricity transmission system operator",
+      "roles": ["Developer"],
+      "startDate": "2024",
+      "description": "Developing and maintaining Application Platform tools for deploying and managing application infrastructure on Azure and on-premises.",
+      "keywords": ["Docker", "Kubernetes", "Azure Kubernetes Service (AKS)", "Argo CD", "GitOps", "Azure DevOps", "Azure Services"]
+    },
+    {
+      "name": "Security Champion",
+      "entity": "Voimalinja Oyj",
+      "x-industry": "electricity transmission system operator",
+      "roles": ["Security Champion"],
+      "startDate": "2023",
+      "description": "Worked as a Security Champion with another developer, focusing on security audits, DevSecOps methods and tools development.",
+      "keywords": ["Security audits", "DevSecOps methods and tools development", "Security best practices", "Threat Modeling"]
+    },
+    {
+      "name": "Application Logging and Monitoring system",
+      "entity": "Voimalinja Oyj",
+      "x-industry": "electricity transmission system operator",
+      "roles": ["Developer"],
+      "startDate": "2022",
+      "description": "Application Monitoring system is a centralised logging and monitoring system. It collects logs and metrics from all applications running in the on-premises environment.",
+      "keywords": ["ELK stack (Elasticsearch, Logstash, Kibana, and Beats)", "Kubernetes", "Docker", "Keycloak", "Opsgenie"]
+    },
+    {
+      "name": "Certification and test application rewrite for the national electricity data hub",
+      "entity": "Voimalinja Oyj",
+      "x-industry": "electricity transmission system operator",
+      "roles": ["Developer"],
+      "description": "Worked as part of the team rewriting the certification and test application for a national electricity data hub, which is a centralised information exchange system for the Finnish electricity retail market.",
+      "keywords": ["Node.js", "TypeScript", "Svelte", "Vue.js", "Docker", "Kubernetes", "Azure", "Contentful CMS"],
+      "x-note": "No date given in the source."
+    },
+    {
+      "name": "Backend development and infrastructure setup",
+      "entity": "Staffia Oyj",
+      "x-industry": "staffing and HR services",
+      "roles": ["Backend Developer"],
+      "description": "Implementing a more performant data layer using ElasticSearch together with a team of 5-7 specialists. Developing cloud infrastructure as code. Data platform implementation and reporting.",
+      "keywords": ["Node.js", "TypeScript", "ElasticSearch", "Python", "Scala", "Terraform", "Power BI", "Azure infra"],
+      "x-note": "No date given in the source."
+    },
+    {
+      "name": "Online Service",
+      "entity": "Eläkevakuutus Karhu",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "pension insurance",
+      "roles": ["Lead developer"],
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "Lead fullstack developer designing and implementing online services with microservices, APIs, and modern security.",
+      "keywords": ["Java Spring Boot", "Angular", "TypeScript", "Docker", "Kubernetes", "Jenkins", "REST/SOAP"]
+    },
+    {
+      "name": "Workplace wellbeing service",
+      "entity": "Eläkevakuutus Karhu",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "pension insurance",
+      "roles": ["Lead developer"],
+      "startDate": "2016",
+      "endDate": "2020",
+      "description": "Lead developer of a pioneering insurance web service; handled design, implementation, and security integration.",
+      "keywords": ["ASP.Net MVC", "Angular", "TypeScript", "SQL", "Azure", "REST/SOAP", "SSIS"]
+    },
+    {
+      "name": "BI",
+      "entity": "Mobile Vendor",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "mobile devices",
+      "roles": ["Developer"],
+      "startDate": "2014",
+      "endDate": "2015",
+      "description": "Developed sales reporting tools and data pipelines for global deployment.",
+      "keywords": ["SQL Server Integration Services", "SQL"]
+    },
+    {
+      "name": "Fullstack services for various clients",
+      "entity": "Multiple clients",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2011",
+      "endDate": "2015",
+      "description": "Responsible for implementation and maintenance of fullstack services for various clients in short-term projects.",
+      "keywords": ["SQL", "SharePoint", "ASP.Net MVC", "C#", "JavaScript"]
+    },
+    {
+      "name": "Disturbance analysis and electricity data hub applications",
+      "entity": "Voimalinja Oyj",
+      "x-industry": "electricity transmission system operator",
+      "roles": ["Developer"],
+      "startDate": "2022",
+      "endDate": "2023",
+      "description": "Further development of Disturbance analysis applications.",
+      "keywords": ["Node.js", "TypeScript", "Python", "Kafka", "Docker", "Kubernetes"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p23",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) contains the same project block four times (two columns, two rows); output once as a highlight-only project. It has no counterpart under 'All client projects'.",
+      "The 'Key Roles' box on slide 2 contains only lorem ipsum template filler ('Tester at lorem ipsum', repeated five times); dropped. Key roles were taken from slide 1.",
+      "Leftover template text 'Project D technologies' on slide 5 dropped.",
+      "Key role 'Backend & Web Developer / Security champion (?)' has no description in the source; the '(?)' marker was dropped.",
+      "Most projects state no role in the title; roles were inferred from the descriptions ('Developer' where nothing more specific is given).",
+      "Skill table 'Frontend' lists AngularJS twice (2 years and 4 years); both rows kept as in the source. 'UI Libraries (Bootstrap)' is given as 21 years although the CV states 14 years of experience; kept as in the source.",
+      "Projects are listed column by column (left column first, then right) per slide, as in the source layout."
+    ]
+  }
+}

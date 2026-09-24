@@ -1,0 +1,236 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Joonas Lehtinen",
+    "label": "Senior Front-End Developer and Partner",
+    "email": "joonas.lehtinen@example.com",
+    "phone": "+358 40 000 1011",
+    "summary": "Joonas is a senior front-end developer, UI designer, and accessibility specialist. With his understanding of usability and visual design, he serves as a bridge between these two areas of expertise. In his current project, Joonas holds the title of Lead Developer, where his responsibilities include providing guidance related to React, TypeScript, and CSS. Additionally, he has served as an instructor teaching frontend technologies to career changers and has delivered numerous presentations on accessibility targeted at both developers and content creators. Joonas is consistently recognized for his exceptional work in usability and accessibility.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-joonas-lehtinen",
+        "url": "https://www.linkedin.com/in/example-joonas-lehtinen"
+      }
+    ],
+    "x-experienceSummary": "20 years of business experience",
+    "x-tagline": "Ask yourself whether motion in a user interface helps people spot what matters, or makes it harder for them to focus on everything else.",
+    "x-strengths": [
+      { "title": "React" },
+      { "title": "TypeScript" },
+      { "title": "CSS" },
+      { "title": "Usability" },
+      { "title": "Accessibility" },
+      { "title": "Animation" }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Accessibility",
+        "description": "Joonas understands what it takes to make services genuinely usable with assistive technology, going beyond merely meeting minimum criteria. He also has experience conducting accessibility audits."
+      },
+      {
+        "title": "Usability",
+        "description": "Static design visuals are never the final product. Joonas's greatest strengths include making design decisions that translate effectively into the browser."
+      },
+      {
+        "title": "Eye for detail",
+        "description": "Joonas has an excellent eye for creating visually polished interfaces and crafting animations that feel just right."
+      },
+      {
+        "title": "Team skills",
+        "description": "Joonas communicates effectively with fellow developers and excels at understanding stakeholders' needs."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Lead Front-end Developer, Kustannus Kirjava",
+        "description": "At Kustannus Kirjava, Joonas has been developing an online education platform for pupils and teachers. The product includes a complex set of UI patterns designed to be accessible even for users relying on assistive technology."
+      },
+      {
+        "title": "Front-end Developer and UI Designer, Merivoima Oyj",
+        "description": "Merivoima Oyj collects enormous amounts of data from their engines used in vessels and power plants around the globe. Joonas's role involved designing and implementing various interfaces that enabled the company's experts to monitor this data through interactive infographics."
+      },
+      {
+        "title": "Accessibility Consultant",
+        "description": "Joonas has conducted accessibility audits for various clients and delivered presentations on accessibility for developers and content creators."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Front-End Developer and Partner"
+    },
+    {
+      "name": "Big Mango Digital",
+      "x-note": "Named together with Turbo Digital as a project heading ('<agency> / <agency>', 2011-2012); interpreted as a former employer."
+    },
+    {
+      "name": "Turbo Digital",
+      "x-note": "Named together with Big Mango Digital as a project heading ('<agency> / <agency>', 2011-2012); interpreted as a former employer."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["JavaScript", "TypeScript", "HTML / CSS", "React", "Next.js", "Vue", "Angular", "SASS", "Styled Components", "Vanilla Extract", "Framer motion"],
+      "x-skillDetails": [
+        { "name": "JavaScript", "years": 6, "yearsText": "6 years" },
+        { "name": "TypeScript", "years": 10, "yearsText": "10 years" },
+        { "name": "HTML / CSS", "years": 20, "yearsText": "20 years" },
+        { "name": "React", "years": 7, "yearsText": "7 years" },
+        { "name": "Next.js", "years": 2, "yearsText": "2 years" },
+        { "name": "Vue", "years": 1, "yearsText": "1 year" },
+        { "name": "Angular", "years": 3, "yearsText": "3 years" },
+        { "name": "SASS", "years": 8, "yearsText": "8 years" },
+        { "name": "Styled Components", "years": 3, "yearsText": "3 years" },
+        { "name": "Vanilla Extract", "years": 2, "yearsText": "2 years" },
+        { "name": "Framer motion", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "React testing library", "Playwright (E2E test framework)", "Docker", "Github actions"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 12, "yearsText": "12 years" },
+        { "name": "React testing library", "years": 4, "yearsText": "4 years" },
+        { "name": "Playwright (E2E test framework)", "years": 2, "yearsText": "2 years" },
+        { "name": "Docker", "years": 8, "yearsText": "8 years" },
+        { "name": "Github actions", "years": 2, "yearsText": "2 years" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Digital learning service",
+      "entity": "Kustannus Kirjava",
+      "x-industry": "book and educational publisher",
+      "roles": ["Lead Front-end Developer"],
+      "startDate": "2024",
+      "x-highlight": true,
+      "description": "The client's education platform is fully custom-built software providing digital assignments for elementary schools. The project's architecture relies on Next.js and React and includes its own design system and component library. State management and data fetching are handled with React Query. All features are implemented to meet WCAG 2.2 accessibility standards.",
+      "keywords": ["React", "TypeScript", "NextJS", "React Query", "React Testing Library", "Playwright", "Vanilla Extract"],
+      "x-note": "Highlight and project list entry merged; the project list does not include React Query in its technologies."
+    },
+    {
+      "name": "Tool Repair Portal",
+      "entity": "Hiomatuote Oy",
+      "x-industry": "abrasives and power tools",
+      "roles": ["Front-end Developer", "Designer"],
+      "startDate": "2023",
+      "x-highlight": true,
+      "description": "The client's Tool Repair Portal is a React web application for managing tools sent to repair centers worldwide. Joonas led the project's design phase, wireframing each step of the repair workflow. During this period, Joonas successfully drove the frontend development, exceeding expectations. He enhanced responsive design, improved user satisfaction, collaborated effectively across teams, and contributed valuable insights in knowledge-sharing sessions.",
+      "keywords": ["React", "TypeScript", "React Query", "Sass", "React Testing Library"],
+      "x-note": "Date taken from the project highlight; the project list gives no date. The project list does not include React Query in its technologies."
+    },
+    {
+      "name": "Tool Portal",
+      "entity": "Hiomatuote Oy",
+      "x-industry": "abrasives and power tools",
+      "startDate": "2022",
+      "endDate": "2023",
+      "description": "Built customer portal for tool registration and repairs using Vue and Episerver.",
+      "keywords": ["Vue", "JavaScript", "Sass", "Episerver"]
+    },
+    {
+      "name": "Fluid reporting dashboards",
+      "entity": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "startDate": "2021",
+      "endDate": "2022",
+      "description": "Designed and developed dashboard UI for experts using React and Highcharts.",
+      "keywords": ["React", "Typescript", "Sass", "Enzyme", "Highcharts"]
+    },
+    {
+      "name": "Asset diagnostics dashboards",
+      "entity": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "UI design and front-end development for asset monitoring dashboards.",
+      "keywords": ["React", "Typescript", "Sass", "Enzyme", "Highcharts"]
+    },
+    {
+      "name": "Data insights application",
+      "entity": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "roles": ["Front-end Developer", "Designer"],
+      "startDate": "2020",
+      "endDate": "2021",
+      "x-highlight": true,
+      "description": "The client's data insights application is a React-based application designed for visualizing complex data through intuitive and professional user interfaces. Joonas created the UI and component library for the data dashboards in expert use and played a central role in crafting polished UI styling, significantly enhancing the user experience. He effectively tackled intricate data manipulation challenges within the frontend, ensuring seamless integration of advanced data visualization techniques.",
+      "keywords": ["React", "Typescript", "Sass", "Enzyme", "Highcharts", "Storybook"]
+    },
+    {
+      "name": "Accessibility audit",
+      "entity": "Järvivoima Oy",
+      "x-industry": "energy utility",
+      "roles": ["Accessibility Consultant"],
+      "description": "Performed WCAG 2.1 accessibility audits for websites and apps.",
+      "keywords": ["Audit", "WCAG 2.1"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Anomaly Detection",
+      "entity": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "description": "Developed map-based UI for vessel tracking using Angular and Mapbox.",
+      "keywords": ["Angular", "Typescript", "Sass", "Mapbox"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Customer portal",
+      "entity": "Tekstiilipalvelu Liina Oyj",
+      "x-industry": "textile and workwear services",
+      "startDate": "2017",
+      "endDate": "2018",
+      "description": "Front-end and UI design for customer web portal for managing workwear.",
+      "keywords": ["Angular", "Typescript", "Sass", "Liferay"]
+    },
+    {
+      "name": "Government project register",
+      "entity": "Government Office",
+      "x-industry": "government",
+      "roles": ["Designer", "Front-end Developer"],
+      "startDate": "2016",
+      "endDate": "2017",
+      "x-highlight": true,
+      "description": "The government project register is a web application providing transparent access to information about ongoing ministerial projects in Finland. Joonas designed and implemented the UI of this inter-ministerial project management service. He played a central role in the initial concept design phase, shaping the user interface for enhanced usability. He also contributed actively as a frontend developer, implementing the UI with precision and attention to detail.",
+      "keywords": ["Angular", "Typescript", "Sass", "Liferay", "Google Analytics"]
+    },
+    {
+      "name": "Various e-commerce projects",
+      "entity": "Kangaskauppa Oy, Regional Transit Authority, WLANplan Oy",
+      "x-industry": "retail, public transport and software",
+      "description": "UI design and front-end development for e-commerce services.",
+      "keywords": ["Magento", "PHP", "CSS", "Elastic Search", "Google Analytics"],
+      "x-note": "No dates given in the source. The source lists three clients in one entry."
+    },
+    {
+      "name": "School photo ordering system and campaign sites",
+      "entity": "Undisclosed client",
+      "x-employer": "Big Mango Digital / Turbo Digital",
+      "x-industry": "digital agency",
+      "startDate": "2011",
+      "endDate": "2012",
+      "description": "Built ordering system for school photos; campaign sites using Flash, HTML, CSS.",
+      "keywords": ["HTML", "CSS", "Javascript", "jQuery", "Flash"],
+      "x-note": "Source title names only two digital agencies; interpreted as employers, clients not named."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p11",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Placeholder text 'Call to Action Text Here' on slide 1 was dropped.",
+      "The 'Top skills' section was stored in x-keySkills.",
+      "The four project highlights duplicate projects in 'All client projects'; they were merged, keeping the fuller highlight descriptions and adding the short project list descriptions where they add content.",
+      "The source has no 'Keywords' or 'Industry Knowledge' section.",
+      "Skill table: JavaScript 6 years vs. TypeScript 10 years looks inconsistent in the source; kept as is.",
+      "The last project heading lists two digital agencies ('<agency> / <agency>') without a client; they were interpreted as employers."
+    ]
+  }
+}

@@ -1,0 +1,740 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Krisu Aho",
+    "label": "Tech Lead / Product Manager / Senior Full-Stack Architect / UX",
+    "email": "krisu.aho@example.com",
+    "phone": "+358 40 000 1027",
+    "summary": "Krisu Aho is a happy and skillful fellow that can make broad kinds of ideas come true also at the business level. He has 28 years of extensive service development experience in various roles including full-stack development, UX design, team lead, strategy and architecture design.\n\nUnderstanding teams, services and businesses also at the deeper level has always been one of Krisu’s strengths. Krisu has experience in both - building teams from scratch and jumping on the “moving train” with existing teams and practices.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-krisu-aho",
+        "url": "https://www.linkedin.com/in/example-krisu-aho"
+      }
+    ],
+    "x-experienceSummary": "28 years of business experience",
+    "x-tagline": "Krisu cares about building great products and services – and about growing the teams and the business along the way. Products, teams and business growth at the heart of it all.",
+    "x-keywords": [
+      "Lead",
+      "Manager",
+      "Architect",
+      "Full-Stack",
+      "Data",
+      "Business Strategy",
+      "UX",
+      "Scrum"
+    ],
+    "x-industries": [
+      "Government & Municipalities",
+      "Global music industry",
+      "All that is tech & Cloud",
+      "Telecom, Enterprises, Startups, etc."
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Tech Lead",
+        "description": "Guiding tech teams through multi-regional cloud environments with internationalization data and high-quality code."
+      },
+      {
+        "title": "Manager",
+        "description": "Managing international cross-teams daily, connecting the right people, guiding changes and organizing workshops and lectures."
+      },
+      {
+        "title": "Architect",
+        "description": "Developing international business, strategy and service architectures."
+      },
+      {
+        "title": "Development Manager, PO & Scrum Master",
+        "description": "Arpa Oy / Aggregation Platform & Backoffice (2023 - 2025). Team building, development management, cross-team work and guiding changes."
+      },
+      {
+        "title": "Tech Lead",
+        "description": "Harmonia Music Tech / Multiple international teams (2021 – 2023). Leading and managing international multicultural tech teams. Developing international business, strategy and service architectures."
+      },
+      {
+        "title": "Full-Stack Architect / AI Developer",
+        "description": "EcoSignal AI / Full-Stack & AI (2026 – ongoing). Koodikaarti Oyj / Multiple projects (2016 – 2021). Architecture, strategy, code, data and multiple other projects."
+      },
+      {
+        "title": "CPO, CEO",
+        "description": "Meshline Oy (2012 – 2014), Sivustolabs Oy (2008 – 2012). Leading tech-startups and developing the business with hands-on product and service development."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Tech Lead / Product Manager / Senior Full-Stack Architect / UX"
+    },
+    {
+      "name": "Koodikaarti Oyj",
+      "position": "Full-Stack Architect",
+      "startDate": "2016",
+      "endDate": "2021"
+    },
+    {
+      "name": "Meshline Oy",
+      "position": "CPO, Co-Founder",
+      "startDate": "2012",
+      "endDate": "2014"
+    },
+    {
+      "name": "Sivustolabs Oy",
+      "position": "CEO, Co-Founder",
+      "startDate": "2008",
+      "endDate": "2012"
+    },
+    {
+      "name": "Mediamestarit",
+      "position": "Consulting, Founder",
+      "startDate": "2006",
+      "endDate": "2012"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Javascript / TypeScript / ECMAScript",
+        "TypeScript",
+        "React / Redux / Saga",
+        "GraphQL / OpenAPI / Swagger",
+        "Next.js",
+        "CMS’s",
+        "AngularJS"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Javascript / TypeScript / ECMAScript",
+          "years": 28,
+          "yearsText": "28 years"
+        },
+        {
+          "name": "TypeScript",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "React / Redux / Saga",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "GraphQL / OpenAPI / Swagger",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Next.js",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "CMS’s",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "AngularJS",
+          "years": 8,
+          "yearsText": "8 years"
+        }
+      ]
+    },
+    {
+      "name": "Server, Cloud & Infrastructure",
+      "keywords": [
+        "Microsoft Azure",
+        "Google Cloud",
+        "AWS",
+        "Kubernetes"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Microsoft Azure",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Google Cloud",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "AWS",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Kubernetes",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "keywords": [
+        "Claude",
+        "Copilot (GitHub Copilot + Microsoft Copilot)",
+        "ChatGPT, Cursor"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Claude",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Copilot (GitHub Copilot + Microsoft Copilot)",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "ChatGPT, Cursor",
+          "years": 2,
+          "yearsText": "2 years"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "NestJS / Express / Node.js",
+        "Cloud services",
+        "TypeScript",
+        "Testing",
+        "Relational databases (PostgreSQL, MySQL etc.)",
+        "Document databases (MongoDB etc.)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "NestJS / Express / Node.js",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Cloud services",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "TypeScript",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Testing",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Relational databases (PostgreSQL, MySQL etc.)",
+          "years": 22,
+          "yearsText": "22 years"
+        },
+        {
+          "name": "Document databases (MongoDB etc.)",
+          "years": 9,
+          "yearsText": "9 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Jenkins",
+        "Docker"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Docker",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI chat interface",
+      "entity": "EcoSignal AI",
+      "x-industry": "sustainability data and AI SaaS",
+      "roles": [
+        "Full-Stack AI Developer"
+      ],
+      "startDate": "2026",
+      "x-highlight": true,
+      "description": "Developing an AI chat interface (an AI agent product) for customers to access all available AI generated data.\n\nEcoSignal AI excels at converting sustainability data into business and collaboration through AI. Krisu started in January, studied the old legacy service, found many ways to improve the old solutions and developed many new wished features. The biggest improvements so far have been the complete rewrite of the legacy system to support modern enterprise solutions and developing the AI chat interface. Adding support for desktop and mobile was also a big improvement as the service was earlier only for browser. On top of developing, Krisu has also helped greatly in sales, strategy, design and UX.",
+      "keywords": [
+        "GCP",
+        "Vercel",
+        "FastAPI",
+        "NextJs",
+        "Claude Code",
+        "Typescript",
+        "OpenAPI",
+        "CloudSQL (Postgres)"
+      ],
+      "x-note": "The 'Story' text of the highlight slide covers both projects for this client; it is attached here."
+    },
+    {
+      "name": "ESG Product development",
+      "entity": "EcoSignal AI",
+      "x-industry": "sustainability data and AI SaaS",
+      "roles": [
+        "Full-Stack AI Developer"
+      ],
+      "startDate": "2026",
+      "x-highlight": true,
+      "description": "Upgrading an old legacy product into a full enterprise service for desktop, web and mobile.",
+      "keywords": [
+        "GCP",
+        "Vercel",
+        "FastAPI",
+        "NextJs",
+        "Claude Code",
+        "Typescript",
+        "OpenAPI",
+        "CloudSQL (Postgres)"
+      ]
+    },
+    {
+      "name": "Aggregation Platform",
+      "entity": "Arpa Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "Development Manager",
+        "Product Owner",
+        "Scrum Master"
+      ],
+      "startDate": "2023",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "The client's backend for multi-tenant gaming services for national and international markets. Architecting the client's platform into the international format with their products and services. International team building, development management, cross-team work and guiding changes. 2 tech-teams: Product & Delivery, Scrum, Strategy, Presentations, Team Lead, Key metrics (KPI's).\n\nKrisu has been a Development Manager at Arpa Oy for 2 years, full-time. His responsibility has been to manage three different international development teams, be responsible for the architecture and build a strategy that has taken Arpa Oy to foreign markets. He has been a strategically very important key player, developing the client's entire technical capabilities for foreign markets and delivering products and services to different countries. He has driven major team and system reforms in co-operation with the client's managers, which have also included difficult organizational reforms and layoffs. Long-term architecture is definitely Krisu's trump card and he is always able to see the impact of even small things on a large scale. Krisu gets along really easily with all kinds of people and can take charge of situations and things quickly and smoothly - in Finnish or English.",
+      "keywords": [
+        "GCP",
+        "Terraform",
+        "IoT",
+        "Git",
+        "GitOps",
+        "Node",
+        "NestJs",
+        "NextJs",
+        "Typescript",
+        "Java",
+        "OpenAPI",
+        "Swagger",
+        "CloudSQL (Postgres)",
+        "Pub/Sub"
+      ],
+      "x-note": "The 'Story' text of the highlight slide covers both projects for this client; it is attached here."
+    },
+    {
+      "name": "Backoffice Suite",
+      "entity": "Arpa Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "Development Manager",
+        "Product Owner",
+        "Scrum Master"
+      ],
+      "startDate": "2023",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "The client's frontend for international markets with a highly scalable management portal for national and international markets. Building the team and platform from scratch. Development management, cross-team work, code, integrations, cloud and guiding changes. Scrum, Agile, Kanban, Strategy, Presentations, Design, Key metrics (KPI's).",
+      "keywords": [
+        "GCP",
+        "Terraform",
+        "IoT",
+        "Git",
+        "GitOps",
+        "Node",
+        "NestJs",
+        "NextJs",
+        "Typescript",
+        "Java",
+        "OpenAPI",
+        "Swagger",
+        "CloudSQL (Postgres)",
+        "Pub/Sub"
+      ]
+    },
+    {
+      "name": "Investor Services",
+      "entity": "Harmonia Music Tech",
+      "x-industry": "music industry technology",
+      "roles": [
+        "Tech Lead"
+      ],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Customer portal for analysing and predicting copyright performances and portfolios globally. Target market was investors who want to invest in music and need to valuate assets. Integrated with the existing copyright, statistics (big data) and financial data handling products to produce interactive and standalone visual reports.\n\nPlanning, Coding, Databases, DevOps, Cloud handling, Big Data and Integrations. International team building, development management, cross-team work and guiding changes. Architecture, integrations and service design. Scrum, Strategy, Presentations, Team Lead, Key metrics (KPI's).",
+      "keywords": [
+        "Google Cloud",
+        "Kubernetes",
+        "Docker",
+        "NX.dev",
+        "Next.js (React)",
+        "NestJS (Node.js)",
+        "Mongo",
+        "Postgres",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Chakra",
+        "Globalbank integration",
+        "Core banking platform integration",
+        "Temporal.io",
+        "Bit.dev",
+        "Internal systems",
+        "Planning",
+        "Team Lead",
+        "Strategy",
+        "IAM (Keycloak, OTP)",
+        "KYC",
+        "Big Data",
+        "Gitlab",
+        "Jira",
+        "CI/CD",
+        "DevOps",
+        "Miro",
+        "Products",
+        "Architecture",
+        "Design",
+        "Presentations"
+      ]
+    },
+    {
+      "name": "Distribution Services",
+      "entity": "Harmonia Music Tech",
+      "x-industry": "music industry technology",
+      "roles": [
+        "Tech Lead"
+      ],
+      "startDate": "2022",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Artist portal for handling marketing, sales, registrations, social media and others. Visual tool for creating different types of campaigns and seeing their performance automatically when launched. Upgrading the frontend with modern tech according to the new design.",
+      "keywords": [
+        "Google Cloud",
+        "Kubernetes",
+        "Docker",
+        "NX.dev",
+        "Next.js (React)",
+        "NestJS (Node.js)",
+        "Mongo",
+        "Postgres",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Chakra",
+        "Globalbank integration",
+        "Core banking platform integration",
+        "Temporal.io",
+        "Bit.dev",
+        "Internal systems",
+        "Planning",
+        "Team Lead",
+        "Strategy",
+        "IAM (Keycloak, OTP)",
+        "KYC",
+        "Big Data",
+        "Gitlab",
+        "Jira",
+        "CI/CD",
+        "DevOps",
+        "Miro",
+        "Products",
+        "Architecture",
+        "Design",
+        "Presentations"
+      ]
+    },
+    {
+      "name": "Financial Services",
+      "entity": "Harmonia Music Tech",
+      "x-industry": "music industry technology",
+      "roles": [
+        "Tech Lead"
+      ],
+      "startDate": "2022",
+      "endDate": "2023",
+      "x-highlight": true,
+      "description": "Customizable white label loan service for many types of music industries, where artists can get advances on their single song or whole portfolio. Money available is based on the assets and how they have been performing the last 6+ months. Trusted predictions are made from future income with Facebook's prediction engine and added margin of error. Artists are then guided through KYC and bank registration to be able to withdraw the calculated money. Can be integrated as a ready-made service or through an API platform. Planning and setting up the payment gateway with Globalbank and integrating it as a microservice into the product.",
+      "keywords": [
+        "Google Cloud",
+        "Kubernetes",
+        "Docker",
+        "NX.dev",
+        "Next.js (React)",
+        "NestJS (Node.js)",
+        "Mongo",
+        "Postgres",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Chakra",
+        "Globalbank integration",
+        "Core banking platform integration",
+        "Temporal.io",
+        "Bit.dev",
+        "Internal systems",
+        "Planning",
+        "Team Lead",
+        "Strategy",
+        "IAM (Keycloak, OTP)",
+        "KYC",
+        "Big Data",
+        "Gitlab",
+        "Jira",
+        "CI/CD",
+        "DevOps",
+        "Miro",
+        "Products",
+        "Architecture",
+        "Design",
+        "Presentations"
+      ]
+    },
+    {
+      "name": "Internal company portal",
+      "entity": "Koodikaarti Oyj",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "software consultancy",
+      "roles": [
+        "Full-Stack Architect"
+      ],
+      "x-highlight": true,
+      "description": "Easy to use company portal (an internal people directory) for finding all internal information easily. Included: Offices, People, Projects, Sales, CV's, Allocations and Feeds. Cherry on the top was the advanced dynamic \"Google-like\" search with super fast results and visual feedback.\n\nOrchestrating all internal systems into one by developing dynamic architecture for the company.",
+      "keywords": [
+        "Google Cloud",
+        "Azure",
+        "Jenkins",
+        "Docker",
+        "React",
+        "Angular",
+        "Express (Node.js)",
+        "Mongo",
+        "Postgres",
+        "ElasticCloud (with Lucene Query)",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Google API",
+        "LinkedIn",
+        "Slack",
+        "Internal systems",
+        "HR",
+        "Design",
+        "Github",
+        "CI/CD",
+        "Jira",
+        "Miro",
+        "AV",
+        "Streaming",
+        "Architecture",
+        "Presentations"
+      ],
+      "x-note": "Falls within the 2016–2021 employment; the source gives no separate dates for the sub-projects."
+    },
+    {
+      "name": "HR legacy system upgrades",
+      "entity": "Palkkavirta Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "HR and payroll software",
+      "roles": [
+        "Full-Stack Architect"
+      ],
+      "x-highlight": true,
+      "description": "Multiple HR legacy system upgrades for municipalities and government for Palkkavirta Oy (Nordvik Software). Extensive backend and complete frontend upgrades.\n\nDesign/Execute serious upgrades into various systems for government and municipalities to use.",
+      "keywords": [
+        "Google Cloud",
+        "Azure",
+        "Jenkins",
+        "Docker",
+        "React",
+        "Angular",
+        "Express (Node.js)",
+        "Mongo",
+        "Postgres",
+        "ElasticCloud (with Lucene Query)",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Google API",
+        "LinkedIn",
+        "Slack",
+        "Internal systems",
+        "HR",
+        "Design",
+        "Github",
+        "CI/CD",
+        "Jira",
+        "Miro",
+        "AV",
+        "Streaming",
+        "Architecture",
+        "Presentations"
+      ],
+      "x-note": "Falls within the 2016–2021 employment; the source gives no separate dates for the sub-projects."
+    },
+    {
+      "name": "Project pipeline upgrade",
+      "entity": "Viinikellari Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "state-owned beverage retail",
+      "roles": [
+        "Full-Stack Architect"
+      ],
+      "x-highlight": true,
+      "description": "Five different projects, only one of which could be developed at a time with the current project pipeline. Upgraded the pipeline to support multiple projects.\n\nGuiding team and management changes.",
+      "keywords": [
+        "Google Cloud",
+        "Azure",
+        "Jenkins",
+        "Docker",
+        "React",
+        "Angular",
+        "Express (Node.js)",
+        "Mongo",
+        "Postgres",
+        "ElasticCloud (with Lucene Query)",
+        "OpenAPI",
+        "Swagger",
+        "GraphQL",
+        "Mui",
+        "Google API",
+        "LinkedIn",
+        "Slack",
+        "Internal systems",
+        "HR",
+        "Design",
+        "Github",
+        "CI/CD",
+        "Jira",
+        "Miro",
+        "AV",
+        "Streaming",
+        "Architecture",
+        "Presentations"
+      ],
+      "x-note": "Falls within the 2016–2021 employment; the source gives no separate dates for the sub-projects."
+    },
+    {
+      "name": "Realtime networks service",
+      "entity": "Meshline Oy",
+      "x-employer": "Meshline Oy",
+      "x-industry": "real-time networking startup",
+      "roles": [
+        "CPO",
+        "Co-Founder"
+      ],
+      "startDate": "2012",
+      "endDate": "2014",
+      "description": "Realtime networks service design and implementation | Programming and Databases | Servers, domains and systems admin | Graphic design (web and print) | Multiple advertising platform integrations and admin | Various network and WLAN system integrations | The company's own sites, Twitter and Facebook design and implementation | IT support and staff guidance | Systems testing and automatic fault management | R&D teaming with Scrum | Customer surveys | Marketing",
+      "keywords": [
+        "Google Cloud",
+        "Amazon",
+        "Docker",
+        "Angular",
+        "Express (Node.js)",
+        "Mongo",
+        "Postgres",
+        "Embedded",
+        "OpenAPI",
+        "Various advertisement systems",
+        "Embedded systems",
+        "Security",
+        "Team Lead",
+        "Planning",
+        "Strategy",
+        "Design",
+        "Products",
+        "Architecture",
+        "Hacking"
+      ]
+    },
+    {
+      "name": "Media consulting and training",
+      "entity": "Mediamestarit",
+      "x-employer": "Mediamestarit",
+      "x-industry": "media consulting and training",
+      "roles": [
+        "Consulting",
+        "Founder"
+      ],
+      "startDate": "2006",
+      "endDate": "2012",
+      "description": "Teaching graphic design, animation and coding | Sales and key account managing | CMS system design and development | All kind of various other projects including coding, graphics and interface",
+      "keywords": [
+        "JavaScript",
+        "MySQL",
+        "PHP",
+        "Flash & ActionScript",
+        "Python",
+        "Java",
+        "Telecom integrations",
+        "TV integrations",
+        "Public projects"
+      ]
+    },
+    {
+      "name": "CMS and CRM development",
+      "entity": "Sivustolabs Oy",
+      "x-employer": "Sivustolabs Oy",
+      "x-industry": "web and CMS software startup",
+      "roles": [
+        "CEO",
+        "Co-Founder"
+      ],
+      "startDate": "2008",
+      "endDate": "2012",
+      "description": "CMS and CRM design and development | Sales and key account manager | Domains and servers administration | Coding and graphical design | Team management | 3rd party integrations. Developed graphical international CMS and CRM systems from scratch.",
+      "keywords": [
+        "JavaScript",
+        "MySQL",
+        "PHP",
+        "Python",
+        "Java",
+        "Various booking systems",
+        "Online payments"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p27",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Project highlight slides 3–6 have no counterparts under 'All client projects'; each starred sub-project is output as its own project with x-highlight. Technology lists on those slides are shared by all sub-projects of the slide.",
+      "Founder/co-founder roles in three own startups are pseudonymized as employers.",
+      "A 'See my LinkedIn for more work history!' entry (1998–2006) with a personal LinkedIn URL was dropped; earlier work history is therefore not included.",
+      "The source's quote about the person and its caption line are rewritten into x-tagline.",
+      "Named client products were generalized (AI chat interface, internal people directory). The payment gateway bank and core banking platform in the integration lists were replaced with their pseudonyms/generic descriptions.",
+      "Key roles from slide 1 and slide 2 are both kept; 'Tech Lead' appears in both with different descriptions.",
+      "The AI skill table row 'ChatGPT / Cursor' contains two tools with one experience value; kept as one row.",
+      "The source's 2026 start date for the sustainability AI client is later than the CV year (2025) of the file name; kept as in the source."
+    ]
+  }
+}

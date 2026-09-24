@@ -1,0 +1,237 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Ilkka Toivola",
+    "label": "Hands-on Software Architect, Lead, Partner",
+    "email": "ilkka.toivola@example.com",
+    "phone": "+358 40 000 1024",
+    "summary": "Ilkka has extensive skills and experience in designing and implementing robust, fault tolerant, highly available and scalable software solutions with a modern developer mindset built around AI-enhanced development.\n\nHaving worked across several industries and in the public sector, Ilkka has experience working with a variety of development team sizes, development cultures, multicultural/multicontinental teams, regulations, legacy requirements and security considerations.\n\nWith his experience as a scrum master and being involved in project management, Ilkka has a natural talent for problem solving and for removing blockers in development as well as translating business requirements into refined user stories for implementation.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-ilkka-toivola",
+        "url": "https://www.linkedin.com/in/example-ilkka-toivola"
+      }
+    ],
+    "x-experienceSummary": "14+ years of experience",
+    "x-tagline": "Writing code to fix a problem is the easy part; the real value lies in finding the right problem to tackle.",
+    "x-keywords": ["Architecture", "Full-stack", "AI-integrations", "Data streaming/ETL", "Team Lead", "DevOps"],
+    "x-industries": ["Energy", "Gaming", "Healthcare", "Telecom"],
+    "x-strengths": [
+      {
+        "title": "Continuous Improvement",
+        "description": "A strong believer in the boy scout rule, Ilkka acknowledges that continuous improvement and leaving something better than you found it is a sustainable and low effort way of minimising technical debt and ensuring service health throughout the entire lifecycle of an application."
+      },
+      {
+        "title": "Quick learner",
+        "description": "Ilkka is very adept at taking in lots of learning quickly and diving deep into the customer's domain to be able to solve an issue with the best applicable approach & technology."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Trust & Safety Developer",
+        "description": "Working with player safety tools and moderation pipelines for a mobile game developer with a very large global player base."
+      },
+      {
+        "title": "Project architect & Team Lead",
+        "description": "Architected & built the full backend infrastructure while leading a team to implement an electricity retailer's customer portal & mobile app (browser, iOS & Android), which went on to become one of the best rated end user mobile applications in the energy sector for several years."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI Project Experience",
+        "description": "Ilkka has supported multiple AI-initiatives by integrating LLMs & GenAI platforms into new and existing data processing pipelines."
+      },
+      {
+        "title": "AI development tools",
+        "description": "In recent customer projects, Ilkka has been utilizing AI development tools such as GitHub Copilot, ChatGPT and Mistral to speed up the development process."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Hands-on Software Architect, Lead, Partner"
+    },
+    {
+      "name": "Sujuva Software Oy"
+    },
+    {
+      "name": "Austin Works Oy"
+    },
+    {
+      "name": "Globex IT Services",
+      "position": "Scrum Master & Application Developer"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming & Databases",
+      "keywords": ["Java (EE, Spring Boot, Quarkus)", "Kotlin", "Go", "Javascript/Typescript", "Node.js", "Python", "Relational Databases (AWS RDS/Aurora, Oracle, MySQL, Postgres)", "NoSQL (DynamoDB, MongoDB, CosmosDB)", "React"],
+      "x-skillDetails": [
+        { "name": "Java (EE, Spring Boot, Quarkus)", "years": 14, "yearsText": "14 years" },
+        { "name": "Kotlin", "years": 2, "yearsText": "2 years" },
+        { "name": "Go", "years": 2, "yearsText": "2 years" },
+        { "name": "Javascript/Typescript", "years": 8, "yearsText": "8 years" },
+        { "name": "Node.js", "years": 8, "yearsText": "8 years" },
+        { "name": "Python", "years": 3, "yearsText": "3 years" },
+        { "name": "Relational Databases (AWS RDS/Aurora, Oracle, MySQL, Postgres)", "years": 14, "yearsText": "14 years" },
+        { "name": "NoSQL (DynamoDB, MongoDB, CosmosDB)", "years": 8, "yearsText": "8 years" },
+        { "name": "React", "years": 2, "yearsText": "2 years" }
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "keywords": ["Amazon Web Services", "Kubernetes", "Terraform", "Azure", "Ansible", "Helm", "Serverless Framework"],
+      "x-skillDetails": [
+        { "name": "Amazon Web Services", "years": 8, "yearsText": "8 years" },
+        { "name": "Kubernetes", "years": 4, "yearsText": "4 years" },
+        { "name": "Terraform", "years": 8, "yearsText": "8 years" },
+        { "name": "Azure", "years": 1, "yearsText": "1 year" },
+        { "name": "Ansible", "years": 4, "yearsText": "4 years" },
+        { "name": "Helm", "years": 4, "yearsText": "4 years" },
+        { "name": "Serverless Framework", "years": 4, "yearsText": "4 years" }
+      ]
+    },
+    {
+      "name": "Build, Ops, Test & Tools",
+      "keywords": ["Git/GitHub Actions", "Testing frameworks (Junit, Mockito, mocha, chai, playwright etc.)", "Datadog", "Grafana", "Prometheus", "AWS CloudWatch", "Docker", "BitBucket Pipelines", "Jenkins", "Elasticsearch"],
+      "x-skillDetails": [
+        { "name": "Git/GitHub Actions", "years": 14, "yearsText": "14 years" },
+        { "name": "Testing frameworks (Junit, Mockito, mocha, chai, playwright etc.)", "years": 14, "yearsText": "14 years" },
+        { "name": "Datadog", "years": 5, "yearsText": "5 years" },
+        { "name": "Grafana", "years": 5, "yearsText": "5 years" },
+        { "name": "Prometheus", "years": 5, "yearsText": "5 years" },
+        { "name": "AWS CloudWatch", "years": 8, "yearsText": "8 years" },
+        { "name": "Docker", "years": 14, "yearsText": "14 years" },
+        { "name": "BitBucket Pipelines", "years": 4, "yearsText": "4 years" },
+        { "name": "Jenkins", "years": 10, "yearsText": "10 years" },
+        { "name": "Elasticsearch", "years": 5, "yearsText": "5 years" }
+      ]
+    },
+    {
+      "name": "Data & ETL",
+      "keywords": ["AWS Lambda", "AWS Kinesis", "Apache Kafka", "Apache Flink", "AWS SQS", "AWS S3", "Azure Functions"],
+      "x-skillDetails": [
+        { "name": "AWS Lambda", "years": 8, "yearsText": "8 years" },
+        { "name": "AWS Kinesis", "years": 8, "yearsText": "8 years" },
+        { "name": "Apache Kafka", "years": 4, "yearsText": "4 years" },
+        { "name": "Apache Flink", "years": 2, "yearsText": "2 years" },
+        { "name": "AWS SQS", "years": 8, "yearsText": "8 years" },
+        { "name": "AWS S3", "years": 8, "yearsText": "8 years" },
+        { "name": "AWS SQS", "years": 8, "yearsText": "8 years" },
+        { "name": "Azure Functions", "years": 1, "yearsText": "1 year" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Trust & Safety services for mobile games",
+      "entity": "Arctic Games Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "mobile game developer",
+      "roles": ["Trust & Safety Developer"],
+      "startDate": "2023-06",
+      "x-highlight": true,
+      "description": "Working in a full Kipinä Development team, tasked with providing Trust & Safety related supporting services to the client's mobile games with a very large global player base. Services like content filtering, content moderation, fair play, player care among many others. Worked with game teams, third parties and other in-house teams to bring business critical and legally compliant player (especially young player) protections to games, including integrations with the National Investigation Authority. Technical work has included building out completely new systems from scratch, utilizing a full end-to-end stack all the way from infrastructure to the UI.",
+      "keywords": ["Kotlin", "Go", "Node.js", "Typescript", "React", "AWS Services (RDS, SNS, SES, SQS, S3, Lambda, ECS, Fargate, Kinesis, DynamoDB ECR etc.)", "Terraform", "Python", "Java", "Docker", "Gradle"]
+    },
+    {
+      "name": "Mobile app architecture evaluation",
+      "entity": "Kotisähkö Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "electricity retail",
+      "roles": ["Software Architect"],
+      "startDate": "2024-01",
+      "endDate": "2024-03",
+      "description": "Tasked with evaluating the architectural integrity and service health of their existing mobile app, specifically the backend, integrations and infrastructure as well as observability. Worked closely with the existing team & management to discover several points of improvement that were described in an architectural report. Some of the critical improvements were successfully implemented during the evaluation process, with good results.",
+      "keywords": ["Node.js", "Typescript", "React", "Azure Services (API Management, Azure DevOps, Web apps, Azure Functions, CosmosDB)"]
+    },
+    {
+      "name": "Mobile ticketing architecture review",
+      "entity": "Linja-autopalvelu Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "bus travel and parcel services",
+      "roles": ["Software Architect"],
+      "startDate": "2023-04",
+      "endDate": "2023-05",
+      "x-highlight": true,
+      "description": "Tasked with creating a comprehensive architectural review of their existing mobile ticketing solution to evaluate technical health and pinpoint problematic areas, implementations and configurations. Resulting in an architectural report with proposals for implementation improvements, performance improvements and ways to ensure better fault tolerance.",
+      "keywords": ["Node.js", "PostgreSQL", "AWS services (RDS, EKS, MSK, OpenSearch, Cognito, Cloudfront etc.)"]
+    },
+    {
+      "name": "Customer service portal and application",
+      "entity": "Kotivirta Oy",
+      "x-employer": "Sujuva Software Oy",
+      "x-industry": "electricity retail",
+      "roles": ["Project Architect", "Team Lead"],
+      "startDate": "2022-01",
+      "endDate": "2023-03",
+      "x-highlight": true,
+      "description": "Returning as an architect to a project for an electricity sales company working on their multi-channel customer service portal/application. (See earlier experience). Mainly focused on working with 3rd parties/integrations (for example: SAF-integrations) for technical readiness for the national electricity data hub systems (first and second generation). Especially the 15-minute measurement resolution as well as support for community (“energiayhteisö”) based measurements. In addition to that, focused on increasing application performance due to higher user volume.",
+      "keywords": ["Nest.js", "Typescript", "Java (Spring Boot)", "Node.js", "MySQL", "AWS services (DynamoDB, RDS, SNS, SES, SQS, S3, Lambda, Cognito, EC2 etc.)", "Kubernetes", "Docker", "Terraform", "Helm", "Ansible", "Google Analytics", "Signicat", "Datadog", "Maven"]
+    },
+    {
+      "name": "B2B e-SIM subscription management portal",
+      "entity": "Telion AB",
+      "x-employer": "Sujuva Software Oy",
+      "x-industry": "telecom equipment",
+      "roles": ["Software Developer"],
+      "startDate": "2021-07",
+      "endDate": "2021-12",
+      "description": "Working with e-sim technologies for an international telecommunications company, mainly on a B2B oriented customer portal for managing e-sim subscriptions. Ilkka was also tasked with updating Vaadin major version & ensuring compatibility during the version migration.",
+      "keywords": ["Java EE", "Vaadin", "SQL", "Robot Framework", "Maven"]
+    },
+    {
+      "name": "IoT data intake platform",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "marine and energy technology",
+      "roles": ["Scrum Master", "Developer"],
+      "startDate": "2021-02",
+      "endDate": "2021-06",
+      "description": "Ilkka was a backend developer and oversaw the project as a scrum master. Working mainly with the backend of a large IoT data intake platform based on Apache Kafka.",
+      "keywords": ["AWS cloud", "Java", "Apache Kafka", "InfluxDB", "PostgreSQL", "Kubernetes", "Helm", "Ansible", "Gradle"]
+    },
+    {
+      "name": "Multi-channel customer portal",
+      "entity": "Kotivirta Oy",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "electricity retail",
+      "roles": ["Lead Backend Developer"],
+      "startDate": "2018-01",
+      "endDate": "2021-02",
+      "x-highlight": true,
+      "description": "The project for an electricity sales company covered a new customer portal development as a multi-channel solution (browser, iOS, Android). Ilkka was responsible for system architecture, backend, DevOps, and integrations. During the projects, he was working in close collaboration with the customer and stakeholders.\n\nAs project architect & team lead, he architected & built the full backend infrastructure while leading a team to implement the client's customer portal & mobile app (browser, iOS & Android), which went on to become one of the best rated end user mobile applications in the energy sector for several years. Responsibilities included backend, DevOps, integrations, observability & monitoring, team lead & project management in close collaboration with the customer & stakeholders. Notable integrations include the first and second generation national electricity data hub and several integrations to different local grid operators.",
+      "keywords": ["Java (Spring Boot)", "Node.js", "MySQL", "AWS services (RDS, SNS, SES, SQS, S3, Lambda, Cognito, EC2 etc.)", "Kubernetes", "Docker", "Terraform", "Helm", "Ansible", "Google Analytics", "Signicat", "Datadog", "Maven"]
+    },
+    {
+      "name": "Patient information system development",
+      "entity": "Globex IT Services",
+      "x-employer": "Globex IT Services",
+      "x-industry": "IT services",
+      "roles": ["Scrum Master", "Application Developer"],
+      "startDate": "2011-03",
+      "endDate": "2018-01",
+      "x-highlight": true,
+      "description": "Ilkka had varying roles in the development of two patient information systems. Responsibilities included printout reform, application development and the requirements management system administrator and trainer. Ilkka was also involved in the integration to the national health data archive & e-prescription functionality. From 2016 onwards, he was lead developer & scrum master of a team implementing a new pharmacotherapy monitoring application that would be integrated into the existing patient care systems.",
+      "keywords": ["Java", "Vaadin Framework", "Oracle SQL", "Uniface", "Jenkins", "Maven"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p24",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats the mobile game, bus operator, electricity retailer and patient information system projects; merged with x-highlight. The electricity retailer highlight ('2018-2021, 2022-2023', Project architect & Team Lead) spans both of that client's projects, so both are flagged; its fuller description was merged into the 2018–2021 project, whose shorter own text it extends.",
+      "Footer text with a misspelled company name (typo of Kipinä Software Oy) ignored as template footer.",
+      "User counts of the gaming client ('hundreds of millions', 'over 300 million') generalized. The mobile app's 'best rated in the energy sector' title softened to avoid an identifiable award.",
+      "'Professional Approach' items stored as x-strengths and 'AI Experience' items as x-keySkills.",
+      "Skill table 'Data & ETL' lists AWS SQS twice (8 years); both rows kept as in the source.",
+      "The patient information system project is the employer's own product development; the employer is used as entity. Its highlight lists it as '2011-2018'; the full dates 03/2011–01/2018 come from 'All client projects'.",
+      "Projects are listed column by column (left column first, then right) per slide, as in the source layout."
+    ]
+  }
+}

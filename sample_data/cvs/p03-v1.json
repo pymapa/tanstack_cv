@@ -1,0 +1,971 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Daniel Brandt",
+    "label": "Project Manager & Technology Lead",
+    "email": "daniel.brandt@example.com",
+    "phone": "+358 40 000 1003",
+    "summary": "Daniel's core competences consist of 20+ years of experience in developing Data & Analytics solutions. He has worked with cloud solutions for over 10 years, mainly with Microsoft solutions, and supports customers in their cloud transformations by designing solution architectures.\n\nDaniel is deeply business-driven: whatever the data source, he focuses on translating it into valuable form — trusted, usable and decision-ready — so it can be used to grow the business and improve performance. He helps organizations combine data from sales, operations, core systems (ERP/CRM) and digital services to enable better steering, faster decisions and measurable outcomes. He enjoys co-designing solutions with business stakeholders, documenting clear information and technical architectures, and then bringing them to life with hands-on development. His core technical hands-on skill is building data platforms. Daniel is also continuously exploring how AI can enhance data quality and accelerate more reliable decision-making and smarter analytics solutions.\n\nDaniel has been designing and implementing numerous projects for some of the largest companies in the Nordics in various roles.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-daniel-brandt",
+        "url": "https://www.linkedin.com/in/example-daniel-brandt"
+      }
+    ],
+    "x-experienceSummary": "20+ years of business experience",
+    "x-keywords": [
+      "Data",
+      "Azure",
+      "Migrations",
+      "IoT",
+      "D365",
+      "Power Platform",
+      "Business",
+      "Leadership",
+      "PM"
+    ],
+    "x-industries": [
+      "Finance",
+      "Industrial",
+      "Ministries and Cities"
+    ],
+    "x-strengths": [
+      {
+        "title": "Project Manager, Tech Lead and Architect of Data team",
+        "description": "Daniel was a tech lead for a textile and workwear services company in a very large ERP migration and business transformation program."
+      },
+      {
+        "title": "Data Architect",
+        "description": "Daniel delivered a data architecture study to a lighting controls manufacturer."
+      },
+      {
+        "title": "Data Engineer and Architect",
+        "description": "Daniel was a hands-on developer and architect of an environmental data platform for a government ministry."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Project manager"
+      },
+      {
+        "title": "Team lead"
+      },
+      {
+        "title": "Solution architect"
+      },
+      {
+        "title": "Data Platform Architect"
+      },
+      {
+        "title": "Data Engineer and architect"
+      },
+      {
+        "title": "Data migration engineer"
+      },
+      {
+        "title": "Business analyst"
+      },
+      {
+        "title": "Cloud architect"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Project Manager & Technology Lead"
+    },
+    {
+      "name": "Piikki Solutions Oyj",
+      "position": "Architect"
+    },
+    {
+      "name": "Kvanta Consulting Oy",
+      "position": "Architect and Project Manager"
+    },
+    {
+      "name": "Strategia Partners Oy",
+      "position": "Senior technology consultant and management consultant",
+      "startDate": "2005",
+      "endDate": "2013",
+      "summary": "Business Analytics, Business Intelligence, programming, SharePoint and profitability management solutions."
+    },
+    {
+      "name": "Nordbank Oyj",
+      "position": "System Expert",
+      "summary": "SAP HR, master payroll systems, reporting and programming."
+    },
+    {
+      "name": "SecureSIM Oy",
+      "position": "System Engineer",
+      "startDate": "2002",
+      "endDate": "2004",
+      "summary": "Consulting mobile operators. Java programming."
+    },
+    {
+      "name": "Fintegra Innovations",
+      "position": "Software Engineer",
+      "summary": "Consulting investment banks. Java programming."
+    },
+    {
+      "name": "Personix Oy",
+      "position": "System Architect",
+      "startDate": "2001",
+      "endDate": "2002",
+      "summary": "Personalization solutions. Java programming."
+    },
+    {
+      "name": "Nordtel Oyj",
+      "position": "Software Engineer",
+      "startDate": "2000",
+      "endDate": "2001",
+      "summary": "User interface developer. Java programming."
+    },
+    {
+      "name": "Kaapelikone Oy",
+      "position": "Trainee and thesis worker",
+      "startDate": "1999",
+      "endDate": "2000",
+      "summary": "User interface development. Machine vision."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data Analytics",
+      "keywords": [
+        "Azure SQL & SQL Server",
+        "Azure Synapse Analytics",
+        "Fabric",
+        "Hadoop",
+        "Spark",
+        "Power BI"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Azure SQL & SQL Server",
+          "years": 22,
+          "yearsText": "22 years"
+        },
+        {
+          "name": "Azure Synapse Analytics",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Fabric",
+          "years": 0.5,
+          "yearsText": "0,5 year"
+        },
+        {
+          "name": "Hadoop",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Spark",
+          "years": 2,
+          "yearsText": "2 year"
+        },
+        {
+          "name": "Power BI",
+          "years": 6,
+          "yearsText": "6 years"
+        }
+      ]
+    },
+    {
+      "name": "Cloud Development",
+      "keywords": [
+        "Azure Databricks",
+        "Azure Data Factory",
+        "Azure Service Bus",
+        "Azure Event Hub",
+        "Azure IoT Hub",
+        "Azure LogicApp",
+        "Azure Functions",
+        "Azure Stream Analytics",
+        "Azure CosmosDB",
+        "Azure Storage",
+        "PowerApps"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Azure Databricks",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure Data Factory",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Azure Service Bus",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Azure Event Hub",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure IoT Hub",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure LogicApp",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure Functions",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure Stream Analytics",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure CosmosDB",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure Storage",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "PowerApps",
+          "years": 1,
+          "yearsText": "1 year"
+        }
+      ]
+    },
+    {
+      "name": "Server, Cloud and Infrastructure",
+      "keywords": [
+        "Office 365",
+        "Azure",
+        "AWS",
+        "Windows Servers"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Office 365",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Azure",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "AWS",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Windows Servers",
+          "years": 18,
+          "yearsText": "18 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test and Tools",
+      "keywords": [
+        "Git",
+        "GitHub (+actions)",
+        "Jira / Confluence",
+        "Azure API Management",
+        "Azure DevOps"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "GitHub (+actions)",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Jira / Confluence",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Azure API Management",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Azure DevOps",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "CDVP2 - Certified Data Vault 2.0 Practitioner",
+      "date": "2021"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Engineer Associate",
+      "date": "2023",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Microsoft Certified: Azure Solution Architect Expert",
+      "date": "2020",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Microsoft Certified: Azure Data Engineer Associate",
+      "date": "2019",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "MCSE: Data Management and Analytics",
+      "date": "2016",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "MCSE: Business Intelligence",
+      "date": "2014",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Certified Scrum Master",
+      "date": "2015"
+    }
+  ],
+  "projects": [
+    {
+      "name": "ERP program data team",
+      "entity": "Tekstiilipalvelu Liina Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "textile and workwear services",
+      "roles": [
+        "IT Data Team Head",
+        "Architect",
+        "Project Manager"
+      ],
+      "startDate": "2023",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "Daniel was Data team lead in a large international ERP program. Daniel was supporting teams to deliver solution design documents and implementation for Azure Data Platform, Business Intelligence and Data migrations. The solution was based on Microsoft D365 and Azure.\n\nDaniel worked as Project Manager for a Data Platform POC based on Microsoft Fabric. He worked as project manager for several Data Quality projects. He also worked as Data Architect for a Data Governance project and Solution Architect for a Sustainability data solution project based on Power Apps and Power BI. Daniel was a hands-on Technical architect for Data Migrations, including the D365 Finance & Operations data migration, and contributed to the Enterprise Data Platform technology selection.",
+      "keywords": [
+        "Azure Data Platform",
+        "Microsoft 365",
+        "Azure SQL",
+        "D365",
+        "Microsoft 365 FO&CE",
+        "a Dynamics 365 add-on",
+        "Power BI",
+        "Power Apps",
+        "Microsoft Fabric"
+      ]
+    },
+    {
+      "name": "Data Engineering and Infrastructure development",
+      "entity": "Ministry of Environmental Affairs",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "government ministry",
+      "roles": [
+        "Developer",
+        "Architect",
+        "Tech Lead"
+      ],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Daniel was a hands-on developer and architect in a digital solution project for environmental situation awareness. Daniel was responsible for data integrations and ETL work with Azure Data Factory and Azure SQL. The role included migration of an on-premise data solution to Azure. Daniel's role also included Data Warehouse (DV2.0) modelling with the Agile Data Engine (ADE) tool. He also developed an Azure Function based data processing framework and Azure infrastructures. Daniel was also tech lead for the Azure infrastructure team.",
+      "keywords": [
+        "Azure Functions",
+        "Azure Data Factory",
+        "Azure SQL",
+        "Data Vault 2.0",
+        "Agile Data Engine"
+      ]
+    },
+    {
+      "name": "Architecture design",
+      "entity": "State owned company",
+      "x-employer": "Kipinä Software Oy",
+      "roles": [
+        "Lead Architect"
+      ],
+      "startDate": "2021",
+      "x-highlight": true,
+      "description": "Daniel was lead architect for designing a new data platform. Daniel's delivery team consisted of 4 professionals. He was responsible for interviewing business and IT stakeholders and collecting requirements. He was leading workshops to co-design the solution with stakeholders. Finally, he documented the technical solution, mostly based on Azure. The technical solution focused on roadmaps, cloud architecture, integrations, data warehousing and reporting.",
+      "keywords": [
+        "Azure",
+        "Roadmaps",
+        "Cloud architecture",
+        "Integrations",
+        "Data warehousing",
+        "Reporting"
+      ]
+    },
+    {
+      "name": "Data architecture advisory",
+      "entity": "Valonohjaus Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "lighting controls manufacturer",
+      "roles": [
+        "Data Architect"
+      ],
+      "startDate": "2023",
+      "x-highlight": true,
+      "description": "Daniel delivered Data Architecture advisor services to a Finnish industrial company. Daniel interviewed business users of corporate BI solutions, ERP and CRM. Daniel audited the technical architecture, including information security, of an Azure Data Platform based on Synapse Analytics, Azure Databricks, Azure Data Lake Gen2 and Power BI. Integration to the source systems Netsuite and Salesforce was part of the audit. Finally, he presented recommendations for the roadmap and technical solutions.",
+      "keywords": [
+        "Azure Data Platform",
+        "Synapse Analytics",
+        "Azure Databricks",
+        "Azure Data Lake Gen2",
+        "Power BI",
+        "Netsuite",
+        "Salesforce"
+      ]
+    },
+    {
+      "name": "Architecture design of Data Platform",
+      "entity": "State owned company",
+      "x-employer": "Piikki Solutions Oyj",
+      "roles": [
+        "Lead Architect"
+      ],
+      "description": "Daniel designed an Azure data platform as a lead architect. He was tech leading a 4-member architecture design team. He interviewed business and IT stakeholders, led technical workshops and documented the technical solution.",
+      "keywords": [
+        "Microsoft Data Platform"
+      ]
+    },
+    {
+      "name": "Architecture design of Event driven integration platform",
+      "entity": "Pension Insurance company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "pension insurance",
+      "roles": [
+        "Azure Architect"
+      ],
+      "description": "Daniel worked as Azure architect to design and hands-on implement an integration platform to support digital business.",
+      "keywords": [
+        "Azure Functions",
+        "Java",
+        "Azure Logic App",
+        "Azure Service Bus",
+        "Azure SQL",
+        "Azure DevOps"
+      ]
+    },
+    {
+      "name": "Architecture design and Development of Hybrid Data Platform",
+      "entity": "State owned company",
+      "x-employer": "Piikki Solutions Oyj",
+      "roles": [
+        "Azure Architect"
+      ],
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "Daniel designed an Azure data platform as an Azure architect. He was especially responsible for Azure infra architecture and also did hands-on work for Data Factory and Databricks. Technologies included Azure Databricks (Spark), Python, Azure Data Factory, Azure Storages, Azure DevOps and Azure VPN Gateway.",
+      "keywords": [
+        "Azure Databricks",
+        "Python",
+        "Azure Data Factory",
+        "Azure DevOps",
+        "Azure VPN Gateway"
+      ]
+    },
+    {
+      "name": "Development of Industrial maintenance reporting solutions",
+      "entity": "Energy Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "energy",
+      "roles": [
+        "Reporting Developer"
+      ],
+      "description": "Daniel worked as a hands-on Reporting developer for an energy company.",
+      "keywords": [
+        "Power BI",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "Architecture design and Development of Analytical Data Platform",
+      "entity": "City of Kaukola",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "municipality",
+      "roles": [
+        "Chief Architect"
+      ],
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "Daniel worked as chief architect for a large analytical data platform project. He designed and implemented the architecture and represented development in the steering group.",
+      "keywords": [
+        "Azure Databricks (Spark)",
+        "Azure Data Factory",
+        "Azure Storages",
+        "Azure Synapse Analytics",
+        "Power BI",
+        "Azure Web App",
+        ".Net Core",
+        "C#",
+        "Azure API Management",
+        "Azure Active Directory"
+      ]
+    },
+    {
+      "name": "Architecture design of Food waste IoT solutions",
+      "entity": "large city",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "municipality",
+      "roles": [
+        "Azure Architect"
+      ],
+      "description": "Daniel worked as Azure architect for a Finnish city. His role included architecture design, hands-on development and coordinating development with the hardware vendor.",
+      "keywords": [
+        "Azure IoT Hub",
+        "Azure Stream Analytics",
+        "Azure Storage",
+        "Azure CosmosDB",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "Architecture design and data modelling of Data Hub",
+      "entity": "German Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "industrial",
+      "roles": [
+        "Azure Data Architect"
+      ],
+      "description": "Daniel worked as Azure data architect for a German company. He designed the integration to D365 CRM and ERP. He also implemented the ERP integration and the Data Hub. The project was done partially onsite in Berlin.",
+      "keywords": [
+        "Azure SQL VM",
+        "Azure SQL Managed Instance",
+        "Azure Analysis Services",
+        "Power BI",
+        "Dynamics 365 Business Central"
+      ]
+    },
+    {
+      "name": "Architecture design of IoT Hub",
+      "entity": "German Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "industrial",
+      "roles": [
+        "Azure IoT Architect"
+      ],
+      "description": "Daniel worked as Azure IoT architect for a German company.",
+      "keywords": [
+        "Azure Functions",
+        "Azure Event Hub",
+        "Azure IoT Hub",
+        "Azure Stream Analytics",
+        "Azure SQL database",
+        "Azure Data Lake",
+        "Cosmos DB"
+      ]
+    },
+    {
+      "name": "Enterprise Architecture design",
+      "entity": "German Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "industrial",
+      "roles": [
+        "Data Architect"
+      ],
+      "description": "Daniel designed reporting and data architecture as part of the Enterprise architecture design."
+    },
+    {
+      "name": "Architecture design and data modelling of Enterprise Data Warehouse POC",
+      "entity": "German Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "industrial",
+      "roles": [
+        "Azure Data Architect"
+      ],
+      "description": "Daniel worked as Azure data architect for a German company. He built an EDW POC based on D365 Business Central and Azure Synapse Analytics.",
+      "keywords": [
+        "Azure Data Factory",
+        "Azure Data Lake Gen2",
+        "Azure Synapse Analytics",
+        "Azure Analysis Services",
+        "Power BI",
+        "Dynamics 365 Business Central"
+      ]
+    },
+    {
+      "name": "Architecture design of user behaviour analytics of Digital portal",
+      "entity": "Metal Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "metal industry",
+      "roles": [
+        "Data Architect"
+      ],
+      "description": "Daniel worked as Data architect and supported developers.",
+      "keywords": [
+        "Azure Data Factory",
+        "Power BI"
+      ]
+    },
+    {
+      "name": "Architecture design of worksite reporting and KPI dashboard",
+      "entity": "Construction company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "construction",
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "description": "Daniel worked as architect and hands-on developer.",
+      "keywords": [
+        "PowerApps",
+        "Azure SQL",
+        "Azure Data Factory",
+        "SSIS",
+        "Power BI"
+      ]
+    },
+    {
+      "name": "Development of Reporting solution POC",
+      "entity": "Machinery Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "machinery",
+      "roles": [
+        "Reporting Developer"
+      ],
+      "description": "Daniel worked as Reporting developer for a large Finnish company.",
+      "keywords": [
+        "Power BI Report Server",
+        "Analysis Services Tabular model",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "Design sprint",
+      "entity": "Construction company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "construction",
+      "roles": [
+        "Facilitator"
+      ],
+      "description": "Daniel helped the customer with creating a new digital service using design thinking."
+    },
+    {
+      "name": "Information architecture design",
+      "entity": "Investment company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "investment",
+      "roles": [
+        "Information Architect"
+      ],
+      "description": "Daniel interviewed experts, prepared workshops and created a conceptual model of the investment business."
+    },
+    {
+      "name": "Enterprise Data Platform Study",
+      "entity": "Construction company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "construction",
+      "roles": [
+        "Solution Architect"
+      ],
+      "description": "Daniel interviewed stakeholders, collected requirements, and designed the solution architecture for an Azure based data platform."
+    },
+    {
+      "name": "Architecture design of AI based data platform",
+      "entity": "Real-estate start-up company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "real estate",
+      "roles": [
+        "Architect"
+      ],
+      "description": "Daniel designed the architecture for a new platform.",
+      "keywords": [
+        "Bluemix DashDB",
+        "Watson Analytics"
+      ]
+    },
+    {
+      "name": "Architecture design and development of a data platform",
+      "entity": "Nordplan Engineering",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "engineering consultancy",
+      "roles": [
+        "Azure Architect",
+        "Developer"
+      ],
+      "startDate": "2017",
+      "endDate": "2018",
+      "description": "Daniel was Azure architect and developer for a new digital product.",
+      "keywords": [
+        "Azure Data Lake",
+        "Azure Data Factory",
+        "Azure Functions",
+        "PowerShell"
+      ]
+    },
+    {
+      "name": "Architecture design of hybrid data platform",
+      "entity": "Market research company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "market research",
+      "roles": [
+        "Azure Architect",
+        "Developer"
+      ],
+      "description": "Daniel was Azure architect and developer for a new digital product.",
+      "keywords": [
+        "SQL Server",
+        "Azure Hybrid Connection Manager",
+        "Azure Data Factory",
+        "Azure Data Management Gateway"
+      ]
+    },
+    {
+      "name": "Architecture and concept design of new digital portal",
+      "entity": "Market research company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "market research",
+      "roles": [
+        "Data Architect"
+      ],
+      "description": "Daniel was leading data related workshops, designing a new data architecture and creating final reports."
+    },
+    {
+      "name": "Architecture design for IoT POC",
+      "entity": "Industrial company",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "industrial",
+      "roles": [
+        "Tech Lead",
+        "Architect"
+      ],
+      "startDate": "2016",
+      "endDate": "2017",
+      "description": "Daniel was tech lead and architect for an experimental IoT project for a Finnish company. The solution included emotion recognition of images.",
+      "keywords": [
+        "Azure Cognitive Services",
+        "Azure Functions",
+        "Azure Data Factory",
+        "Azure Data Lake",
+        "Power BI"
+      ]
+    },
+    {
+      "name": "Digital Architecture target state design",
+      "entity": "University in Finland",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "higher education",
+      "roles": [
+        "Advisor"
+      ],
+      "description": "Daniel advised with target visions for Advanced Analytics, Master Data Management, Big Data and Data Warehousing, Digital Content Management, Internet of Everything, API Management and Governance."
+    },
+    {
+      "name": "Architecture design for Remote Monitoring IoT solution",
+      "entity": "Industrial Maintenance company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "industrial maintenance",
+      "roles": [
+        "Architect"
+      ],
+      "keywords": [
+        "Azure"
+      ]
+    },
+    {
+      "name": "Azure training",
+      "entity": "Industrial Maintenance company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "industrial maintenance",
+      "roles": [
+        "Azure Trainer"
+      ],
+      "keywords": [
+        "Azure"
+      ]
+    },
+    {
+      "name": "Architecture design for POC and Azure training",
+      "entity": "Media company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "media",
+      "roles": [
+        "Architect",
+        "Azure Trainer"
+      ],
+      "keywords": [
+        "Azure"
+      ]
+    },
+    {
+      "name": "Advanced sales analytics POC",
+      "entity": "Textile company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "textile",
+      "roles": [
+        "Project Manager"
+      ],
+      "keywords": [
+        "R"
+      ]
+    },
+    {
+      "name": "BI architecture design for Application Performance Management",
+      "entity": "Kanervapankki",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "cooperative banking group",
+      "roles": [
+        "Project Manager",
+        "BI Architect"
+      ],
+      "keywords": [
+        "Tableau"
+      ]
+    },
+    {
+      "name": "Connected Machine Analytics IoT POC",
+      "entity": "Industrial company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "industrial",
+      "roles": [
+        "Project Manager",
+        "Architect"
+      ],
+      "keywords": [
+        "Azure",
+        "R",
+        "Exploratory data analysis"
+      ]
+    },
+    {
+      "name": "Architecture design for Health and Safety management IoT solution",
+      "entity": "Industrial Maintenance company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "industrial maintenance",
+      "roles": [
+        "Architect"
+      ],
+      "keywords": [
+        "Azure"
+      ]
+    },
+    {
+      "name": "Crash reporting portal for a smartphone line",
+      "entity": "Northwind Software",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "mobile devices",
+      "roles": [
+        "Project Manager"
+      ],
+      "keywords": [
+        "Azure",
+        "Migration to MS stack"
+      ]
+    },
+    {
+      "name": "Global Sales Analytical Tool",
+      "entity": "Northwind Software",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "mobile devices",
+      "roles": [
+        "Project Manager",
+        "BI Architect"
+      ],
+      "startDate": "2014",
+      "endDate": "2015",
+      "keywords": [
+        "Azure",
+        "SQL Server BI"
+      ]
+    },
+    {
+      "name": "Device Activation Record solution",
+      "entity": "Northwind Software",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "mobile devices",
+      "roles": [
+        "Project Manager",
+        "BI Architect"
+      ],
+      "startDate": "2014",
+      "endDate": "2015",
+      "description": "Project management and hands-on BI architecture design.",
+      "keywords": [
+        "Azure",
+        "Hadoop"
+      ]
+    },
+    {
+      "name": "Consumer Behavior Data solution",
+      "entity": "Northwind Software",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "mobile devices",
+      "roles": [
+        "Project Manager",
+        "BI Architect"
+      ],
+      "description": "Project management and hands-on BI architecture design.",
+      "keywords": [
+        "Azure",
+        "Hadoop",
+        "Migration to MS stack"
+      ]
+    },
+    {
+      "name": "BI development",
+      "entity": "Pension Insurance company",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "pension insurance",
+      "roles": [
+        "BI Developer"
+      ],
+      "keywords": [
+        "Azure",
+        "SQL Server",
+        "SharePoint",
+        "Data modeling"
+      ]
+    },
+    {
+      "name": "BI development",
+      "entity": "Kanervapankki",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "cooperative banking group",
+      "roles": [
+        "BI Developer"
+      ],
+      "keywords": [
+        "Microsoft Business Intelligence",
+        "SharePoint",
+        "Data modelling"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p03",
+    "variant": "PM",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats four Kipinä projects; merged into the corresponding projects with x-highlight. Start years for the two projects dated only on the highlight slide (2021, 2023) were taken from there.",
+      "'Information Architecture design for investment company' appears twice in the source with identical text; included once.",
+      "Employment history (1999–2014) is given as employer lines; mapped to work[] instead of projects. 'System Engineer' at the mobile operator software company appears twice in the source; included once.",
+      "Only some projects have dates in the source; the others have no startDate/endDate."
+    ]
+  }
+}

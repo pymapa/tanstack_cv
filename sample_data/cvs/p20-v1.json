@@ -1,0 +1,704 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Eero Salmela",
+    "label": "Senior Software Developer, Partner",
+    "email": "eero.salmela@example.com",
+    "phone": "+358 40 000 1020",
+    "summary": "Eero is a senior full-stack developer, integration specialist and data engineer with 20 years of experience building business-critical digital services and data platforms.\n\nHis work ranges from an electricity transmission system operator's open-data and grid-operations tools to a global software company's internal analytics platform and enterprise integrations connecting core business systems.\n\nHe moves comfortably between backend, frontend, data and infrastructure, combining strong expertise in Azure and Microsoft technologies with TypeScript, Python, Kubernetes and modern DevOps practices.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-eero-salmela",
+        "url": "https://www.linkedin.com/in/example-eero-salmela"
+      }
+    ],
+    "x-experienceSummary": "20 years of business experience",
+    "x-tagline": "Great software ties everything together – the people using it, the data, the integrations and the systems underneath.",
+    "x-hobbies": "Enjoys nature and outdoor activities as well as a variety of sports.",
+    "x-industries": [
+      "Energy",
+      "Public Sector",
+      "Healthcare",
+      "Media & Publishing",
+      "Telecom",
+      "Industrial & Logistics"
+    ],
+    "x-strengths": [
+      {
+        "title": "Azure"
+      },
+      {
+        "title": "SQL"
+      },
+      {
+        "title": "Integrations"
+      },
+      {
+        "title": "TypeScript"
+      },
+      {
+        "title": "DevOps"
+      },
+      {
+        "title": ".NET"
+      },
+      {
+        "title": "Full-stack"
+      },
+      {
+        "title": "Kubernetes"
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior full-stack developer",
+        "description": "Builds end-to-end services with TypeScript/Node.js, React/Next.js, .NET and Python — from user interfaces and APIs to data processing."
+      },
+      {
+        "title": "Integration specialist",
+        "description": "Has designed and maintained business-critical integrations across ERP, CRM and other core systems, including a platform of more than 100 integrations."
+      },
+      {
+        "title": "Data & cloud engineer",
+        "description": "Develops analytics and cloud-native platforms with Azure, SQL, Synapse, Databricks, Kubernetes and infrastructure as code."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Full-stack development",
+        "description": "End-to-end services with TypeScript/Node.js, React/Next.js, .NET and Python."
+      },
+      {
+        "title": "Integration architecture",
+        "description": "Reliable APIs and enterprise integrations across ERP, CRM and other core systems."
+      },
+      {
+        "title": "Data engineering",
+        "description": "Analytics platforms and pipelines with Azure SQL, Synapse, Databricks, Data Factory and Python."
+      },
+      {
+        "title": "Cloud-native platforms",
+        "description": "Hands-on delivery with Azure, Kubernetes, Docker, Kafka, Bicep and Argo CD."
+      },
+      {
+        "title": "Technical architecture",
+        "description": "Modernization of business-critical services, legacy platforms and production environments."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer, Partner"
+    },
+    {
+      "name": "Piikki Solutions Oyj",
+      "position": "Developer, DevOps / Developer, Tech Architect / Developer"
+    },
+    {
+      "name": "Orient IT Services Finland Oy",
+      "position": "Developer, Technical architect"
+    },
+    {
+      "name": "Consultia Oy",
+      "position": "Developer, Technical architect, software consultant"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software & Data",
+      "keywords": [
+        "SQL / relational databases",
+        "C# / .NET",
+        "JavaScript",
+        "Python",
+        "Java",
+        "TypeScript",
+        "Node.js",
+        "React / Next.js"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "SQL / relational databases",
+          "years": 16,
+          "yearsText": "16 years"
+        },
+        {
+          "name": "C# / .NET",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "JavaScript",
+          "years": 9,
+          "yearsText": "9 years"
+        },
+        {
+          "name": "Python",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Java",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "TypeScript",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Node.js",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "React / Next.js",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Cloud & Integrations",
+      "keywords": [
+        "Microsoft Azure",
+        "Enterprise integrations",
+        "Docker",
+        "Bicep / IaC",
+        "Kubernetes",
+        "Azure data services",
+        "Azure API Management",
+        "Kafka / messaging"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Microsoft Azure",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "Enterprise integrations",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "Docker",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "Bicep / IaC",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Kubernetes",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Azure data services",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Azure API Management",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Kafka / messaging",
+          "years": 4,
+          "yearsText": "4 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git / Version control",
+        "CI/CD pipelines",
+        "Azure DevOps",
+        "Jenkins",
+        "Playwright",
+        "Robot Framework",
+        "Argo CD",
+        "ELK / Grafana"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git / Version control",
+          "years": 20,
+          "yearsText": "20 years"
+        },
+        {
+          "name": "CI/CD pipelines",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Azure DevOps",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Playwright",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Robot Framework",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Argo CD",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "ELK / Grafana",
+          "years": 4,
+          "yearsText": "4 years"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Azure Solutions Architect Expert",
+      "date": "2021",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Azure Data Engineer Associate",
+      "date": "2021",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "DevOps Engineer Expert",
+      "date": "2020",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Azure Developer Associate",
+      "date": "2020",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Microsoft Certified Professional Developer: Web Developer 4",
+      "date": "2014",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Technology Specialist: Microsoft BizTalk Server 2010",
+      "date": "2012",
+      "issuer": "Microsoft"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Open Data & Grid Operations Tools",
+      "entity": "Voimalinja Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "electricity transmission system operator",
+      "roles": [
+        "Senior Software Developer",
+        "Consultant"
+      ],
+      "startDate": "2022",
+      "x-highlight": true,
+      "description": "Designed and developed an open data platform, along with multiple internal applications supporting key grid operations, including signal testing, power grid disturbance analysis, and production curtailment message handling.",
+      "keywords": [
+        "Node.js",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Bicep",
+        "AAD B2C",
+        "Azure Api Management",
+        "Playwright",
+        "Python",
+        "Kafka",
+        "Docker",
+        "Kubernetes",
+        "Azure DevOps",
+        "ArgoCD",
+        "Rancher",
+        "Harbor",
+        "Java",
+        "ELK stack"
+      ]
+    },
+    {
+      "name": "Smart City Platform",
+      "entity": "City of Savola",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "municipality",
+      "roles": [
+        "DevOps / Developer"
+      ],
+      "description": "Evaluated MVP-stage smart city solutions and implemented CI/CD pipelines to support infrastructure deployment and scalability during early-stage development.",
+      "keywords": [
+        "Azure DevOps",
+        "Kubernetes",
+        "VerneMQ",
+        "Fiware",
+        "Orion Context Broker",
+        "MongoDB",
+        "PostgreSQL",
+        "Grafana",
+        "Apache APISIX",
+        "IaC"
+      ]
+    },
+    {
+      "name": "Internal Data & Analytics Platform",
+      "entity": "Northwind Software",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "global software company",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2018",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Part of the client's internal Data & Analytics Platform team, responsible for developing a data warehouse that delivers enriched customer survey data across all of the company's products for internal use via a REST API. Also managed GDPR compliance and integration of data from multiple internal sources.",
+      "keywords": [
+        "Azure Functions",
+        "Azure SQL",
+        "Azure Synapse",
+        "Azure Databricks",
+        "Python",
+        ".NET",
+        "R",
+        "GitHub",
+        "Jenkins",
+        "Robot Framework",
+        "Bicep"
+      ]
+    },
+    {
+      "name": "Real estate asset management data platform",
+      "entity": "Nordplan Engineering",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "engineering consultancy",
+      "roles": [
+        "Developer"
+      ],
+      "description": "Contributed to the initial development of an intelligent real estate asset management platform designed to minimize vacant spaces and maximize returns across real estate portfolios. Part of the founding team responsible for delivering the first production-ready versions of the platform.",
+      "keywords": [
+        ".NET Core",
+        "Cosmos DB",
+        "Azure SQL",
+        "Vue",
+        "Azure Data Factory",
+        "Gitlab"
+      ]
+    },
+    {
+      "name": "Internal Chatbot",
+      "entity": "Piikki Solutions Oyj",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "digital consultancy",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2017",
+      "endDate": "2018",
+      "description": "Designed and implemented an internal chatbot for HR and IT support using Azure Bot Framework, helping employees quickly access support resources and automate common service requests.",
+      "keywords": [
+        "Azure Bot Framework",
+        "QnA Maker",
+        "LUIS",
+        "Cognitive Services"
+      ]
+    },
+    {
+      "name": "ERP & Automation",
+      "entity": "Lääketehdas Oy",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "pharmaceutical manufacturing",
+      "roles": [
+        "Tech Architect",
+        "Developer"
+      ],
+      "startDate": "2016",
+      "endDate": "2017",
+      "description": "Extended the lifespan of the legacy ERP system by modernizing key components and supported its integration with a newly implemented robotic warehouse and automation systems. This work was carried out during the company's transition to a significantly larger production facility.",
+      "keywords": [
+        "C#",
+        "Receptum Maxx",
+        "Rowa robot warehouse",
+        "Tosho dose dispensing robot",
+        "Git"
+      ]
+    },
+    {
+      "name": "IoT Reporting",
+      "entity": "Telelinkki Oyj",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "telecom operator",
+      "roles": [
+        "Developer"
+      ],
+      "description": "Built a customer-facing reporting solution using the ThingWorx IoT platform, enabling the client to deliver real-time data insights and visualizations as part of its IoT service offering to customers.",
+      "keywords": [
+        "Thingworx IoT",
+        "Java"
+      ]
+    },
+    {
+      "name": "Master data validation notifications",
+      "entity": "Autotalo Oy",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "automotive import and retail",
+      "roles": [
+        "Developer"
+      ],
+      "description": "Responsible for designing and implementing a custom email notification system aimed at improving data integrity in the MDS (Master Data Services) environment. The solution automatically notifies users when they attempt to modify an MDS entity that either fails validation rules or results in the creation of a duplicate entity, helping to reduce errors and ensure consistency across the system.",
+      "keywords": [
+        "SSIS",
+        "C#",
+        "Gitlab"
+      ]
+    },
+    {
+      "name": "Integration platform",
+      "entity": "Aikakausmedia Kajo Oy",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "magazine publisher",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2014",
+      "endDate": "2016",
+      "description": "Oversaw the maintenance and development of a critical integration platform supporting day-to-day business operations. The integration platform handled more than 100 unique integrations.",
+      "keywords": [
+        "BizTalk server",
+        "SAS",
+        "Gitlab",
+        "Mercurial"
+      ]
+    },
+    {
+      "name": "CMS product new version",
+      "entity": "QuickCMS",
+      "x-employer": "Orient IT Services Finland Oy",
+      "x-industry": "CMS product company",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2013",
+      "endDate": "2014",
+      "description": "Part of the team responsible for designing and implementing a new version of the CMS product, with a focus on modernizing the architecture, enhancing usability, and improving overall system performance.",
+      "keywords": [
+        "C#",
+        "framework v4.5",
+        "Bootstrap",
+        "jQuery",
+        "JavaScript",
+        "Responsive design",
+        "Azure",
+        "OData",
+        "TFS"
+      ]
+    },
+    {
+      "name": "BizTalk system integrations",
+      "entity": "Meijeri Oy",
+      "x-employer": "Orient IT Services Finland Oy",
+      "x-industry": "dairy",
+      "roles": [
+        "Developer"
+      ],
+      "description": "Responsible for designing and implementing system integrations using BizTalk, enabling reliable data exchange and process automation across multiple enterprise applications.",
+      "keywords": [
+        "BizTalk server 2010",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Public-facing websites for government and environmental agencies",
+      "entity": "Ministry of Environmental Affairs",
+      "x-employer": "Orient IT Services Finland Oy",
+      "x-industry": "government ministry",
+      "roles": [
+        "Technical architect",
+        "Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2013",
+      "description": "Part of the team responsible for designing and implementing multiple public-facing websites for the ministry and related government and environmental agencies using a commercial CMS platform. Contributed to the delivery of accessible, user-friendly, and reliable digital services for government and environmental agencies.",
+      "keywords": [
+        "C#",
+        ".NET framework v4.0",
+        "jQuery",
+        "JavaScript",
+        "Responsive design",
+        "SQL server",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Internet and extranet sites",
+      "entity": "State Finance Agency",
+      "x-employer": "Orient IT Services Finland Oy",
+      "x-industry": "government treasury",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2013",
+      "description": "Responsible for designing and implementing both internet and extranet sites for the agency using a commercial CMS platform, supporting secure and user-centric digital services for the agency.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "framework v4.0",
+        "jQuery",
+        "JavaScript",
+        "Responsive design",
+        "SQL server",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Internet and intranet sites",
+      "entity": "City of Kaukola",
+      "x-employer": "Orient IT Services Finland Oy",
+      "x-industry": "municipality",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2013",
+      "x-highlight": true,
+      "description": "Part of the team responsible for designing and implementing the city's internet and intranet sites using a commercial CMS platform, enhancing digital communication for both internal staff and public users in the city.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "framework v4.0",
+        "jQuery",
+        "JavaScript",
+        "WCF",
+        "SQL server",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Grain trading web portal",
+      "entity": "Viljava Nordic Oy",
+      "x-employer": "Consultia Oy",
+      "x-industry": "grain trading",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2009",
+      "endDate": "2010",
+      "description": "Part of the team responsible for designing and implementing the client's grain trading web portal, providing farmers and buyers with tools to manage transactions, access market data, and communicate efficiently.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "Framework v4.0",
+        "LINQ",
+        "SQL server",
+        "TFS"
+      ]
+    },
+    {
+      "name": "CRM and ERP integrations",
+      "entity": "Tierakentaja Oy",
+      "x-employer": "Consultia Oy",
+      "x-industry": "infrastructure construction",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2009",
+      "endDate": "2010",
+      "description": "Part of the team responsible for implementing system integrations between Microsoft Dynamics CRM and Dynamics AX and other enterprise applications, ensuring reliable data exchange and streamlined operations.",
+      "keywords": [
+        "BizTalk server",
+        "Dynamics CRM",
+        "Dynamics AX",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Customer data integrations and CRM migration",
+      "entity": "Tekstiilipalvelu Liina Oyj",
+      "x-employer": "Consultia Oy",
+      "x-industry": "textile and workwear services",
+      "roles": [
+        "Technical architect",
+        "Software consultant",
+        "Developer"
+      ],
+      "startDate": "2008",
+      "endDate": "2009",
+      "description": "Responsible for designing and implementing customer data integrations between the CRM system and various other internal systems. Also developed specialized software used to cleanse and standardize customer data in legacy systems, ensuring data quality prior to the CRM migration.",
+      "keywords": [
+        "C#",
+        "CRM 4.0",
+        "BizTalk 2006 r2 cluster",
+        "SQL server 2005",
+        "WS/WCF",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Population data query portal",
+      "entity": "National Citizen Data Agency",
+      "x-employer": "Consultia Oy",
+      "x-industry": "government population data agency",
+      "roles": [
+        "Technical Architect",
+        "Developer"
+      ],
+      "startDate": "2006",
+      "endDate": "2011",
+      "x-highlight": true,
+      "description": "Member of the team responsible for implementing a population data query service, a large-scale, high-availability web portal. Also responsible for setting up a new production environment to support a hardware and operating system upgrade, ensuring continued system stability and performance.",
+      "keywords": [
+        "C#",
+        ".NET framework v2.0",
+        "SQL server 2005 cluster",
+        "Windows server 2003 clusters",
+        "Oracle g10 clusters",
+        "IBM Informix",
+        "SSIS",
+        "Microsoft Visual SourceSafe",
+        ".NET",
+        "framework v3.5",
+        "SQL server 2008 cluster",
+        "Windows server 2008 clusters",
+        "Oracle g11 clusters",
+        "SSIS",
+        "TFS"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p20",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects from 'All client projects'; merged with x-highlight. The All client projects versions have slightly longer technology lists (React, Robot Framework) and were used.",
+      "Hobbies (a summer cottage and several specific outdoor activities and sports) were in the About text; generalized into x-hobbies and removed from the summary.",
+      "'In a nutshell' contains only short titles without descriptions; stored as x-strengths titles.",
+      "Government, municipal and client website domains removed from project descriptions.",
+      "Named products generalized: the employer's CMS platform product, the client's data platform name, the internal chatbot name, the population data query service name.",
+      "Several projects have no dates in the source; they have no startDate/endDate.",
+      "Dropped link text 'See project highlights'."
+    ]
+  }
+}

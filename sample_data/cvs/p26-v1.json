@@ -1,0 +1,188 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Janne Heikkinen",
+    "label": "Senior Fullstack Developer",
+    "email": "janne.heikkinen@example.com",
+    "phone": "+358 40 000 1026",
+    "summary": "Janne Heikkinen is a senior full-stack developer with strong background in product development. Years in product development has made him persistent and a reliable developer who is familiar with devops and very aware of the significance of well implemented CI/CD processes.\n\nThe most important thing for Janne is to make things deliver the value they are supposed to. More specifically: make things work, make them work well and keep them running CI/CD processes.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-janne-heikkinen",
+        "url": "https://www.linkedin.com/in/example-janne-heikkinen"
+      }
+    ],
+    "x-tagline": "Simplicity first.",
+    "x-keywords": [".NET C#", "SQL Server", "Unit tests", "CI/CD", "Azure", "HTML"],
+    "x-strengths": [
+      {
+        "title": "Microsoft stack",
+        "description": "Janne has 17 years of experience in developing with the Microsoft stack."
+      },
+      {
+        "title": "It's not about the knicks and knack",
+        "description": "When it comes to software development, Janne believes the focus should not be in the knicks and knacks but in what brings value."
+      },
+      {
+        "title": "Something unfamiliar, count me in!",
+        "description": "Janne has a desire for solving problems with unknown technologies as well as they provide excellent learning opportunities."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Software Team Lead",
+        "description": "As team lead Janne was driving the team into adopting TDD-like development attitude in making the software more testable and in time more reliable.\n\nDriving changes can be difficult but changes can provide possibilities for learning and growing up that can be very valuable for individuals. And after all, despite the technical nature of IT, it's the people that matter most."
+      },
+      {
+        "title": "Fullstack developer",
+        "description": "Janne has worked as a fullstack developer for several years giving him the ability to solve problems or implement changes affecting the whole software stack.\n\nFoundation was built on backend side at early stages of career and widened to whole stack through years has made Janne able to provide value in various ways.\n\nAgentic development has found its way in Janne's toolkit as well, lately focused utilizing Github Copilot."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Fullstack Developer"
+    },
+    {
+      "name": "Raporttilabs Oy",
+      "startDate": "2016-08",
+      "endDate": "2022-01"
+    },
+    {
+      "name": "Kvanta Consulting Oy",
+      "startDate": "2008-08",
+      "endDate": "2016-07"
+    },
+    {
+      "name": "Lippujärjestelmä Oy",
+      "startDate": "2001-05",
+      "endDate": "2008-07",
+      "x-note": "The source gives the period as '05/2021 – 07/2008' (reversed); interpreted as 05/2001 – 07/2008, since the next employment starts 08/2008."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": ["C#", "F#", "SQL Server", "ASP.NET MVC", "Blazor"],
+      "x-skillDetails": [
+        { "name": "C#", "years": 17, "yearsText": "17 years" },
+        { "name": "F#", "years": 2, "yearsText": "2 years" },
+        { "name": "SQL Server", "years": 17, "yearsText": "17 years" },
+        { "name": "ASP.NET MVC", "years": 5, "yearsText": "5 years" },
+        { "name": "Blazor", "years": 2, "yearsText": "2 year" }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": ["JavaScript/TypeScript", "HTML / CSS", "UI Libraries (Bootstrap)", "AngularJS", "Angular", "React"],
+      "x-skillDetails": [
+        { "name": "JavaScript/TypeScript", "years": 10, "yearsText": "10 years" },
+        { "name": "HTML / CSS", "years": 14, "yearsText": "14 years" },
+        { "name": "UI Libraries (Bootstrap)", "years": 8, "yearsText": "8 years" },
+        { "name": "AngularJS", "years": 6, "yearsText": "6 years" },
+        { "name": "Angular", "years": 1, "yearsText": "1 year" },
+        { "name": "React", "years": 3, "yearsText": "3 years" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "NUnit", "xUnit", "RhinoMocks, Moq", "Jasmine", "Playwright", "Selenium"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 15, "yearsText": "15 years" },
+        { "name": "NUnit", "years": 16, "yearsText": "16 years" },
+        { "name": "xUnit", "years": 2, "yearsText": "2 years" },
+        { "name": "RhinoMocks, Moq", "years": 8, "yearsText": "8 years" },
+        { "name": "Jasmine", "years": 2, "yearsText": "2 years" },
+        { "name": "Playwright", "years": 2, "yearsText": "2 years" },
+        { "name": "Selenium", "years": 4, "yearsText": "4 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "AZ-204: Azure Developer Associate", "date": "2024", "issuer": "Microsoft" },
+    { "name": "AZ-400: DevOps Engineer Expert", "date": "2024", "issuer": "Microsoft" }
+  ],
+  "projects": [
+    {
+      "name": "Recycling platform development and maintenance",
+      "entity": "Undisclosed client",
+      "x-industry": "recycling",
+      "roles": ["Senior Fullstack Developer"],
+      "startDate": "2022-01",
+      "endDate": "2026-01",
+      "description": "Responsible for finalizing the national e-identification service authentication and authorization integration to replace certain parts of the existing identity handling solution. Responsible for further development activities to the platform.",
+      "keywords": [".NET C#", "F#", ".NET Core", "WebAPI", "National e-identification service", "JavaScript", "HTML", "CSS", "TypeScript", "React", "cypress", "XUnit", "CosmosDB", "SQL Server", "Azure"]
+    },
+    {
+      "name": "Water information management system development",
+      "entity": "Undisclosed client",
+      "x-industry": "environmental information",
+      "roles": ["Senior Fullstack Developer"],
+      "startDate": "2022-08",
+      "description": "Main responsibility is to build a versatile analysis tool for professionals to make it easier and faster for them to create the analysis and comparisons they need. In addition to the main responsibility, the role is to be part of a team focusing on front-end development and partake in a wider range of development activities throughout the system area.",
+      "keywords": [".NET C#", "F#", ".NET Core", "WebAPI", "Blazor", "JavaScript", "HTML", "CSS", "TypeScript", "React", "Playwright", "JSONForms", "cypress", "XUnit", "plotly.js", "SQL Server", "Azure"]
+    },
+    {
+      "name": "Built environment information system development",
+      "entity": "Undisclosed client",
+      "x-industry": "built environment information",
+      "roles": ["Backend Developer"],
+      "startDate": "2023-12",
+      "endDate": "2024-04",
+      "description": "Responsible for building a backend API for managing plan management requests.",
+      "keywords": [".NET C#", ".NET Core", "WebAPI", "SQL Server", "xUnit", "MediatR"]
+    },
+    {
+      "name": "Reporting SaaS service development",
+      "entity": "Raporttilabs Oy",
+      "x-employer": "Raporttilabs Oy",
+      "x-industry": "reporting SaaS",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2016-08",
+      "endDate": "2022-01",
+      "description": "The team's responsibilities were to design, develop and maintain a reporting service that was provided as a SaaS service. Responsibilities included developing the service on both front-end and backend and developing and maintaining integration interfaces. The team was responsible for everything from development to releasing and got familiar with devops practices along the road when the service was developed to be run cloud natively.",
+      "keywords": [".NET C#", ".NET Core", "WebAPI", "JavaScript", "HTML", "CSS", "Less", "Bootstrap", "TypeScript", "AngularJS", "Angular", "RxJS", "SQL Server", "FluentMigrator", "Log4net", "Highcharts", "Ruby/Rake", "NUnit", "Moq", "RobotFramework", "TeamCity", "Dapper", "Jasmine", "Git", "AWS"]
+    },
+    {
+      "name": "Consulting and integration product development",
+      "entity": "Kvanta Consulting Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "IT consultancy",
+      "roles": ["Consultant", "Product Developer"],
+      "startDate": "2008-08",
+      "endDate": "2016-07",
+      "description": "Time at Kvanta Consulting Oy consisted of roles in consulting and product development. Projects in consulting included:\n- EPiServer solutions development.\n- Development of different types of integration interfaces and adding monitoring to interfaces.\n- Full-stack development on Microsoft stack.\n\nProduct development was done in a team developing products and a platform for systems integrations. The team was responsible for the whole product development cycle from design to implementation and all the way to quality assurance and maintenance. One major step during that time was to be part of implementing the transition from on-premises to a cloud platform ready version.",
+      "keywords": [".NET C#", "ASP.NET MVC", "ASP.NET WebForms", "WinForms", "WCF", "WebAPI", "JavaScript", "TypeScript", "CoffeeScript", "HTML", "CSS", "Less", "jQuery", "jQuery UI", "AngularJS", "Knockout.js", "Highcharts", "Bootstrap", "Ruby/Rake", "RhinoMocks", "NSubstitute", "SQL Server", "Entity Framework", "NHibernate", "FluentMigrator", "Log4net", "EPiServer", "EPiServer Commerce", "SVN", "Git", "Azure Web Sites", "Azure Service Bus", "Azure Table Storage", "Azure AD", "TeamCity", "NUnit", "Dapper", "Selenium", "RobotFramework", "WatIn"]
+    },
+    {
+      "name": "Public transport travel card backend system",
+      "entity": "Lippujärjestelmä Oy",
+      "x-employer": "Lippujärjestelmä Oy",
+      "x-industry": "public transport ticketing systems",
+      "roles": ["Software Developer"],
+      "startDate": "2001-05",
+      "endDate": "2008-07",
+      "x-note": "The source gives the period as '05/2021 – 07/2008' (reversed); interpreted as 05/2001 – 07/2008, since the next employment starts 08/2008.",
+      "description": "Main responsibilities were designing, implementing and maintaining solutions for a regional public transport travel card backend system. Solutions had a wide range of different functionalities ranging from parameter configuration to event processing, event browsing, error handling, logging and statistics reporting to name a few. In a multi-vendor environment, projects were delivered mostly using a waterfall approach but on smaller scale projects, agile methodologies were practiced as well.",
+      "keywords": ["AdWISE development tools", "Titanium database engine"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p26",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) contains only empty 'TECHNOLOGIES USED IN THIS ASSIGNMENT' headings; no content.",
+      "The 'Industry Knowledge' box is empty in the source.",
+      "The three most recent projects name no client; entity set to 'Undisclosed client' and industry inferred from the project names.",
+      "The last three entries under 'All client projects' are employer lines with a description and technology list; output both as projects (employer as entity) and as work[] entries with the stated employment periods. The long technology list at the top of slide 5 belongs to the IT consultancy entry that starts on slide 4.",
+      "The travel card backend system of the ticketing systems employer was described with a named metropolitan area; generalized to 'a regional public transport travel card backend system'.",
+      "Roles are not stated per project; inferred from the descriptions and the CV title.",
+      "First-person sentence in 'In a nutshell' rewritten to third person."
+    ]
+  }
+}

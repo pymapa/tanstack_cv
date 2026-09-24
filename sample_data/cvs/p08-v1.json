@@ -1,0 +1,376 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Risto Kallas",
+    "label": "Senior Software Developer",
+    "email": "risto.kallas@example.com",
+    "phone": "+358 40 000 1008",
+    "summary": "Risto is an experienced software developer with multiple technologies and domains under his belt. He enjoys working with projects that impact the everyday life of users and uses his experience to combine beautiful, accessible applications into robust, reliable and secure services. Risto ensures that the technical solutions always are impactful and meaningful.\n\nBe it client or server development, Risto will find the right tool for the job. Risto also likes to help his team to improve and enjoys finding solutions to both technical and ways-of-working problems.\n\nRisto believes that AI is a very useful assistant but not a replacement for experienced developers.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-risto-kallas",
+        "url": "https://www.linkedin.com/in/example-risto-kallas"
+      }
+    ],
+    "x-experienceSummary": "10+ years of business experience",
+    "x-tagline": "Building high-quality software that makes people's daily lives a little easier — and turning business needs into technical opportunities that really matter.",
+    "x-keywords": [
+      "Kotlin",
+      "Java",
+      "Mobile Development",
+      "Flutter",
+      "Accessibility (WCAG)",
+      "Spring",
+      "React / React Native",
+      "Android SDK"
+    ],
+    "x-industries": [
+      "Finance and Loyalty",
+      "Logistics",
+      "Construction Industry"
+    ],
+    "x-strengths": [
+      {
+        "title": "Mobile application development",
+        "description": "Risto has worked with both native development with Java and Kotlin and cross-platform technologies like React Native. He has worked on projects with high security and accessibility (WCAG 2.2) requirements, and working with mobile solutions is his main strength."
+      },
+      {
+        "title": "Server & web development",
+        "description": "Risto has worked with Java backend services mainly utilizing Spring and has worked with web frameworks like React and Angular."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Mobile development",
+        "description": "Risto has worked with native Android development using Java and Kotlin and with cross-platform technologies like React Native. He is also interested in Flutter to see where the scene goes with it."
+      },
+      {
+        "title": "Full-stack development",
+        "description": "While not in the latest projects, Risto has worked on full-stack projects with Java and AngularJS / React."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer"
+    },
+    {
+      "name": "Lanka Mobile Oy",
+      "position": "Software developer"
+    },
+    {
+      "name": "Freelancer",
+      "position": "Android Developer"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Technologies",
+      "keywords": [
+        "Java",
+        "Kotlin",
+        "Android Platform",
+        "React Native / React",
+        "Spring",
+        "AngularJS",
+        "Flutter"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Java",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Kotlin",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Android Platform",
+          "years": 9,
+          "yearsText": "9 years"
+        },
+        {
+          "name": "React Native / React",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Spring",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "AngularJS",
+          "years": 1,
+          "yearsText": "1 years"
+        },
+        {
+          "name": "Flutter",
+          "years": 1,
+          "yearsText": "1 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Testing frameworks (Junit)",
+        "Espresso",
+        "Gradle",
+        "Gitlab CI",
+        "Docker"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Testing frameworks (Junit)",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Espresso",
+          "years": 9,
+          "yearsText": "9 years"
+        },
+        {
+          "name": "Gradle",
+          "years": 9,
+          "yearsText": "9 years"
+        },
+        {
+          "name": "Gitlab CI",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Docker",
+          "years": 3,
+          "yearsText": "3 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Large-scale finance and loyalty Android application",
+      "entity": "Finance industry client (NDA)",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "finance industry",
+      "roles": [
+        "Software developer"
+      ],
+      "startDate": "2023",
+      "x-highlight": true,
+      "x-note": "The highlight slide ('Senior Software Developer', 2021 - present) covers this project and the preceding one for the same client via the mobile consultancy; it is merged here.",
+      "description": "Working on one of the most used finance / commerce applications in Finland. The project has high security and accessibility requirements, as users do their daily banking activities and other loyalty program related tasks with it. Risto's tasks included working on the Android client and related backend services, and he also helps improve the ways-of-working of the team.\n\nResponsible for developing and specifying features for the large-scale Android application and developing features and integrations for Java/Spring backend services.",
+      "keywords": [
+        "Kotlin",
+        "Java (11, 18)",
+        "Android",
+        "Spring",
+        "REST",
+        "Gitlab pipelines",
+        "Gitlab CI",
+        "Gradle",
+        "JavaScript",
+        "Jetpack compose",
+        "RxJava",
+        "Coroutines",
+        "Docker",
+        "NFC",
+        "NFC payment solutions",
+        "terraform",
+        "podman",
+        "integrations"
+      ]
+    },
+    {
+      "name": "Large-scale Android application",
+      "entity": "Finance industry client (NDA)",
+      "x-employer": "Lanka Mobile Oy",
+      "x-industry": "finance industry",
+      "roles": [
+        "Software developer"
+      ],
+      "startDate": "2021",
+      "endDate": "2023",
+      "x-duration": "2 years",
+      "description": "Responsible for developing and specifying features for a large-scale Android application. Acted as a substitute team lead at one point for a month.",
+      "keywords": [
+        "Kotlin",
+        "Android",
+        "Gitlab pipelines",
+        "Gradle",
+        "JavaScript",
+        "Jetpack compose",
+        "RxJava",
+        "Coroutines",
+        "Docker",
+        "NFC"
+      ]
+    },
+    {
+      "name": "Consumer postal services Android app",
+      "entity": "Kirjekulku Oyj",
+      "x-employer": "Lanka Mobile Oy",
+      "x-industry": "postal and logistics",
+      "roles": [
+        "Software developer"
+      ],
+      "startDate": "2017",
+      "endDate": "2020",
+      "x-duration": "3 years, 4 months",
+      "x-highlight": true,
+      "description": "A consumer postal services app is the client's consumer application for its services and an integral part of modern Finnish postal services. Risto's role was Android developer, where he played a key role in the architectural decisions on the application implementation.\n\nResponsible for developing, specifying and architecting the Android application. Was also part of creating a custom native-to-web solution where a web application could be bundled with a native application.",
+      "keywords": [
+        "Android",
+        "Java",
+        "Kotlin",
+        "some React",
+        "JavaScript",
+        "Jenkins",
+        "CircleCI",
+        "Room",
+        "GraphQL",
+        "Web-to-Native bridge communication"
+      ]
+    },
+    {
+      "name": "Construction documentation application",
+      "entity": "Turvatyömaa Oy",
+      "x-employer": "Lanka Mobile Oy",
+      "x-industry": "construction safety software",
+      "roles": [
+        "Software developer"
+      ],
+      "startDate": "2017",
+      "x-duration": "3 months",
+      "x-highlight": true,
+      "x-note": "Year from the highlight slide; the project list gives only the duration.",
+      "description": "The client's application is used to manage various construction documents, inspections and incident reports. Users fill in forms and other regulatory documents with the application to help with the bureaucracy involved in the construction industry. Risto's tasks were developing the React Native application, including camera and file storage functionality, and helping the startup to reach its market.",
+      "keywords": [
+        "React Native",
+        "TypeScript",
+        "hockeyapp",
+        "Java",
+        "Objective-C",
+        "mobX"
+      ]
+    },
+    {
+      "name": "Location based MVP Android app",
+      "entity": "Paikkapiste",
+      "x-employer": "Lanka Mobile Oy",
+      "x-industry": "location-based app startup",
+      "roles": [
+        "Software developer"
+      ],
+      "x-duration": "3 months",
+      "description": "Responsible for developing a location based MVP Android app and assisting in server application development.",
+      "keywords": [
+        "Android",
+        "Java",
+        "Spark framework",
+        "Pipedrive crm"
+      ]
+    },
+    {
+      "name": "Meeting assistant web application",
+      "entity": "Undisclosed client",
+      "x-employer": "Lanka Mobile Oy",
+      "roles": [
+        "Full stack developer"
+      ],
+      "startDate": "2016",
+      "endDate": "2017",
+      "x-duration": "7 months",
+      "x-highlight": true,
+      "description": "A meeting assistant web application built on the Salesforce platform. Companies can integrate it within their Salesforce cloud solution to help with various meeting related tasks; the application was used for creating meeting notes and converting them to various objects used in Salesforce CRM. Risto was responsible for full stack application development with Java and Angular and for improving the DevOps of the project.",
+      "keywords": [
+        "AngularJs",
+        "Java",
+        "Salesforce",
+        "Apex language",
+        "Gradle",
+        "Jenkins",
+        "Express (Node.js)"
+      ]
+    },
+    {
+      "name": "Workforce hiring application",
+      "entity": "Hirely",
+      "x-employer": "Lanka Mobile Oy",
+      "x-industry": "workforce hiring platform",
+      "roles": [
+        "Software developer"
+      ],
+      "x-duration": "6 months",
+      "description": "Responsible for developing an Android application and assisting in developing backend features for an application used for hiring workforce.",
+      "keywords": [
+        "Android SDK",
+        "Java",
+        "spring boot",
+        "RxJava",
+        "Gradle"
+      ]
+    },
+    {
+      "name": "Card game",
+      "entity": "Sieni Games",
+      "x-employer": "Freelancer",
+      "x-industry": "mobile game developer",
+      "roles": [
+        "Android Developer"
+      ],
+      "startDate": "2015",
+      "endDate": "2016",
+      "x-duration": "4 months",
+      "description": "Responsible for developing features for a card game.",
+      "keywords": [
+        "Android",
+        "Java",
+        "RxJava"
+      ]
+    },
+    {
+      "name": "Running app (a route planning app)",
+      "entity": "Sovellusverstas Oy",
+      "x-employer": "Freelancer",
+      "x-industry": "mobile app development",
+      "roles": [
+        "Android Developer"
+      ],
+      "x-duration": "3 months",
+      "description": "Responsible for feature development for an Android application used for running.",
+      "keywords": [
+        "Android",
+        "Java",
+        "RxJava"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p08",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats four projects; merged into the corresponding projects with x-highlight, combining descriptions and technology lists. The highlight slide uses the role 'Senior Software Developer' for two projects; the project list roles are used.",
+      "The 'In a nutshell' section is titled 'In development' in the source; stored in x-strengths.",
+      "The finance industry client is undisclosed (NDA) in the source.",
+      "unmapped product: a Salesforce-based meeting assistant application (named product; its client is not named) generalized.",
+      "Technology 'Express (Node.js' was truncated in the source; closed the parenthesis.",
+      "Projects are in the source reading order (left column, then right column on each slide). Several projects have only a duration and no dates."
+    ]
+  }
+}

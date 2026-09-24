@@ -1,0 +1,261 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Veli-Matti Seppälä",
+    "label": "Senior Software Developer and Partner",
+    "email": "veli-matti.seppala@example.com",
+    "phone": "+358 40 000 1015",
+    "summary": "Vemmu is an experienced frontend focused developer with a good grasp on usability and accessibility. He is not afraid of working with the backend either. His passion is creating services that are easy to use. Vemmu likes to use his critical thinking to challenge designs and ways of working and spar ideas with other team members. He often becomes a key player in a team by taking responsibility and supporting everyone.\n\nVemmu has experience in developing services used both by experts for work and for the public. He has worked on many greenfield projects, smaller gigs and major overhauls.\n\nTo compensate all the screen time at work and with pc games, Vemmu enjoys nature and outdoor activities. He has also built a hobby web application of his own with SvelteKit and Vercel.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-veli-matti-seppala",
+        "url": "https://www.linkedin.com/in/example-veli-matti-seppala"
+      }
+    ],
+    "x-experienceSummary": "10+ years of business experience",
+    "x-tagline": "Things should be simple. Developers carry the responsibility of building services that are accessible and easy to use, and I build them for people, together with people.",
+    "x-keywords": ["Fullstack", "UX", "Accessibility", "WCAG", "React", "Teamwork", "CSS", "Design systems"],
+    "x-industries": ["Energy", "Media", "Telecom"],
+    "x-strengths": [
+      {
+        "title": "Frontend development",
+        "description": "Vemmu has lots of experience with React from the first days of Redux to the latest state management solutions. He is a fan of Svelte and hopes to see it become more mainstream."
+      },
+      {
+        "title": "Accessible by default",
+        "description": "Vemmu has developed services with AA-level accessibility requirements and is familiar with accessibility guidelines."
+      },
+      {
+        "title": "Key team player",
+        "description": "The big picture is always on Vemmu's mind. He always considers the whole solution and does not settle for just finishing tickets."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "React wizard",
+        "description": "Vemmu has been using React since its early years and knows how to implement applications with a good architecture."
+      },
+      {
+        "title": "Team guide",
+        "description": "Vemmu is good at remembering the big picture and is happy to help others. He takes responsibility and eagerly takes part in discussions."
+      },
+      {
+        "title": "Friend of designers",
+        "description": "Sparring with designers and giving opinions on both UX and how to best implement the suggested design is what Vemmu really likes to do. Colleagues have jokingly called him an honorary member of the design team."
+      },
+      {
+        "title": "Accessibility expert",
+        "description": "Implementing applications with strict accessibility requirements have made Vemmu very familiar with WCAG guidelines."
+      }
+    ],
+    "x-hobbies": "Enjoys nature and outdoor activities, and PC games; builds hobby web applications in his free time."
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Partner"
+    },
+    {
+      "name": "Koodikaarti Oyj"
+    },
+    {
+      "name": "Telesofta Oyj",
+      "position": "Software Engineer",
+      "startDate": "2014-05",
+      "endDate": "2017-11"
+    },
+    {
+      "name": "Lakeland University of Technology",
+      "position": "Research assistant",
+      "startDate": "2011-05",
+      "endDate": "2013-12"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "TypeScript", "ReactJS", "NextJS", "Svelte", "HTML / CSS", "Styled-components", "Vue"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 10, "yearsText": "10 years" },
+        { "name": "TypeScript", "years": 5, "yearsText": "5 years" },
+        { "name": "ReactJS", "years": 10, "yearsText": "10 years" },
+        { "name": "NextJS", "years": 5, "yearsText": "5 years" },
+        { "name": "Svelte", "years": 1, "yearsText": "1 year" },
+        { "name": "HTML / CSS", "years": 10, "yearsText": "10 years" },
+        { "name": "Styled-components", "years": 6, "yearsText": "6 years" },
+        { "name": "Vue", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Java", "Spring/ Spring Boot", "Node.js", "Python", "Clojure", "Relational databases", "Document databases"],
+      "x-skillDetails": [
+        { "name": "Java", "years": 4, "yearsText": "4 years" },
+        { "name": "Spring/ Spring Boot", "years": 4, "yearsText": "4 years" },
+        { "name": "Node.js", "years": 2, "yearsText": "2 years" },
+        { "name": "Python", "years": 4, "yearsText": "4 years" },
+        { "name": "Clojure", "years": 2, "yearsText": "2 years" },
+        { "name": "Relational databases", "years": 3, "yearsText": "3 years" },
+        { "name": "Document databases", "years": 2, "yearsText": "2 years" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "Mercurial", "Cypress (test framework)", "Playwright (test framework)", "Robot Framework", "Jenkins", "Docker", "Gitlab Pipelines", "Github Actions"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 8, "yearsText": "8 years" },
+        { "name": "Mercurial", "years": 4, "yearsText": "4 years" },
+        { "name": "Cypress (test framework)", "years": 3, "yearsText": "3 years" },
+        { "name": "Playwright (test framework)", "years": 3, "yearsText": "3 years" },
+        { "name": "Robot Framework", "years": 4, "yearsText": "4 years" },
+        { "name": "Jenkins", "years": 2, "yearsText": "2 years" },
+        { "name": "Docker", "years": 4, "yearsText": "4 years" },
+        { "name": "Gitlab Pipelines", "years": 5, "yearsText": "5 years" },
+        { "name": "Github Actions", "years": 1, "yearsText": "1 year" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Consumer and corporate self-service portals",
+      "entity": "Kaupunkienergia Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "energy utility",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2023-02",
+      "x-highlight": true,
+      "description": "Responsible for frontend development of the new services for both personal and corporate use. Work included making sure accessibility requirements set by the accessibility directive were met and facilitating team retros. Also worked on the Python backend and with the client's design system component library.",
+      "keywords": ["TypeScript", "React", "NextJS", "styled-components", "Playwright", "React testing library", "Storybook", "Stitches.js", "Python", "Cypress"],
+      "x-note": "The source shows this and the following engagement for the same client in one box with a shared description and technology list; the highlight ('2020-') covers both."
+    },
+    {
+      "name": "Consumer and corporate self-service portals",
+      "entity": "Kaupunkienergia Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "energy utility",
+      "roles": ["Fullstack developer"],
+      "startDate": "2020-08",
+      "endDate": "2022-02",
+      "x-highlight": true,
+      "description": "Responsible for frontend development of the new services for both personal and corporate use. Work included making sure accessibility requirements set by the accessibility directive were met and facilitating team retros. Also worked on the Python backend and with the client's design system component library.\n\nA greenfield project where Vemmu was responsible for starting the development of the React component library and was also building the whole application from scratch.",
+      "keywords": ["TypeScript", "React", "NextJS", "styled-components", "Playwright", "React testing library", "Storybook", "Stitches.js", "Python", "Cypress"],
+      "x-note": "The greenfield paragraph comes from the highlight; it was attached to this earlier engagement because the project started in 2020."
+    },
+    {
+      "name": "Refreshed UI for an existing product",
+      "entity": "Smartheat Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "smart building heating technology",
+      "roles": ["Fullstack developer"],
+      "startDate": "2018-11",
+      "endDate": "2020-06",
+      "x-duration": "1 years, 8 months",
+      "x-highlight": true,
+      "description": "Responsible for implementing a refreshed UI for an existing product and refactoring the codebase to the latest versions of used technologies.",
+      "keywords": ["React", "React contexts & hooks", "Flux", "Clojure"]
+    },
+    {
+      "name": "Technology magazine website and digital magazine",
+      "entity": "Kirjava Media",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "magazine publisher",
+      "roles": ["Frontend developer"],
+      "startDate": "2018-03",
+      "endDate": "2018-11",
+      "x-duration": "9 months",
+      "x-highlight": true,
+      "description": "Responsible for frontend development for the Tekniikkalehti website and the new version of the digital magazine.\n\nA greenfield project where the team was responsible for the whole single page application.",
+      "keywords": ["React", "kea.js (Redux)", "jest", "Puppeteer", "WordPress REST API"]
+    },
+    {
+      "name": "Mobile-like web application",
+      "entity": "Vuorovesi Software",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "software startup",
+      "roles": ["Fullstack developer"],
+      "startDate": "2020-07",
+      "endDate": "2020-08",
+      "x-duration": "2 month",
+      "description": "Responsible for continuing development of a mobile like web application.",
+      "keywords": ["React", "Node.js", "AWS Lambda", "DynamoDB"]
+    },
+    {
+      "name": "Search tool features",
+      "entity": "Career Journey, Campus Compass",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "career exploration education and college admissions community",
+      "roles": ["Fullstack developer"],
+      "startDate": "2017-11",
+      "endDate": "2018-02",
+      "x-duration": "4 months",
+      "description": "Responsible for implement new features to an existing search tool.",
+      "keywords": ["React", "Node.js", "Docker", "MariaDB"],
+      "x-note": "The source names two clients in one title."
+    },
+    {
+      "name": "Engine system features",
+      "entity": "Oppimo Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "digital learning platform",
+      "roles": ["Frontend developer"],
+      "startDate": "2020-06",
+      "endDate": "2020-06",
+      "x-duration": "1 month",
+      "description": "Responsible for developing features to an engine system to support the further development of their main product.",
+      "keywords": ["JavaScript", "Backbone"]
+    },
+    {
+      "name": "Test automation setup",
+      "entity": "Sijoitus Kivi Oyj",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "investment services",
+      "roles": ["Tester"],
+      "startDate": "2017-11",
+      "endDate": "2017-11",
+      "x-duration": "1 month",
+      "description": "Responsible for setting up test automation and developing the baseline for testing in an ongoing project.",
+      "keywords": ["Matlab", "Python", "Shell scripting"],
+      "x-note": "The technology list is identical to the university research assistant entry; possibly copied by mistake in the source."
+    },
+    {
+      "name": "Configurable UI product",
+      "entity": "Telesofta Oyj",
+      "x-employer": "Telesofta Oyj",
+      "x-industry": "telecom software",
+      "roles": ["Software Engineer"],
+      "startDate": "2014-05",
+      "endDate": "2017-11",
+      "x-highlight": true,
+      "description": "Responsible for the frontend implementation of a new product with a highly configurable UI. Work included backend development, functional testing and mentoring new team members and consultants. Teams used rotating scrum master roles.\n\nIn the beginning of the employment, as a junior developer, responsible for maintenance of products made with Java and Java Server Pages.",
+      "keywords": ["JavaScript", "React", "Redux", "Java Spring", "Robot Framework"]
+    },
+    {
+      "name": "DNA sequencing data analytics",
+      "entity": "Lakeland University of Technology",
+      "x-employer": "Lakeland University of Technology",
+      "x-industry": "technical university",
+      "roles": ["Research assistant"],
+      "startDate": "2011-05",
+      "endDate": "2013-12",
+      "description": "Responsible for big data analytics tasks with various DNA sequencing data related to prostate cancer research.",
+      "keywords": ["Matlab", "Python", "Shell scripting"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p15",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "The person is referred to by nickname throughout the source; the pseudonym nickname is used.",
+      "Placeholder text 'Call to Action Text Here' on slide 1 was dropped.",
+      "Hobby details (a specific nature hobby and a personal website about it) were generalized.",
+      "The first project box in the source contains two engagements for the same client (via Kipinä Software from 02/2023 and via Koodikaarti Oyj 08/2020-02/2022) with one shared description and technology list; they were output as two projects.",
+      "Keyword 'Accessibility, WCAG' was split into two keywords.",
+      "The four project highlights duplicate projects in 'All client projects' and were merged into them.",
+      "The investment services test automation project has the same technology list (Matlab, Python, Shell scripting) as the university research assistant role; possibly a copy-paste error."
+    ]
+  }
+}

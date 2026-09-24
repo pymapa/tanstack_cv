@@ -1,0 +1,671 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Henri Mäkinen",
+    "label": "Senior Software Developer and Partner",
+    "email": "henri.makinen@example.com",
+    "phone": "+358 40 000 1002",
+    "summary": "Henri Mäkinen is a software developer with vast experience in various IT positions. His experience includes a wide range of business domains from publishing, retail, telecom, fintech and industry to government fields, covering several projects with different tasks in designing, creating, and maintaining software solutions.\n\nThese days, he's focused on web technologies, with an emphasis on back-end development. His core strength is Java but he's capable of acting as a full-stack developer. He believes strongly in test-driven development practices, and that it is the team-work that makes projects shine. He gets his motivation from delivering high-quality solutions meeting the business needs.\n\nHe's using AI mainly as an assistant in software development.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-henri-makinen",
+        "url": "https://www.linkedin.com/in/example-henri-makinen"
+      }
+    ],
+    "x-experienceSummary": "25+ years of business experience",
+    "x-tagline": "Great developers turn hard problems into something anyone can follow, by writing clean and well-crafted code.",
+    "x-keywords": [
+      "Java",
+      "Quarkus",
+      "Backend",
+      "SpringBoot",
+      "Databases",
+      "APIs",
+      "Spring",
+      "Flyway"
+    ],
+    "x-industries": [
+      "Publishing",
+      "Public sector",
+      "Telecom",
+      "Retail"
+    ],
+    "x-strengths": [
+      {
+        "title": "Backend development, Java ecosystem",
+        "description": "Henri has 18 years of experience in Java development and architectural design."
+      },
+      {
+        "title": "Quality focused",
+        "description": "Believes in quality driven development by developing practices and processes."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Lead developer",
+        "description": "As a lead developer, Henri has overseen whole projects from technology selection to implementation and documentation."
+      },
+      {
+        "title": "Senior backend developer",
+        "description": "Henri has experience with multiple projects in the role of senior backend developer, with responsibilities including e.g. architectural design, development and team leading."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Generative AI and Coding Tools",
+        "description": "Familiar with AI-assisted development tools, including GitHub Copilot, Claude, and ChatGPT. Experienced in generating test cases using Copilot and leveraging Claude for creative, home-based coding projects."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Partner"
+    },
+    {
+      "name": "Koodimo Oy",
+      "position": "Software Developer"
+    },
+    {
+      "name": "Nordic Wildlife Research Institute",
+      "position": "Senior Specialist",
+      "startDate": "2019",
+      "endDate": "2021"
+    },
+    {
+      "name": "Uudistamo Oy",
+      "position": "Software Developer",
+      "startDate": "2018",
+      "endDate": "2019"
+    },
+    {
+      "name": "Lainaväylä International",
+      "position": "Software Developer",
+      "startDate": "2016",
+      "endDate": "2018"
+    },
+    {
+      "name": "Digitalo Oyj",
+      "position": "Software Developer"
+    },
+    {
+      "name": "Seurantatekniikka Oy",
+      "position": "Software Developer",
+      "startDate": "2013",
+      "endDate": "2014"
+    },
+    {
+      "name": "Digitoimisto Virta Oy",
+      "position": "Software Developer",
+      "startDate": "2011",
+      "endDate": "2013"
+    },
+    {
+      "name": "Nordtel Oyj",
+      "position": "C++ developer",
+      "startDate": "2002",
+      "endDate": "2011"
+    },
+    {
+      "name": "Telekuva Oy",
+      "position": "Software Developer",
+      "startDate": "2000",
+      "endDate": "2002"
+    },
+    {
+      "name": "Tähtiverkko Systems Oy",
+      "position": "C/Progress developer",
+      "startDate": "1999",
+      "endDate": "2000"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "Java",
+        "Quarkus FW",
+        "Spring / Spring Boot",
+        "Relational databases (PostgreSQL, MariaDB etc.)",
+        "NoSQL databases (MongoDB)",
+        "ORMs (Hibernate, Spring JPA etc.)",
+        "C/C++ (Symbian, Qt)",
+        "Scripting languages (Python, Bash)",
+        "NodeJS",
+        "Flyway",
+        "Kotlin"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Java",
+          "years": 18,
+          "yearsText": "18 years"
+        },
+        {
+          "name": "Quarkus FW",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Spring / Spring Boot",
+          "years": 11,
+          "yearsText": "11 years"
+        },
+        {
+          "name": "Relational databases (PostgreSQL, MariaDB etc.)",
+          "years": 17,
+          "yearsText": "17 years"
+        },
+        {
+          "name": "NoSQL databases (MongoDB)",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "ORMs (Hibernate, Spring JPA etc.)",
+          "years": 14,
+          "yearsText": "14 years"
+        },
+        {
+          "name": "C/C++ (Symbian, Qt)",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Scripting languages (Python, Bash)",
+          "years": 20,
+          "yearsText": "20 years"
+        },
+        {
+          "name": "NodeJS",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Flyway",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Kotlin",
+          "years": 1,
+          "yearsText": "1 year"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Javascript",
+        "Typescript",
+        "Thymeleaf",
+        "AngularJS",
+        "Html / css",
+        "Bootstrap",
+        "Vaadin UI",
+        "Svelte",
+        "React"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Javascript",
+          "years": 14,
+          "yearsText": "14 years"
+        },
+        {
+          "name": "Typescript",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Thymeleaf",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "AngularJS",
+          "years": 1,
+          "yearsText": "1 years"
+        },
+        {
+          "name": "Html / css",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Bootstrap",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Vaadin UI",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Svelte",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "React",
+          "years": 1,
+          "yearsText": "1 year"
+        }
+      ]
+    },
+    {
+      "name": "Cloud and architecture",
+      "keywords": [
+        "Amazon Web Services",
+        "Azure"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Amazon Web Services",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Azure",
+          "years": 4,
+          "yearsText": "4 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Testing frameworks (Junit)",
+        "Webdriver.o (Selenium)",
+        "Docker",
+        "Jenkins",
+        "Robot FW",
+        "JIRA, Confluence",
+        "GitHub/GitLab"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 14,
+          "yearsText": "14 years"
+        },
+        {
+          "name": "Testing frameworks (Junit)",
+          "years": 14,
+          "yearsText": "14 years"
+        },
+        {
+          "name": "Webdriver.o (Selenium)",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Docker",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Robot FW",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "JIRA, Confluence",
+          "years": 13,
+          "yearsText": "13 years"
+        },
+        {
+          "name": "GitHub/GitLab",
+          "years": 9,
+          "yearsText": "9 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Digital learning content service",
+      "entity": "Kustannus Kirjava",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "book and educational publisher",
+      "roles": [
+        "Senior Backend Developer"
+      ],
+      "startDate": "2022",
+      "endDate": "2025",
+      "x-highlight": true,
+      "x-note": "Role is 'Backend developer' in the project list and 'Senior Backend Developer' on the highlight slide.",
+      "description": "Back-end developer of digital content for pupils in elementary and secondary schools. The service is a tool for publishers who can create content and assignments for students as well as an interface for pupils and students. Being part of making design and architectural decisions for the software since the project started from scratch. The project included a MongoDB assessment. Later on one of five back-end developers in the team focusing on database and Java development. Reviewing React FE code.",
+      "keywords": [
+        "Java",
+        "Quarkus FW",
+        "PostgreSQL",
+        "MongoDB",
+        "JUnit",
+        "GitHub CI",
+        "OpenAPI",
+        "AWS",
+        "React",
+        "Flyway"
+      ]
+    },
+    {
+      "name": "Research application development and competence transfer",
+      "entity": "Nordic Wildlife Research Institute",
+      "x-employer": "Koodimo Oy",
+      "x-industry": "natural resources research",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-duration": "2 months",
+      "description": "Working with an online application service as a software developer and in consultant roles for the institute's digital services group.\n\nInternal Java/Spring Boot application for the institute's researchers. Implementing extensions and improvements for functionalities of the application, e.g. a womb operation process.\n\nJava-based BE application for transferring data between the institute and a natural history museum. Integration is done via REST API, and Henri extended the old code base by setting up one import data collection and 4 different data sets for export to the museum.\n\nMore of a consultant role for competence transfer, helping a developer tasked to take over the Java-based BE application.",
+      "keywords": [
+        "Java",
+        "Spring / Springboot",
+        "REST",
+        "Swagger / Open API",
+        "Jira",
+        "Jenkins",
+        "Junit",
+        "PostgreSQL",
+        "Flyway"
+      ]
+    },
+    {
+      "name": "Patient engagement application",
+      "entity": "Radiant Oncology Systems",
+      "x-employer": "Koodimo Oy",
+      "x-industry": "oncology software",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2022",
+      "endDate": "2022",
+      "x-duration": "7 months",
+      "x-highlight": true,
+      "description": "Back-end developer of the Patient engagement team of a patient engagement app. One of the main tasks was to participate in the very first micro-service of the team, implemented with Spring Boot and Kotlin. REST APIs were defined with OpenAPI, as the development environment is a highly regulated medical field.",
+      "keywords": [
+        "Java",
+        "Kotlin",
+        "Springboot",
+        "PostgreSQL",
+        "Junit",
+        "Gitlab CI",
+        "OpenAPI"
+      ]
+    },
+    {
+      "name": "Research data services and applications",
+      "entity": "Nordic Wildlife Research Institute",
+      "x-employer": "Nordic Wildlife Research Institute",
+      "x-industry": "natural resources research",
+      "roles": [
+        "Senior Specialist"
+      ],
+      "startDate": "2019",
+      "endDate": "2021",
+      "x-duration": "2 years, 8 months",
+      "x-highlight": true,
+      "x-note": "The project list gives 2019-2021 (2 years, 8 months), the highlight slide 2019-2022; the project list dates are used.",
+      "description": "Software developer as a member of the digital services group. Self-directed developer with experience delivering end-to-end solo projects. In addition to common developer duties, Henri participated in improving CI processes, e.g. setting up a Jenkins CI application.\n\nJava Spring Boot & Angular project to present scientific research results regarding the fish density of a river in northern Finland. Results are built over OpenStreetMap using the OpenLayers library. One of the challenging issues was the integration of the Angular FE to be part of the legacy Java (war) project.\n\nInternal Java/Spring Boot application for the institute's researchers. One of the biggest challenges was to implement a SAML2.0 based integration with a federated authentication service. The most enjoyable tasks were implementing a number of integrations with collar tracking services to track wolves, wild boars etc.\n\nPure BE application implemented with Java and Spring Boot to handle integration between the institute and a natural history museum. Integration was done with REST API/JSON, and the application is controlled with schedulers or web REST calls. The biggest challenge was to optimize and handle massive data streams.\n\nImplementing, designing, and planning the architecture of the renewal project of a wildlife observation service. Henri focused on the BE application done with Java Spring Boot with multiple DB connections, with minor technical tasks to help FE development (Svelte) in a Full Stack role.",
+      "keywords": [
+        "Java",
+        "Spring/Springboot",
+        "AngularJS",
+        "REST",
+        "Swagger / OpenAPI",
+        "SAML2",
+        "Jira",
+        "Jenkins",
+        "Junit",
+        "Azure",
+        "Svelte",
+        "PostGIS",
+        "PostgreSQL",
+        "Flyway"
+      ]
+    },
+    {
+      "name": "Micro-service prototype and consulting",
+      "entity": "Uudistamo Oy",
+      "x-employer": "Uudistamo Oy",
+      "x-industry": "software consultancy",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2018",
+      "endDate": "2019",
+      "x-duration": "7 months",
+      "description": "Working as a software developer. Duties included continuing to work for a consumer lending fintech company as a consultant. Designing and implementing a micro-service prototype of a street light controller for one of the biggest cities of Finland in an Azure environment. The project was won through an industry hackathon.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "Springboot",
+        "micro-services",
+        "Jira",
+        "REST",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Digital lending back-end and integrations",
+      "entity": "Lainaväylä International",
+      "x-employer": "Lainaväylä International",
+      "x-industry": "consumer lending fintech",
+      "roles": [
+        "Software Developer",
+        "Lead Developer"
+      ],
+      "startDate": "2016",
+      "endDate": "2018",
+      "x-duration": "2 years, 5 months",
+      "x-highlight": true,
+      "description": "Software developer as a member of an international developer team for a Fintech company.\n\nImplementing a scalable and modern back-end for a digital business built on the AWS cloud environment.\n\nDeveloping Java tools to generate a textual, written version of numbers for various reports, e.g. numbers in the Spanish language.\n\nTaking over the role of lead developer of a team of 4 developers implementing, deploying and maintaining business critical core software, a so-called legacy business application running in Lithuania and Australia.\n\nImplementing many different business integrations with various APIs needed to run digital business applications, e.g. a web service connection to Australia's biggest credit reference service.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "Javascript",
+        "JSP",
+        "Jquery",
+        "MySQL",
+        "MariaDB",
+        "REST",
+        "Web Services",
+        "Salesforce",
+        "Tomcat",
+        "AWS",
+        "GIT",
+        "Junit",
+        "Flyway"
+      ]
+    },
+    {
+      "name": "Teaching and studying portal",
+      "entity": "Lakeland University of Technology",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "technical university",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2015",
+      "endDate": "2016",
+      "x-duration": "1 year",
+      "description": "Java/Liferay portal application for processing of teaching and studying at one of the Finnish technical universities.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "Liferay",
+        "GIT",
+        "Oracle DB"
+      ]
+    },
+    {
+      "name": "Vehicle tracking application",
+      "entity": "Seurantatekniikka Oy",
+      "x-employer": "Seurantatekniikka Oy",
+      "x-industry": "vehicle tracking software",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2013",
+      "endDate": "2014",
+      "x-duration": "7 months",
+      "description": "Henri was implementing a vehicle tracking application as a member of the developer team. He focused on calculating different reports of vehicle routings with the Oracle spatial tools. He also set up basic CI environments and improved developer testing processes.",
+      "keywords": [
+        "Java",
+        "OracleDB",
+        "Spatial",
+        "JavaScript",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "Application logging on an early cloud environment",
+      "entity": "Digitalo Oyj",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "IT services",
+      "roles": [
+        "NodeJS Developer"
+      ],
+      "x-duration": "4 months",
+      "description": "NodeJS project on the company's early cloud environment for collecting logging data of applications based on the so-called ELK (elasticsearch/kibana) stack architecture.",
+      "keywords": [
+        "Node.js",
+        "Elasticsearch",
+        "REST",
+        "MongoDB"
+      ]
+    },
+    {
+      "name": "Portal and Java application development",
+      "entity": "Digitoimisto Virta Oy",
+      "x-employer": "Digitoimisto Virta Oy",
+      "x-industry": "digital agency",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2011",
+      "endDate": "2013",
+      "x-duration": "2 years, 8 months",
+      "description": "Responsible for designing, implementing, and testing in the application development process as well as some solution architecture tasks. Part of everyday life was CI/unit testing and implementing Selenium/Robot FW testing tasks.\n\nJava/Oracle portal-based intranet website for a big Finnish retail company.\n\nJava/Spring application for handling logistics for a heavy industry corporation.\n\nJava/Spring application for handling a welding process.",
+      "keywords": [
+        "Java",
+        "JavaScript",
+        "JSP",
+        "jQuery",
+        "Spring",
+        "REST",
+        "XML",
+        "Tomcat",
+        "Jenkins",
+        "MySQL",
+        "MariaDB",
+        "Bamboo",
+        "DB2",
+        "Junit",
+        "Selenium",
+        "Robot Framework",
+        "Oracle portal"
+      ]
+    },
+    {
+      "name": "Environmental research results application",
+      "entity": "Kaari Engineering",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "engineering and design consultancy",
+      "roles": [
+        "Senior Software Developer"
+      ],
+      "x-duration": "7 months",
+      "description": "Software developer as a member of a Java software developer team. Java/Spring-based application for handling scientific results of research on environmental modifications.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "JavaScript",
+        "Oracle DB",
+        "GIT"
+      ]
+    },
+    {
+      "name": "Smartphone application development",
+      "entity": "Nordtel Oyj",
+      "x-employer": "Nordtel Oyj",
+      "x-industry": "telecom and mobile devices",
+      "roles": [
+        "C++ developer"
+      ],
+      "startDate": "2002",
+      "endDate": "2011",
+      "x-duration": "7 years, 5 months",
+      "description": "Symbian & Qt application developer as a member of the application team of a smartphone platform. Besides basic programmer duties, Henri acted as a technical consultant for the UI/UX team and contributed actively to quality improvement in the development phase.",
+      "keywords": [
+        "C++",
+        "QT",
+        "XML",
+        "UI designing",
+        "Scrum Master",
+        "Mobile applications"
+      ]
+    },
+    {
+      "name": "Telecom software development",
+      "entity": "Telekuva Oy",
+      "x-employer": "Telekuva Oy",
+      "x-industry": "telecom software",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2000",
+      "endDate": "2002",
+      "x-duration": "2 years, 4 months",
+      "description": "Tasks included software designing, implementation and testing with Java. Also, some integration duties between different platforms and solutions. Projects have been in the field of telecommunication, e.g. a chat application.",
+      "keywords": [
+        "Java",
+        "JavaScript",
+        "Java Servlets",
+        "Oracle DB"
+      ]
+    },
+    {
+      "name": "Progress DB solutions",
+      "entity": "Swedish teleoperator",
+      "x-employer": "Tähtiverkko Systems Oy",
+      "x-industry": "telecom operator",
+      "roles": [
+        "C/Progress developer"
+      ],
+      "startDate": "1999",
+      "endDate": "2000",
+      "x-duration": "10 months",
+      "description": "Duties included designing, implementing, and testing Progress DB solutions for a Swedish teleoperator.",
+      "keywords": [
+        "C",
+        "SQL"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p02",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats four projects; merged into the corresponding projects with x-highlight, combining the descriptions.",
+      "Titles of the form 'Employer – Role' without a client (research institute, fintech, vehicle tracking, digital agency, telecom companies) are in-house work: entity and x-employer are the same organization, and the period is also recorded in work[].",
+      "The two Digitalo projects 'NodeJS Developer' and the engineering consultancy project have no dates in the source.",
+      "First-person text in project descriptions rewritten to third person. URLs of the research institute's public services removed; named internal services and the river name generalized.",
+      "The skill table row 'Webdriver.o (Selenium)' is kept as in the source (probably 'WebdriverIO')."
+    ]
+  }
+}

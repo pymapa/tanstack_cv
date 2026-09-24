@@ -1,0 +1,534 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Marko Ahola",
+    "label": "Principal Software Engineer",
+    "email": "marko.ahola@example.com",
+    "phone": "+358 40 000 1001",
+    "summary": "Marko is a seasoned software architect and full-stack developer with experience from mobile apps to cloud infrastructure. He builds scalable, maintainable systems and contributes to impactful open-source projects.\n\nHe has worked in both startups and large organizations, bridging technical and non-technical teams to ensure alignment and strong delivery. In addition to technical leadership, Marko brings solid management experience, leading teams, mentoring developers, and driving collaboration. His combined technical and managerial insight makes him valuable to any team focused on results and long-term success.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-marko-ahola",
+        "url": "https://www.linkedin.com/in/example-marko-ahola"
+      }
+    ],
+    "x-experienceSummary": "20 years of business experience",
+    "x-keywords": [
+      "Full-stack Development",
+      "System Design",
+      "Process Improvement",
+      "Product-driven Development",
+      "Team Leading",
+      "End-to-End Delivery"
+    ],
+    "x-industries": [
+      "Finance",
+      "Ecommerce",
+      "Healthcare",
+      "Industrial Systems"
+    ],
+    "x-strengths": [
+      {
+        "title": "End-to-End Ownership",
+        "description": "Led end-to-end development of complex systems, owning architecture, delivery, and team direction."
+      },
+      {
+        "title": "Team Leadership & Scaling",
+        "description": "Scaled teams (4–10 engineers) and improved delivery through mentoring, process improvements, and product-focused development."
+      },
+      {
+        "title": "Product-Driven Engineering",
+        "description": "Strong product mindset. Connects business goals to technical solutions and to measurable impact."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Engineering Manager",
+        "description": "Led cross-functional teams, aligning engineering with business goals. Owned delivery, planning, and team performance."
+      },
+      {
+        "title": "Senior / Staff Engineer",
+        "description": "Designed scalable systems and improved legacy architectures. Strong ownership across backend, frontend, infrastructure and developer experience."
+      },
+      {
+        "title": "Lead Developer",
+        "description": "Owned architecture and delivery in complex regulated systems. Mentored developers and improved engineering practices."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI experience",
+        "description": "Applied AI in code generation, testing, and refactoring workflows with strong guardrails. Focus on developer experience and validity.\n\nRapidly build and ship products using AI-assisted development workflows. Improve productivity with AI in regulated environments."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Principal Software Engineer"
+    },
+    {
+      "name": "Own sole proprietorship",
+      "startDate": "2012",
+      "endDate": "2020",
+      "summary": "Short part-time projects of up to 4 months."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.JS",
+        "Python",
+        ".NET, C#",
+        "Java",
+        "Postgres",
+        "MSSQL",
+        "NoSQL"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Node.JS",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Python",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": ".NET, C#",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Java",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Postgres",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "MSSQL",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "NoSQL",
+          "years": 6,
+          "yearsText": "6 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "HTML / CSS",
+        "JavaScript / TypeScript",
+        "React",
+        "Angular",
+        "Flutter"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "HTML / CSS",
+          "years": 15,
+          "yearsText": "15 years"
+        },
+        {
+          "name": "JavaScript / TypeScript",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "React",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Angular",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Flutter",
+          "years": 2,
+          "yearsText": "2 years"
+        }
+      ]
+    },
+    {
+      "name": "Server, cloud and infrastructure",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "AWS",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Azure",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Google Cloud",
+          "years": 3,
+          "yearsText": "3 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "CI/CD",
+        "Observability"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "CI/CD",
+          "years": 15,
+          "yearsText": "15 years"
+        },
+        {
+          "name": "Observability",
+          "years": 10,
+          "yearsText": "10 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Full-stack development and integrations",
+      "entity": "Kaupunkienergia Oy",
+      "x-industry": "energy utility",
+      "roles": [
+        "Full-stack Developer"
+      ],
+      "startDate": "2023",
+      "endDate": "2026",
+      "description": "Designed and developed functionality across the full technology stack, including complex internal and external integrations. Contributed to technical planning, system design, implementation, testing, and infrastructure. Improved engineering effectiveness through better development processes, tooling, architecture, technical practices, and observability.",
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "TypeScript",
+        "React",
+        "Postgres",
+        "Redis",
+        "AWS",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "Product engineering and team leadership",
+      "entity": "Refurbia",
+      "x-industry": "refurbished smartphone marketplace",
+      "x-highlight": true,
+      "x-note": "The project list gives 2020-2023, the highlight slide 2020-2024; the project list dates are used.",
+      "roles": [
+        "Engineering Manager",
+        "Staff Engineer"
+      ],
+      "startDate": "2020",
+      "endDate": "2023",
+      "description": "Led teams of 4–10 engineers across multiple product domains, improving delivery and team performance. Evolved backend systems from simple implementations to scalable, production-grade architecture. Improved reliability and development speed through better observability, processes, and system design.",
+      "keywords": [
+        "Node.js",
+        "Python",
+        "TypeScript",
+        "React",
+        "Django",
+        "PostgreSQL",
+        "GCP",
+        "Kubernetes",
+        "PubSub"
+      ]
+    },
+    {
+      "name": "Modular CRM system",
+      "entity": "Financial sector organization",
+      "x-industry": "financial services",
+      "x-highlight": true,
+      "roles": [
+        "Senior Engineer"
+      ],
+      "startDate": "2019",
+      "endDate": "2020",
+      "description": "Designed and developed a modular CRM system in a regulated financial domain. Defined architecture for extending a monolithic system with modular features. Worked hands-on across backend and frontend as part of a delivery team.",
+      "keywords": [
+        "C#",
+        ".NET",
+        ".NET Core",
+        "React",
+        "TypeScript",
+        "DocumentDB",
+        "Azure",
+        "Large Monolith System"
+      ]
+    },
+    {
+      "name": "Financial digitalization project",
+      "entity": "Sijoitus Kivi Oyj",
+      "x-industry": "investment services",
+      "x-highlight": true,
+      "roles": [
+        "Lead Developer"
+      ],
+      "startDate": "2016",
+      "endDate": "2019",
+      "description": "Large multi-year digitalization project for a financial sector customer. Led development of a system in the project and designed the service architecture, integrations and core domain logic. Included developing web-based applications, improving the customer's software development processes in a regulated environment, and designing and executing a hiring and mentoring program to grow the customer's own development team.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "React",
+        "JavaScript",
+        "Java",
+        "NoSQL",
+        "Python",
+        "ServiceBus",
+        "Enterprise Service Bus",
+        "Microservices",
+        "Identity Server",
+        "Azure",
+        "TFS Online"
+      ]
+    },
+    {
+      "name": "Job collaboration platform",
+      "entity": "Tiimityö Oy",
+      "x-industry": "job collaboration platform",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2015",
+      "endDate": "2016",
+      "description": "Development of a job collaboration platform for universities, companies and talents and help take it to production.",
+      "keywords": [
+        "Node.js",
+        "AngularJS",
+        "Postgres"
+      ]
+    },
+    {
+      "name": "Data handling platform prototype",
+      "entity": "Datakeskus Oyj",
+      "x-industry": "IT services",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2015",
+      "endDate": "2015",
+      "description": "Prototype of a data handling platform with new platforms for a large enterprise company. Created example projects for internal development teams.",
+      "keywords": [
+        "Python",
+        "Flask",
+        "Rx",
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "AWS",
+        "Azure",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "Code club",
+      "entity": "Kuusiston koulu",
+      "x-industry": "primary school",
+      "roles": [
+        "Assistant Teacher"
+      ],
+      "startDate": "2019",
+      "endDate": "2019",
+      "description": "Teaching Digital technology to 5th graders (2h per week). Designing the lectures and preparation of the materials.",
+      "keywords": [
+        "Powerpoint",
+        "Scratch",
+        "Lego-robots",
+        "Computers & components"
+      ]
+    },
+    {
+      "name": "Short freelance projects",
+      "entity": "Various clients",
+      "x-employer": "Own sole proprietorship",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2020",
+      "description": "Short projects, max 4 months, part-time work, e.g. developing a cross-platform application for a sports equipment company, designing a platform for a modular application for a finance institution, and a prototype of a system for distributed workload handling for an engineering company.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "Python",
+        "Mono",
+        "NHibernate",
+        "RabbitMQ",
+        "ZeroMQ",
+        "Rx",
+        "BLE"
+      ]
+    },
+    {
+      "name": "Laboratory system software platform",
+      "entity": "Calor Scientific",
+      "x-industry": "scientific instruments",
+      "x-highlight": true,
+      "x-note": "The project list gives 2019-2020 (same as the previous project on the slide, likely a copy error); the highlight slide gives 2012-2015, which is used.",
+      "roles": [
+        "Software Architect",
+        "Lead Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2015",
+      "description": "Lead Developer and architect of a .NET software platform for laboratory systems, to control instruments and handle data. Designed and built the modular platform from scratch, replacing multiple legacy systems with a unified, extensible architecture. This improved maintainability and enabled faster feature development across multiple use cases. Project team of 5–10 developers and project size ~15 man-years.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "SQL Server",
+        "WPF",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Cross-platform desktop application",
+      "entity": "Kompassi Sports",
+      "x-industry": "sports watches",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2012",
+      "endDate": "2012",
+      "description": "Developing a cross platform desktop application. Improving concurrent processing of data calculations.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "Mono",
+        "WinForms",
+        "NHibernate",
+        "SQLite"
+      ]
+    },
+    {
+      "name": "Business intelligence platform development",
+      "entity": "Market Insight Group",
+      "x-industry": "market intelligence",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2010",
+      "endDate": "2012",
+      "description": "Developing functionality to a business intelligence platform. Design and development of a light weight mobile site for the platform.",
+      "keywords": [
+        "C#",
+        "VB.NET",
+        "SQL Server",
+        "ASP.NET",
+        "ASP.NET MVC"
+      ]
+    },
+    {
+      "name": "RFID reader application",
+      "entity": "RFID-järjestelmät Oy",
+      "x-industry": "RFID systems",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2015",
+      "endDate": "2015",
+      "description": "Developing an application for reading information from RFID tags and communicating with backend server for a handheld Windows CE device.",
+      "keywords": [
+        "C#",
+        ".NET Compact Framework",
+        "RFID"
+      ]
+    },
+    {
+      "name": "Point of Sale system",
+      "entity": "Kassajärjestelmä GmbH",
+      "x-industry": "retail and banking POS systems",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2009",
+      "endDate": "2010",
+      "description": "Requirement specifications and developing a Point of Sale system with .NET-technology. Implementing database procedures. Participating in the improvement of department’s software development process.",
+      "keywords": [
+        "C#",
+        "VB.NET",
+        ".NET",
+        "SQL Server",
+        "WinForms"
+      ]
+    },
+    {
+      "name": ".NET application development",
+      "entity": "Laskuri Oyj",
+      "x-industry": "financial process automation software",
+      "roles": [
+        "Developer",
+        "Scrum Master"
+      ],
+      "startDate": "2007",
+      "endDate": "2009",
+      "description": "Developing applications with .NET, mainly with C#. Usage of 3-Tier (Client-Server) architecture. Improving TFS Continuous Integration. Acting as a Scrum Master.",
+      "keywords": [
+        "C#",
+        ".NET",
+        "SQL Server",
+        "WinForms"
+      ]
+    },
+    {
+      "name": "Engineering plan selection application",
+      "entity": "Voltaris",
+      "x-industry": "electrical engineering and drives",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2006",
+      "endDate": "2006",
+      "description": "Creating an application for mechanical engineers for selecting and previewing technical plans. Developing an application for migrating data between databases.",
+      "keywords": [
+        "VB.NET",
+        "SQL Server",
+        "Java",
+        "HSQLDB"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p01",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats four projects; merged into the corresponding projects with x-highlight. Highlight descriptions and technology lists were combined with the project list versions; roles were taken from the highlight titles.",
+      "Project titles contain only the client name; project names and roles (where not stated) are neutral descriptions. The source does not state which employer each project was done for, so x-employer is set only for the sole proprietorship projects.",
+      "Projects are in the source reading order (left column, then right column on each slide); the source list is not strictly chronological.",
+      "unmapped organization: a financial sector organization (client of the modular CRM project, given only as an abbreviation)",
+      "'AI experience' is free text, not a skill table; stored in basics.x-keySkills.",
+      "Slide 6 contains three dates in the right column (2012-2012, 2010-2012, 2015-2015) without any project; dropped as leftover template content.",
+      "The 'Frontend' skill table heading appears three times in the source; used once. Technology 'HSQLD' was truncated; restored as 'HSQLDB'. The school name of the code club was anonymized.",
+      "Dates such as 2015-2015 for the RFID application project are kept as in the source, although they may be copy errors."
+    ]
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Sami Lindroos",
+    "label": "PO / Scrum Master / AI & Agentic Delivery",
+    "email": "sami.lindroos@example.com",
+    "phone": "+358 40 000 1010",
+    "summary": "Sami is not only an experienced PO/SM and coach, but also a recognized specialist in combining AI, agentic development and teamwork — passionately driving how organizations build software and teams collaborate in the AI era.\n\nWith a background in software development and product ownership, he brings an end-to-end perspective from value definition to delivery. He actively explores how software development is evolving in the AI era and how organizations can adapt their ways of working to move forward in an increasingly AI-assisted and agentic environment — translating emerging possibilities into practical ways of working. He uses AI in daily work through workflows, structured prompting, and agent-like ways of working to support smart teamwork, requirements, prioritization, and decision-making.\n\nHis approach combines product ownership mindset, facilitation, and delivery leadership to ensure that the right things are built — and delivered.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-sami-lindroos",
+        "url": "https://www.linkedin.com/in/example-sami-lindroos"
+      }
+    ],
+    "x-experienceSummary": "25+ years of business experience",
+    "x-keywords": ["Product Ownership", "Agile Delivery", "Stakeholder Alignment", "Value Driven Development", "Business–Tech Collaboration", "AI in Product Development"],
+    "x-industries": ["Finance", "Telecom", "Retail", "Aviation", "Media"],
+    "x-strengths": [
+      {
+        "title": "AI and Agentic delivery visionary",
+        "description": "Sami is one of the few professionals in his field who is genuinely passionate about helping organizations move forward with AI and agentic development. He helps teams and leaders make sense of the AI-driven shift with a product-ownership mindset and a collaborative way of working. His background in software development and experience of different AI tools gives him an end-to-end view from value definition to delivery."
+      },
+      {
+        "title": "Delivery, alignment, and collaboration",
+        "description": "He helps teams and stakeholders align priorities, improve ways of working, and drive steady delivery, with roots in interaction design and human–computer interaction."
+      },
+      {
+        "title": "Clarity, collaboration, progress",
+        "description": "Sami helps teams and leaders make sense of complexity with a product-ownership mindset and a collaborative way of working. He connects customer needs, business goals, and delivery — turning strategy into clear priorities and actionable decisions. His background in software development and AI tools gives him an end-to-end view from value definition to delivery."
+      }
+    ],
+    "x-keyRoles": [
+      { "title": "Product Owner / Scrum Master", "description": "Translating business needs into value-driven priorities and scalable ways of working for effective delivery in the AI era." },
+      { "title": "Project & Program Leader", "description": "Structure, alignment, and execution." },
+      { "title": "AI Accelerator", "description": "Enabling teams and organizations to adopt AI agents in daily work and beyond." },
+      { "title": "Business–Tech Bridge", "description": "Connecting business needs, technology, and AI capabilities." },
+      { "title": "Agile Delivery Enabler", "description": "Enabling collaboration, clarity, and steady progress." }
+    ],
+    "x-keySkills": [
+      { "title": "Systems Thinking", "description": "Understanding complexity and shaping ways of working in evolving, AI-driven environments." },
+      { "title": "Product Ownership & Value", "description": "Turning strategy, customer needs, and business goals into clear priorities and clear decisions." },
+      { "title": "AI in Product Development and Team acceleration", "description": "Turning teams AI enabled, applying AI through workflows and agent-like approaches to support prioritization, decision-making, and collaboration." },
+      { "title": "Agile Delivery & Facilitation", "description": "Ensuring steady progress through clear priorities, collaboration, and structured ways of working." },
+      { "title": "Project Leadership", "description": "Aligning stakeholders and priorities to move initiatives from strategy to delivery." }
+    ]
+  },
+  "x-testimonials": [
+    {
+      "quote": "Sami works hard to get things right. He prepares thoroughly, stays focused on outcomes and does not stop until the job is done properly."
+    }
+  ],
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "PO / Scrum Master / AI & Agentic Delivery"
+    },
+    {
+      "name": "Kuusama Consulting Oy",
+      "position": "Agile Coach",
+      "startDate": "2018",
+      "endDate": "2021",
+      "summary": "Worked in multiple client assignments as Agile Coach and Scrum Master. Supported teams, leaders, and stakeholders in adopting agile practices, improving delivery, and building collaboration across business and technology. Also provided internal agile training and sparring for colleagues and supported other client projects with agile coaching when needed."
+    },
+    {
+      "name": "Kvanta Consulting Oy",
+      "position": "Agile Coach",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "Worked in multiple assignments at a retail bank as Agile Coach and Scrum Master, supporting both business development and product delivery."
+    },
+    {
+      "name": "Kvanta Consulting Oy",
+      "position": "Software Developer",
+      "startDate": "2011",
+      "endDate": "2014",
+      "summary": "Worked as software developer in multiple client projects, focusing on web development and digital services."
+    },
+    {
+      "name": "Turbo Digital",
+      "position": "Software Developer",
+      "startDate": "2006",
+      "endDate": "2007",
+      "summary": "Worked on web solutions for clients in print media, telecommunications, and cybersecurity. Focused on frontend development and UI design."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Agile Frameworks",
+      "level": "10+ years",
+      "keywords": ["Scrum", "Kanban", "SAFe", "LeSS", "XP"]
+    },
+    {
+      "name": "Technical Background",
+      "level": "15+ years",
+      "keywords": ["Web development", "Mobile development (iOS, Android)", "Cloud-based services"]
+    },
+    {
+      "name": "Practices",
+      "level": "10+ years",
+      "keywords": ["Lean", "Design Thinking", "Continuous Delivery", "Interaction Design"]
+    },
+    {
+      "name": "Agentic AI & Generative AI (hands-on)",
+      "level": "1.5+ years",
+      "keywords": ["ChatGPT", "Gemini", "Claude", "Claude Code", "Codex", "Cursor"]
+    }
+  ],
+  "certificates": [
+    { "name": "ICAgile Certified Agile Coach", "issuer": "ICAgile" },
+    { "name": "Certified Scrum Master (CSM)", "issuer": "Scrum Alliance" },
+    { "name": "Certified Product Owner (CSPO)", "issuer": "Scrum Alliance" }
+  ],
+  "projects": [
+    {
+      "name": "AI Development Agent (MVP)",
+      "entity": "Public Broadcaster Kaiku",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "national public broadcaster",
+      "roles": ["Concept Lead", "Service Designer"],
+      "startDate": "2025",
+      "x-highlight": true,
+      "description": "Led concepting and service design for an AI-powered “development agent” to support early-stage ideation and decision-making. Defined the concept, structure, and workflow supporting ideation, benchmarking, and evaluation. Facilitated workshops with stakeholders to clarify needs and translate goals into a concrete MVP, structuring input into actionable insights. Aligned business goals, user needs, and technical possibilities to support decision-making and next steps.",
+      "keywords": ["Service Design", "AI workflows", "Lean / Agile", "Claude", "Claude Code", "Gemini"]
+    },
+    {
+      "name": "B2B eCommerce renewal",
+      "entity": "Telelinkki Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Agile Coach"],
+      "startDate": "2023",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "Worked as Agile Coach in the renewal of the client's B2B eCommerce, supporting delivery across teams and stakeholders. Helped product owners clarify value and align priorities across Online and Salesforce units, ensuring decisions and next steps were grounded in business needs. Facilitated prioritization and cross-unit workshops to keep direction shared and delivery moving. Simplified the end-to-end development flow, increased transparency across the pipeline, and used AI tools to support clarity and decision-making.",
+      "keywords": ["Scrum", "LeSS", "Kanban", "Jira", "Azure DevOps", "CI/CD pipelines"]
+    },
+    {
+      "name": "Mortgage system renewal",
+      "entity": "Kanervapankki",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "cooperative banking group",
+      "roles": ["Scrum Master", "Project Manager"],
+      "startDate": "2022",
+      "endDate": "2023",
+      "x-highlight": true,
+      "description": "Worked as Scrum Master / Project Manager in the renewal of the bank's mortgage system. Supported requirement definition for Salesforce and online initiatives where clarity of scope and priorities was critical. Helped product owners refine requirements, assess options, and prioritize work so that business needs translated into clear development tasks. Facilitated collaboration between analysts, developers, and stakeholders to keep priorities visible and delivery aligned with business goals.",
+      "keywords": ["Scrum", "Kanban", "Jira", "Azure DevOps", "Salesforce"]
+    },
+    {
+      "name": "B2B data analytics initiative",
+      "entity": "Kauppatalo Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "retail group",
+      "roles": ["Scrum Master"],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Worked as Scrum Master for a development team in a B2B data analytics initiative. Partnered with product owners and business stakeholders to clarify value and shape backlog items, translating high-level needs into actionable work for the team. The team developed analytics solutions to strengthen collaboration between Kauppatalo Oyj and its suppliers, improve supply chain visibility, and support data-driven decisions. Facilitated requirement work and team practices to ensure clarity and steady progress, strengthening collaboration between business and development.",
+      "keywords": ["Scrum", "Power BI", "Azure"]
+    },
+    {
+      "name": "Analytics data team",
+      "entity": "Northpeak Sports",
+      "x-employer": "Kuusama Consulting Oy",
+      "x-industry": "sporting goods group",
+      "roles": ["Scrum Master"],
+      "description": "Scrum Master for a data team building AWS-based analytics solutions for Northpeak Sports. Worked globally with the group's brands in France and Canada. Worked closely with business counterparts to clarify reporting needs and ensure development focused on insights with the highest business value.",
+      "keywords": ["Scrum", "AWS", "Power BI"]
+    },
+    {
+      "name": "Scaling Scrum in web development",
+      "entity": "Kauppaosuuskunta Keskus",
+      "x-employer": "Kuusama Consulting Oy",
+      "x-industry": "cooperative retail group",
+      "roles": ["Scrum Master"],
+      "description": "Sami led the web development team and co-created a process to scale Scrum across the entire development department. His work improved cross-team collaboration, increased transparency, and strengthened agile understanding throughout the organization.",
+      "keywords": ["Scrum", "AWS", "Oracle"]
+    },
+    {
+      "name": "Large-scale agile workshop",
+      "entity": "Kauppaosuuskunta Keskus",
+      "x-employer": "Kuusama Consulting Oy",
+      "x-industry": "cooperative retail group",
+      "roles": ["Agile Coach", "Facilitator"],
+      "description": "Co-designed and delivered a large-scale remote workshop on agile practices for hundreds of participants over several days. Facilitated interactive sessions and exercises that introduced agile principles across roles and departments, helping the organization build shared understanding and a common language. Supported product owners in building shared understanding of value and priorities during cross-team collaboration and large-scale workshops.",
+      "keywords": ["Agile methods and frameworks", "Remote facilitation tools (Miro, Teams)"]
+    },
+    {
+      "name": "Digital services unit",
+      "entity": "City of Merilinna",
+      "x-employer": "Kuusama Consulting Oy",
+      "x-industry": "municipality",
+      "roles": ["Agile Coach", "Scrum Master"],
+      "description": "Served as Agile Coach and Scrum Master in the city's digital services unit. Supported multiple teams developing online services through API-based solutions. Supported product owners in maintaining clarity of goals and priorities across API-based development work.",
+      "keywords": ["Scrum", "Azure DevOps", "API-based services"]
+    },
+    {
+      "name": "Other agile coaching assignments",
+      "entity": "Multiple clients",
+      "x-employer": "Kuusama Consulting Oy",
+      "roles": ["Agile Coach"],
+      "description": "Included smaller assignments for Keskinäinen Vakuutus Kataja, Saarieläintarha and Kiinteistö Hirvi Oy, where the focus was on supporting agile adoption and delivery practices."
+    },
+    {
+      "name": "Mobile development team in the digital unit",
+      "entity": "Revontuli Airlines",
+      "x-industry": "airline",
+      "roles": ["Scrum Master"],
+      "startDate": "2018",
+      "description": "Scrum Master for a mobile development team (iOS/Android) in the airline's digital unit. The unit developed all consumer-facing services from booking and payments to the mobile app, ancillary products, and supporting backend systems. Contributed also to the unit-wide agile ways of working together with 2–3 other Scrum Masters, including planning and facilitation of PI plannings for around eight teams. Worked with business owners and multiple teams to strengthen collaboration and establish shared agile practices across the unit.",
+      "keywords": ["Scrum", "Kanban", "LeSS", "SAFe", "Jira", "Azure DevOps", "iOS", "Android"]
+    },
+    {
+      "name": "New mobile banking app",
+      "entity": "Kauppiaspankki",
+      "x-industry": "retail bank",
+      "roles": ["Agile Coach"],
+      "description": "Agile Coach for multiple teams developing the retail bank's new mobile banking and loyalty app (iOS, Android, backend, design, and service design). Focused on agile practices, improving delivery quality, and accelerating pace together with business and development stakeholders.",
+      "keywords": ["Scrum", "Kanban", "Lean", "Jira", "iOS", "Android", "Service design"]
+    },
+    {
+      "name": "Growth hacking initiative",
+      "entity": "Kauppiaspankki",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "retail bank",
+      "roles": ["Growth Hacking Facilitator"],
+      "startDate": "2016",
+      "endDate": "2017",
+      "description": "Facilitated a growth hacking initiative exploring new opportunities in lending, credit, and investment services. Applied Lean, Kanban, and dynamic facilitation methods to identify improvements and new business potential.",
+      "keywords": ["Scrum", "Kanban", "Lean"]
+    },
+    {
+      "name": "Scaling Scrum across the development department",
+      "entity": "Laitekauppa Oy",
+      "x-industry": "consumer electronics e-commerce",
+      "roles": ["Scrum Master"],
+      "startDate": "2014",
+      "endDate": "2016",
+      "description": "Led the web development team and co-created a process to scale Scrum across the whole development department. Helped teams improve cross-team collaboration, increase transparency, and build a stronger understanding of agile practices throughout the organization. Supported both team delivery and department-wide alignment as the organization scaled.",
+      "keywords": ["Scrum", "Kanban", "Jira", "CI/CD pipelines"]
+    },
+    {
+      "name": "Consumer website renewal",
+      "entity": "Kauppiaspankki",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "retail bank",
+      "roles": ["Software Developer"],
+      "description": "Developer in the renewal of the bank's main consumer website, contributing to both frontend and backend implementation. Collaborated with business stakeholders and designers to improve usability and reliability of online banking services.",
+      "keywords": ["MS .NET", "C#", "JavaScript", "HTML/CSS", "SQL", "Angular", "EPiServer"]
+    },
+    {
+      "name": "Other client assignments",
+      "entity": "Multiple clients",
+      "x-employer": "Kvanta Consulting Oy",
+      "roles": ["Software Developer"],
+      "description": "Contributed to projects as a developer for Taajuus Drives Oy, Kauppatalo Kone, Pankkitieto Oy, Säätieto Oy and Sähkötukku Oy, building and maintaining customer-facing digital solutions.",
+      "keywords": ["MS .NET", "C#", "JavaScript", "HTML/CSS", "SQL", "Angular", "Multiple Web Frameworks", "EPiServer"]
+    },
+    {
+      "name": "Publication automation system renewal",
+      "entity": "National Statistics Office",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "national statistics",
+      "roles": ["Software Developer"],
+      "startDate": "2011",
+      "x-note": "The source places a lone '2011' after this entry; interpreted as its date. The PPTX version of the same CV has no date here. Employer inferred from its position under the 2011–2014 developer role.",
+      "description": "Sami contributed to the renewal of the organization's publication automation system. His role included architecture design, validation, UI development, and internal service design."
+    },
+    {
+      "name": "Youth services publishing platform",
+      "entity": "City of Merilinna",
+      "x-industry": "municipality",
+      "roles": ["Software Developer", "Scrum Master"],
+      "startDate": "2009",
+      "endDate": "2011",
+      "description": "Developed and maintained the city's youth services publishing platform. Took responsibility for CMS implementation and also acted as Scrum Master for the development team."
+    },
+    {
+      "name": "Research project on digital services and peer-to-peer content sharing",
+      "entity": "Academy of Arts and Design",
+      "x-industry": "art and design university",
+      "roles": ["Interaction Designer", "Software Developer"],
+      "startDate": "2007",
+      "endDate": "2009",
+      "description": "Worked as interaction designer and software developer in a research project on digital services and peer-to-peer content sharing. Combined human-centered design with software implementation in collaboration with cultural organizations."
+    },
+    {
+      "name": "Early career developer roles",
+      "entity": "Multiple clients",
+      "roles": ["Software Developer"],
+      "startDate": "2000",
+      "endDate": "2006",
+      "description": "Early career developer roles across mobile, web, gaming, and industrial automation projects, including Telelinkki Oyj, Pohjan Teräs Oyj and Calor Scientific."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p10",
+    "variant": "SM-PO-AI-v2",
+    "sourceFormat": "pdf",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "PDF text has interleaved columns; the PPTX version 'SM-PO-AI' of the same person was used only to resolve which technology list belongs to which project.",
+      "Certificates have no dates in the source.",
+      "Skill categories under 'Methods & Tools' give experience per category, not per technology; stored in skills[].level.",
+      "The descriptions of 'Scaling Scrum in web development' (cooperative retail group) and the consumer electronics e-commerce Scrum Master role are nearly identical in the source."
+    ]
+  }
+}

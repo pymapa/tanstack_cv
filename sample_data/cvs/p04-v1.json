@@ -1,0 +1,512 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Kevin Rask",
+    "label": "Senior Software Developer and Architect",
+    "email": "kevin.rask@example.com",
+    "phone": "+358 40 000 1004",
+    "summary": "Kevin Rask is a senior software engineer with extensive skills in designing, creating, and maintaining software solutions that handle large amounts of data and have high availability requirements.\n\nWhether the target is to take over a large legacy system or create a sophisticated modern web solution for large scale usage, Kevin is the right man for the job. He has been working in different areas of business including Finance, Banking, Logistics, Gaming Industry and Telecom, with tech stacks ranging from embedded systems to databases and modern web solutions.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-kevin-rask",
+        "url": "https://www.linkedin.com/in/example-kevin-rask"
+      }
+    ],
+    "x-tagline": "Building software that is easy to maintain is a craft of its own. You learn it by having supported such systems yourself, and by knowing the tools that help along the way.",
+    "x-keywords": [
+      "Java",
+      "Databases",
+      "CI/CD",
+      "CMS",
+      ".NET",
+      "Docker",
+      "AWS",
+      "DWH"
+    ],
+    "x-industries": [
+      "Banking",
+      "Gaming",
+      "Telecom",
+      "Government"
+    ],
+    "x-strengths": [
+      {
+        "title": "Backend software developer",
+        "description": "Kevin has extensive experience in backend development, especially in Java and .NET environments."
+      },
+      {
+        "title": "DevOps engineer",
+        "description": "With a lot of experience in DevOps work, Kevin is the right person for taking over an existing solution."
+      },
+      {
+        "title": "Metrics",
+        "description": "In order to make solutions maintainable, metrics play a crucial part. Kevin has lots of experience in planning a supportable application."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Web developer",
+        "description": "Architecting and developing many different applications and systems through the years, mainly web applications, but familiar also with desktop and embedded software development. Familiar with many different databases, both relational and key/value based. Maintaining cloud infra as infrastructure as code."
+      },
+      {
+        "title": "Support engineer",
+        "description": "Lots of experience in the whole lifespan of a software, starting from architecture and planning into development, testing and deployment and finally to maintenance, monitoring and incident management. This experience is crucial in building robust and maintainable applications."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Architect"
+    },
+    {
+      "name": "Kvanta Consulting Oy"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "Java (ie. J2EE and Spring boot)",
+        ".NET (ie. Episerver)",
+        "Typescript / Javascript",
+        "Python"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Java (ie. J2EE and Spring boot)",
+          "years": 22,
+          "yearsText": "22 years"
+        },
+        {
+          "name": ".NET (ie. Episerver)",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Typescript / Javascript",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Python",
+          "years": 2,
+          "yearsText": "2 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "AngularJS",
+        "React",
+        "Traditional MVC based web development"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "AngularJS",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "React",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Traditional MVC based web development",
+          "years": 15,
+          "yearsText": "15 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Automated build pipelines (CI)",
+        "Testing frameworks",
+        "Docker / Docker compose",
+        "Jenkins",
+        "Grafana"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Automated build pipelines (CI)",
+          "years": 11,
+          "yearsText": "11 years"
+        },
+        {
+          "name": "Testing frameworks",
+          "years": 17,
+          "yearsText": "17 years"
+        },
+        {
+          "name": "Docker / Docker compose",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Grafana",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Microsoft Azure",
+      "date": "2024",
+      "issuer": "Microsoft"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Customer management application support and AWS infrastructure",
+      "entity": "Arpa Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "DevOps Engineer",
+        "Software Developer"
+      ],
+      "startDate": "2022",
+      "description": "Supporting customer management for the client, consisting of multiple different applications with various tech stacks. Maintaining AWS cloud infrastructure with CI/CD tools and an Infrastructure as Code (IaC) approach. Grafana based monitoring.",
+      "keywords": [
+        "AWS",
+        "Terraform",
+        "Terragrunt",
+        "Kubernetes",
+        "Helm",
+        "GitLab CI/CD",
+        "Kaniko",
+        "Grafana",
+        "Spring boot",
+        "AuroraDB MySQL",
+        "DynamoDB",
+        "Redis",
+        "Typescript",
+        "NodeJS",
+        "React"
+      ]
+    },
+    {
+      "name": "AWS infrastructure and application migration",
+      "entity": "Kirjekulku Oyj",
+      "x-industry": "postal and logistics",
+      "roles": [
+        "DevOps Engineer",
+        "Software Developer"
+      ],
+      "startDate": "2021",
+      "endDate": "2022",
+      "description": "Responsible for AWS-based infra and application migration. Maintained a Python/React web app, implemented Kafka consumers and Azure AD OAuth2 authentication in a serverless app.",
+      "keywords": [
+        "AWS",
+        "Python",
+        "React",
+        "Kafka",
+        "Azure AD",
+        "OAuth2"
+      ]
+    },
+    {
+      "name": "DevOps processes for customer projects",
+      "entity": "Multiple customers",
+      "x-employer": "Kvanta Consulting Oy",
+      "roles": [
+        "DevOps Engineer"
+      ],
+      "startDate": "2018",
+      "endDate": "2021",
+      "description": "Implemented and led DevOps processes across multiple customer projects involving web app development and CMS systems.",
+      "keywords": [
+        "Episerver (.NET)",
+        "Java",
+        "Angular",
+        "React",
+        "NodeJS",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Vagrant",
+        "Azure",
+        "SQL Server",
+        "Tomcat",
+        "Jboss",
+        "CircleCI"
+      ]
+    },
+    {
+      "name": "Web application development",
+      "entity": "Arpa Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "Software Developer"
+      ],
+      "description": "Developed a web application for the client using Spring Boot and Docker.",
+      "keywords": [
+        "Eclipse",
+        "Spring Boot",
+        "DB2",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
+    {
+      "name": "Episerver service management and development",
+      "entity": "Multiple customers",
+      "x-employer": "Kvanta Consulting Oy",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2014",
+      "endDate": "2016",
+      "description": "Service management and software development for multiple Episerver environments.",
+      "keywords": [
+        "Visual Studio",
+        "Episerver 5–9",
+        "ImageVault",
+        "Commerce Manager"
+      ]
+    },
+    {
+      "name": "Banking portal development",
+      "entity": "Kanervapankki",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "cooperative banking group",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2013",
+      "endDate": "2014",
+      "description": "Software development for a banking portal environment.",
+      "keywords": [
+        "Eclipse",
+        "Oracle WebLogic Portal"
+      ]
+    },
+    {
+      "name": "Data warehouse renewal",
+      "entity": "Nordtel Oyj",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "telecom and mobile devices",
+      "roles": [
+        "Consultant"
+      ],
+      "startDate": "2012",
+      "endDate": "2013",
+      "description": "Consulting in a data warehouse renewal project for the client.",
+      "keywords": [
+        "Teradata"
+      ]
+    },
+    {
+      "name": "J2EE and PHP systems, data warehousing and CI/CD",
+      "entity": "AdMobile Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "ad-funded mobile operator",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2010",
+      "endDate": "2012",
+      "description": "Developed multiple J2EE and PHP systems, including data warehousing and CI/CD pipelines.",
+      "keywords": [
+        "Pentaho Kettle",
+        "EJB3",
+        "Spring",
+        "CodeIgniter",
+        "MySQL",
+        "Oracle",
+        "Infobright",
+        "JBoss",
+        "Tomcat",
+        "Apache",
+        "JIRA",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "J2EE-based system",
+      "entity": "Arpa Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2009",
+      "endDate": "2010",
+      "description": "Developed a J2EE-based system for the client.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "Hibernate",
+        "Freemarker",
+        "Sitemesh",
+        "MySQL",
+        "Oracle",
+        "Tomcat"
+      ]
+    },
+    {
+      "name": "J2EE-based management system",
+      "entity": "AdMobile Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "ad-funded mobile operator",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2008",
+      "endDate": "2009",
+      "description": "Developed a J2EE-based management system for the client.",
+      "keywords": [
+        "Java",
+        "EJB3",
+        "Struts",
+        "Oracle",
+        "JBoss EAS"
+      ]
+    },
+    {
+      "name": "Drupal-based web application",
+      "entity": "AdMobile Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "ad-funded mobile operator",
+      "roles": [
+        "Software Developer"
+      ],
+      "description": "Developed a Drupal-based web application for the client.",
+      "keywords": [
+        "PHP",
+        "MySQL",
+        "Apache",
+        "Drupal"
+      ]
+    },
+    {
+      "name": "Taxi meter embedded system",
+      "entity": "Taksimittari Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "taxi meter manufacturer",
+      "roles": [
+        "Embedded Software Developer"
+      ],
+      "description": "Developed an ARM-based taxi meter embedded system using a real-time kernel.",
+      "keywords": [
+        "C",
+        "uCos II (RTOS)"
+      ]
+    },
+    {
+      "name": "PDF document generation and website update",
+      "entity": "Kirjekulku Oyj",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "postal and logistics",
+      "roles": [
+        "Software Developer"
+      ],
+      "description": "Created PDF documents using FOP/XML and updated the customer website.",
+      "keywords": [
+        "FOP",
+        "XML",
+        "Java",
+        "PHP",
+        "BEA WebLogic Server",
+        "WAMP"
+      ]
+    },
+    {
+      "name": "Database migration",
+      "entity": "Arpa Oy",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": [
+        "Software Developer"
+      ],
+      "description": "Migrated a production database from Informix to DB2 and updated C support functions.",
+      "keywords": [
+        "Informix",
+        "DB2",
+        "Embedded C"
+      ]
+    },
+    {
+      "name": "Project and financing management systems",
+      "entity": "National Innovation Funding Agency",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "innovation funding",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2001",
+      "endDate": "2006",
+      "description": "Developed project and financing management systems and document generation tools.",
+      "keywords": [
+        "EJB",
+        "JSP",
+        "WebLogic",
+        "XML",
+        "XSLT",
+        "FOP",
+        "JUnit",
+        "Ant",
+        "Eclipse"
+      ]
+    },
+    {
+      "name": "Electronic application form server",
+      "entity": "National Innovation Funding Agency",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "innovation funding",
+      "roles": [
+        "Software Designer"
+      ],
+      "description": "Designed electronic application form server software.",
+      "keywords": [
+        "Java Servlets",
+        "JDBC",
+        "JRun",
+        "Apache",
+        "MS SQL"
+      ]
+    },
+    {
+      "name": "Hospital equipment software",
+      "entity": "Anestesia Medical",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "medical equipment",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "1997",
+      "endDate": "1999",
+      "description": "Developed and ported hospital equipment software to the Windows NT environment.",
+      "keywords": [
+        "Visual C++",
+        "C",
+        "AMX/DOS"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p04",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 1 headings appear swapped relative to the template: the block under 'Key Roles' in the 'In a nutshell' position (Backend software developer, DevOps engineer, Metrics) is stored in x-strengths, and the keyword boxes under the 'In a nutshell' heading are stored in x-keywords. The 'Key Roles' of slide 2 are in x-keyRoles.",
+      "Project titles give only 'Employer + Client' or the client alone; project names and roles are neutral descriptions derived from the text. The two newest projects (2021–2022, 2022–ongoing) name no employer, so x-employer is omitted.",
+      "Projects are in the source reading order (left column, then right column on each slide), which is chronological where dates exist. Seven projects have no dates in the source.",
+      "The source uses two different company-name forms for the same consultancy employer; both mapped to the same pseudonym.",
+      "No 'years of business experience' line in the source. The certificate is given only as 'Microsoft Azure'."
+    ]
+  }
+}

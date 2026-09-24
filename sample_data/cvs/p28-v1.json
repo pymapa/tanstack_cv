@@ -1,0 +1,240 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Oskari Laakso",
+    "label": "Senior Software Developer and Architect, Agile Practitioner",
+    "email": "oskari.laakso@example.com",
+    "phone": "+358 40 000 1028",
+    "summary": "Oskari brings deep technical expertise and a strong business mindset to every project. He has successfully designed and delivered complex software solutions across the public sector, finance, energy, and mobility domains. Oskari combines a rock-solid foundation in Java and JEE with modern web technologies. Today, his development practices are increasingly centered on AI-assisted programming.\n\nBeyond his technical skills, Oskari offers a future-oriented perspective grounded in his master’s studies in sustainable futures and foresight. He approaches software development with a broad foresight mindset, anticipating how client environments and needs will evolve over time. His thesis work on AI-assisted foresight methods highlights his ability to blend modern technology with strategic insights to build sustainable, future-proof solutions.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-oskari-laakso",
+        "url": "https://www.linkedin.com/in/example-oskari-laakso"
+      }
+    ],
+    "x-experienceSummary": "20+ years of business experience",
+    "x-tagline": "When resources are scarce, real impact depends as much on what we decide to leave unbuilt as on what we actually build.",
+    "x-keywords": ["Java", "Node.js", "React", "AI-development", "Databases", "Architecture", "Software Engineering"],
+    "x-industries": ["Retail", "Insurance", "Finance", "Energy"],
+    "x-keyRoles": [
+      {
+        "title": "Tech / Team Lead",
+        "description": "Mentoring teams, fostering collaboration, and driving engineering best practices."
+      },
+      {
+        "title": "Senior / Lead Developer",
+        "description": "Owning end-to-end delivery from architecture to production with modern full-stack and AI-assisted workflows."
+      },
+      {
+        "title": "Software Architect",
+        "description": "Designing scalable enterprise solutions and bridging business requirements with technical execution."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Technical Leadership & Architecture",
+        "description": "Guides software delivery from high-level architecture down to code execution, balancing technical excellence with pragmatic, resource-aware decision-making."
+      },
+      {
+        "title": "AI-Assisted Development & Integration",
+        "description": "Leverages modern AI tools, RAG concepts, and LLM integrations to optimize development workflows and accelerate feature delivery."
+      },
+      {
+        "title": "Strategic Foresight & Sustainability",
+        "description": "Brings a future-oriented, foresight-driven mindset to software design, focusing on long-term value and what not to build in resource-limited environments."
+      },
+      {
+        "title": "Pragmatic Problem solving",
+        "description": "Tackles complex technical hurdles through ruthless prioritization, clean execution, and a strong foundation in modern web tech and Java."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Architect, Agile Practitioner"
+    },
+    {
+      "name": "Sileä Software Oy"
+    },
+    {
+      "name": "Ambra Digital Oy"
+    },
+    {
+      "name": "Datakeskus Oyj",
+      "position": "Senior Software Developer"
+    },
+    {
+      "name": "Systeemipalvelut Oy",
+      "position": "Information Specialist"
+    },
+    {
+      "name": "Synergia IT Oy",
+      "position": "Senior Engineer",
+      "startDate": "2001",
+      "endDate": "2003"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["TypeScript / React / Next.js", "JavaScript / HTML / CSS", "GraphQL", "Storybook"],
+      "x-skillDetails": [
+        { "name": "TypeScript / React / Next.js", "years": 5, "yearsText": "5 years" },
+        { "name": "JavaScript / HTML / CSS", "years": 20, "yearsText": "20+ years" },
+        { "name": "GraphQL", "years": 3, "yearsText": "3 years" },
+        { "name": "Storybook", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Java (JEE, Spring, Spring Boot)", "Node.js", "GCP", "OpenShift/AWS", "Containers", "Kubernetes", "Python", "Databases (relational, NoSQL)"],
+      "x-skillDetails": [
+        { "name": "Java (JEE, Spring, Spring Boot)", "years": 20, "yearsText": "20+ years" },
+        { "name": "Node.js", "years": 7, "yearsText": "7 years" },
+        { "name": "GCP", "years": 3, "yearsText": "3 years" },
+        { "name": "OpenShift/AWS", "years": 3, "yearsText": "3 years" },
+        { "name": "Containers", "years": 10, "yearsText": "10 years" },
+        { "name": "Kubernetes", "years": 5, "yearsText": "5 years" },
+        { "name": "Python", "years": 1, "yearsText": "1 year" },
+        { "name": "Databases (relational, NoSQL)", "years": 20, "yearsText": "20+ years" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Testing Frameworks (Junit, Jest etc.)", "Performance testing (Locust)", "CI/CD (Jenkins, Github Actions, Atlassian tools)", "Git (Version Control)", "AI assisted development (Cursor, Claude Code, Lovable, various chat tools)"],
+      "x-skillDetails": [
+        { "name": "Testing Frameworks (Junit, Jest etc.)", "years": 20, "yearsText": "20+ years" },
+        { "name": "Performance testing (Locust)", "years": 3, "yearsText": "3 years" },
+        { "name": "CI/CD (Jenkins, Github Actions, Atlassian tools)", "years": 20, "yearsText": "20+ years" },
+        { "name": "Git (Version Control)", "years": 20, "yearsText": "20+ years" },
+        { "name": "AI assisted development (Cursor, Claude Code, Lovable, various chat tools)", "years": 4, "yearsText": "4 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "Oracle Certified Master, Java SE 6 Developer", "date": "2011", "issuer": "Oracle" },
+    { "name": "Sun Certified Programmer for the Java Platform, SE 6", "date": "2010", "issuer": "Sun" },
+    { "name": "Certified Scrum Master", "date": "2010", "x-dateText": "2010, 2021" },
+    { "name": "Tietojärjestelmäarkkitehdin valmennusohjelma (Tieturi)", "date": "2009", "issuer": "Tieturi" }
+  ],
+  "projects": [
+    {
+      "name": "RAG-based AI assistant for public sector officials",
+      "entity": "National Citizen Data Agency",
+      "x-employer": "Sileä Software Oy",
+      "x-industry": "government population data agency",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2026",
+      "x-duration": "3 months",
+      "x-highlight": true,
+      "description": "Acted as a Senior Software Developer, collaborating closely with a Data Engineer to build a Retrieval-Augmented Generation (RAG) system that serves as an intelligent AI assistant for public sector officials. Focused on software and application development to leverage Natural Language Processing (NLP) and generative AI, ultimately streamlining document processing and enhancing decision-making workflows for government handlers.",
+      "keywords": ["TypeScript", "React", "Next.js", "Python", "Node.js", "PostgreSQL", "Docker", "AWS", "Amazon Bedrock", "Anthropic Claude", "RAG architectures", "DevOps"],
+      "x-note": "The 'All client projects' slide lists the client only as 'Public Sector Client'; the agency is named on the highlight slide. Technologies taken from the highlight slide (see meta notes)."
+    },
+    {
+      "name": "Pricing management system",
+      "entity": "Energy Sector Client",
+      "x-employer": "Sileä Software Oy",
+      "x-industry": "energy",
+      "roles": ["Lead Fullstack Developer", "Architect", "Scrum master"],
+      "startDate": "2023",
+      "endDate": "2026",
+      "x-duration": "2 yr, 9 mo",
+      "x-highlight": true,
+      "description": "Acted as the Lead Full-Stack Developer, Architect, and Scrum Master for a comprehensive pricing management system. Held end-to-end responsibility, from senior-level application architecture design and microservices implementation to managing deployment processes and maintaining the system in production. Guided, coached, and mentored junior developers within a diverse, multicultural, and international team environment. Ensured smooth Agile project execution and active collaboration across geographic boundaries. Actively utilized AI-assisted coding tools to optimize development workflows and code quality.",
+      "keywords": ["Next.js", "React", "TypeScript", "Node.js", "Bun", "PostgreSQL", "Microservices", "REST APIs", "Elysia framework", "Google Cloud Platform (GCP)", "Kubernetes", "GitHub Actions", "Tailwind CSS", "daisyUI", "Locust (Performance Testing)", "TDD", "AI-assisted software development (GitHub Copilot, Cursor)", "Scrum", "Teaching & Training", "Project Communication", "DevOps"],
+      "x-note": "The highlight slide gives the period as '2023-2023'; 'All client projects' gives '2023-2026 (2 years, 9 months)', which was used."
+    },
+    {
+      "name": "Various client projects",
+      "entity": "Multiple clients",
+      "x-employer": "Ambra Digital Oy",
+      "roles": ["Team Lead", "PM", "Architect", "Senior Fullstack Developer"],
+      "startDate": "2019",
+      "endDate": "2023",
+      "x-duration": "4 yr, 5 mo",
+      "x-highlight": true,
+      "description": "Acted in versatile leadership and expert roles across the retail, insurance, finance, and energy sectors. Took on heavy responsibilities as a Project Manager and Scrum Master, successfully driving projects forward and managing deliveries. Alongside managing projects and designing software architecture, Oskari played a key role in team leadership. This included building cohesive teams, participating in talent recruitment, and actively coaching and mentoring developers to support their professional growth.",
+      "keywords": ["Next.js", "React", "TypeScript", "Node.js", "JavaScript", "Java", "Java EE", "Spring Boot", "AWS", "OpenShift", "Microservices", "Test-Driven Development (TDD)", "Test Automation", "Scrum", "Agile", "Project Management", "AI-assisted software development"],
+      "x-note": "Technologies taken from the highlight slide (see meta notes)."
+    },
+    {
+      "name": "National self-service portal for vehicle registrations and driver's licenses",
+      "entity": "Transport Agency",
+      "x-employer": "Ambra Digital Oy",
+      "x-industry": "transport and communications",
+      "roles": ["Lead Developer", "Software Architect"],
+      "startDate": "2014",
+      "endDate": "2019",
+      "x-duration": "4 yr, 11 mo",
+      "x-highlight": true,
+      "description": "Served as the Lead Developer and Software Architect for the agency's national electronic self-service portal used by citizens for vehicle registrations and driver's licenses. Designed and developed the highly critical service on the Liferay platform, successfully handling complex requirements such as national e-identification service authentication and secure payment system integrations.",
+      "keywords": ["Java", "Java EE", "Spring Boot", "Spring Framework", "Liferay", "JVM", "JavaScript", "Solution & Software Architecture", "Microservices", "National e-identification service", "Payment systems (Paytrail)", "TDD", "Integration Testing", "JUnit", "SoapUI", "Scrum"]
+    },
+    {
+      "name": "Various client projects",
+      "entity": "Multiple clients",
+      "x-employer": "Ambra Digital Oy",
+      "roles": ["Senior Software Architect", "Developer"],
+      "startDate": "2011",
+      "endDate": "2014",
+      "x-duration": "4 years",
+      "description": "Gained extensive experience in designing and implementing software solutions across retail, e-commerce, corporate web, and service platforms. Acted as a solution architect, application developer, project manager, and Scrum Master, laying a strong foundation for managing complex technical deliveries and Agile methodologies.",
+      "keywords": ["Java", "J2EE", "Grails", "JavaScript", "Test-Driven Development (TDD)", "Solution Architecture", "Scrum", "Agile"]
+    },
+    {
+      "name": "Various client projects",
+      "entity": "Multiple clients",
+      "x-employer": "Datakeskus Oyj",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2006",
+      "endDate": "2011",
+      "x-duration": "5 yr, 2 mo",
+      "description": "Focused on IT consulting and full-stack software development for various clients. Built a strong foundation in enterprise-level software engineering and customer consultation.",
+      "keywords": ["Java", "J2EE", "Full-Stack Development"]
+    },
+    {
+      "name": "Various client projects",
+      "entity": "Multiple clients",
+      "x-employer": "Systeemipalvelut Oy",
+      "roles": ["Information Specialist"],
+      "startDate": "2003",
+      "endDate": "2006",
+      "x-duration": "3 years",
+      "description": "Worked in consulting and full-stack development roles, delivering technical solutions and technical support for client projects.",
+      "keywords": ["Java", "J2EE", "Full-Stack Development"]
+    },
+    {
+      "name": "Consulting and full-stack development",
+      "entity": "Synergia IT Oy",
+      "x-employer": "Synergia IT Oy",
+      "x-industry": "IT consultancy",
+      "roles": ["Senior Engineer"],
+      "startDate": "2001",
+      "endDate": "2003",
+      "x-duration": "2 years",
+      "description": "Started career in consulting and full-stack development, gaining early hands-on experience in software engineering and web technologies.",
+      "keywords": ["Java", "J2EE", "Full-Stack Development"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p28",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects; merged with x-highlight.",
+      "The highlight for the transport agency project contains a leftover description of an unrelated pharmaceutical wholesale platform (copy-paste from another CV template); ignored. The description from 'All client projects' was used.",
+      "In 'All client projects', the public sector RAG assistant and the 2019–2023 multi-client role carry a leftover technology list (Java, Spring Boot, Lagom, Axon-type framework, event sourcing, CQRS, Maven) copied from another CV; the matching technology lists from the highlight slide were used instead.",
+      "The energy sector project is dated '2023-2023' on the highlight slide and '2023-2026 (2 years, 9 months)' in 'All client projects'; the latter was used.",
+      "Master's degree programme name and exact thesis topic generalized.",
+      "Skill 'Java (JEE, Spring, Spring Boot' was missing its closing parenthesis; fixed. '20+ years' stored as years = 20.",
+      "The certificate table heading has a typo ('CERTIFICATEf'); Certified Scrum Master has two years (2010, 2021), the first is used as date.",
+      "The 'Skills in Spotlight' text column without a heading is stored as x-keySkills.",
+      "Employment lines on slide 5 are output as projects (with their technology lists); the earliest employer line also as a dated work[] entry."
+    ]
+  }
+}

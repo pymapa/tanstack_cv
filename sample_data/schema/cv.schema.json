@@ -1,0 +1,268 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cv.schema.json",
+  "title": "Kipinä CV (JSON Resume + laajennukset)",
+  "description": "JSON Resume 1.0 -dokumentti, jossa on Kipinä-pohjan lisätiedot x-alkuisissa kentissä.",
+  "allOf": [
+    {
+      "$ref": "jsonresume.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "basics",
+        "skills",
+        "projects",
+        "meta"
+      ],
+      "properties": {
+        "basics": {
+          "type": "object",
+          "required": [
+            "name",
+            "label",
+            "summary"
+          ],
+          "properties": {
+            "x-experienceSummary": {
+              "type": "string",
+              "description": "Esim. '20+ years of business experience'"
+            },
+            "x-keywords": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-industries": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-keyRoles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "title"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "description": "'Key Roles' -osion roolit"
+            },
+            "x-strengths": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "title"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "description": "'In a nutshell' -vahvuudet"
+            },
+            "x-tagline": {
+              "type": "string",
+              "description": "Lyhyt tunnuslause tai motto"
+            },
+            "x-keySkills": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "title"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "description": "'Key Skills' -osion osaamiset"
+            },
+            "x-hobbies": {
+              "type": "string",
+              "description": "Yleistetty maininta harrastuksista"
+            }
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "x-skillDetails": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "years": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Kokemus vuosina, jos ilmoitettu (esim. 0.5, 10)"
+                    },
+                    "yearsText": {
+                      "type": "string",
+                      "description": "Alkuperäinen muoto, esim. '10+ years'"
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "entity"
+            ],
+            "properties": {
+              "x-employer": {
+                "type": "string",
+                "description": "Työnantaja projektin aikana, jos eri kuin Kipinä"
+              },
+              "x-industry": {
+                "type": "string",
+                "description": "Asiakkaan toimiala"
+              },
+              "x-duration": {
+                "type": "string",
+                "description": "Kesto alkuperäisessä muodossa, esim. '2 yr, 9 mo'"
+              },
+              "x-highlight": {
+                "type": "boolean",
+                "description": "Näytetään 'Project highlights' -osiossa"
+              },
+              "x-note": {
+                "type": "string",
+                "description": "Muunnoksessa tehdyt tulkinnat tai korjaukset"
+              }
+            }
+          }
+        },
+        "x-testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "quote"
+            ],
+            "properties": {
+              "quote": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "personId",
+            "variant",
+            "sourceFormat",
+            "x-cvYear"
+          ],
+          "properties": {
+            "personId": {
+              "type": "string",
+              "pattern": "^p[0-9]{2}$"
+            },
+            "variant": {
+              "type": "string",
+              "description": "CV-version rooli/käyttötarkoitus, esim. 'default', 'PM', 'SM-PO-AI'"
+            },
+            "sourceFormat": {
+              "enum": [
+                "pptx",
+                "pdf"
+              ]
+            },
+            "x-cvYear": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "x-conversionNotes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Havaitut virheet tai tulkinnat lähdedatassa"
+            }
+          }
+        },
+        "certificates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "x-dateText": {
+                "type": "string",
+                "description": "Päivämäärä alkuperäisessä muodossa, jos se ei ole ISO 8601 (esim. '2017-2018')"
+              }
+            }
+          }
+        },
+        "work": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "x-note": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

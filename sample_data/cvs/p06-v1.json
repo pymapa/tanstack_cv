@@ -1,0 +1,559 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Petri Kivistö",
+    "label": "Principal Software Developer and Architect, Partner",
+    "email": "petri.kivisto@example.com",
+    "phone": "+358 40 000 1006",
+    "summary": "Petri enjoys projects where the focus is on finding solutions efficiently through collaboration.\n\nHe is solution-oriented, works efficiently and is flexible in teamwork.\n\nWith extensive experience and a genuine passion for his work, Petri brings speed, clarity, and calm confidence to problem-solving.\n\nHe is particularly interested in how agentic development is reshaping ways of working—accelerating development and opening up new, meaningful ways to create results and build software.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-petri-kivisto",
+        "url": "https://www.linkedin.com/in/example-petri-kivisto"
+      }
+    ],
+    "x-experienceSummary": "20+ years of business experience",
+    "x-tagline": "Building innovative, high-quality software that tackles real problems — efficient, scalable and dependable, and always aiming to go beyond what the project expected.",
+    "x-keywords": [
+      "Java",
+      "Spring",
+      "Backend",
+      "Microservices",
+      "Databases",
+      "AI assisted development",
+      "Agentic development"
+    ],
+    "x-industries": [
+      "Finance and payment solutions",
+      "Telecom",
+      "Public Sector"
+    ],
+    "x-strengths": [
+      {
+        "title": "Backend development, Java ecosystem",
+        "description": "Petri has an impressive 19 years of experience in Java development and architecture design."
+      },
+      {
+        "title": "Database architecture and development",
+        "description": "Petri has more than 20 years of experience in database architecture and development including both relational and document databases."
+      },
+      {
+        "title": "Actively curious attitude",
+        "description": "Petri does not wait for problems to pile up; instead, he proactively addresses them and drives projects forward with determination. As an experienced developer, Petri actively shares his expertise and supports his team members."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Lead developer",
+        "description": "As a lead developer, Petri has overseen the whole project from technology selections to implementation and documentation."
+      },
+      {
+        "title": "Senior backend developer",
+        "description": "Petri has experience in multiple projects in the role of senior backend developer with responsibilities including e.g. architectural design, development and team leading."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI development tools",
+        "description": "In the latest customer projects, it has been possible to utilize agentic development or AI assisting development tools to speed up the development process. Petri has had good experience with these tools and looks forward to seeing how much more they will affect his work in the future."
+      },
+      {
+        "title": "LLM development as a hobby",
+        "description": "As a hobby, Petri developed a language model-based AI bot over 10 years ago and has been maintaining it and following its evolution over the years as the database used has expanded constantly."
+      }
+    ],
+    "x-hobbies": "Develops and maintains a language model-based chatbot as a hobby."
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Principal Software Developer and Architect, Partner"
+    },
+    {
+      "name": "Koodikaarti Oyj"
+    },
+    {
+      "name": "Kvanta Consulting Oy"
+    },
+    {
+      "name": "Kirjekulku Oyj",
+      "position": "Senior software developer",
+      "startDate": "2006",
+      "endDate": "2007"
+    },
+    {
+      "name": "E-laskupalvelut Oy",
+      "position": "Senior software developer",
+      "startDate": "2003",
+      "endDate": "2006"
+    },
+    {
+      "name": "Viestimo Oy",
+      "position": "Developer",
+      "startDate": "2000",
+      "endDate": "2003"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "Java",
+        "Spring / Spring Boot",
+        "Relational databases (PostgreSQL, MySQL etc.)",
+        "Document databases (MongoDB, CosmoDB etc.)",
+        "ORMs (Hibernate, Spring JPA, Spring Data, QueryDSL etc.)",
+        "jOOQ (Object Oriented Querying, jOOQ)",
+        "Elasticsearch",
+        "C/C++",
+        "Scripting languages (Perl, PHP, Ruby, Python, Bash)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Java",
+          "years": 18,
+          "yearsText": "18 years"
+        },
+        {
+          "name": "Spring / Spring Boot",
+          "years": 11,
+          "yearsText": "11 years"
+        },
+        {
+          "name": "Relational databases (PostgreSQL, MySQL etc.)",
+          "years": 22,
+          "yearsText": "22 years"
+        },
+        {
+          "name": "Document databases (MongoDB, CosmoDB etc.)",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "ORMs (Hibernate, Spring JPA, Spring Data, QueryDSL etc.)",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "jOOQ (Object Oriented Querying, jOOQ)",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Elasticsearch",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "C/C++",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Scripting languages (Perl, PHP, Ruby, Python, Bash)",
+          "years": 17,
+          "yearsText": "17 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Javascript",
+        "HTML / CSS",
+        "UI Libraries (Bootstrap)",
+        "AngularJS",
+        "GraphQL"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Javascript",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "HTML / CSS",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "UI Libraries (Bootstrap)",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "AngularJS",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "GraphQL",
+          "years": 2,
+          "yearsText": "2 years"
+        }
+      ]
+    },
+    {
+      "name": "Server, cloud and infrastructure",
+      "keywords": [
+        "Microsoft Azure",
+        "Kubernetes"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Microsoft Azure",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Kubernetes",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Testing frameworks (Junit)",
+        "Selenium",
+        "Docker",
+        "Jenkins",
+        "Maven",
+        "Gradle"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 11,
+          "yearsText": "11 years"
+        },
+        {
+          "name": "Testing frameworks (Junit)",
+          "years": 18,
+          "yearsText": "18 years"
+        },
+        {
+          "name": "Selenium",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Docker",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Maven",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Gradle",
+          "years": 4,
+          "yearsText": "4 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Web admin tool development",
+      "entity": "Geenitieto Oy",
+      "x-industry": "genetic testing",
+      "roles": [
+        "Full-stack Developer"
+      ],
+      "x-note": "The source gives only the client name and technologies; no role or dates. The role is inferred from the description.",
+      "description": "Extended the web admin tool with new user, sample, and product management features, bulk Excel exports, a unified design refresh, infinite-scroll pagination, and TOTP 2FA for admins. Backed by Lambda + GraphQL changes for new fields and batch operations.",
+      "keywords": [
+        "Claude Code",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TanStack Query",
+        "AWS Amplify",
+        "Lambda (Node.js/TS)",
+        "AppSync GraphQL",
+        "DynamoDB",
+        "Cognito"
+      ]
+    },
+    {
+      "name": "Game content backend platform",
+      "entity": "Globalstream Entertainment",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "streaming and gaming company",
+      "roles": [
+        "Senior Backend Developer"
+      ],
+      "startDate": "2025",
+      "endDate": "2026",
+      "x-highlight": true,
+      "description": "Backend platform for managing downloadable game content across the client's gaming platform. In short: it's a versioned, schema-validated game content pipeline — from authoring through validation and packaging to delivery (Kafka + KV).\n\nThe development team used strongly AI assisted and agentic development methods – mainly with Claude Code.",
+      "keywords": [
+        "Java 25",
+        "an internal microservice framework",
+        "gRPC + Rest",
+        "PostgreSQL",
+        "jOOQ + Flyway",
+        "Apache Kafka",
+        "AWS",
+        "OpenAPI 3 / SpringDoc / Swagger UI",
+        "Service Mesh",
+        "Gradle (multi-module)"
+      ]
+    },
+    {
+      "name": "Digital service platform microservice refactoring",
+      "entity": "Lääketukku Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "pharmaceutical wholesale",
+      "roles": [
+        "Senior Backend Developer"
+      ],
+      "startDate": "2024",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "The client's digital service platform is a modern platform where pharmacies, hospitals, health stores, pharmaceutical and health product companies, and other healthcare operators can connect in a new way. Petri's task was to refactor deprecated microservices from the Lagom framework into a system powered by Spring Boot and the Axon framework.",
+      "keywords": [
+        "Java",
+        "Spring Boot",
+        "Lagom",
+        "Axon Framework",
+        "microservices",
+        "event sourcing",
+        "CQRS",
+        "Maven"
+      ]
+    },
+    {
+      "name": "Large-scale billing system",
+      "entity": "Metropolitan Hospital District",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "public hospital district",
+      "roles": [
+        "Senior Backend Developer"
+      ],
+      "startDate": "2020",
+      "endDate": "2024",
+      "x-highlight": true,
+      "description": "The team developed a large-scale billing system for public hospitals and health care clinics serving over a million customers in a large Finnish healthcare region. The system gathers customer visit data as HL7 FHIR messages and processes the data in those messages into billable format that is then divided to the responsible payees for billing. Event based microservice architecture where messages are processed through messaging queues. Petri's role included development work and supporting architects in architectural design as part of the scrum team.",
+      "keywords": [
+        "Java",
+        "Spring Boot",
+        "jOOQ",
+        "RabbitMQ",
+        "Microsoft Azure",
+        "JetBrains IntelliJ IDEA",
+        "Gradle",
+        "Kubernetes",
+        "Minikube",
+        "PostgreSQL",
+        "HL7 FHIR"
+      ]
+    },
+    {
+      "name": "Billing system rewrite",
+      "entity": "Metropolitan Hospital District",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "public hospital district",
+      "roles": [
+        "Lead Developer"
+      ],
+      "startDate": "2019",
+      "endDate": "2020",
+      "x-highlight": true,
+      "x-note": "The project list gives 2019-2020, the highlight slide 2018-2020; the project list dates are used. The highlight slide lists different technologies (the same list as the pharmaceutical wholesale project, probably a copy error); the project list technologies are used.",
+      "description": "Billing system rewrite for the hospital district. As a lead developer, Petri's duties involved software development, code reviewing and planning of feature implementations.",
+      "keywords": [
+        "Java",
+        "Spring Boot",
+        "Git",
+        "Microsoft SQL Server",
+        "MongoDB",
+        "Cosmos DB",
+        "Microsoft Azure",
+        "Docker",
+        "Microservices",
+        "Apache Maven"
+      ]
+    },
+    {
+      "name": "B2B web-shop development",
+      "entity": "Tukkudata Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "B2B wholesale e-commerce",
+      "roles": [
+        "Senior Fullstack Developer"
+      ],
+      "startDate": "2014",
+      "endDate": "2019",
+      "description": "B2B web-shop development, backend and frontend. Integrations to ERP and other external systems. Petri was involved in the project from the very beginning as a backend developer, initially as the sole backend developer. He wrote a large part of the backend code, assisted and guided team members, conducted code reviews, did production troubleshooting, and also contributed to frontend development. The first version had a very tight schedule, requiring production readiness within six months.",
+      "keywords": [
+        "Java",
+        "Spring",
+        "Hibernate",
+        "Spring Data",
+        "QueryDSL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "AngularJS",
+        "Microsoft SQL Server",
+        "Apache Tomcat",
+        "Jetty",
+        "JetBrains IntelliJ IDEA",
+        "Apache Maven",
+        "Elasticsearch",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "Service Bus integrated microservices",
+      "entity": "Customs Authority",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "customs",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2010",
+      "endDate": "2014",
+      "description": "Service Bus integrated microservices. Development and architecture work.",
+      "keywords": [
+        "Sybase DB",
+        "AquaLogic Service Bus",
+        "Spring",
+        "Kafka",
+        "Junit",
+        "Eclipse",
+        "Java",
+        "jQuery",
+        "Selenium",
+        "XSLT",
+        "Oracle WebLogic",
+        "Apache Maven",
+        "XMLBeans",
+        "Oracle Service Bus",
+        "Python",
+        "CVS version control"
+      ]
+    },
+    {
+      "name": "Decision portal",
+      "entity": "National Innovation Funding Agency",
+      "x-employer": "Kvanta Consulting Oy",
+      "x-industry": "innovation funding",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2007",
+      "endDate": "2010",
+      "description": "Decision portal. Integrations to ERP and other systems.",
+      "keywords": [
+        "Oracle",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "jQuery",
+        "Junit",
+        "Eclipse",
+        "Subversion",
+        "Java",
+        "EJB2",
+        "Selenium",
+        "Oracle WebLogic",
+        "Oracle SQL Developer",
+        "Python",
+        "Ruby"
+      ]
+    },
+    {
+      "name": "B2B billing development",
+      "entity": "Kirjekulku Oyj",
+      "x-employer": "Kirjekulku Oyj",
+      "x-industry": "postal and logistics",
+      "roles": [
+        "Senior software developer"
+      ],
+      "startDate": "2006",
+      "endDate": "2007",
+      "description": "B2B billing development, Finvoice, EDI etc. Integration to ERP.",
+      "keywords": [
+        "MySQL",
+        "Eclipse",
+        "Perl",
+        "CVS",
+        "C",
+        "Emacs",
+        "RCS"
+      ]
+    },
+    {
+      "name": "B2B electronic billing",
+      "entity": "E-laskupalvelut Oy",
+      "x-employer": "E-laskupalvelut Oy",
+      "x-industry": "e-invoicing services",
+      "roles": [
+        "Senior software developer",
+        "Team lead"
+      ],
+      "startDate": "2003",
+      "endDate": "2006",
+      "description": "B2B billing development. Handling of electronic billing between businesses, transforming messages between systems and transferring them. Also internal development and customer web-portals. Team lead.",
+      "keywords": [
+        "IBM DB2",
+        "Informix",
+        "Perl",
+        "PHP",
+        "CVS",
+        "Vim",
+        "C",
+        "C++",
+        "Emacs",
+        "LISP",
+        "RCS",
+        "Primavera",
+        "Finvoice",
+        "EDI"
+      ]
+    },
+    {
+      "name": "SMS and WAP gateway",
+      "entity": "Viestimo Oy",
+      "x-employer": "Viestimo Oy",
+      "x-industry": "mobile messaging software",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2000",
+      "endDate": "2003",
+      "description": "Development of an SMS and WAP gateway according to specifications. The software had to run on several different unix operating systems, used in several different countries.",
+      "keywords": [
+        "C",
+        "C++"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p06",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats four projects; merged into the corresponding projects with x-highlight. Roles are taken from the project list titles (the highlight slide uses 'Senior Software Developer' for two of them).",
+      "Titles 'Employer – Role' without a client (postal company, e-invoicing company, mobile messaging company) are in-house work: entity and x-employer are the same organization, and the period is also recorded in work[].",
+      "The client's internal microservice framework and its customer-facing platform name were generalized; the customer count of the hospital billing system was generalized.",
+      "First-person text in the quote and descriptions rewritten to third person.",
+      "Projects are in the source reading order (left column, then right column on each slide)."
+    ]
+  }
+}

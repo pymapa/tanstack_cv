@@ -1,0 +1,272 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Samuli Järvelä",
+    "label": "Senior Software Developer and Partner",
+    "email": "samuli.jarvela@example.com",
+    "phone": "+358 40 000 1013",
+    "summary": "Samuli is a senior software developer with an adaptive mindset and strong expertise in modern full-stack development and system design. He leverages agentic development approaches and AI-assisted workflows to deliver efficient, high-quality solutions, and applies lean architectural principles to keep systems maintainable as they grow. He is committed to building secure, maintainable software with technologies that best serve the problem at hand.\n\nGeared with a strong agile background and enthusiastic approach, he helps teams perform at their very best.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-samuli-jarvela",
+        "url": "https://www.linkedin.com/in/example-samuli-jarvela"
+      }
+    ],
+    "x-experienceSummary": "10 years of business experience",
+    "x-tagline": "Trust and better teamwork grow from taking ownership and sharing responsibility, reinforced by a genuinely hospitable attitude.",
+    "x-keywords": ["Agentic AI", "Lean startup", "AI-Assisted dev", "Agile", "Node", "Java", "React", "TypeScript", "Next.js", "Cloud Architectures"],
+    "x-industries": ["Telecom", "Banking", "Construction industry", "Audio engineering"],
+    "x-strengths": [
+      {
+        "title": "Strive for ownership & shared responsibilities",
+        "description": "Samuli promotes strong ownership, helping people perform at their best and take responsibility for outcomes. Through alignment on shared business goals and open decision-making, he enables trust and lasting impact."
+      },
+      {
+        "title": "Lean startup mindset",
+        "description": "Samuli helps teams move fast through experimentation, continuous learning, and data-driven iteration. The focus stays on meaningful outcomes and validated business impact."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior Software Developer",
+        "description": "Working in senior developer roles at Telelinkki Oyj, Kanervapankki and Liftmaster Oyj, among others, Samuli naturally takes on responsibility and ownership. In addition to the software development itself, Samuli steers the direction of the product and the ways of working."
+      },
+      {
+        "title": "Agile Master",
+        "description": "Beyond improving his own teams, Samuli has also supported other teams to improve development practices and processes department-wide."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI Experience",
+        "description": "Samuli has leveraged GitHub Copilot since its early adoption, making AI-assisted development a core part of modern workflows. More recently, agentic coding practices with tools like Claude Code have highlighted the transformative potential of AI-driven software production."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Partner"
+    },
+    {
+      "name": "Tunnistuslabs Oy"
+    },
+    {
+      "name": "Austin Works Oy"
+    },
+    {
+      "name": "Analyytika Oy",
+      "position": "Software Designer",
+      "startDate": "2017",
+      "endDate": "2018"
+    },
+    {
+      "name": "Vakuutussofta Oy",
+      "position": "Trainee, Software developer",
+      "startDate": "2016",
+      "endDate": "2017"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "HTML / CSS", "Spring", "React", "AWS", "Next.js", "Kotlin", "Flutter"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 10, "yearsText": "10 years" },
+        { "name": "HTML / CSS", "years": 10, "yearsText": "10 years" },
+        { "name": "Spring", "years": 10, "yearsText": "10 years" },
+        { "name": "React", "years": 7, "yearsText": "7 years" },
+        { "name": "AWS", "years": 4, "yearsText": "4 years" },
+        { "name": "Next.js", "years": 2, "yearsText": "2 years" },
+        { "name": "Kotlin", "years": 1, "yearsText": "1 year" },
+        { "name": "Flutter", "years": 0.08, "yearsText": "1 month" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Java", "Spring", "Node", "AWS", "Kotlin"],
+      "x-skillDetails": [
+        { "name": "Java", "years": 10, "yearsText": "10 years" },
+        { "name": "Spring", "years": 10, "yearsText": "10 years" },
+        { "name": "Node", "years": 7, "yearsText": "7 years" },
+        { "name": "AWS", "years": 4, "yearsText": "4 years" },
+        { "name": "Kotlin", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Build, Test and Tools",
+      "keywords": ["Git", "Docker", "Jenkins", "Bitbucket pipelines", "Github actions", "Playwright"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 10, "yearsText": "10 years" },
+        { "name": "Docker", "years": 6, "yearsText": "6 years" },
+        { "name": "Jenkins", "years": 3, "yearsText": "3 years" },
+        { "name": "Bitbucket pipelines", "years": 2, "yearsText": "2 years" },
+        { "name": "Github actions", "years": 2, "yearsText": "2 years" },
+        { "name": "Playwright", "years": 1, "yearsText": "1 year" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Corporate growth prototypes and experiments",
+      "entity": "Telelinkki Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Senior Software Developer", "Full stack developer", "Agile Master"],
+      "startDate": "2024",
+      "endDate": "2026",
+      "x-duration": "2 years",
+      "x-highlight": true,
+      "description": "Samuli started as a developer in the client's CMS team, but was soon invited to join the Corporate Growth team working with lean and agile principles. Serving as the sole developer in the team in this fast-paced environment, he contributed to building prototypes and running experiments to validate new business ideas, leveraging lean startup methods and AI-assisted workflows and heavily utilizing AI tools.\n\nHe also introduced leaner, data-driven ways of making business decisions by focusing on meaningful KPIs and early validation through measurable outcomes.\n\nAlongside his development work, Samuli acted as an Agile Master, supporting teams through coaching and contributing to department-level improvements in development practices and processes across the wider engineering organization.",
+      "keywords": ["React", "Typescript", "Playwright", "Java", "Spring", "Contentful", "Kubernetes", "Conductrics", "Flutter", "wearables"],
+      "x-note": "Highlight and project list entry merged; Conductrics appears only in the highlight's technology list."
+    },
+    {
+      "name": "Customer management tool",
+      "entity": "Lemmikkikauppa Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "pet supplies retail",
+      "roles": ["Full stack developer"],
+      "x-duration": "4 months",
+      "description": "Developing Next.js customer management tool for point-of-sales and admin users while managing other production applications on a serverless AWS infrastructure. Designed and implemented better architecture for the application and helped the team use Next.js more efficiently.",
+      "keywords": ["React", "Typescript", "Next.js", "Python", "AWS Lambda", "AWS DynamoDB"],
+      "x-note": "No start/end dates given in the source, only the duration."
+    },
+    {
+      "name": "Application for business customers",
+      "entity": "Kanervapankki",
+      "x-employer": "Tunnistuslabs Oy",
+      "x-industry": "cooperative banking group",
+      "roles": ["Senior Software Developer", "Full stack developer"],
+      "startDate": "2023",
+      "endDate": "2024",
+      "x-duration": "1 year",
+      "x-highlight": true,
+      "description": "Responsible for creating new application for business customers. The application was developed with close collaboration with UX designer and test engineer. High quality & security standards were enforced via multi-level testing, auditing, and manual reviews. After finishing the application, joined the team working with multiple projects.",
+      "keywords": ["React", "Typescript", "Spring boot", "OpenAPI", "AWS CDK", "AWS ECS", "AWS CodePipeline"]
+    },
+    {
+      "name": "Patient data and records management",
+      "entity": "Terveys-IT Oy",
+      "x-employer": "Tunnistuslabs Oy",
+      "x-industry": "healthcare IT services",
+      "roles": ["Full stack developer"],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-duration": "1 year",
+      "description": "Responsible for creating a greenfield project together with another developer to manage patient data and records for a healthcare provider. The project was built on time and was successful. The service was running in the clients own Kubernetes cluster along with integrated microservices.",
+      "keywords": ["Spring", "React", "Kubernetes", "Docker"]
+    },
+    {
+      "name": "Customer portal development",
+      "entity": "Standards Certification Org",
+      "x-employer": "Tunnistuslabs Oy",
+      "x-industry": "certification and standards",
+      "roles": ["Full stack developer"],
+      "startDate": "2022",
+      "endDate": "2023",
+      "x-duration": "4 months",
+      "description": "Worked for the client continuing their customer portal development in close collaboration with the customer. Backend was developed using Kotlin, the UI was built with React. REST API was built with Ktor delivering the data to the frontend and the data was saved to a PostgreSQL database.",
+      "keywords": ["Kotlin", "Ktor", "Java", "Typescript", "React", "PostgreSQL", "AWS", "Docker"]
+    },
+    {
+      "name": "Billing service architecture plan",
+      "entity": "Taloushallinto Pilvi Oy",
+      "x-employer": "Tunnistuslabs Oy",
+      "x-industry": "financial management software",
+      "roles": ["Software architect"],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-duration": "4 months",
+      "description": "Worked as a software architect for developing an updated version of customer's billing service. Planned, devised, and built a thorough plan for the customer on how to start developing the new version of the billing service system. End result was high level cloud architecture for AWS, team composition, suggested ways of working and rough estimate of expense structure.",
+      "keywords": ["AWS", "Cloud Architectures"]
+    },
+    {
+      "name": "SaaS SSO product",
+      "entity": "Finnish media companies",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "media",
+      "roles": ["Project manager"],
+      "x-duration": "3 months",
+      "description": "Managed in-house team building authentication system for Finnish media companies, that could later be productized. Worked as an interface between customer and the team, handling client communication and organizing development work.",
+      "keywords": ["Keycloak"],
+      "x-note": "No start/end dates given in the source, only the duration."
+    },
+    {
+      "name": "Crane manual handling systems backend",
+      "entity": "Liftmaster Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "industrial cranes",
+      "roles": ["Backend developer"],
+      "startDate": "2019",
+      "endDate": "2020",
+      "x-duration": "1 year",
+      "x-highlight": true,
+      "description": "Designed and built a greenfield backend service for crane manual handling systems, integrating it into the client's large-scale, company-wide microservice architecture. Took full ownership of the backend from architecture to delivery, leveraging a broad AWS stack including Lambda, API Gateway, and ElasticSearch. After delivering the project on schedule, continued contributing across other team initiatives.",
+      "keywords": ["AWS", "Lambda", "AWS API Gateway", "AWS EC2", "AWS S3", "AWS ElasticSearch", "AWS CloudFormation", "Kubernetes", "Cloud Architectures"]
+    },
+    {
+      "name": "Funding and partner search web application",
+      "entity": "Innofund Consulting",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "innovation consultancy",
+      "roles": ["Fullstack developer"],
+      "x-duration": "5 months",
+      "description": "Responsible for creating web application for funding and partner search algorithm.",
+      "keywords": ["React", "Node", "TS", "Kubernetes", "GCP"],
+      "x-note": "No start/end dates given in the source, only the duration."
+    },
+    {
+      "name": "Public telecom website",
+      "entity": "Nordlink Telecom",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Frontend developer"],
+      "startDate": "2018",
+      "endDate": "2019",
+      "x-duration": "1 year",
+      "description": "Frontend development for telecompany website running on Magnolia CMS. Organisation was using SAFE, worked as part of a team responsible of building public site.",
+      "keywords": ["JS", "jQuery", "Spring", "React", "Magnolia CMS"]
+    },
+    {
+      "name": "Liferay frontend components",
+      "entity": "Undisclosed client",
+      "x-employer": "Analyytika Oy",
+      "x-industry": "IT and data consultancy",
+      "roles": ["Software Designer"],
+      "startDate": "2017",
+      "endDate": "2018",
+      "description": "Developed frontend components for Liferay application and few smaller projects.",
+      "keywords": ["Java", "JSP", "Scala", "jQuery", "React", "Liferay"]
+    },
+    {
+      "name": "Insurance and pension application",
+      "entity": "Undisclosed client",
+      "x-employer": "Vakuutussofta Oy",
+      "x-industry": "insurance and pension software",
+      "roles": ["Trainee", "Software developer"],
+      "startDate": "2016",
+      "endDate": "2017",
+      "description": "Started as a trainee and worked as part of a Scrum team that was responsible for building a large insurance and pension application customised for the company's client.",
+      "keywords": ["Java", "JSP", "jQuery"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p13",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Placeholder text 'Ask me more' on slide 1 was dropped.",
+      "The heading of the third skill table (Git, Docker, Jenkins...) is missing in the source; inferred as 'Build, Test and Tools' from the template.",
+      "The 'Frontend' skill table contains backend technologies (Spring, AWS, Kotlin); kept as in the source.",
+      "Skill 'Flutter' is given as '1 month'; stored as 0.08 years.",
+      "Strength title 'Learn startup mindset' corrected to 'Lean startup mindset'.",
+      "The 'AI Experience' paragraph was stored in x-keySkills.",
+      "The three project highlights duplicate projects in 'All client projects' and were merged into them.",
+      "Project titles give durations in parentheses (e.g. '(4 months)'); stored in x-duration."
+    ]
+  }
+}

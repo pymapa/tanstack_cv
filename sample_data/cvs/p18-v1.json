@@ -1,0 +1,320 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Riku Hiltula",
+    "label": "Senior Software Engineer and Architect, Partner",
+    "email": "riku.hiltula@example.com",
+    "phone": "+358 40 000 1018",
+    "summary": "Riku is a technically savvy senior software engineer and architect with insight into how to develop elegant and maintainable systems out of complex domains.\n\nHe has a strong engineering background, enjoys the problem-solving aspect of software design, and excels as part of an agile team in full stack web development. He’s also enthusiastic about learning new technologies and has a talent for quickly picking up new ones.\n\nLately he has been developing services that utilize various AI capabilities that run the mill of vector databases, genAI, RAG, multimodal models and OCR.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-riku-hiltula",
+        "url": "https://www.linkedin.com/in/example-riku-hiltula"
+      }
+    ],
+    "x-tagline": "Good engineering means solving the problems that create genuine value and help the business grow.",
+    "x-keywords": ["Typescript", "Node.js", "Python", "Postgres", "AWS", "GCP", "React", "Terraform", "GenAI", "Vector databases", "RAG"],
+    "x-industries": ["eCommerce", "AdTech", "Food delivery", "User Authentication and Authorization"],
+    "x-strengths": [
+      {
+        "title": "Backend development",
+        "description": "Riku has an extensive experience of developing RESTful backend services in Node.js and Python."
+      },
+      {
+        "title": "Frontend development",
+        "description": "Riku has a vast experience of frontend development with many frameworks like React, NextJS, Angular and others as well as with SPA and SSR."
+      },
+      {
+        "title": "Cloud platforms & container orchestration",
+        "description": "Riku has utilized both AWS and GCP using many different services and is also a very capable user of Kubernetes."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "System designer",
+        "description": "Riku has been in multiple projects where he has made decisions on how to design the new system from scratch. As such he has lots of insights on how to make that happen successfully. Thinking in systems gives Riku a perspective on development that guarantees a robust solution."
+      },
+      {
+        "title": "Developing eCommerce",
+        "description": "Ecommerce development lends itself very well into other business domains. Having developed things like user auth, file storage, database indexing, APM, search, serverless, geocoding, observability and many others make Riku a very versatile fullstack developer."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Generative AI",
+        "description": "Riku has lately been focusing on developing systems that use generative AI, RAG, multimodal models and OCR. This experience has given Riku new ideas on how to think outside of the discrete coding box."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Engineer and Architect, Partner"
+    },
+    {
+      "name": "Kettu Software Oy",
+      "position": "Fullstack Developer, Backend Developer, Frontend Developer"
+    },
+    {
+      "name": "Painopiste Oy",
+      "position": "Fullstack Developer"
+    },
+    {
+      "name": "Kaskadi Solutions Oy",
+      "position": "Software Developer / Trainee"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "Typescript", "HTML / CSS", "React", "Angular", "GraphQL"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 11, "yearsText": "11 years" },
+        { "name": "Typescript", "years": 8, "yearsText": "8 years" },
+        { "name": "HTML / CSS", "years": 12, "yearsText": "12 years" },
+        { "name": "React", "years": 6, "yearsText": "6 years" },
+        { "name": "Angular", "years": 2, "yearsText": "2 years" },
+        { "name": "GraphQL", "years": 1, "yearsText": "1 years" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Node.js", "Express", "FastAPI", "Relational databases (Postgres)", "Document databases (DynamoDB)", "Protocol buffers", "Open API", "AI Platforms and ML tools"],
+      "x-skillDetails": [
+        { "name": "Node.js", "years": 10, "yearsText": "10 years" },
+        { "name": "Express", "years": 8, "yearsText": "8 years" },
+        { "name": "FastAPI", "years": 1, "yearsText": "1 year" },
+        { "name": "Relational databases (Postgres)", "years": 8, "yearsText": "8 years" },
+        { "name": "Document databases (DynamoDB)", "years": 3, "yearsText": "3 years" },
+        { "name": "Protocol buffers", "years": 2, "yearsText": "2 years" },
+        { "name": "Open API", "years": 7, "yearsText": "7 years" },
+        { "name": "AI Platforms and ML tools", "years": 0.75, "yearsText": "9 months" }
+      ]
+    },
+    {
+      "name": "Cloud and architecture",
+      "keywords": ["Amazon Web Services", "Google Cloud Platform", "Kubernetes"],
+      "x-skillDetails": [
+        { "name": "Amazon Web Services", "years": 8, "yearsText": "8 years" },
+        { "name": "Google Cloud Platform", "years": 1, "yearsText": "1 year" },
+        { "name": "Kubernetes", "years": 3, "yearsText": "3 years" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "Testing frameworks (Ava, Mocha, Jest, Pytest)", "Webdriver.io (Selenium)", "Docker", "Jenkins", "CircleCI", "Github Actions", "Webpack", "Esbuild", "Handlebars", "Sentry"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 11, "yearsText": "11 years" },
+        { "name": "Testing frameworks (Ava, Mocha, Jest, Pytest)", "years": 10, "yearsText": "10 years" },
+        { "name": "Webdriver.io (Selenium)", "years": 1, "yearsText": "1 year" },
+        { "name": "Docker", "years": 5, "yearsText": "5 years" },
+        { "name": "Jenkins", "years": 2, "yearsText": "2 years" },
+        { "name": "CircleCI", "years": 1, "yearsText": "1 year" },
+        { "name": "Github Actions", "years": 2, "yearsText": "2 years" },
+        { "name": "Webpack", "years": 1, "yearsText": "1 year" },
+        { "name": "Esbuild", "years": 1, "yearsText": "1 year" },
+        { "name": "Handlebars", "years": 1, "yearsText": "1 year" },
+        { "name": "Sentry", "years": 2, "yearsText": "2 years" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Citation and contradiction checker PoC for a TV show",
+      "entity": "Public Broadcaster Kaiku",
+      "x-industry": "national public broadcaster",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2025-06",
+      "endDate": "2025-08",
+      "x-highlight": true,
+      "description": "Riku created a proof of concept of an API and an app that was able to generate 100 % correct citations and a contradictions checker. This was achieved by using a multimodal LLM model by OpenAI. A script readiness checker based on highlight colors was also explored.",
+      "keywords": ["Typescript", "React", "Styled-components", "Python", "FastAPI", "BeautifulSoup4", "OpenAI Platform", "GCP (Cloud Run)", "Docker", "Terraform"]
+    },
+    {
+      "name": "Generative AI pipeline for sustainability data",
+      "entity": "EcoSignal AI",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "sustainability data and AI SaaS",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2024-11",
+      "x-highlight": true,
+      "description": "The client develops a system that scrapes public sustainability and corporate responsibility related data and generates various things with generative AI including sustainability acts, goals and company profiles. Riku's role was to design and implement the generation pipeline which was done by creating a queue of generation jobs which then start generation steps like scraping, classifying, generation and post processing.",
+      "keywords": ["Python", "FastAPI", "Tensorflow", "Chroma", "Langchain", "HuggingFace", "LangDetect", "BeautifulSoup4", "PdfPlumber", "Pillow", "Google Gemini API", "GCP (Vertex AI, Cloud Run, SQL Postgres, Storage, Translate)", "Docker", "Terraform", "Github Actions"]
+    },
+    {
+      "name": "AI Assistant",
+      "entity": "Kipinä Software Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "software consultancy",
+      "roles": ["Senior Fullstack Developer"],
+      "startDate": "2024-09",
+      "endDate": "2024-10",
+      "x-highlight": true,
+      "description": "Riku developed a service where a user can upload files which are stored in a vector database which is then used to do a Retrieval Augmented Generation with a chat bot interface. This allows the user to ask questions about the material in natural language. He designed the system to be able to be scoped by customer so that the chat bots could be hosted securely behind customer auth.",
+      "keywords": ["Typescript", "React", "Azure MSAL", "styled-components", "zustand", "Node", "Express", "Open API", "JWT", "Kysely", "Zod", "Multer", "OpenAI Platform", "Postgres", "Hetzner Cloud", "Terraform", "Docker", "Github Actions"]
+    },
+    {
+      "name": "Ad automation and orchestration libraries",
+      "entity": "Adflow",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "social advertising software",
+      "roles": ["Senior Fullstack Developer"],
+      "startDate": "2023-05",
+      "endDate": "2024-06",
+      "x-highlight": true,
+      "description": "Riku's task was to take the shared automation and orchestration libraries for ads, ad sets and campaigns into use with two social media platforms. He also developed a shared video template render queuing library to be used by all platform teams. The work done with frontend, ASTs and directed acyclic graphs drove a measurable profit increase.",
+      "keywords": ["Node", "Typescript", "jest", "React", "styled-components", "pnpm", "Turborepo", "Docker", "PostgreSQL", "Open API", "Koa", "Objection", "knex", "zod", "Kubernetes"]
+    },
+    {
+      "name": "CRM backend",
+      "entity": "Rantakiinteistöt Oy",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "real estate",
+      "roles": ["Senior Backend Developer"],
+      "startDate": "2023-02",
+      "endDate": "2023-04",
+      "description": "Riku was tasked with investigating the legacy system, planning the new system, creating tickets out of the plans and doing the work for what was to become a CRM for the company. He created the REST API endpoints with Serverless Express, designed the data model and database indexes etc.",
+      "keywords": ["Node", "Typescript", "Express", "AWS Amplify", "AWS API Gateway", "AWS DynamoDB", "AWS Cognito"]
+    },
+    {
+      "name": "Product system frontend update",
+      "entity": "Warmwerk GmbH",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "heating systems",
+      "roles": ["Frontend Developer"],
+      "startDate": "2023-01",
+      "endDate": "2023-01",
+      "description": "Riku's task was to update the codebase to the new designs, add new features, and to integrate over 30 new products to the existing system. He also wrote some utility scripts that used ffmpeg to expedite image manipulations.",
+      "keywords": ["Node", "Javascript", "Vue", "Kiosk Pro Plus", "Dropbox", "ffmpeg"]
+    },
+    {
+      "name": "Ad management core service rebuild",
+      "entity": "Adflow",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "social advertising software",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2022-08",
+      "endDate": "2023-01",
+      "x-note": "Source date '01/2023-08/2022' is reversed; corrected to 08/2022–01/2023.",
+      "description": "Riku was responsible for a major rebuilding of the core service that automates ad, ad set, and campaign management for a social media platform. The project was executed in close partnership with the platform and featured a very ambitious deadline. The project was fully delivered within the agreed upon schedule.",
+      "keywords": ["Node", "Typescript", "jest", "React", "styled-components", "Docker", "PostgreSQL", "Open API", "Koa", "Objection", "knex", "Kubernetes"]
+    },
+    {
+      "name": "Backend for a delivery service self-trial",
+      "entity": "Ruokakuljetus Oy",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "food delivery platform",
+      "roles": ["Backend Developer"],
+      "startDate": "2021-08",
+      "endDate": "2022-05",
+      "description": "Riku was tasked with the design and creation of a new backend system that linked the new UI of the client's delivery service product to the product's microservice API and existing company services. The objective of this system was to allow potential new customers to test the service and even use it without undertaking potentially costly API integration work of their own.",
+      "keywords": ["Node", "Typescript", "jest", "Docker", "MongoDb", "mongoose", "Sentry", "Hapi.js", "Github Actions", "io-ts", "Protocol Buffers", "gRPC", "Open API", "JSON Web Token", "Kubernetes"]
+    },
+    {
+      "name": "Self-service portal backend",
+      "entity": "Aamuviesti Media Oyj",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "media company",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2020-10",
+      "endDate": "2021-07",
+      "description": "Riku was responsible for taking sole ownership of the backend that managed the self-service functions and email communication to users for the portal with 500 000+ MAU. He implemented numerous improvements to the codebase, which resulted in better maintainability, observability and architecture.",
+      "keywords": ["Node", "Javascript", "Typescript", "jest", "React", "Bulma", "Express", "Webpack", "Handlebars", "Webdriver.io", "Browserstack Automate", "JWT", "AWS S3", "AWS DynamoDB", "AWS KMS", "AWS SAM", "Auth0", "TravisCI"]
+    },
+    {
+      "name": "Reporting database integration",
+      "entity": "Telelinkki Oyj",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2020-05",
+      "endDate": "2020-09",
+      "description": "Riku was tasked with developing the backend integration to a Microsoft SQL Server database used to store Power BI reports. As the task was straightforward and completed promptly, he moved on to other responsibilities in the project.",
+      "keywords": ["Node", "Javascript", "Typescript", "React", "jest", "Mocha", "Docker", "Express", "Redux", "Open API", "knex", "Jenkins", "PostgreSQL", "Microsoft SQL Server"]
+    },
+    {
+      "name": "Brand website rewrite",
+      "entity": "Veritesti Health",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "health technology",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2020-01",
+      "endDate": "2020-03",
+      "description": "Riku was tasked with rewriting most of the existing codebase for the client's brand website as the new designs were vastly superior to the old ones and most of the time the existing code didn't fit well with them. He and a colleague were praised for their swift work pace and quality.",
+      "keywords": ["Node", "Typescript", "React", "styled-components", "jest", "Prismic.io", "Circle CI", "Gatsby"]
+    },
+    {
+      "name": "Waste management product ordering",
+      "entity": "Ympäristöpalvelu Kierto Oy",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "environmental services",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2019-12",
+      "endDate": "2019-12",
+      "description": "Riku was responsible for adding ten new features or fixes in ten days. Added IE11 support, fixed a bunch of bugs and added more features related to ordering of waste management products.",
+      "keywords": ["Node", "Typescript", "React", "Formik", "Express", "Docker", "Sendgrid", "PostgreSQL", "Terraform", "AWS ECS", "Contentful", "typeorm", "Forest Admin"]
+    },
+    {
+      "name": "Digital law office app",
+      "entity": "Digiturva Oy",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "social media safety service",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2019-07",
+      "endDate": "2019-11",
+      "description": "Riku was responsible for working on the digital law office's app that featured anonymous user interactions in order to protect the privacy of its users. He improved the login flow, made the NextJS app a PWA and among other things, reverse-engineered Typeform enough to drop their SDK that was too sluggish to run on older mobile devices. The startup got off the ground.",
+      "keywords": ["Node", "Javascript", "NextJS", "React", "styled-components", "Typeform", "Express", "jest", "Mocha", "Datadog", "Docker", "Twilio", "Auth0", "knex", "Circle CI"]
+    },
+    {
+      "name": "Service backend and CI/CD",
+      "entity": "Regional Business Agency",
+      "x-employer": "Kettu Software Oy",
+      "x-industry": "regional business development",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2019-03",
+      "endDate": "2019-05",
+      "description": "Riku was responsible for the backend side of the service, created CI / CD pipelines, the REST API, user authentication with AWS Cognito, user messaging with Sendgrid, S3 Antivirus for file uploads and a cron job for cleaning the database. He also delivered some of the frontend features like the admin view.",
+      "keywords": ["Node", "Javascript", "React", "styled-components", "Express", "jest", "Sendgrid", "Open API", "Bookshelf", "knex", "Bitbucket Pipelines", "AWS S3", "AWS Cognito", "AWS Cloudfront"]
+    },
+    {
+      "name": "E-commerce web shop platform",
+      "entity": "Painopiste Oy",
+      "x-employer": "Painopiste Oy",
+      "x-industry": "printing and content services",
+      "roles": ["Fullstack Developer"],
+      "startDate": "2017-01",
+      "endDate": "2019-01",
+      "description": "Riku was part of the work that became a general-purpose e-commerce web shop platform. During the two years he worked on most parts of the system including user auth, admin portal, pdf preflight, SQS, antivirus for the pdfs, S3, etc. He acquired a huge amount of know-how on modern web programming.",
+      "keywords": ["Node", "Javascript", "Typescript", "Angular", "Bootstrap", "Redux", "Express", "jest", "Ava", "Open API", "GraphQL", "Bookshelf", "knex", "PostgreSQL", "Circle CI", "Elasticsearch", "JWT", "AWS (S3, Cognito, Cloudfront, Lambda, SES, SQS)"]
+    },
+    {
+      "name": "Browser clone of a legacy Java application",
+      "entity": "Kaskadi Solutions Oy",
+      "x-employer": "Kaskadi Solutions Oy",
+      "x-industry": "software company",
+      "roles": ["Software Developer / Trainee"],
+      "startDate": "2015-05",
+      "endDate": "2015-10",
+      "description": "Riku was tasked with creating a clone from a 20-year-old Java application that would run in the browser. He used this project for his Bachelor's thesis on building a modern web application. The app featured a responsive design – a feature the old app did not have.",
+      "keywords": ["Node", "Backbone.js", "Javascript", "HTML5", "CSS3", "Bootstrap", "Gulp"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p18",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects from 'All client projects'; merged with x-highlight. Dates taken from the fuller month-level dates in 'All client projects' (e.g. the highlight slide gives only years 2024-2025 for the sustainability AI project vs '11/2024-ongoing').",
+      "Project descriptions were written in first person; rewritten to third person.",
+      "The 'AI experience' section (Generative AI) is stored in x-keySkills.",
+      "Titles with only an employer ('Painopiste Oy – Fullstack Developer', 'Kaskadi Solutions Oy – Software Developer / Trainee') are treated as work for that employer.",
+      "Projects in the source have no names (except 'AI Assistant'); short neutral names were derived from the descriptions. The TV show name in the public broadcaster title was generalized.",
+      "Two named social media platforms and the named delivery product of the food delivery client were generalized.",
+      "Bachelor's thesis topic kept only at a general level.",
+      "Dropped 'See all...' link text."
+    ]
+  }
+}

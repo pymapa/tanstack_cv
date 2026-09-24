@@ -1,0 +1,249 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Heikki Rautanen",
+    "label": "Senior Data Engineer, Full Stack Developer and Partner",
+    "email": "heikki.rautanen@example.com",
+    "phone": "+358 40 000 1017",
+    "summary": "Heikki is an experienced IT professional with a diverse background covering roles from data engineer to integration architect. Solution-oriented and curious by nature, he enjoys teamwork and achieving goals together with others. Adaptable and eager to learn, Heikki thrives in environments where problem-solving and continuous learning are part of everyday work.\n\nHis current focus is on AI, with a strong belief that AI will play a transformative role in shaping the future. He sees high-quality data as the key for achieving meaningful AI outcomes. He approaches challenges by first understanding the business context and big picture, then identifying the most suitable technologies to deliver results.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-heikki-rautanen",
+        "url": "https://www.linkedin.com/in/example-heikki-rautanen"
+      }
+    ],
+    "x-tagline": "Reliable data turned into insight is what makes AI work.",
+    "x-keywords": ["AI", "Data Engineering", "Python", "Databases", "Azure", "SQL", "Backend"],
+    "x-industries": ["Finance", "HR Services", "Software Infrastructure", "Sustainability"],
+    "x-strengths": [
+      {
+        "title": "Data Engineering",
+        "description": "Heikki has been crafting end-to-end platforms—ingesting, transforming and modeling data with multiple technologies to deliver reliable, high-quality data."
+      },
+      {
+        "title": "Versatile",
+        "description": "Experience across a wide range of technologies and roles, adapting quickly to new challenges and project needs."
+      },
+      {
+        "title": "Curious",
+        "description": "Naturally driven to explore and learn, refining practices through hands-on problem solving and continuous improvement."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior Data Engineer",
+        "description": "Heikki has worked as a senior data engineer across several projects, where he has been involved in architecture design, development and data modeling. He has also been leading data teams."
+      },
+      {
+        "title": "Integration Architect",
+        "description": "As an integration architect his responsibilities were leading development teams and driving the design and implementation of scalable integration solutions. He worked closely with stakeholders and technical teams to keep everyone aligned with the business goals."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Data Engineer, Full Stack Developer and Partner"
+    },
+    {
+      "name": "Piikki Solutions Oyj",
+      "position": "Senior Data Engineer"
+    },
+    {
+      "name": "Digitalo Oyj",
+      "position": "Systems Designer, Integration Architect"
+    },
+    {
+      "name": "Kaarela University",
+      "position": "Backend Developer, Technical Project Manager"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data Engineering",
+      "keywords": ["Python", "SQL", "Databricks", "R", "Relational databases (PostgreSQL, Azure SQL, SQL Server, DB2)", "Data Warehousing (Synapse Analytics, BigQuery)", "ETL Tools (Data Factory, SSIS, Dagster)", "PowerBI", "Data Modeling", "Web scraping"],
+      "x-skillDetails": [
+        { "name": "Python", "years": 7, "yearsText": "7 years" },
+        { "name": "SQL", "years": 10, "yearsText": "10 years" },
+        { "name": "Databricks", "years": 6, "yearsText": "6 years" },
+        { "name": "R", "years": 3, "yearsText": "3 years" },
+        { "name": "Relational databases (PostgreSQL, Azure SQL, SQL Server, DB2)", "years": 10, "yearsText": "10 years" },
+        { "name": "Data Warehousing (Synapse Analytics, BigQuery)", "years": 3, "yearsText": "3 years" },
+        { "name": "ETL Tools (Data Factory, SSIS, Dagster)", "years": 7, "yearsText": "7 years" },
+        { "name": "PowerBI", "years": 3, "yearsText": "3 years" },
+        { "name": "Data Modeling", "years": 6, "yearsText": "6 years" },
+        { "name": "Web scraping", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Backend and Frontend",
+      "keywords": ["Java / Kotlin", "JavaScript / TypeScript / Node.js", ".NET / C#", "Document databases (MongoDB, CosmosDB)", "XSLT", "SOAP / XML / JSON / REST", "Elasticsearch", "Redis", "React", "Next.js", "FastAPI"],
+      "x-skillDetails": [
+        { "name": "Java / Kotlin", "years": 5, "yearsText": "5 years" },
+        { "name": "JavaScript / TypeScript / Node.js", "years": 4, "yearsText": "4 years" },
+        { "name": ".NET / C#", "years": 1, "yearsText": "1 year" },
+        { "name": "Document databases (MongoDB, CosmosDB)", "years": 2, "yearsText": "2 years" },
+        { "name": "XSLT", "years": 5, "yearsText": "5 years" },
+        { "name": "SOAP / XML / JSON / REST", "years": 8, "yearsText": "8 years" },
+        { "name": "Elasticsearch", "years": 3, "yearsText": "3 years" },
+        { "name": "Redis", "years": 1, "yearsText": "1 year" },
+        { "name": "React", "years": 2, "yearsText": "2 years" },
+        { "name": "Next.js", "years": 1, "yearsText": "1 year" },
+        { "name": "FastAPI", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "AI",
+      "keywords": ["Agentic coding", "AI-assisted coding", "Agentic AI", "LLM", "RAG", "Google Gemini API"],
+      "x-skillDetails": [
+        { "name": "Agentic coding", "years": 1, "yearsText": "1 year" },
+        { "name": "AI-assisted coding", "years": 2, "yearsText": "2 years" },
+        { "name": "Agentic AI", "years": 1, "yearsText": "1 year" },
+        { "name": "LLM", "years": 1, "yearsText": "1 year" },
+        { "name": "RAG", "years": 1, "yearsText": "1 year" },
+        { "name": "Google Gemini API", "years": null, "note": "Experience not stated in source" }
+      ]
+    },
+    {
+      "name": "Server, Cloud and Infrastructure",
+      "keywords": ["Azure", "AWS", "Kubernetes", "Google Cloud"],
+      "x-skillDetails": [
+        { "name": "Azure", "years": 6, "yearsText": "6 years" },
+        { "name": "AWS", "years": 3, "yearsText": "3 years" },
+        { "name": "Kubernetes", "years": 2, "yearsText": "2 years" },
+        { "name": "Google Cloud", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Build, Test and Tools",
+      "keywords": ["Git", "Docker", "Jenkins", "Terraform", "Gradle", "Testing frameworks (pytest, junit etc.)"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 10, "yearsText": "10 years" },
+        { "name": "Docker", "years": 6, "yearsText": "6 years" },
+        { "name": "Jenkins", "years": 5, "yearsText": "5 years" },
+        { "name": "Terraform", "years": 4, "yearsText": "4 years" },
+        { "name": "Gradle", "years": 2, "yearsText": "2 years" },
+        { "name": "Testing frameworks (pytest, junit etc.)", "years": 10, "yearsText": "10 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "Azure Data Engineer Associate", "date": "2019", "issuer": "Microsoft" },
+    { "name": "Azure Solutions Architect Expert", "date": "2020", "issuer": "Microsoft" },
+    { "name": "Azure Developer Associate", "date": "2021", "issuer": "Microsoft" },
+    { "name": "AWS Certified Solutions Architect - Associate", "date": "2019", "issuer": "AWS" },
+    { "name": "IBM DataPower Gateway V7.1", "date": "2016", "issuer": "IBM" },
+    { "name": "IBM Data Science Professional Certificate", "date": "2019", "issuer": "IBM" },
+    { "name": "IBM API Connect V5.0.5", "date": "2017", "issuer": "IBM" },
+    { "name": "MCD - Integration and API Associate (Mule)", "date": "2017", "issuer": "MuleSoft" },
+    { "name": "Scrum, DevOps, SAFE, ITIL certifications", "date": "2017", "x-dateText": "2017-2018" }
+  ],
+  "projects": [
+    {
+      "name": "AI pipeline and SaaS development",
+      "entity": "EcoSignal AI",
+      "x-industry": "sustainability data and AI SaaS",
+      "roles": ["Senior Fullstack Developer"],
+      "startDate": "2025",
+      "x-duration": "1 yr, 4 mo",
+      "description": "The product (SaaS) is an enterprise platform that collects publicly available company documents, classifies them by sustainability relevance and generates company profiles using Retrieval Augmented Generation (RAG), ChatGPT and Gemini. Heikki's responsibilities were to create the backend system for the app and help to improve the AI pipeline. He also created new features to the frontend.",
+      "keywords": ["Python", "FastAPI", "PostgreSQL", "Google Cloud", "Terraform", "Github Actions", "RAG", "ChatGPT", "Gemini", "React", "Next.js", "Typescript"]
+    },
+    {
+      "name": "Data layer performance improvement and data platform",
+      "entity": "Staffia Oyj",
+      "x-industry": "staffing and HR services",
+      "roles": ["Senior Data Engineer"],
+      "startDate": "2022",
+      "endDate": "2024",
+      "x-duration": "2 yr, 10 mo",
+      "description": "Responsible for implementing a more performant data layer using Elasticsearch. Developed a cloud infrastructure as code using Terraform. Led the design and implementation of a data platform leveraging a data lakehouse architecture for storage and reporting. Provided ongoing maintenance for previously developed modern web applications and system integrations.",
+      "keywords": ["Azure (Databricks, Data Lake, Data Factory, Container Service, Functions, Event Bus, SQL)", "Python", "Elasticsearch", "Node.js", "TypeScript", "Terraform", "React", "Redis", "PostgreSQL", "Docker"]
+    },
+    {
+      "name": "Core migration and data project",
+      "entity": "Staffia Oyj",
+      "x-industry": "staffing and HR services",
+      "roles": ["Senior Data Engineer"],
+      "startDate": "2023",
+      "endDate": "2024",
+      "x-duration": "1 yr, 11 mo",
+      "description": "Responsible for designing and implementing a migration from an old ERP system to a new one. Assisted in preparing data for an AI-driven matching service. Midway through the project, took on primary responsibility, including gathering requirements, leading the development team, and maintaining effective communication with stakeholders.",
+      "keywords": ["Azure (Databricks, Data Lake)", "Python", "PostgreSQL", "Elasticsearch", "Kotlin", "AWS (Lambda, Step Functions, RDS, EC2, S3)", "Terraform", "AWS CDK", "Docker"]
+    },
+    {
+      "name": "Customer Analytics Platform",
+      "entity": "Northwind Software",
+      "x-employer": "Piikki Solutions Oyj",
+      "x-industry": "global software company",
+      "roles": ["Senior Data Engineer"],
+      "startDate": "2019",
+      "endDate": "2022",
+      "x-duration": "2 yr, 9 mo",
+      "description": "Responsible for designing, implementing and maintaining solutions relating to systems responsible for processing and running the client's customer surveys and data platforms.",
+      "keywords": ["Azure (Databricks, SQL, Data Factory, Synapse Analytics, DevOps)", "Python", "R", "SQL", "SQL Server", "React", "Node.js", "TypeScript"]
+    },
+    {
+      "name": "Integration Centre of Excellence",
+      "entity": "Eläkevakuutus Tähti",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "pension insurance",
+      "roles": ["Integration Architect"],
+      "startDate": "2018",
+      "endDate": "2019",
+      "x-duration": "11 months",
+      "description": "Working as an integration architect in various projects and value streams. Heikki was responsible for leading development teams, designing and implementing solutions, and working with the client needs. His job was to ensure that client needs were fulfilled, and the targets of the integration projects were exceeded. In addition, his role included participating in the governance and operations of integrations.",
+      "keywords": ["XSLT", "JavaScript", "Java", "IBM WebSphere DataPower", "IBM WebSphere MQ", "Automic ONE Automation", "Jenkins", "Splunk"]
+    },
+    {
+      "name": "Integration Centre of Excellence",
+      "entity": "Eläkevakuutus Tähti",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "pension insurance",
+      "roles": ["Systems Designer"],
+      "startDate": "2014",
+      "endDate": "2018",
+      "x-duration": "4 years",
+      "description": "Responsible for development and maintenance of integrations, workflows and APIs using mainly IBM WebSphere DataPower, IBM WebSphere MQ and Automic ONE Automation platforms with XSLT and JavaScript. The responsibilities also included development and maintenance of existing Java applications running on IBM WebSphere Application Server.",
+      "keywords": ["XSLT", "JavaScript", "Java", "IBM WebSphere DataPower", "IBM WebSphere MQ", "Automic ONE Automation", "Jenkins", "Splunk"]
+    },
+    {
+      "name": "Live audience participation tool",
+      "entity": "Institute for Information Research",
+      "x-employer": "Kaarela University",
+      "x-industry": "research institute",
+      "roles": ["Technical Project Manager"],
+      "startDate": "2011",
+      "endDate": "2012",
+      "x-duration": "8 months",
+      "description": "Responsible for project management. In addition, Heikki participated in backend development.",
+      "keywords": ["Node.js", "JavaScript", "MongoDB", "AWS"]
+    },
+    {
+      "name": "Master Data Management PoC",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Kaarela University",
+      "x-industry": "marine and energy technology",
+      "roles": ["Backend Developer"],
+      "startDate": "2009",
+      "endDate": "2010",
+      "x-duration": "8 months",
+      "description": "Responsible for backend development.",
+      "keywords": [".NET C#", "SQL Server"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p17",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Skill table 'AI' in the source had three year values (3, 6, 3 years) without technology names; they were dropped.",
+      "Keyword 'Data Engir' was truncated in the source; restored as 'Data Engineering'. Duplicate keyword 'AI' removed.",
+      "Slide 3 (Project highlights) was empty in the source.",
+      "Skill table heading 'Build, Test and Tools' is missing in the source; inferred from the template."
+    ]
+  }
+}

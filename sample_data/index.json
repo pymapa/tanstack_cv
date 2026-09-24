@@ -1,0 +1,416 @@
+{
+  "people": [
+    {
+      "personId": "p01",
+      "name": "Marko Ahola",
+      "primary": "p01-v1.json",
+      "versions": [
+        {
+          "file": "p01-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p02",
+      "name": "Henri Mäkinen",
+      "primary": "p02-v1.json",
+      "versions": [
+        {
+          "file": "p02-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p03",
+      "name": "Daniel Brandt",
+      "primary": "p03-v2.json",
+      "versions": [
+        {
+          "file": "p03-v1.json",
+          "variant": "PM",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p03-v2.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p04",
+      "name": "Kevin Rask",
+      "primary": "p04-v1.json",
+      "versions": [
+        {
+          "file": "p04-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p05",
+      "name": "Markus Vainikka",
+      "primary": "p05-v1.json",
+      "versions": [
+        {
+          "file": "p05-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p06",
+      "name": "Petri Kivistö",
+      "primary": "p06-v1.json",
+      "versions": [
+        {
+          "file": "p06-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p07",
+      "name": "Timo Karjala",
+      "primary": "p07-v1.json",
+      "versions": [
+        {
+          "file": "p07-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p08",
+      "name": "Risto Kallas",
+      "primary": "p08-v1.json",
+      "versions": [
+        {
+          "file": "p08-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p09",
+      "name": "Olli Rantasalo",
+      "primary": "p09-v1.json",
+      "versions": [
+        {
+          "file": "p09-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p10",
+      "name": "Sami Lindroos",
+      "primary": "p10-v8.json",
+      "versions": [
+        {
+          "file": "p10-v1.json",
+          "variant": "insurance-client",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v2.json",
+          "variant": "PM-AC-SM",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v3.json",
+          "variant": "PM-PO",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v4.json",
+          "variant": "PM-AC-SM-alt",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v5.json",
+          "variant": "PO",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v6.json",
+          "variant": "SM-PO-AI-latest",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v7.json",
+          "variant": "SM-PO-AI",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        },
+        {
+          "file": "p10-v8.json",
+          "variant": "SM-PO-AI-v2",
+          "sourceFormat": "pdf",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p11",
+      "name": "Joonas Lehtinen",
+      "primary": "p11-v1.json",
+      "versions": [
+        {
+          "file": "p11-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p12",
+      "name": "Oliver Lindgren",
+      "primary": "p12-v1.json",
+      "versions": [
+        {
+          "file": "p12-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p13",
+      "name": "Samuli Järvelä",
+      "primary": "p13-v1.json",
+      "versions": [
+        {
+          "file": "p13-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p14",
+      "name": "Kalle Nurmela",
+      "primary": "p14-v1.json",
+      "versions": [
+        {
+          "file": "p14-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p15",
+      "name": "Veli-Matti Seppälä",
+      "primary": "p15-v1.json",
+      "versions": [
+        {
+          "file": "p15-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p16",
+      "name": "Valtteri Koskela",
+      "primary": "p16-v1.json",
+      "versions": [
+        {
+          "file": "p16-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p17",
+      "name": "Heikki Rautanen",
+      "primary": "p17-v1.json",
+      "versions": [
+        {
+          "file": "p17-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p18",
+      "name": "Riku Hiltula",
+      "primary": "p18-v1.json",
+      "versions": [
+        {
+          "file": "p18-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p19",
+      "name": "Lauri Hakola",
+      "primary": "p19-v1.json",
+      "versions": [
+        {
+          "file": "p19-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p20",
+      "name": "Eero Salmela",
+      "primary": "p20-v1.json",
+      "versions": [
+        {
+          "file": "p20-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p21",
+      "name": "Teemu Aaltola",
+      "primary": "p21-v1.json",
+      "versions": [
+        {
+          "file": "p21-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    },
+    {
+      "personId": "p22",
+      "name": "Jussi Peltonen",
+      "primary": "p22-v1.json",
+      "versions": [
+        {
+          "file": "p22-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p23",
+      "name": "Matti Saarela",
+      "primary": "p23-v1.json",
+      "versions": [
+        {
+          "file": "p23-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p24",
+      "name": "Ilkka Toivola",
+      "primary": "p24-v1.json",
+      "versions": [
+        {
+          "file": "p24-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p25",
+      "name": "Pasi Harjula",
+      "primary": "p25-v1.json",
+      "versions": [
+        {
+          "file": "p25-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p26",
+      "name": "Janne Heikkinen",
+      "primary": "p26-v1.json",
+      "versions": [
+        {
+          "file": "p26-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p27",
+      "name": "Krisu Aho",
+      "primary": "p27-v1.json",
+      "versions": [
+        {
+          "file": "p27-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2025"
+        }
+      ]
+    },
+    {
+      "personId": "p28",
+      "name": "Oskari Laakso",
+      "primary": "p28-v1.json",
+      "versions": [
+        {
+          "file": "p28-v1.json",
+          "variant": "default",
+          "sourceFormat": "pptx",
+          "cvYear": "2026"
+        }
+      ]
+    }
+  ]
+}

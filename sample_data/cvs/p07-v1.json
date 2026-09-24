@@ -1,0 +1,606 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Timo Karjala",
+    "label": "Senior Hands-on Software Crafter, Architect, Team lead",
+    "email": "timo.karjala@example.com",
+    "phone": "+358 40 000 1007",
+    "summary": "With close to two decades of experience in the IT industry, Timo brings deep hands-on expertise in modern software development practices.\n\nA disciplined practitioner of the engineering mindset and test-driven development, Timo embeds quality, clarity, and adaptability into the development process from day one.\n\nHis product development approach is rooted in lean principles: minimizing cycle time, managing variability, validating early, and accelerating feedback loops to maximize value delivery.\n\nTimo enjoys working in learning-driven organizations, where technical excellence, continuous improvement, and aligned execution are core to building successful teams.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-timo-karjala",
+        "url": "https://www.linkedin.com/in/example-timo-karjala"
+      }
+    ],
+    "x-experienceSummary": "16 years of business experience",
+    "x-tagline": "In a modern organization it is the team, not the individual, that learns — and once teams learn, the whole organization learns with them.",
+    "x-industries": [
+      "Industrial Internet",
+      "Marine",
+      "Energy",
+      "Public Sector",
+      "Ecom"
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Product Owner, Merivoima Oyj",
+        "description": "Led the development of the client's IoT data platform on AWS for collecting and preprocessing engine sensor data from vessels and power plants, to be used as the foundation for AI-driven uptime and efficiency services enabling top-tier agreements."
+      },
+      {
+        "title": "Platform engineer, Voimalinja Oyj",
+        "description": "Contributed to multiple projects within the client's internal development unit, focusing on AI-based data quality monitoring, electric grid planning, and building a hybrid Azure/on-prem application platform."
+      },
+      {
+        "title": "Architect, Tech lead, Eläketieto Oy",
+        "description": "Designed modernization solutions for core services of the Finnish pension system, as part of a full system overhaul and cloud (GCP) migration to shift towards a data platform model."
+      }
+    ],
+    "x-strengths": [
+      {
+        "title": "Lean product development",
+        "description": "Timo has applied lean principles and safe-to-fail experiments to deliver scalable, user-focused solutions with minimal waste. He emphasizes small batch sizes, WIP management and rapid feedback to improve flow, reduce cycle time, and to align architecture with real user needs."
+      },
+      {
+        "title": "Test Driven Development",
+        "description": "Timo advocates for a test-first mindset. He has consistently applied TDD on various levels across projects to improve quality and team confidence. He often coaches teams in test automation to help embed testing into the daily development flow."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Project Experience",
+        "description": "Timo has actively used AI features of the project's tech stack, such as Elasticsearch anomaly detection where available, and collaborated with data scientists in feature engineering to clean data for AI use."
+      },
+      {
+        "title": "AI development tools",
+        "description": "Timo has used AI development tools in recent projects to speed up development, such as Cursor and Github Co-pilot."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Hands-on Software Crafter, Architect, Team lead"
+    },
+    {
+      "name": "Merivoima Oyj",
+      "position": "Digital Product owner"
+    },
+    {
+      "name": "Austin Works Oy",
+      "position": "Senior Consultant"
+    },
+    {
+      "name": "Ambra Digital Oy",
+      "position": "Developer"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software Engineering",
+      "keywords": [
+        "Java",
+        "Kotlin",
+        "Python",
+        "JavaScript / TypeScript",
+        "Testing Frameworks (jUnit, Cucumber, Spock, Selenium etc.)",
+        "Application frameworks (Spring boot, fastapi, express)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Java",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Kotlin",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Python",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "JavaScript / TypeScript",
+          "years": 16,
+          "yearsText": "16 years"
+        },
+        {
+          "name": "Testing Frameworks (jUnit, Cucumber, Spock, Selenium etc.)",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Application frameworks (Spring boot, fastapi, express)",
+          "years": 10,
+          "yearsText": "10 years"
+        }
+      ]
+    },
+    {
+      "name": "Data Engineering",
+      "keywords": [
+        "Apache Kafka Stack (Kafka, Kafka Streams, Kafka Connect, KSQL)",
+        "Apache Flink",
+        "ELK Stack (ElasticSearch, Logstash, Kibana)",
+        "Relational Databases (PostgreSQL, MySQL, MS SQL)",
+        "TimeSeries & Document DBs (InfluxDB, MongoDb, DynamoDB)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Apache Kafka Stack (Kafka, Kafka Streams, Kafka Connect, KSQL)",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Apache Flink",
+          "years": 1,
+          "yearsText": "1 years"
+        },
+        {
+          "name": "ELK Stack (ElasticSearch, Logstash, Kibana)",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Relational Databases (PostgreSQL, MySQL, MS SQL)",
+          "years": 16,
+          "yearsText": "16 years"
+        },
+        {
+          "name": "TimeSeries & Document DBs (InfluxDB, MongoDb, DynamoDB)",
+          "years": 12,
+          "yearsText": "12 years"
+        }
+      ]
+    },
+    {
+      "name": "Development Practices",
+      "keywords": [
+        "Test Driven Development",
+        "Domain-Driven Design (DDD)",
+        "Pair & Mob Programming",
+        "Trunk Based Development",
+        "Continuous Integration (CI)",
+        "Coaching & Mentoring",
+        "Lean Product Development",
+        "Technical Agile Coaching",
+        "Agile frameworks (Scrum, Kanban, Shapeup, Safe)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Test Driven Development",
+          "years": 12,
+          "yearsText": "12 years"
+        },
+        {
+          "name": "Domain-Driven Design (DDD)",
+          "years": 8,
+          "yearsText": "8years"
+        },
+        {
+          "name": "Pair & Mob Programming",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Trunk Based Development",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Continuous Integration (CI)",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Coaching & Mentoring",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Lean Product Development",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Technical Agile Coaching",
+          "years": 9,
+          "yearsText": "9 years"
+        },
+        {
+          "name": "Agile frameworks (Scrum, Kanban, Shapeup, Safe)",
+          "years": 16,
+          "yearsText": "16 years"
+        }
+      ]
+    },
+    {
+      "name": "Platform Engineering",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Terraform",
+        "Ansible",
+        "Bicep",
+        "ECS",
+        "Kubernetes (Helm)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "AWS",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Azure",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "GCP",
+          "years": 1,
+          "yearsText": "1 years"
+        },
+        {
+          "name": "Terraform",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Ansible",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Bicep",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "ECS",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Kubernetes (Helm)",
+          "years": 8,
+          "yearsText": "8 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Pension platform modernization",
+      "entity": "Eläketieto Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "pension industry IT services",
+      "roles": [
+        "Architect",
+        "Technical Lead"
+      ],
+      "startDate": "2024-05",
+      "endDate": "2025-09",
+      "x-highlight": true,
+      "description": "Worked as a Software Architect in the client's platform modernization initiative for a pension calculation system, which targets enabling data-driven capabilities, such as BI, AI and analytics, for the Finnish pension industry via redesign of critical key systems. Responsible for architecting and advocating modernization solutions and supporting both stakeholders and development teams in transition.",
+      "keywords": [
+        "GCP",
+        "Terraform",
+        "Kubernetes",
+        "Linux",
+        "PostgreSQL",
+        "ELK Stack",
+        "Redis",
+        "REST",
+        "SOAP",
+        "Gitlab",
+        "Kafka",
+        "Pub/sub",
+        "Java",
+        "Spring Boot",
+        "Node.js",
+        "Typescript",
+        "React.js",
+        "OIDC",
+        "shell scripting",
+        "TDD",
+        "BDD",
+        "DB migrations"
+      ]
+    },
+    {
+      "name": "Internal development unit platform and data applications",
+      "entity": "Voimalinja Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "electricity transmission system operator",
+      "roles": [
+        "Consultant",
+        "Platform Engineer"
+      ],
+      "startDate": "2023-01",
+      "endDate": "2024-04",
+      "x-highlight": true,
+      "description": "Worked under the client's internal software development organization umbrella in varied domains, such as AI based data quality monitoring, electric grid planning and building an application platform to support development teams. Responsible for cloud infra work, developing data-heavy applications and coaching teams. Drove the co-creation of a new working model for the internal development unit, building on existing collaboration practices.",
+      "keywords": [
+        "Azure (Bicep, Functions, API Mgmt, ADO)",
+        "Kubernetes (Rancher, ArgoCD, Harbor)",
+        "Kafka Stack",
+        "ELK Stack",
+        "PostgreSQL",
+        "Anchore Stack",
+        "REST/SOAP",
+        "Node.js (Nest.js, Fastify)",
+        "React.js",
+        "Python (FastAPI, JupyterHub)",
+        "Kotlin (Spring Boot)",
+        "OIDC",
+        "TDD/BDD"
+      ]
+    },
+    {
+      "name": "Early childhood education ERP",
+      "entity": "Two Finnish municipalities",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "municipality",
+      "roles": [
+        "Lead Developer"
+      ],
+      "startDate": "2022-01",
+      "endDate": "2023-01",
+      "description": "Worked as a lead developer in implementing an early childhood education system, a modern ERP system for early childhood education for two Finnish municipalities. Responsible for integrations to public sector directory and authentication services, as well as building a custom ETL tool for migration from the old ERP system to the new one.",
+      "keywords": [
+        "AWS",
+        "ECS",
+        "RDS Postgresql",
+        "mTLS",
+        "Integrations (population data, early childhood education data and education data services)",
+        "REST",
+        "SOAP",
+        "Kotlin",
+        "Spring Boot",
+        "Python",
+        "Typescript",
+        "Node.js",
+        "React.js",
+        "CircleCI",
+        "Terraform",
+        "OIDC",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "IoT data platform",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "roles": [
+        "Digital Product owner",
+        "Coding Architect"
+      ],
+      "startDate": "2021-03",
+      "endDate": "2022-01",
+      "x-highlight": true,
+      "x-note": "The highlight slide gives 2019-2022, covering also the preceding consultancy period on the same platform; the project list dates are used.",
+      "description": "Led the development of the client's IoT data platform on AWS for collecting engine sensor data from vessels, power plants and other sites around the world, consisting of millions of signals with potentially 1hz resolution.\n\nThe data is pre-processed on the platform targeting different use cases and served to several internal departments and external customers with various requirements per consumer.\n\nThe platform is built on streaming data powered by the Kafka stack. Several types of devices collect the data, with some registered in AWS IoT while others rely on in-house systems to connect. Ingestion is managed with HiveMQ. Data processors run as Kafka Streams based microservices on Kubernetes, routing data with Ksql, sinking to InfluxDb and S3 via Kafka Connect to offer real-time, API-based and file-based consumption methods.\n\nTimo was responsible for the product roadmap & management of two development teams with 6 members each, mixing data engineers, developers and cloud architects, co-creating the evolving platform architecture, hands-on development, facilitation, coaching and mentoring team members.\n\nThe real impact of the teams' work was the boost the platform gave to the service business as the foundation for the AI-driven uptime and efficiency services enabling top-tier agreements.",
+      "keywords": [
+        "AWS",
+        "Kafka (Streams, Connect, KSQL)",
+        "InfluxDb",
+        "mTLS",
+        "OIDC",
+        "Lambda",
+        "Java",
+        "Spring Boot",
+        "Python",
+        "Node.js",
+        "Kubernetes",
+        "Helm",
+        "Bamboo",
+        "Ansible",
+        "Terraform",
+        "Grafana",
+        "PostgreSQL",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "Asset data platform",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "marine and energy technology",
+      "roles": [
+        "Senior Consultant",
+        "Lead Developer",
+        "Scrum Master"
+      ],
+      "startDate": "2019-05",
+      "endDate": "2021-03",
+      "description": "Worked as a lead developer and scrum master, building a data platform for the client's asset data, collected from vessels and power plants, to be used as the foundation for AI-driven uptime and efficiency services enabling top-tier agreements. Responsible for the ongoing architecture of the platform, development, facilitation, coaching and mentoring.",
+      "keywords": [
+        "AWS",
+        "Kafka (Streams, Connect, KSQL)",
+        "InfluxDb",
+        "mTLS",
+        "Lambda",
+        "Java",
+        "Spring Boot",
+        "Python",
+        "Node.js",
+        "Kubernetes",
+        "Helm",
+        "Bamboo",
+        "Ansible",
+        "Terraform",
+        "Grafana",
+        "PostgreSQL",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "Enterprise search for field services",
+      "entity": "Prosessiautomaatio Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "industrial automation",
+      "roles": [
+        "Senior Consultant"
+      ],
+      "startDate": "2019-02",
+      "endDate": "2019-05",
+      "description": "Worked on an enterprise search solution, an asset data utilization solution for field services. Responsible for building a serverless ETL pipeline for asset data, using Data Factory for transformations, indexing the data in Azure Search, providing APIs on top of it via API Management and finally enabling search and update of the data via an Android app.",
+      "keywords": [
+        "Azure",
+        "Azure Search",
+        "API Management",
+        "Data Factory",
+        "Data lake",
+        "Azure Functions",
+        "Android SDK",
+        "Java",
+        "Node.Js",
+        "shell scripting",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "Predictive maintenance deployment pipeline",
+      "entity": "Huoltovoima Oy",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "industrial maintenance services",
+      "roles": [
+        "Senior Consultant"
+      ],
+      "startDate": "2018-12",
+      "endDate": "2019-02",
+      "description": "Worked on a deployment pipeline for an AI based predictive maintenance solution, enabling data scientists to effortlessly run and update their R models deployed to Azure Kubernetes Service. Responsible for building the Kubernetes infra & CI/CD pipeline.",
+      "keywords": [
+        "Azure AKS",
+        "R",
+        "ACR",
+        "Helm",
+        "shell scripting",
+        "TDD",
+        "BDD",
+        "db migrations"
+      ]
+    },
+    {
+      "name": "IoT portal CDC solution",
+      "entity": "Talotekniikka Kuulas Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "building technology services",
+      "roles": [
+        "Senior Consultant"
+      ],
+      "startDate": "2018-10",
+      "endDate": "2018-12",
+      "description": "Worked as part of the IoT-portal team in developing a CDC solution for SAP Hana. Responsible for building, configuring and deploying the ETL microservices.",
+      "keywords": [
+        "Azure",
+        "Node.Js",
+        "Loopback",
+        "REST",
+        "OpenAPI",
+        "Kubernetes",
+        "Rancher",
+        "Docker",
+        "Azure API Management",
+        "Azure Functions",
+        "SAP Hana SQL",
+        "shell scripting",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "IoT platform for condition-based maintenance",
+      "entity": "Liftmaster Oyj",
+      "x-employer": "Ambra Digital Oy",
+      "x-industry": "industrial cranes",
+      "roles": [
+        "IoT developer",
+        "Agile Coach"
+      ],
+      "startDate": "2016-12",
+      "endDate": "2018-10",
+      "description": "Worked as an agile coach and developer in the IoT-platform team of a customer portal, to build solutions for condition-based maintenance and remote management. Responsible for development of new feature areas, refactoring the test harness and coaching the team.",
+      "keywords": [
+        "AWS",
+        "Linux",
+        "Java",
+        "Groovy",
+        "Grails",
+        "Spock",
+        "Javascript",
+        "SQL Server",
+        "REST",
+        "SOAP",
+        "location tracking",
+        "Geofencing",
+        "shell scripting",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "eCommerce platform",
+      "entity": "Kangaskauppa Oy",
+      "x-employer": "Ambra Digital Oy",
+      "x-industry": "fabric and craft retail",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2016-09",
+      "endDate": "2016-12",
+      "description": "Worked on building the client's eCommerce platform, with a focus on systems integrations and business-critical workflows. Designed and implemented integrations between the online store and key backend systems such as ERP and logistics.",
+      "keywords": [
+        "Magento2",
+        "Linux",
+        "Node.js",
+        "Javascript",
+        "REST",
+        "SOAP",
+        "TDD",
+        "BDD"
+      ]
+    },
+    {
+      "name": "Ecommerce and web projects",
+      "entity": "Multiple customers",
+      "x-employer": "Ambra Digital Oy",
+      "roles": [
+        "Lead Developer",
+        "Scrum Master",
+        "Agile Coach",
+        "Test Lead"
+      ],
+      "startDate": "2009",
+      "endDate": "2016",
+      "x-note": "The source title names the employer as 'Ambra Digital Oy & Others'.",
+      "description": "Worked as a lead developer, scrum master, agile coach and test lead. Mostly in charge of integration implementations."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p07",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (project highlights) repeats three projects; merged into the corresponding projects with x-highlight, combining descriptions and technology lists.",
+      "The skill table 'Data Engineering' has the column header 'CERTIFICATE | EXPERIENCE' in the source; treated as a skill table. There are no certificates in the source.",
+      "The 'Platform Engineering' skill table is broken at the end: 'Kubernetes (Helm,' is truncated (stored as 'Kubernetes (Helm)', 8 years) and the last row has '6 years' without a technology name; that row was dropped.",
+      "Leftover template texts 'See all...' and 'Ask me more' on slide 1 were dropped. The source has no Keywords section.",
+      "unmapped product: the client's IoT data platform (a named product of the marine and energy technology company) generalized to 'IoT data platform'; the predictive maintenance product and the enterprise search solution names were generalized as well.",
+      "The quote on slide 1 is a well-known management-literature saying about team learning; rewritten.",
+      "The IoT data platform project title gives the marine and energy company itself as the organization (no consultancy), so it is recorded as an employer in work[] without dates."
+    ]
+  }
+}

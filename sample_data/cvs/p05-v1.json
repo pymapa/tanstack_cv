@@ -1,0 +1,745 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Markus Vainikka",
+    "label": "Senior Software Developer and Architect",
+    "email": "markus.vainikka@example.com",
+    "phone": "+358 40 000 1005",
+    "summary": "With 25+ years in software engineering across Finland and abroad, Markus has delivered high-impact solutions in automotive, healthcare, and industrial settings.\n\nA master of the Microsoft stack, he codes fluently in .NET / C# and JS/TS, pairing them with React, Node.js and cloud-native services on both Azure and AWS to build resilient full-stack products.\n\nBeyond hands-on development and architecture, Markus moves effortlessly between team leadership, facilitation, project management and SEO-driven growth, translating business challenges into elegant technical wins.\n\nCalm, approachable and relentlessly supportive, he slips into any role the moment the team needs it, mentoring colleagues in agile best practices and inspiring them to achieve standout results.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-markus-vainikka",
+        "url": "https://www.linkedin.com/in/example-markus-vainikka"
+      }
+    ],
+    "x-experienceSummary": "27 years of business experience",
+    "x-tagline": "Software that lasts and succeeds is built on people talking to each other.",
+    "x-keywords": [
+      ".NET",
+      "Node",
+      "Azure",
+      "AWS",
+      "Architectures",
+      "Microservices",
+      "Team Coach"
+    ],
+    "x-industries": [
+      "Automotive",
+      "Healthcare",
+      "Logistics",
+      "Gaming"
+    ],
+    "x-strengths": [
+      {
+        "title": "Senior Tech Lead",
+        "description": "Markus has an impressive over 25 years of experience in the software business."
+      },
+      {
+        "title": "Architect",
+        "description": "Broad knowledge of different architectures. Proven track record of re-architecting existing projects."
+      },
+      {
+        "title": "Team coach",
+        "description": "Markus has excellent communication skills. He is capable of coaching teams to adopt modern agile ways of working."
+      },
+      {
+        "title": "Senior Tech Leader with team coaching skills"
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Lead developer",
+        "description": "As a lead developer, Markus has overseen the whole project from technology selections to implementation and documentation."
+      },
+      {
+        "title": "Senior backend developer",
+        "description": "Markus has experience in multiple projects in the role of senior backend developer with responsibilities including e.g. architectural design, development and team coach."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI development tools",
+        "description": "Markus has been using assisting AI development tools from the beginning of the AI era to improve the development process. He has seen the evolution of AI development tools and has a good understanding of how they work, how they should be used and what the pitfalls are."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and Architect"
+    },
+    {
+      "name": "Autodata Oy",
+      "position": "Technical Product Manager",
+      "startDate": "2010",
+      "endDate": "2017"
+    },
+    {
+      "name": "Koodikoti Oy",
+      "position": "Software Architect"
+    },
+    {
+      "name": "Cetrix B.V.",
+      "position": "Developer"
+    },
+    {
+      "name": "Järvilaakson ammattiopisto",
+      "position": "IT Admin",
+      "startDate": "1998",
+      "endDate": "1999"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "C#",
+        ".Net (Core, Framework)",
+        ".Net MVC, WebForms",
+        "Relational databases (SqlServer)",
+        "Document databases (DynamoDB, CosmoDB)",
+        "ORMs (EntityFramework)",
+        "Node.js",
+        "Testing (xUnit, MS Test, Nunit)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "C#",
+          "years": 24,
+          "yearsText": "24 years"
+        },
+        {
+          "name": ".Net (Core, Framework)",
+          "years": 24,
+          "yearsText": "24 years"
+        },
+        {
+          "name": ".Net MVC, WebForms",
+          "years": 15,
+          "yearsText": "15 years"
+        },
+        {
+          "name": "Relational databases (SqlServer)",
+          "years": 20,
+          "yearsText": "20 years"
+        },
+        {
+          "name": "Document databases (DynamoDB, CosmoDB)",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "ORMs (EntityFramework)",
+          "years": 15,
+          "yearsText": "15 years"
+        },
+        {
+          "name": "Node.js",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Testing (xUnit, MS Test, Nunit)",
+          "years": 10,
+          "yearsText": "10 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Javascript",
+        "TypeScript",
+        "ReactJS + Redux (ES6)",
+        "Jest, React Testing Library",
+        "GraphQL",
+        "HTML / CSS",
+        "MUI",
+        "Cypress, Playwright"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Javascript",
+          "years": 21,
+          "yearsText": "21 years"
+        },
+        {
+          "name": "TypeScript",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "ReactJS + Redux (ES6)",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Jest, React Testing Library",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "GraphQL",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "HTML / CSS",
+          "years": 21,
+          "yearsText": "21 years"
+        },
+        {
+          "name": "MUI",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Cypress, Playwright",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Server, cloud and infrastructure",
+      "keywords": [
+        "Microsoft Azure",
+        "AWS"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Microsoft Azure",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "AWS",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "AWS CDK",
+        "Terraform",
+        "Docker",
+        "Jenkins",
+        "Azure DevOps",
+        "Jira"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "AWS CDK",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Terraform",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Docker",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "Azure DevOps",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Jira",
+          "years": 23,
+          "yearsText": "23 years"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Developer – Associate",
+      "issuer": "AWS"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Internal core tool",
+      "entity": "Kaupunkienergia Oy",
+      "x-industry": "energy utility",
+      "roles": [
+        "Full-stack developer"
+      ],
+      "description": "As a senior full-stack developer on the team, Markus helped the customer assess the existing application architecture, designed a new one, and devised a strategy for refactoring toward it. Under his guidance, the team began migrating the sizeable codebase to the new architecture; careful, well-planned tactics were essential to the success. In addition, he conducted technical recruitment interviews to hire lead developers for several of the client’s teams.",
+      "keywords": [
+        "Azure",
+        "Sql Server",
+        "ADX",
+        "Azure Functions",
+        "Event Hubs",
+        "Azure DevOps pipelines",
+        "xUnit Tests",
+        ".Net 8",
+        "C#",
+        "Entity Framework",
+        "Rest APIs",
+        "Docker",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "Internal integrations",
+      "entity": "Kaupunkienergia Oy",
+      "x-industry": "energy utility",
+      "roles": [
+        "Full-stack developer"
+      ],
+      "x-duration": "5 months",
+      "description": "Designed the architecture and implemented a new integration project for the customer.",
+      "keywords": [
+        "Azure",
+        "Sql Server",
+        "ADX",
+        "Azure Functions",
+        "Azure DevOps pipelines",
+        "xUnit Tests",
+        ".Net 8",
+        "C#",
+        "Entity Framework",
+        "Rest APIs",
+        "Docker",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "B2B platform",
+      "entity": "Kaupunkienergia Oy",
+      "x-industry": "energy utility",
+      "roles": [
+        "Lead Full-stack developer"
+      ],
+      "startDate": "2024",
+      "endDate": "2025",
+      "x-duration": "11 months",
+      "x-highlight": true,
+      "x-note": "Dates from the highlight slide; the project list gives only the duration. Role 'Full-stack developer' in the project list, 'Lead Full-stack developer' on the highlight slide.",
+      "description": "Markus led and helped the team develop the application to a stable state. With his support, the team successfully transitioned from constantly facing issues to a smoother development phase. He also coached the team on more efficient practices to ensure daily work was as seamless as possible. In...",
+      "keywords": [
+        "Azure",
+        "Sql Server",
+        "Azure Functions",
+        "Azure DevOps pipelines",
+        "xUnit Tests",
+        ".Net 6",
+        "C#",
+        "Entity Framework",
+        "Rest APIs",
+        "Docker",
+        "React",
+        "Typescript",
+        "Playwright",
+        "Static web apps"
+      ]
+    },
+    {
+      "name": "Warehouse logistics",
+      "entity": "Staffora Logistics",
+      "x-industry": "logistics and warehouse services",
+      "roles": [
+        "Backend Architect"
+      ],
+      "startDate": "2023",
+      "endDate": "2024",
+      "x-duration": "9 months",
+      "x-highlight": true,
+      "x-note": "The project list description ends with a stray '2022-', which conflicts with the stated 2023 - 2024; the stated dates are used.",
+      "description": "Developing and designing the architecture of serverless cloud native backend micro services built with Azure Functions and Storage Queues. The project aims to streamline and increase customer profitability. The logistics backend system has several integrations between different distributed systems.",
+      "keywords": [
+        "Azure",
+        "CosmosDB",
+        "Azure Functions",
+        "Storage Queues",
+        "Azure DevOps pipelines",
+        "MS Tests",
+        ".Net 7",
+        "C#"
+      ]
+    },
+    {
+      "name": "Digital waiting number",
+      "entity": "Code Academy Nord",
+      "x-industry": "software training programme",
+      "roles": [
+        "Software Architect",
+        "Scrum Master",
+        "Mentor",
+        "Full-stack Developer"
+      ],
+      "startDate": "2022",
+      "endDate": "2023",
+      "x-duration": "6 months",
+      "x-highlight": true,
+      "x-note": "The highlight slide shows the same description and technologies under the energy utility client with year 2024 and title 'Architect / Lead / Scrum Master / Mentor'; the project list client and dates are used.",
+      "description": "Markus's assignment was to lead a group of industry changers to build their very first professional level software project. In this project, he has been facilitating several learning sessions on various topics of software development. His main role in the project is to mentor team members,...",
+      "keywords": [
+        "Azure",
+        "SQL",
+        "Azure Functions",
+        "JavaScript",
+        "ReactJS",
+        "MUI",
+        "REST API",
+        "Jest",
+        "React Testing Library",
+        ".NET 7",
+        "C#",
+        "SignalR",
+        "xUnit",
+        "Azure DevOps"
+      ]
+    },
+    {
+      "name": "Project 2",
+      "entity": "Coreplay Games",
+      "x-industry": "mobile game studio",
+      "roles": [
+        "Software Architect",
+        "Fullstack developer"
+      ],
+      "startDate": "2022",
+      "endDate": "2023",
+      "x-duration": "9 months",
+      "x-highlight": true,
+      "x-note": "Dates from the highlight slide.",
+      "description": "Designed the software architecture for a new tool for the client's creative team. Infrastructure as Code was deployed using a CDK TypeScript project. Markus personally mentored a junior Scrum Master to facilitate Scrum methodologies in this project. The application was successfully taken into production usage in August after 7...",
+      "keywords": [
+        "AWS",
+        "DynamoDB",
+        "Okta",
+        "Lambda",
+        "TypeScript",
+        "ReactJS",
+        "MUI",
+        "REST API",
+        "Jest",
+        "React Testing Library",
+        "Cypress",
+        "GraphQL",
+        "CDK CI/CD"
+      ]
+    },
+    {
+      "name": "Project 1",
+      "entity": "Coreplay Games",
+      "x-industry": "mobile game studio",
+      "roles": [
+        "Tech Lead",
+        "Full-stack developer"
+      ],
+      "x-duration": "5 months",
+      "description": "Markus was part of the development team as a developer and architecture sparring partner. The app was built using React, MUI design and Typescript, with Amplify and GraphQL to communicate with the database. Jest unit tests and end to end integration tests with Cypress against the Amplify mock API to...",
+      "keywords": [
+        "AWS",
+        "DynamoDB",
+        "Amplify",
+        "Okta",
+        "TypeScript",
+        "ReactJS",
+        "MUI",
+        "REST API",
+        "Jest",
+        "Cypress",
+        "GraphQL",
+        "Amplify CI/CD"
+      ]
+    },
+    {
+      "name": "Laboratory Instruments",
+      "entity": "Pipettilabs Oy",
+      "x-industry": "laboratory instruments",
+      "roles": [
+        "Cloud Architect",
+        "Scrum Master Mentor"
+      ],
+      "startDate": "2020",
+      "endDate": "2021",
+      "x-duration": "1 year, 6 months",
+      "description": "Working as a Cloud Architect subcontractor for the client's embedded team. The client builds laboratory instruments. Markus's assignment is to build up a cloud native backend system for their new laboratory instrument products: new generation instruments and a mobile application combined with cloud. He is also helping the customer to understand agile...",
+      "keywords": [
+        ".Net Core 3.1",
+        ".NET 5",
+        "REST API",
+        "C#",
+        "xUnit",
+        "Azure DevOps CI/CD",
+        "Azure techs (Functions, APIM, App insights, Cosmos DB)",
+        "React Native"
+      ]
+    },
+    {
+      "name": "Electric vehicle charge API",
+      "entity": "Latausverkko Oy",
+      "x-industry": "EV charging",
+      "roles": [
+        "Architect",
+        "Full-stack Developer",
+        "Scrum Master Mentor"
+      ],
+      "startDate": "2018",
+      "endDate": "2020",
+      "x-duration": "2 years",
+      "description": "REST API to charge electric cars. The API backend communicates with AWS services which are connected to electric car charging hardware. The API is offered to 3rd parties and can also be used with the supplied mobile application. The project is an AWS microservice architecture whose microservices are...",
+      "keywords": [
+        ".Net Core 2.1",
+        "REST API",
+        "C#",
+        "xUnit",
+        "JS",
+        "AWS",
+        "DynamoDB",
+        "Stripe (payments)"
+      ]
+    },
+    {
+      "name": "Monitoring application (an internal system)",
+      "entity": "Jalostamo Oyj",
+      "x-industry": "oil refining and renewable fuels",
+      "roles": [
+        "Architect",
+        "Full-stack developer",
+        "Scrum master mentor"
+      ],
+      "x-duration": "6 months",
+      "description": "The client's monitoring application. Markus joined the team as a fullstack developer. In addition to development, his responsibilities were to improve project management, take care of the customer and improve the team's development work.",
+      "keywords": [
+        ".Net Framework 4.6",
+        "C#",
+        "REST API",
+        "AngularJS",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Outdoor payment unit integration (an internal system)",
+      "entity": "Jalostamo Oyj",
+      "x-industry": "oil refining and renewable fuels",
+      "roles": [
+        "Developer"
+      ],
+      "x-duration": "4 months",
+      "description": "Integrating new outdoor payment unit hardware into the existing payment system. Development work consisted of backend coding and going through technical specifications with the customer.",
+      "keywords": [
+        ".Net Framework 3.5/4",
+        "C#",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "ERP",
+      "entity": "Rakennuspuu Oy",
+      "x-industry": "timber and building materials wholesale",
+      "roles": [
+        "Architect",
+        "Full-stack Developer"
+      ],
+      "startDate": "2017",
+      "endDate": "2018",
+      "x-duration": "6 months",
+      "description": "New ERP system for the client. Microsoft Dynamics was the main data source. The team built a modern mobile application for field workers and a backend API to communicate with the Dynamics system. Markus's assignment was to be part of the dev team, lead the development team for successful software and help...",
+      "keywords": [
+        ".Net Core",
+        "C#",
+        "xUnit",
+        "Microsoft Dynamics",
+        "Aurelia.js"
+      ]
+    },
+    {
+      "name": "Customer sites",
+      "entity": "Autodata Oy",
+      "x-employer": "Autodata Oy",
+      "x-industry": "automotive data services",
+      "roles": [
+        "Technical Product Manager"
+      ],
+      "startDate": "2010",
+      "endDate": "2017",
+      "description": "Product Manager for customer sites. Markus took responsibility for the technological choices of the sites and the ways to implement and architect them. He also worked as the team's Scrum Master and the leader of the team. He was heavily involved in application development. In...",
+      "keywords": [
+        ".Net Framework 4.7",
+        "C#",
+        ".Net WebForms",
+        ".Net MVC",
+        "Entity Framework",
+        "JavaScript",
+        "Html",
+        "Css",
+        "Scss",
+        "SEO",
+        "Sql Server",
+        "xUnit",
+        "EpiServer"
+      ]
+    },
+    {
+      "name": "Project architecture design and development",
+      "entity": "Koodikoti Oy",
+      "x-employer": "Koodikoti Oy",
+      "x-industry": "software consultancy",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2009",
+      "x-note": "The source gives no date box for this entry; the description ends with '2009-', used as the start year.",
+      "description": "Project architecture design and development, pre-sales.",
+      "keywords": [
+        ".Net Framework 4.7",
+        "C#",
+        ".Net WebForms",
+        "Entity Framework",
+        "JavaScript",
+        "Html",
+        "Css",
+        "Sql Server",
+        "xUnit"
+      ]
+    },
+    {
+      "name": "Exhibitor online shop",
+      "entity": "Näyttelypalvelu Oy",
+      "x-industry": "trade fair organizer",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2009",
+      "endDate": "2010",
+      "x-duration": "2 years",
+      "x-note": "The date box says 2009 - 2010, but the description ends with '2004-' and the duration is 2 years; the date box is kept but may be misplaced.",
+      "description": "Exhibitor online shop architecture design and development. The system was an independent part of a bigger MOSS portal.",
+      "keywords": [
+        ".Net 2.0 C#",
+        "ASP.Net WebForms",
+        "JavaScript",
+        "SqlServer"
+      ]
+    },
+    {
+      "name": "Kidney Transplantation Registry / Cancer Registry",
+      "entity": "Metropolitan Hospital District",
+      "x-industry": "public hospital district",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "2004",
+      "endDate": "2009",
+      "x-duration": "5 years",
+      "description": "Developed two different registries for the hospital district. Markus had lots of meetings with surgeons to understand their process and problems. The systems were web applications built with .Net Framework 2.0 WebForms, using SqlServer as their database. Before the new system was taken into production usage, old systems...",
+      "keywords": [
+        ".Net Framework 2.0",
+        "C#",
+        "Asp.Net WebForms",
+        "MUMPS",
+        "Caché"
+      ]
+    },
+    {
+      "name": "Crew management system",
+      "entity": "Revontuli Airlines",
+      "x-industry": "airline",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2002",
+      "endDate": "2004",
+      "x-duration": "2 years",
+      "description": "After working for almost half a year in the Netherlands developing time reporting software for the police, Markus returned to Finland and started to transfer knowledge from the Netherlands to Finland. His responsibility was to act as software architect for a crew management system and lead a team consisting...",
+      "keywords": [
+        "Delphi",
+        "SQL",
+        "Sybase",
+        "Win32 API"
+      ]
+    },
+    {
+      "name": "Police time reporting system",
+      "entity": "a Dutch police authority",
+      "x-employer": "Cetrix B.V.",
+      "x-industry": "police",
+      "roles": [
+        "Developer"
+      ],
+      "x-duration": "5 months",
+      "x-note": "The date box next to this project (1999 - 2002) conflicts with the 5-month duration and with the following crew management project (2002 - 2004) that states this work came just before it; the date is omitted.",
+      "description": "Moved to the Netherlands to help a daughter company (Cetrix B.V.) develop their first web application, a time reporting system for the police. Markus was part of their development team.",
+      "keywords": [
+        "Delphi",
+        "ASP",
+        "VB-script",
+        "JavaScript",
+        "SQL",
+        "DB2"
+      ]
+    },
+    {
+      "name": "Sales and supply ERP",
+      "entity": "Jalostamo Oyj",
+      "x-industry": "oil refining and renewable fuels",
+      "roles": [
+        "Developer"
+      ],
+      "startDate": "1999",
+      "endDate": "2002",
+      "x-duration": "3 years",
+      "description": "Windows client/server system created using Delphi. The Delphi application was Markus's main responsibility; the app had over 100 forms. One of his tasks was also to integrate other Windows applications into the system so that they could talk together via APIs.",
+      "keywords": [
+        "Delphi v4/5/6",
+        "Win32 API",
+        "Tuxedo middleware ( C )",
+        "SQL",
+        "PL/SQL",
+        "Oracle"
+      ]
+    },
+    {
+      "name": "School IT administration",
+      "entity": "Järvilaakson ammattiopisto",
+      "x-employer": "Järvilaakson ammattiopisto",
+      "x-industry": "vocational school",
+      "roles": [
+        "IT Admin"
+      ],
+      "startDate": "1998",
+      "endDate": "1999",
+      "description": "In addition to studying, Markus worked as a school information system administrator. His job was to take care of the school's computers, maintain student IDs and permissions and to advise and assist students and school staff on technical issues."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p05",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 1 headings appear swapped relative to the template: the block under 'Key roles' in the 'In a nutshell' position (Senior Tech Lead, Architect, Team coach) is stored in x-strengths, and the keyword boxes under the 'In a nutshell' heading in x-keywords. The standalone line 'Senior Tech Leader with team coaching skills' is stored as an extra x-strengths entry. The 'Key Roles' of slide 2 are in x-keyRoles.",
+      "Slide 3 (project highlights) repeats four projects; merged into the corresponding projects with x-highlight.",
+      "Many project descriptions in the source are cut off mid-sentence and end with '...' (text overflow in the slides); they are kept truncated. Several descriptions end with stray start years ('2022-', '2009-', '2004-', '1998-') that were removed from the text.",
+      "The only certificate appears at the end of the truncated vocational school description ('Certifications AWS Certified Developer – Associate...'); no year is given and further certificates may have been cut off.",
+      "First-person text rewritten to third person. The Dutch city name was generalized to the Netherlands; named internal systems of the refining company were generalized.",
+      "Projects are in the source reading order (left column, then right column on each slide). Only some projects have dates; date boxes on slide 6 appear to be partly misplaced (see x-note)."
+    ]
+  }
+}

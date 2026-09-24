@@ -1,0 +1,273 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Oliver Lindgren",
+    "label": "Senior Software Developer and UI/UX Designer",
+    "email": "oliver.lindgren@example.com",
+    "phone": "+358 40 000 1012",
+    "summary": "A highly skilled software developer with 15 years of experience in software development and 6 years in design, Oliver has a proven track record of creating and delivering a diverse range of B2B and B2C solutions. He has a strong passion for building modern web applications that are performant, functionally robust, visually appealing, and compatible across all major platforms. Driven by a desire to simplify users' lives, Oliver is always eager to explore innovative approaches to user interface design and development.\n\nAs a certified Scrum Master, Oliver is an effective team player and is well-equipped to lead development teams and manage specification tasks. His business-first mindset allows him to approach challenges strategically, consistently advocating for solutions that align with business goals. Oliver has the ability to constructively challenge both teams and clients at critical moments.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-oliver-lindgren",
+        "url": "https://www.linkedin.com/in/example-oliver-lindgren"
+      }
+    ],
+    "x-experienceSummary": "15 years of business experience",
+    "x-tagline": "As a developer, my aim is always to create user experiences so smooth they go unnoticed: interfaces that anticipate what people need, adapt to them and make even complicated tasks feel easy.",
+    "x-industries": ["Public Sector", "Media", "Technology", "Accommodation"],
+    "x-strengths": [
+      { "title": "TypeScript" },
+      { "title": "React" },
+      { "title": "CSS" },
+      { "title": "Prototyping" },
+      { "title": "UI/UX Design" },
+      { "title": "Figma" },
+      { "title": "Accessibility" },
+      { "title": "D3" }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Frontend development",
+        "description": "Oliver understands what it takes to make services genuinely usable, going beyond merely meeting minimum criteria. Oliver has an excellent eye for creating visually polished interfaces and crafting interaction animations that feel natural."
+      },
+      {
+        "title": "Design through tech and vice versa",
+        "description": "Oliver ensures the design aligns with the data, minimizing unnecessary complexity while maintaining clean, efficient codebases. Likewise, Oliver can identify when a strong UX indicator calls for underlying backend schema changes, in order to avoid having logic spread out in multiple layers of the software architecture when not needed."
+      },
+      {
+        "title": "AI Experience: Project Experience",
+        "description": "Oliver has developed various components and chat interfaces where an AI model generates a response to user inputs."
+      },
+      {
+        "title": "AI Experience: AI development tools",
+        "description": "In recent customer projects, Oliver has been utilizing AI development tools to speed up the development process."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior Software Developer, Kauppaosuuskunta Keskus",
+        "description": "Responsible for modernizing and migrating existing Keskus Hotels self-service kiosks to a new API, while reducing complexity and business-logic from the front-end."
+      },
+      {
+        "title": "UI/UX Developer and Designer, Public Broadcaster Kaiku",
+        "description": "Oliver designed and developed tools used by journalists to boost productivity as well as election-related services. Many of the tools Oliver helped develop utilized AI and custom LLM's to help users understand complex topics and to summarize large data sets."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Developer and UI/UX Designer"
+    },
+    {
+      "name": "Medilink Oy",
+      "position": "Web Developer & Graphic Designer",
+      "startDate": "2011",
+      "endDate": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "Typescript", "HTML / CSS", "React", "NextJS", "GraphQL", "D3.js", "SASS", "Framer motion", "Electron"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 15, "yearsText": "15 years" },
+        { "name": "Typescript", "years": 8, "yearsText": "8 years" },
+        { "name": "HTML / CSS", "years": 15, "yearsText": "15 years" },
+        { "name": "React", "years": 8, "yearsText": "8 years" },
+        { "name": "NextJS", "years": 2, "yearsText": "2 years" },
+        { "name": "GraphQL", "years": 2, "yearsText": "2 years" },
+        { "name": "D3.js", "years": 2, "yearsText": "2 years" },
+        { "name": "SASS", "years": 5, "yearsText": "5 years" },
+        { "name": "Framer motion", "years": 2, "yearsText": "2 years" },
+        { "name": "Electron", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "Testing frameworks", "Power BI", "Github actions", "ChatGPT", "Claude Code"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 10, "yearsText": "10 years" },
+        { "name": "Testing frameworks", "years": 8, "yearsText": "8 years" },
+        { "name": "Power BI", "years": 2, "yearsText": "2 years" },
+        { "name": "Github actions", "years": 2, "yearsText": "2 years" },
+        { "name": "ChatGPT", "years": 2, "yearsText": "2 years" },
+        { "name": "Claude Code", "years": 0.33, "yearsText": "4 months" }
+      ]
+    },
+    {
+      "name": "Design",
+      "keywords": ["Figma", "Sketch", "Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign"],
+      "x-skillDetails": [
+        { "name": "Figma", "years": 5, "yearsText": "5 years" },
+        { "name": "Sketch", "years": 3, "yearsText": "3 years" },
+        { "name": "Adobe Illustrator", "years": 5, "yearsText": "5 years" },
+        { "name": "Adobe Photoshop", "years": 15, "yearsText": "15 years" },
+        { "name": "Adobe InDesign", "years": 5, "yearsText": "5 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "AWS Certified Cloud Practitioner", "date": "2022", "issuer": "AWS" },
+    { "name": "Certified ScrumMaster®", "date": "2015" }
+  ],
+  "projects": [
+    {
+      "name": "Self-service kiosk API migration",
+      "entity": "Keskus Hotels",
+      "x-industry": "hotel chain",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2025-11",
+      "x-highlight": true,
+      "description": "As part of the client's hotel team, Oliver was responsible for migrating every Keskus Hotels self-service kiosk to use a new API. As there was no-one left with knowledge of the codebase, Oliver made a clear action plan for the project, with visual mappings of the old schema to the new. The codebase got modernized to TypeScript while unnecessary complexity and business-logic got removed from the front-end, making it easier to maintain and less error-prone.",
+      "keywords": ["React", "TypeScript", "GraphQL", "Electron", "Playwright", "TDD", "AWS", "Kiro CLI", "Figma"],
+      "x-note": "Project list title names the cooperative retail group and its hotel chain; the highlight gives '2025 - Ongoing', the project list '11/2025 – Ongoing'."
+    },
+    {
+      "name": "Event venue and meeting room booking service",
+      "entity": "Kauppaosuuskunta Keskus",
+      "x-industry": "cooperative retail group",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2025-05",
+      "endDate": "2025-11",
+      "description": "Oliver was part of the development team of the client's event management system, where he helped bring new features that better serve todays expectations when it comes to booking event locations and meeting rooms. The tasks included refactoring complex logic, combining data from multiple external API's, modifying backend endpoint, A/B testing and Black Friday campaign flags through LaunchDarkly and photography/videography of content to use in the frontpage video banner. A big focus was also put on accessibility, where the service was continuously improved in order to pass higher levels of accessibility audits.",
+      "keywords": ["React", "TypeScript", "GraphQL", "Apollo", "Playwright", "LaunchDarkly", "Go", "Figma", "ChatGPT"]
+    },
+    {
+      "name": "Sustainability analysis and reporting SaaS",
+      "entity": "EcoSignal AI",
+      "x-industry": "sustainability data and AI SaaS",
+      "roles": ["Software Developer & UI/UX Designer"],
+      "startDate": "2025-02",
+      "endDate": "2025-05",
+      "description": "Oliver led the development of the user interface for a web-based SaaS focused on sustainability analysis and reporting. Utilized Next.js to build a user-friendly frontend, while also contributing to visual design and the creation of custom data visualizations to enhance the clarity and impact of sustainability metrics. Collaborated closely with backend engineers to design a new API, helping define and shape the endpoints needed to support the platform's data.",
+      "keywords": ["NextJS", "React", "TypeScript", "Tailwind", "Stoplight", "Clerk", "Figma"]
+    },
+    {
+      "name": "Journalist productivity tools and election services",
+      "entity": "Public Broadcaster Kaiku",
+      "x-industry": "national public broadcaster",
+      "roles": ["Software Developer & UI/UX Designer"],
+      "startDate": "2022-10",
+      "endDate": "2025-02",
+      "x-highlight": true,
+      "description": "As part of the broadcaster's news innovation lab team, Oliver designed and developed tools used by journalists to boost productivity as well as election-related services. Many of the tools Oliver helped develop utilized AI and custom LLM's to help users understand complex topics and to summarize large data sets.",
+      "keywords": ["React", "TypeScript", "HTML5", "SCSS", "AWS", "OpenAI", "Power BI", "Figma"]
+    },
+    {
+      "name": "Loan application form",
+      "entity": "Municipal Finance Bank",
+      "x-industry": "municipal finance",
+      "roles": ["Software Developer & UI/UX Designer"],
+      "startDate": "2022-02",
+      "endDate": "2022-10",
+      "description": "Oliver was responsible for the development of a loan application form user interface for customers applying for loans through the client.",
+      "keywords": ["React", "TypeScript", "Node", "Figma"]
+    },
+    {
+      "name": "Internal data consolidation tool",
+      "entity": "Tax Administration",
+      "x-industry": "tax administration",
+      "roles": ["Software Developer"],
+      "startDate": "2019",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Oliver was responsible for designing and developing the user interface for an internal tool at the Tax Administration, that brought multiple internal data sources into one easily understandable interface.",
+      "keywords": ["React", "Redux", "TypeScript", "HTML5", "SCSS", "D3", "Azure", "Figma", "Adobe XD"]
+    },
+    {
+      "name": "Photo postcard service renewal",
+      "entity": "Kirjekulku Oyj",
+      "x-industry": "postal and logistics",
+      "roles": ["Software Developer"],
+      "description": "Oliver renewed and modernized the client's photo postcard service, turning it from a desktop service into an accessible and responsive service, compatible with all devices and in line with the client's updated brand guidelines.",
+      "keywords": ["Java", "Maven", "JavaScript", "CSS"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Disruption messaging flow editor",
+      "entity": "Rautatie Oy",
+      "x-industry": "railway company",
+      "roles": ["Software Developer & UI/UX Designer"],
+      "startDate": "2018",
+      "endDate": "2019",
+      "x-highlight": true,
+      "description": "Oliver created an interactive drag-and-drop interface for the maintenance and creation of different flows for customer-oriented disruption messaging related to train delays and interruptions. The tool allowed users to visually create event nodes on a canvas, where each node could be connected to another, resulting in a flow diagram that determines which combination of events results in what type of customer message.",
+      "keywords": ["React", "Redux", "TypeScript", "SCSS", "AWS"],
+      "x-note": "The highlight gives '2019', the project list '2018 – 2019'; the project list dates were used."
+    },
+    {
+      "name": "Energy usage customer portal",
+      "entity": "Tunturin Voima ja Vesi",
+      "x-industry": "energy and water utility",
+      "roles": ["Software Developer & UI/UX"],
+      "description": "Oliver was responsible for the frontend development of a customer portal showing customer energy usage data in various animated graphs. The project was done in mobile-first fashion but worked on all platforms.",
+      "keywords": ["React", "MobX", "TypeScript", "SCSS", "D3", "InVision"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Customer messaging application",
+      "entity": "Tunturisähkö Oy",
+      "x-industry": "regional electricity company",
+      "roles": ["Software Developer & UI/UX"],
+      "description": "Responsibilites for the client's customer messaging application included wireframe design, layout design and frontend development.",
+      "keywords": ["React", "Office UI Fabric"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Global intranet UI layer",
+      "entity": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "roles": ["Software Developer & UI/UX"],
+      "description": "The client's global intranet was the main place for employees to find useful bits of information and news. Due to Sharepoint's limitations at the time, Oliver helped build new UI layer with React, mostly only consuming Sharepoint's data as a backend. Tasks included UX planning, wireframe & UI design, and frontend development",
+      "keywords": ["React", "Office 365", "Sharepoint", "SCSS"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Employee intranet UI layer",
+      "entity": "Kauppatalo Oyj",
+      "x-industry": "retail group",
+      "roles": ["Software Developer & UI/UX"],
+      "startDate": "2016",
+      "endDate": "2017",
+      "description": "The client's employee intranet service was built on Sharepoint for the group's employees, where each chain had their own so-called frontpages that had different requirements. Oliver helped build new UI layer with React. Tasks included UX planning, wireframe & UI design, and frontend development",
+      "keywords": ["React", "Office 365", "Sharepoint", "SCSS", "Photoshop"]
+    },
+    {
+      "name": "University intranet development",
+      "entity": "Western University of Finland",
+      "x-industry": "university",
+      "roles": ["Software Developer"],
+      "startDate": "2015",
+      "endDate": "2016",
+      "description": "Oliver's main responsibilites in this assignment was to extend and further develop custom features on top of Sharepoints default features for the university's intranet.",
+      "keywords": ["CoffeeScript", "Sharepoint", "SCSS"]
+    },
+    {
+      "name": "Graphic design and web development",
+      "entity": "Medilink Oy",
+      "x-employer": "Medilink Oy",
+      "x-industry": "healthcare technology",
+      "roles": ["Web Developer & Graphic Designer"],
+      "startDate": "2011",
+      "endDate": "2015",
+      "description": "Oliver worked as the company's graphic designer in the marketing team. His job included ad and brochure design (print & digital), updating their website, adwords, newsletters and staff photography. Oliver collaborated with an advertising agency when planning and designing the company's new website, which brought the company more visibility and an overall greater experience for visitors.",
+      "keywords": ["HTML", "CSS", "JS", "PHP", "Wordpress", "ProcessWire", "InDesign", "Illustrator", "Photoshop"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p12",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "The 'Top skills' section and the two 'AI Experience' items were stored in x-keySkills (AI items prefixed with 'AI Experience:').",
+      "The four project highlights duplicate projects in 'All client projects' and were merged into them.",
+      "Skill 'Claude Code' is given as '4 months'; stored as 0.33 years.",
+      "The retail group's employee intranet name is mapped as a loyalty app product in the mapping; here it was generalized as an employee intranet service.",
+      "The former employer's website project involved an advertising agency, which was generalized to 'an advertising agency'."
+    ]
+  }
+}

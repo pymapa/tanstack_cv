@@ -1,0 +1,557 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Valtteri Koskela",
+    "label": "Software architect with excellent programming skills",
+    "email": "valtteri.koskela@example.com",
+    "phone": "+358 40 000 1016",
+    "summary": "Valtteri is a versatile software professional with a strong track record in delivering challenging projects across diverse domains.\n\nWith a solid background in software engineering, he combines deep technical expertise with domain understanding. As a mentor, he believes good architecture grows from real insight, not overdesign.\n\nHe actively follows advancements in developer tooling and uses AI agents daily to support development work from big-picture thinking to small details.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-valtteri-koskela",
+        "url": "https://www.linkedin.com/in/example-valtteri-koskela"
+      }
+    ],
+    "x-experienceSummary": "25+ years of business experience",
+    "x-tagline": "Reliable code lays the groundwork, yet truly great software grows out of genuine care for its purpose and the people using it.",
+    "x-industries": [
+      "Industrial Automation & Embedded Systems",
+      "Logistics & Transportation",
+      "Energy & Infrastructure",
+      "Defence & Communications"
+    ],
+    "x-strengths": [
+      {
+        "title": ".NET / C#"
+      },
+      {
+        "title": "C / C++"
+      },
+      {
+        "title": "Architecture"
+      },
+      {
+        "title": "Algorithms"
+      },
+      {
+        "title": "Git / CI"
+      },
+      {
+        "title": "Azure"
+      },
+      {
+        "title": "Mentoring"
+      },
+      {
+        "title": "Collaboration"
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior SW Engineer at Transportation ERP Renewal",
+        "description": "Backend and subsystem design for a custom logistics ERP (.NET, Azure). Business logic, IaC, CI and mentoring."
+      },
+      {
+        "title": "Lead Software Architect – Tunneling Control Systems",
+        "description": "Distributed control system projects for tunnel drilling machines (C++/Qt/Linux)."
+      },
+      {
+        "title": "SW Engineer in Various Industrial Automation",
+        "description": "Multiple projects across automation, communications, control, firmware and embedded systems for diverse clients."
+      },
+      {
+        "title": "SW Engineer in Various Energy Sector Projects",
+        "description": "Multiple energy distribution and transmission grid control projects for various clients."
+      },
+      {
+        "title": "SW Engineer in Various XR & Streaming Media projects",
+        "description": "Various Streaming Media, Augmented Reality and Gaming related projects for various clients."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Software architect with excellent programming skills"
+    },
+    {
+      "name": "Koodikaarti Oyj",
+      "position": "Senior Software Engineer, Software Architect"
+    },
+    {
+      "name": "Cyberlane Consulting",
+      "position": "Software Architect"
+    },
+    {
+      "name": "Sulautettu Oy",
+      "position": "Lead SW Architect & Engineer, Software Engineer"
+    },
+    {
+      "name": "Prosessikone Oyj",
+      "position": "Software Engineer"
+    },
+    {
+      "name": "Insinööritoimisto Mekano",
+      "position": "Software Engineer"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": [
+        "C# / .NET / C++",
+        "SQL (MS Azure SQL, PostgreSQL)",
+        "Distributed Control Systems, Industrial Automation and Firmware",
+        "AR, VR, 3D, Streaming Media"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "C# / .NET / C++",
+          "years": 20,
+          "yearsText": "20 years"
+        },
+        {
+          "name": "SQL (MS Azure SQL, PostgreSQL)",
+          "years": 16,
+          "yearsText": "16 years"
+        },
+        {
+          "name": "Distributed Control Systems, Industrial Automation and Firmware",
+          "years": 15,
+          "yearsText": "15 years"
+        },
+        {
+          "name": "AR, VR, 3D, Streaming Media",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Typescript / React",
+        "Unity3D",
+        "Qt"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Typescript / React",
+          "years": 4,
+          "yearsText": "4 years"
+        },
+        {
+          "name": "Unity3D",
+          "years": 3,
+          "yearsText": "3 years"
+        },
+        {
+          "name": "Qt",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Testing frameworks (NUnit, XUnit, CppUnit)",
+        "Azure DevOps",
+        "Jenkins"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Testing frameworks (NUnit, XUnit, CppUnit)",
+          "years": 16,
+          "yearsText": "16 years"
+        },
+        {
+          "name": "Azure DevOps",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 8,
+          "yearsText": "8 years"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Order and shipment management ERP renewal",
+      "entity": "Rahtivirta Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "logistics and transportation",
+      "roles": [
+        "Senior Software Engineer"
+      ],
+      "startDate": "2022-01",
+      "description": "Total renewal of customer's order and shipment management system as custom ERP software solution running on Microsoft Azure. Design and implementation work of various subsystems. Team mentoring.",
+      "keywords": [
+        "Git",
+        "C#",
+        "Azure",
+        "SQL",
+        "Entity Framework",
+        "Cosmos DB",
+        "Service Bus",
+        "IaC (Bicep)",
+        "TypeScript",
+        "React"
+      ]
+    },
+    {
+      "name": "Control system and web application development",
+      "entity": "Energy technology client",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "energy technology",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2019-08",
+      "endDate": "2022-01",
+      "description": "Software development for C#/React web applications and classic Windows desktop C++ applications. Control system component programming. Web backend programming. Architectural, performance, multi-threading and robustness improvements. Unit testing guidelines and examples. Git version control transition done from TFVC. Commucation backbone server and clients rewritten to use secure communications.",
+      "keywords": [
+        "C# / C++",
+        "PostGreSQL",
+        "PostGIS",
+        "Algorithms",
+        "WebSockets",
+        "Unit testing",
+        "Jenkins CI",
+        "Git"
+      ]
+    },
+    {
+      "name": "3D audio spatialization evaluation applications",
+      "entity": "Media Tech Company",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "media technology",
+      "roles": [
+        "Senior SW Engineer"
+      ],
+      "startDate": "2019-04",
+      "endDate": "2019-06",
+      "description": "Unity (Hololens) & Python applications for evaluating 3D audio spatialization algorithms for MPEG-I standardization Dynamic import of custom 3D scene models from evaluation server",
+      "keywords": [
+        "Unity3D",
+        "Python",
+        "Microsoft HoloLens",
+        "3D"
+      ]
+    },
+    {
+      "name": "Onboard mobile game for cruise ferries",
+      "entity": "Gaming operator",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "gaming",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2017-10",
+      "endDate": "2019-04",
+      "description": "iOS and Android mobile game to be played on cruise ferries. Game activated onboard ships by Bluetooth LE beacon proximity detection. Onboard game winnings (digital vouchers) validated with external Node.js server. Heavily regulated customer domain.",
+      "keywords": [
+        "C#",
+        "Unity3D",
+        "Vuforia",
+        "Animation",
+        "Game Design",
+        "Analytics",
+        "Bluetooth LE",
+        "Augmented Reality",
+        "Obfuscation",
+        "Node.js",
+        "Unit testing",
+        "Android",
+        "iOS"
+      ]
+    },
+    {
+      "name": "Augmented reality demo for process measurements",
+      "entity": "Prosessianalytiikka Kide Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "industrial process analytics",
+      "roles": [
+        "Senior Software Engineer"
+      ],
+      "startDate": "2017-08",
+      "endDate": "2017-09",
+      "description": "AR demo: Augmented reality demo application for visualizing process measurement signals, warnings and history trends",
+      "keywords": [
+        "C#",
+        "Unity3D",
+        "Vuforia",
+        "Augmented Reality"
+      ]
+    },
+    {
+      "name": "Immersive virtual reality video streaming research",
+      "entity": "Media Tech Company",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "media technology",
+      "roles": [
+        "Senior SW Engineer"
+      ],
+      "startDate": "2016-01",
+      "endDate": "2017-08",
+      "description": "Research and development of MPEG-DASH based tiled H.265/HEVC immersive stereoscopic video streaming for virtual reality. Maintenance of QoE verication web application developed with Python/Django and Angular 2",
+      "keywords": [
+        "VR",
+        "Video streaming",
+        "Streaming Media",
+        "Linux",
+        "Android",
+        "Python",
+        "Django",
+        "Angular 2",
+        "3D",
+        "MPEG-DASH",
+        "C++",
+        "H.265"
+      ]
+    },
+    {
+      "name": "Patient monitor software development",
+      "entity": "Globex Healthcare",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "medical technology",
+      "roles": [
+        "Senior Software Engineer"
+      ],
+      "startDate": "2015-08",
+      "endDate": "2016-01",
+      "description": "Patient monitor software development on customer’s custom medical software framework",
+      "keywords": [
+        "C++"
+      ]
+    },
+    {
+      "name": "HEIF image file format library",
+      "entity": "Media Tech Company",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "media technology",
+      "roles": [
+        "Senior SW Engineer"
+      ],
+      "startDate": "2015-11",
+      "endDate": "2015-12",
+      "description": "Implementation of Advanced Video Coding (H.264/AVC) support for HEIF image file format library",
+      "keywords": [
+        "C++"
+      ]
+    },
+    {
+      "name": "Messaging protocol tester",
+      "entity": "Defence sector client",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "defence",
+      "roles": [
+        "Senior SW Engineer"
+      ],
+      "startDate": "2015-06",
+      "endDate": "2015-08",
+      "description": "Messaging protocol tester for communication interfaces",
+      "keywords": [
+        "Python",
+        "Twisted"
+      ]
+    },
+    {
+      "name": "Messaging System for Constrained Environments",
+      "entity": "Defence sector client",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "defence",
+      "roles": [
+        "Senior SW Engineer"
+      ],
+      "startDate": "2014-10",
+      "endDate": "2015-06",
+      "description": "Messaging System for Constrained Environments. Mobile radio remote control application programming, Link backend module programming",
+      "keywords": [
+        "C",
+        "Qt",
+        "C++",
+        "Linux"
+      ]
+    },
+    {
+      "name": "Data collection and visualization tool studies",
+      "entity": "Cyberlane Consulting",
+      "x-employer": "Cyberlane Consulting",
+      "x-industry": "IT consultancy",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2014-06",
+      "endDate": "2014-09",
+      "description": "Open source tool studies for data collection and visualization",
+      "keywords": [
+        "JavaScript",
+        "HTML5",
+        "Graphite",
+        "Grafana"
+      ],
+      "x-note": "The source title names only the employer ('Cyberlane Consulting – Software Architect'); interpreted as an internal assignment."
+    },
+    {
+      "name": "Elemental analyzer diagnostics application",
+      "entity": "Mineraalitekniikka Oyj",
+      "x-employer": "Cyberlane Consulting",
+      "x-industry": "mining and metallurgy technology",
+      "roles": [
+        "Software Architect"
+      ],
+      "startDate": "2013-12",
+      "endDate": "2014-06",
+      "description": "Elemental analyzers: HTML5 diagnostics application development for an elemental analyzer that's used for measuring mineral slurry elemental concentrations with Laser-induced Breakdown Spectroscopy (LIBS) technology. Software architecture design on top of customer’s generic web application stack",
+      "keywords": [
+        "HTML5",
+        "MongoDB",
+        "AngularJS",
+        "Node.js",
+        "Measurement systems",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Tunneling rig boom control and drilling instrumentation",
+      "entity": "Kalliokone AB",
+      "x-employer": "Sulautettu Oy",
+      "x-industry": "mining equipment",
+      "roles": [
+        "Lead SW Architect & Engineer"
+      ],
+      "startDate": "2012-03",
+      "endDate": "2013-12",
+      "description": "Software architecture design of the client's tunneling rig boom control and drilling instrumentation system on top of customer’s generic control system platform. Prototyping and implementation of subsystem distribution and data serialization, supporting multiple operating systems. Implementation of various subsystems.",
+      "keywords": [
+        "Linux",
+        "Google Protocol Buffers",
+        "Qt",
+        "C++",
+        "CAN/CANopen",
+        "Valgrind profiling tool",
+        "Polarion"
+      ]
+    },
+    {
+      "name": "Variable speed drive control firmware",
+      "entity": "Voltaris",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "electrical engineering and drives",
+      "roles": [
+        "Senior Software Engineer"
+      ],
+      "startDate": "2009-11",
+      "endDate": "2012-04",
+      "description": "Firmware programming for hard-realtime variable speed electric drive control system for industrial electric motor drives, running on customer’s dedicated DSP. Design and implementation of various control and monitoring subsystems. Code analysis and optimization on assembly level.",
+      "keywords": [
+        "Realtime Systems",
+        "Machine safety",
+        "TI Code Composer Studio",
+        "Optimization & performance improvement",
+        "C++"
+      ]
+    },
+    {
+      "name": "Distributed control system for tunneling jumbos",
+      "entity": "Kalliokone AB",
+      "x-employer": "Sulautettu Oy",
+      "x-industry": "mining equipment",
+      "roles": [
+        "Lead SW Architect & Engineer"
+      ],
+      "startDate": "2003-06",
+      "endDate": "2009-10",
+      "description": "Distributed control system for the client's tunneling jumbos. These 50-ton vehicles are called to the scene when there's need to drill underground railroad, highway or metro tunnels etc. Higher level control system software architecture design (Bus data handling and distribution, drill plan management, boom sequence control, data collection, diagnostics etc). Implementation of various subsystems.",
+      "keywords": [
+        "Linux",
+        "Qt",
+        "GNU tool",
+        "C++",
+        "CAN/CANopen",
+        "Valgrind profiling tool"
+      ]
+    },
+    {
+      "name": "Power transmission line compensation and protection system",
+      "entity": "Kondensaattori Oy",
+      "x-employer": "Sulautettu Oy",
+      "x-industry": "power capacitor manufacturer",
+      "roles": [
+        "Software Engineer"
+      ],
+      "startDate": "2002-03",
+      "endDate": "2003-05",
+      "description": "Extra-high voltage power transmission line compensation and protection system. Software development for protection and compensation stations used in electricity transmission grid. Redundant hard-realtime system with 100us control cycle, made with C++. Onsite system commissioning work for Voimalinja Oyj, Finland and Coastal Hydro Utility, Canada.",
+      "keywords": [
+        "Machine Control",
+        "Multithreading/Parallel programming",
+        "C++"
+      ]
+    },
+    {
+      "name": "Paper web quality measurement system",
+      "entity": "Prosessikone Oyj",
+      "x-employer": "Prosessikone Oyj",
+      "x-industry": "industrial machinery and automation",
+      "roles": [
+        "Software Engineer"
+      ],
+      "startDate": "2000-02",
+      "endDate": "2002-02",
+      "description": "Paper web quality measurement system. Several R&D projects for quality measurement sensors used in paper machines. Control system component programming in C for the company's automation system.",
+      "keywords": [
+        "C",
+        "Automation system (DCS)",
+        "Machine to Machine communication"
+      ]
+    },
+    {
+      "name": "Warehouse control systems",
+      "entity": "Insinööritoimisto Mekano",
+      "x-employer": "Insinööritoimisto Mekano",
+      "x-industry": "engineering and automation",
+      "roles": [
+        "Software Engineer"
+      ],
+      "startDate": "1997-01",
+      "endDate": "2000-01",
+      "description": "Several warehouse control system projects based on company’s warehouse control system platform. Designed, implemented and deployed a crystallization warehouse control system for a confectionery manufacturer as his MSc thesis project. The system was used in the production of several of the manufacturer's candy products for well over a decade.",
+      "keywords": [
+        "Delphi",
+        "Microsoft SQL Server",
+        "Profibus",
+        "Siemens PLC"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p16",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "About text was partly in first person; rewritten to third person.",
+      "Key Roles appear on slides 1 and 2; slide 2 has the fuller list (the slide 1 entry 'SW Engineer in Various Industrial & Energy Projects' is split into separate industrial automation and energy sector roles there), so slide 2 was used.",
+      "'In a nutshell' contains only short titles without descriptions; stored as x-strengths titles.",
+      "The Frontend skill table has the header 'CERTIFICATE | EXPERIENCE' (template leftover) but contains technologies; treated as a skill table. No certificates in the source.",
+      "Projects in the source have no names; short neutral names were derived from the descriptions.",
+      "Titles with only an employer ('Cyberlane Consulting – Software Architect', 'Prosessikone Oyj – Software Engineer', 'Insinööritoimisto Mekano – Software Engineer') are treated as employer-internal work.",
+      "MSc thesis mention generalized; product names and figures in the thesis project description removed.",
+      "Named client products (an AR demo product name, paper quality measurement service, automation system, elemental analyzer, tunneling rig control systems) generalized.",
+      "Dropped template placeholder 'Call to Action Text Here'."
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Jussi Peltonen",
+    "label": "Senior Software Engineer, Partner",
+    "email": "jussi.peltonen@example.com",
+    "phone": "+358 40 000 1022",
+    "summary": "Jussi is a senior software engineer with extensive skills in designing, creating and maintaining mobile and backend software solutions.\n\nJussi has a wide experience from different IT technologies ranging from safety-critical embedded devices to modern mobile technologies and backend applications. He also has skills and experience in working with Linux, DevOps and cloud applications. If the project needs tools unfamiliar to Jussi, he can learn them in a fast pace.\n\nThe recent advances in AI offer exciting opportunities in automating IT work and processes.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-jussi-peltonen",
+        "url": "https://www.linkedin.com/in/example-jussi-peltonen"
+      }
+    ],
+    "x-experienceSummary": "25+ years of business experience",
+    "x-tagline": "Most problems have several good solutions, yet none of them suits every case – a professional is someone who can choose the one that fits the situation at hand.",
+    "x-industries": ["Telecom"],
+    "x-strengths": [
+      { "title": "Kotlin" },
+      { "title": "Android" },
+      { "title": "Spring Boot" },
+      { "title": "Backend" },
+      { "title": "Linux" },
+      { "title": "C++" },
+      { "title": "Databases" },
+      { "title": "Desktop" }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software Engineer, Partner"
+    },
+    {
+      "name": "Koodikaarti Oyj",
+      "position": "Senior Software Developer, Software Developer"
+    },
+    {
+      "name": "Suojaus Oyj",
+      "position": "Expert Developer"
+    },
+    {
+      "name": "Telion AB",
+      "position": "Experienced Developer"
+    },
+    {
+      "name": "Northwind Software",
+      "position": "Senior Software Engineer"
+    },
+    {
+      "name": "Nordtel Oyj",
+      "position": "Senior Software Engineer"
+    },
+    {
+      "name": "Telesoft Consulting",
+      "position": "Senior Software Engineer"
+    },
+    {
+      "name": "Albion Instruments Analytical",
+      "position": "Software Design Manager, Software Designer"
+    },
+    {
+      "name": "Lakeland University of Technology",
+      "position": "Researcher, Research Assistant"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript", "HTML / CSS", "UI Libraries (Bootstrap)", "AngularJS", "GraphQL"],
+      "x-skillDetails": [
+        { "name": "Javascript", "years": 16, "yearsText": "16 years" },
+        { "name": "HTML / CSS", "years": 10, "yearsText": "10 years" },
+        { "name": "UI Libraries (Bootstrap)", "years": 21, "yearsText": "21 years" },
+        { "name": "AngularJS", "years": 2, "yearsText": "2 years" },
+        { "name": "GraphQL", "years": 10, "yearsText": "10 years" },
+        { "name": "AngularJS", "years": 4, "yearsText": "4 years", "note": "AngularJS appears twice in the source table with different values" }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": ["Git", "Testing frameworks (Junit)", "Webdriver.io (Selenium)", "Docker", "Jenkins", "CircleCI"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 10, "yearsText": "10 years" },
+        { "name": "Testing frameworks (Junit)", "years": 16, "yearsText": "16 years" },
+        { "name": "Webdriver.io (Selenium)", "years": 5, "yearsText": "5 years" },
+        { "name": "Docker", "years": 4, "yearsText": "4 years" },
+        { "name": "Jenkins", "years": 3, "yearsText": "3 years" },
+        { "name": "CircleCI", "years": 3, "yearsText": "3 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "Microsoft Azure", "date": "2024" },
+    { "name": "Kubernetes", "date": "2020" }
+  ],
+  "projects": [
+    {
+      "name": "Consumer mobile banking and loyalty application",
+      "entity": "Kauppaosuuskunta Keskus",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "cooperative retail group",
+      "roles": ["Developer"],
+      "startDate": "2024-06",
+      "description": "Android and backend development for the retail bank's mobile banking and loyalty app. The consumer application is a banking and loyalty application used actively by a large user base in Finnish, Swedish, and English languages, and has high reliability, availability and accessibility requirements.",
+      "keywords": ["Kotlin", "Jetpack Compose", "Java", "Spring Boot", "Terraform", "AWS", "Splunk"]
+    },
+    {
+      "name": "Desktop automation application for medical professionals",
+      "entity": "Colossus Medical",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "medical software",
+      "roles": ["Developer"],
+      "startDate": "2023-01",
+      "endDate": "2024-06",
+      "description": "The client's product is a Windows & macOS desktop application for automating the repetitive tasks for medical professionals. In this role Jussi took part in selecting the used technologies, designing, and implementing the desktop application and setting up the CI pipeline.",
+      "keywords": ["C++", "Cmake", "Qt Widgets", "GitHub actions"]
+    },
+    {
+      "name": "Field technician mobile app",
+      "entity": "Rautatie Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "railway company",
+      "roles": ["Developer"],
+      "startDate": "2022-04",
+      "endDate": "2023-01",
+      "description": "A field technician mobile app for the client's technicians. It is used to manage the daily schedules for fleet maintenance, provide step-by step instructions for maintenance tasks, manage spare part orders, and more. Jussi worked as a member of the Android developer team.",
+      "keywords": ["Java", "Spring Boot", "Lagom", "Axom Framework", "microservices", "event sourcing", "CQRS", "Maven"],
+      "x-note": "The technology list in the source is identical to the pharmaceutical wholesale highlight project and does not match the Android work described; possibly copy-pasted, kept as in the source."
+    },
+    {
+      "name": "Embedded analysis device application support layer",
+      "entity": "Global corporation focused in the business areas of diagnostics, life science research",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "diagnostics and life science",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2021-06",
+      "endDate": "2022-03",
+      "description": "In this position Jussi worked in a team responsible for writing the application support layer in an embedded analysis device. During this project, Jussi developed, tested and documented Linux middleware components to interface the device's hardware components and assisted application developers with using these components from application code.",
+      "keywords": ["Yocto & C++ in embedded Linux", "C# application development"],
+      "x-note": "The source title has no role; the role was taken from the other assignments of the same employer."
+    },
+    {
+      "name": "Linux server security product",
+      "entity": "Suojaus Oyj",
+      "x-employer": "Suojaus Oyj",
+      "x-industry": "cybersecurity",
+      "roles": ["Expert Developer"],
+      "startDate": "2020-11",
+      "endDate": "2021-06",
+      "description": "Jussi was part of the team responsible for the Linux server security product that detects, prevents, and reports security threats by using a variety of different heuristics. The work involved e.g. writing code to monitor system calls made by running applications, to detect abnormal network connections, etc.",
+      "keywords": ["Linux service development with C++ & Go"]
+    },
+    {
+      "name": "Consumer mobile application",
+      "entity": "Kaupunkienergia Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "energy utility",
+      "roles": ["Software Developer"],
+      "startDate": "2020-01",
+      "endDate": "2020-10",
+      "description": "The client's consumer mobile application is used by its consumer clients. Jussi was part of the team designing the phone application. Work consisted of specifying, implementing, and testing the Flutter application. Jussi also did some work with the application's backend.",
+      "keywords": ["Python", "PostgreSQL", "Flutter", "Dart", "AWS"]
+    },
+    {
+      "name": "Microservice refactoring for a healthcare digital service platform",
+      "entity": "Lääketukku Oy",
+      "x-industry": "pharmaceutical wholesale",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2018",
+      "endDate": "2020",
+      "x-highlight": true,
+      "description": "The client's digital service platform is a modern platform where pharmacies, hospitals, health stores, pharmaceutical and health product companies, and other healthcare operators can connect in a new way. Jussi's task was to refactor deprecated microservices from the Lagom framework into a system powered by Spring Boot and the Axon framework.",
+      "keywords": ["Java", "Spring Boot", "Lagom", "Axom Framework", "microservices", "event sourcing", "CQRS", "Maven"],
+      "x-note": "Appears only on the Project highlights slide, where the same entry is repeated four times; output once. Not listed under All client projects; placed here by date."
+    },
+    {
+      "name": "Smart waste monitoring app",
+      "entity": "Paalain Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "waste compaction equipment",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2019-07",
+      "endDate": "2019-12",
+      "description": "A smart waste monitoring solution: a remote monitoring app for the client's smart devices. Jussi was responsible for the Android development, using Kotlin programming language.",
+      "keywords": ["Kotlin", "fuel", "Google Maps", "GCP"]
+    },
+    {
+      "name": "Stove guard monitoring app",
+      "entity": "Liesivahti Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "smart home safety devices",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2018-12",
+      "endDate": "2019-07",
+      "description": "Jussi designed and implemented the Android version of the client's app, a monitoring application for the client's stove guard devices. This project involved creating various custom UI components and debugging Bluetooth LE stack issues on various mobile devices.",
+      "keywords": ["Android application development", "Kotlin", "Bluetooth LE"]
+    },
+    {
+      "name": "Area reservation tool backend",
+      "entity": "City of Merilinna",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "municipality",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2016-04",
+      "endDate": "2018-10",
+      "description": "In this project Jussi was a member of the team responsible for implementing the backend for a permit management system (area reservation tool). The backend combines data from various sources, e.g., a GIS database, an ERP system for finances, and a reservation database.",
+      "keywords": ["Java", "Spring Boot", "PostgreSQL", "PostGIS", "Querydsl"]
+    },
+    {
+      "name": "Thermostat data analysis demo",
+      "entity": "Lämpöaste Oy",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "smart heating technology",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2016-02",
+      "endDate": "2016-05",
+      "description": "FIWARE tools for the client, Cloud-based data analysis tool demo for the client's thermostat data",
+      "keywords": ["Python", "Django", "JavaScript", "WireCloud"]
+    },
+    {
+      "name": "Patient monitor new CPU project",
+      "entity": "Globex Healthcare",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "medical technology",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2015-05",
+      "endDate": "2016-01",
+      "description": "Patient monitor new CPU project",
+      "keywords": ["Embedded Linux Platform Development (Yocto Linux)", "application porting to new platform (C++)"]
+    },
+    {
+      "name": "IP Router software development",
+      "entity": "Telion AB",
+      "x-employer": "Telion AB",
+      "x-industry": "telecom equipment",
+      "roles": ["Experienced Developer"],
+      "startDate": "2014-08",
+      "endDate": "2015-05",
+      "description": "IP Router software development in C language",
+      "keywords": ["C"]
+    },
+    {
+      "name": "Senior software engineering",
+      "entity": "Northwind Software",
+      "x-employer": "Northwind Software",
+      "x-industry": "global software company",
+      "roles": ["Senior Software Engineer"],
+      "startDate": "2014-04",
+      "endDate": "2014-08",
+      "x-note": "The description in the source is the placeholder 'XX'; dropped."
+    },
+    {
+      "name": "Mobile application and platform middleware development",
+      "entity": "Nordtel Oyj",
+      "x-employer": "Nordtel Oyj",
+      "x-industry": "telecom and mobile devices",
+      "roles": ["Senior Software Engineer"],
+      "startDate": "2010-08",
+      "endDate": "2014-04",
+      "description": "Windows Phone application development using C# and C++. Lead developer for a mobile imaging app. UI work with C#, algorithm optimizations with C++. Middleware development for a mobile Linux platform. Lead developer in the platform's input methods team. Took part in the design and implementation of the platform's Input Methods Framework. Helped team members with implementation issues. Co-operated with inhouse and external partners’ SW teams. Occasionally acted as the team’s scrum master.",
+      "keywords": ["Linux", "C++", "Qt"]
+    },
+    {
+      "name": "DRM library porting to a mobile Linux platform",
+      "entity": "Telesoft Consulting",
+      "x-employer": "Telesoft Consulting",
+      "x-industry": "telecom software consulting",
+      "roles": ["Senior Software Engineer"],
+      "startDate": "2008-08",
+      "endDate": "2010-07",
+      "description": "Familiarized with a mobile Linux platform. Porting a Windows-based DRM library to the platform. Interfacing to GStreamer media framework.",
+      "keywords": ["agile", "scrum", "continuous integration", "C", "GTK"]
+    },
+    {
+      "name": "X-ray analyzer software team management",
+      "entity": "Albion Instruments Analytical",
+      "x-employer": "Albion Instruments Analytical",
+      "x-industry": "analytical instruments",
+      "roles": ["Software Design Manager"],
+      "startDate": "2006-10",
+      "endDate": "2008-07",
+      "description": "Managing a team of software developers. Coordinating in-house and subcontractor software work. SW project resourcing and scheduling. Developing software for an X-ray analyzer.",
+      "keywords": ["Embedded systems", "C++"]
+    },
+    {
+      "name": "Handheld X-ray analyzer embedded Linux and controller application",
+      "entity": "Albion Instruments Analytical",
+      "x-employer": "Albion Instruments Analytical",
+      "x-industry": "analytical instruments",
+      "roles": ["Software Designer"],
+      "startDate": "2005-10",
+      "endDate": "2006-09",
+      "description": "Setting up an embedded Linux system and cross-compilation tools for handheld X-ray analyzer. Developing controller application for the analyzer.",
+      "keywords": ["Embedded systems", "C++"]
+    },
+    {
+      "name": "Embedded energy consumption research",
+      "entity": "Lakeland University of Technology",
+      "x-employer": "Lakeland University of Technology",
+      "x-industry": "technical university",
+      "roles": ["Researcher"],
+      "startDate": "2004-01",
+      "endDate": "2005-09",
+      "description": "Studying the energy consumption of an embedded microcontroller. Investigating options for implementing an energy-optimizing C compiler. Design and implementation of automatic measurement tool for statistical analysis of assembly instruction-level power consumption. C++ lectures. Leading a project for reference implementation of remote media control protocol."
+    },
+    {
+      "name": "Remote media control protocol and embedded tools",
+      "entity": "Lakeland University of Technology",
+      "x-employer": "Lakeland University of Technology",
+      "x-industry": "technical university",
+      "roles": ["Research Assistant"],
+      "startDate": "1997-06",
+      "endDate": "2003-12",
+      "description": "Designing a protocol for remote media control. Teaching C++ and object-oriented programming. Software development and tool design for embedded systems."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p22",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Key Roles on slides 1 and 2 contain only lorem ipsum template filler ('Tester at lorem ipsum…'); dropped, no x-keyRoles.",
+      "Project highlights slide repeats the same pharmaceutical wholesale project four times (identical text); output once with x-highlight. It has no counterpart under All client projects.",
+      "Industry Knowledge lists 'Telecom' four times; deduplicated.",
+      "Frontend skill table lists AngularJS twice (2 years and 4 years); both rows kept.",
+      "Certificate table entries ('Microsoft Azure' 2024, 'Kubernetes' 2020) are vague in the source; kept as given, issuer not evident.",
+      "Typo 'Webdriver.o' restored as 'Webdriver.io'. The keyword 'Axom Framework' is as in the source (the description says Axon).",
+      "'Keywords:' lines in the older project descriptions were moved to the project keywords. Multi-line bullet descriptions were joined into sentences.",
+      "Named client products generalized (mobile banking and loyalty app, medical desktop application name, field technician app, consumer energy app, smart waste solution, stove guard app, permit management system, patient monitor, X-ray analyzer, mobile imaging app, mobile Linux platforms). User count over one million tied to a named product generalized.",
+      "Dropped template placeholders 'Call to Action Text Here', 'See all...' and the 'XX' description."
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Lauri Hakola",
+    "label": "Fullstack Developer",
+    "email": "lauri.hakola@example.com",
+    "phone": "+358 40 000 1019",
+    "summary": "Senior software engineer and true techie with deep backend, data and DevOps strength. Lauri dives into difficult technical challenges, designs systems for demanding requirements, and is especially strong at getting troubled projects back on track. He has worked across pension technology, energy, media, healthcare, gaming, telecom, startups and the public sector, and can also contribute in modern frontend stacks when needed.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-lauri-hakola",
+        "url": "https://www.linkedin.com/in/example-lauri-hakola"
+      }
+    ],
+    "x-experienceSummary": "10+ years of business experience",
+    "x-tagline": "Hard problems are welcome – the tougher the challenge, the more motivating it gets.",
+    "x-industries": ["Pension tech", "Energy", "Media", "Healthcare", "Gaming", "Telecom", "Startups", "Public sector"],
+    "x-strengths": [
+      { "title": "AWS / Azure" },
+      { "title": "DevOps & CI" },
+      { "title": "Java / Spring" },
+      { "title": "Python" },
+      { "title": "Databases" },
+      { "title": "Security / a11y" },
+      { "title": "React / NextJS" },
+      { "title": "Kubernetes" }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Software architect / technical leader",
+        "description": "Mission-critical pension system modernization, technical guidelines and architecture decisions."
+      },
+      {
+        "title": "Full-stack developer",
+        "description": "Cloud, data, backend and frontend delivery across energy, media, healthcare and product companies."
+      },
+      {
+        "title": "Backend, data & DevOps specialist",
+        "description": "Strongest areas: Java/Spring, databases, CI/CD, cloud infrastructure and project rescue work."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Fullstack Developer",
+      "startDate": "2021",
+      "summary": "Senior Consultant at Kipinä Software from 2021 onward."
+    },
+    {
+      "name": "Terävä Digital Oy",
+      "position": "Full-stack developer, Backend developer"
+    },
+    {
+      "name": "Pixel Pond Games",
+      "position": "Server Engineer"
+    },
+    {
+      "name": "Digitalo Oyj",
+      "position": "Senior Backend Developer, Junior Developer"
+    },
+    {
+      "name": "Regional Transit Authority",
+      "position": "Development Specialist",
+      "x-note": "The source title names only the organization (organization – role) and the description says he led external consultants; interpreted as an employer."
+    },
+    {
+      "name": "Palautepilvi Oy",
+      "position": "Senior Software Engineer"
+    },
+    {
+      "name": "Tiekarhu Software Oy",
+      "position": "Software Consultant"
+    },
+    {
+      "name": "Ideapaja Oy",
+      "position": "Software Consultant"
+    },
+    {
+      "name": "Elementti Software Oy",
+      "position": "Software Consultant"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend & Data",
+      "keywords": ["Java", "Spring / Spring Boot", "Python", "Kotlin", "Node.js", "Relational DBs", "Timeseries DBs", "Document DBs"],
+      "x-skillDetails": [
+        { "name": "Java", "years": 7, "yearsText": "7 years" },
+        { "name": "Spring / Spring Boot", "years": 7, "yearsText": "7 years" },
+        { "name": "Python", "years": 5, "yearsText": "5 years" },
+        { "name": "Kotlin", "years": 1.5, "yearsText": "1.5 years" },
+        { "name": "Node.js", "years": 2, "yearsText": "2 years" },
+        { "name": "Relational DBs", "years": 8, "yearsText": "8 years" },
+        { "name": "Timeseries DBs", "years": 4, "yearsText": "4 years" },
+        { "name": "Document DBs", "years": 3, "yearsText": "3 years" }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "keywords": ["Azure", "AWS", "GCP", "Kubernetes", "Terraform"],
+      "x-skillDetails": [
+        { "name": "Azure", "years": 4, "yearsText": "4 years" },
+        { "name": "AWS", "years": 6.5, "yearsText": "6.5 years" },
+        { "name": "GCP", "years": null, "yearsText": "current project" },
+        { "name": "Kubernetes", "years": null, "yearsText": "multiple projects" },
+        { "name": "Terraform", "years": null, "yearsText": "multiple projects" }
+      ]
+    },
+    {
+      "name": "Frontend & Tools",
+      "keywords": ["Git", "Docker", "Jenkins", "JavaScript", "TypeScript", "ReactJS + Redux", "GraphQL", "HTML / CSS"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 8, "yearsText": "8 years" },
+        { "name": "Docker", "years": 8, "yearsText": "8 years" },
+        { "name": "Jenkins", "years": 1, "yearsText": "1 year" },
+        { "name": "JavaScript", "years": 2, "yearsText": "2 years" },
+        { "name": "TypeScript", "years": 1.5, "yearsText": "1.5 years" },
+        { "name": "ReactJS + Redux", "years": 1, "yearsText": "1 year" },
+        { "name": "GraphQL", "years": 1, "yearsText": "1 year" },
+        { "name": "HTML / CSS", "years": 3, "yearsText": "3 years" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Pension data-system modernization",
+      "entity": "Eläketieto Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "pension industry IT services",
+      "roles": ["Software architect / technical leader"],
+      "startDate": "2024",
+      "x-highlight": true,
+      "description": "Technical lead and architect for pension-related data-system modernization. Created guidelines, bridged legacy and modern platforms, and coordinated architecture across diverse development teams.",
+      "keywords": ["GCP", "Kubernetes", "Terraform", "Java", "Spring", "React", "NextJS", "Python"]
+    },
+    {
+      "name": "News personalization A/B testing tool",
+      "entity": "Uutistalo Oyj",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "media company",
+      "roles": ["Full-stack developer"],
+      "startDate": "2022",
+      "endDate": "2022",
+      "x-highlight": true,
+      "x-note": "Date is given only on the Project highlights slide ('2022').",
+      "description": "Built an A/B testing tool for news personalization and live headline testing, replacing an older platform in a cross-functional team.",
+      "keywords": ["AWS CloudFormation/CDK", "Scala", "NextJS", "Python", "NodeJS", "TypeScript", "Docker", "Bash", "Scrum", "Git", "Fargate"]
+    },
+    {
+      "name": "Archival query engine and platform improvements",
+      "entity": "Tilauspöytä Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "restaurant ordering technology",
+      "roles": ["Full-stack developer"],
+      "startDate": "2021",
+      "endDate": "2022",
+      "description": "Optimized CI/CD and data access, built an OpenSearch and QLDB-based archival query engine, improved monitoring, security and testing, and started modularizing microservices.",
+      "keywords": ["Kotlin", "Micronaut", "Groovy", "OpenSearch", "AWS", "Microservices", "MariaDB", "Docker", "TypeScript", "Scrum", "Git", "JavaScript", "Fargate"]
+    },
+    {
+      "name": "Operational Data Layer",
+      "entity": "Kaupunkienergia Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "energy utility",
+      "roles": ["Full-stack developer"],
+      "startDate": "2022",
+      "endDate": "2024",
+      "x-highlight": true,
+      "description": "Helped implement an Operational Data Layer for centralized business-critical big data and data access from multiple internal and external systems.",
+      "keywords": ["Azure", "Databricks", "Kubernetes", "Docker", "Terraform", "Python", "TimescaleDB", "Bash", "Scrum", "Git", "Fargate"]
+    },
+    {
+      "name": "Genetic insights mobile app backend",
+      "entity": "Geenitieto Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "genetic testing",
+      "roles": ["Full-stack developer"],
+      "description": "Built backend solution and AWS Amplify integrations for a Flutter mobile application providing insights into genetic markers and risk factors.",
+      "keywords": ["AWS Amplify", "CloudFormation", "GitLab", "NodeJS", "Flutter", "Swift", "Kotlin", "Contentful", "Scrum", "Git", "JavaScript", "TypeScript"]
+    },
+    {
+      "name": "Customer-data migration and notification pipelines",
+      "entity": "Arpa Oy",
+      "x-employer": "Terävä Digital Oy",
+      "x-industry": "state-owned gaming company",
+      "roles": ["Full-stack developer"],
+      "description": "Delivered legacy customer-data migration, built customer-support tooling, documented and rewrote backend notification pipelines, and added monitoring and performance-testing support.",
+      "keywords": ["Kotlin", "Javalin", "React", "Redux", "HTML5", "CSS", "Kubernetes", "Jenkins", "Ansible", "AWS", "TypeScript", "Terraform", "Grafana", "InfluxDB", "PostgreSQL", "Kafka"]
+    },
+    {
+      "name": "Preschool enrollment services",
+      "entity": "Ministry of Education",
+      "x-employer": "Terävä Digital Oy",
+      "x-industry": "government ministry",
+      "roles": ["Backend developer"],
+      "description": "Improved PDF generation templates for preschool enrollment and combined two microservices together.",
+      "keywords": ["Java 14", "Microservices", "PostgreSQL", "ELK", "AWS", "Kubernetes", "Scrum", "Git", "Kafka"]
+    },
+    {
+      "name": "Public transport services development",
+      "entity": "Regional Transit Authority",
+      "x-industry": "public transport authority",
+      "roles": ["Development Specialist"],
+      "startDate": "2019",
+      "endDate": "2020",
+      "x-highlight": true,
+      "description": "Led external consultants and contributed hands-on across the authority's services. Delivered data migration and database hotswap work that reduced costs and improved query performance.",
+      "keywords": ["Java", "Azure", "Docker Swarm", "Ansible", "GitLab", "Spring", "Hibernate", "PostgreSQL", "Kubernetes", "Pulsar", "Kafka", "MQTT", "GraphQL", "TypeScript", "Fargate"]
+    },
+    {
+      "name": "Analytics and machine-learning microservices",
+      "entity": "Palautepilvi Oy",
+      "x-employer": "Palautepilvi Oy",
+      "x-industry": "customer feedback analytics SaaS",
+      "roles": ["Senior Software Engineer"],
+      "startDate": "2018",
+      "endDate": "2019",
+      "description": "Maintained analytics and machine-learning microservices, helped rewrite them into a serverless monolithic NodeJS backend, and improved data-science code quality.",
+      "keywords": ["Spring", "Java", "Grails", "Groovy", "Gradle", "Docker", "Kubernetes", "Terraform", "Azure", "MongoDB", "PostgreSQL", "AWS", "R", "JUnit", "Spock", "Maven", "RabbitMQ", "CloudFormation", "NodeJS", "Python", "Fargate"]
+    },
+    {
+      "name": "Game server development",
+      "entity": "Pixel Pond Games",
+      "x-employer": "Pixel Pond Games",
+      "x-industry": "mobile game studio",
+      "roles": ["Server Engineer"],
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "Maintained game servers and rewrote server, infrastructure, data pipeline and payment code for the Chinese beta launch of a mobile brawler game.",
+      "keywords": ["Kotlin", "Java", "Python", "Ansible", "Packer", "Docker", "Kafka", "AWS", "DynamoDB", "Gradle", "Maven", "gRPC", "SVN", "InfluxDB", "Grafana", "Microservices", "Git"]
+    },
+    {
+      "name": "Backend development in multiple projects",
+      "entity": "Multiple clients",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "IT services",
+      "roles": ["Senior Backend Developer"],
+      "description": "Maintained multiple parallel projects, delivered features and microservice refactorings for the national ice hockey league's mobile backend, and later consulted for the regional transit authority.",
+      "keywords": ["Dropwizard", "REST", "Functional Java", "Kubernetes", "AWS", "Hibernate", "SOAP", "MySQL RDS", "JUnit", "nginx", "Aurora", "Azure", "Cosmos", "Docker", "Jenkins", "Spring Boot", "Vue.js", "Kotlin", "Bash", "RabbitMQ"]
+    },
+    {
+      "name": "Vehicle repair platform and access-control software",
+      "entity": "Tiekarhu Software Oy",
+      "x-employer": "Tiekarhu Software Oy",
+      "x-industry": "software consultancy / vehicle repair platform",
+      "roles": ["Software Consultant"],
+      "description": "Maintained a next-generation intelligent vehicle repair platform and later telecom access-control software.",
+      "keywords": ["Java", "Webservices", "SOAP", "XML", "JSP", "AWS", "Angular 1", "Jenkins", "Git", "Scrum"]
+    },
+    {
+      "name": "Paywall and payment gateway maintenance",
+      "entity": "Aamuviesti Media Oyj",
+      "x-employer": "Ideapaja Oy",
+      "x-industry": "media company",
+      "roles": ["Software Consultant"],
+      "description": "Maintained the client's paywall and payment gateway.",
+      "keywords": ["Java", "MongoDB", "Webservices", "AWS", "Angular 1", "Scrum", "Git"]
+    },
+    {
+      "name": "ERP and integration platform maintenance",
+      "entity": "Kuusama Consulting Oy",
+      "x-employer": "Elementti Software Oy",
+      "x-industry": "IT and design consultancy",
+      "roles": ["Software Consultant"],
+      "description": "Maintained ERP and integration platform for a Finnish third-party magazine and newspaper retailer.",
+      "keywords": ["Java", "Webservices", "SOAP", "XML", "RPC", "JSP", "Self-hosted", "Jenkins", "Scrum", "Git"]
+    },
+    {
+      "name": "IoT platform for hydraulic press crimping management",
+      "entity": "Hydrapress Oy",
+      "x-employer": "Digitalo Oyj",
+      "x-industry": "hydraulic machinery",
+      "roles": ["Junior Developer"],
+      "description": "Worked on a Digitalo Oyj IoT platform for hydraulic press crimping management, featured at an international industrial trade fair in 2017.",
+      "keywords": ["Java 8", "Spring Boot", "Hibernate", "PostgreSQL", "InfluxDB", "RabbitMQ", "Camel", "Mule", "Jenkins", "Scrum", "Git", "Python"]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p19",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2026",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects from 'All client projects'; merged with x-highlight.",
+      "Key Roles appear on slides 1 and 2 with slightly different wording; the titled list on slide 2 was used, and the slide 1 line about the Kipinä role from 2021 onward is stored in work[0].",
+      "'In a nutshell' contains only short titles without descriptions; stored as x-strengths titles.",
+      "Skill tables were extracted as separate TECHNOLOGY and EXPERIENCE text boxes; rows were paired by order. Cloud rows with 'current project' / 'multiple projects' have years null.",
+      "Many projects have no dates in the source; they have no startDate/endDate.",
+      "Titles naming only an organization (game studio, customer feedback analytics company, vehicle repair platform company, Digitalo Oyj, regional transit authority) are treated as employers.",
+      "Personal code repository link dropped. The named game title and trade fair name were generalized.",
+      "Projects in the source have no names; short neutral names were derived from the descriptions."
+    ]
+  }
+}

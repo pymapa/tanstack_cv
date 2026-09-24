@@ -1,0 +1,533 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Teemu Aaltola",
+    "label": "Senior Software and Cloud Security Engineer",
+    "email": "teemu.aaltola@example.com",
+    "phone": "+358 40 000 1021",
+    "summary": "Teemu Aaltola is a senior software and cloud security engineer with a strong background in designing, securing, and maintaining cloud infrastructure and software solutions, particularly in AWS and other cloud environments.\n\nTeemu’s core strengths are cloud security, cybersecurity, cloud architecture, infrastructure, backend development, and DevSecOps. His software engineering background gives him a practical understanding of how applications and cloud platforms are built, enabling him to identify security risks across application, infrastructure, and deployment layers. He is also comfortable working with modern frontend technologies when required.\n\nTeemu has a strong interest in application security, cloud security, secure architecture, vulnerability assessment, and identifying potential attack paths within modern cloud-native systems. He approaches security from an engineering perspective, focusing not only on identifying vulnerabilities but also on understanding their real-world impact and how they can be effectively mitigated.\n\nTeemu is passionate about continuously developing his cybersecurity and engineering expertise. He actively invests time in hands-on security research, security testing, cloud technologies, and modern cybersecurity practices, while continuously expanding his technical knowledge.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-teemu-aaltola",
+        "url": "https://www.linkedin.com/in/example-teemu-aaltola"
+      }
+    ],
+    "x-experienceSummary": "15 years of business experience",
+    "x-tagline": "Tracking down security weaknesses and getting them fixed is what a security engineer is here for.",
+    "x-keywords": [
+      "AWS",
+      "Cybersecurity",
+      "Backend development",
+      "Python",
+      "Infrastructure",
+      "Cloud architecture"
+    ],
+    "x-industries": [
+      "Gaming",
+      "Industry",
+      "Telecom"
+    ],
+    "x-strengths": [
+      {
+        "title": "Where security, code, and infrastructure meet",
+        "description": "Teemu thrives at the intersection of cybersecurity, cloud infrastructure, and software engineering. He enjoys solving complex technical and security challenges, particularly where understanding the complete system—from application code and APIs to cloud infrastructure, networking, and deployment—is essential.\n\nTeemu has worked across a wide range of business domains, including gaming, telecom, and industrial environments. His broad engineering background allows him to approach security challenges with an understanding of how modern systems are actually designed, built, deployed, and operated.\n\nTeemu is a collaborative team player who approaches security with both technical and business needs in mind. He works effectively with developers, architects, infrastructure teams, and stakeholders to identify risks and find practical solutions.\n\nRather than treating security as a separate layer or blocker, Teemu aims to integrate it into architecture, development, and operations. He is comfortable challenging existing approaches when necessary while focusing on solutions that are secure, maintainable, and realistic for the teams responsible for them."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Security Engineer",
+        "description": "As a security engineer, Teemu has worked together with clients to secure their Cloud environments with industry best practices, developed tools to enhance security visibility and awareness and setup scanning for vulnerabilities and misconfigurations."
+      },
+      {
+        "title": "Lead backend developer",
+        "description": "As a lead backend developer, Teemu has overseen the whole project from technology selections to implementation and documentation."
+      },
+      {
+        "title": "Cloud architect",
+        "description": "Teemu has experience in architecting and building complex cloud architectures using traditional and serverless technologies in addition to mapping out when a certain technology is a right tool for the job."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI experience",
+        "description": "Teemu is using modern AI agentic workflows for security and software engineering."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Senior Software and Cloud Security Engineer"
+    },
+    {
+      "name": "Merivoima Oyj",
+      "position": "Software Developer"
+    },
+    {
+      "name": "Austin Works Oy",
+      "position": "Software Developer / Site Reliability Engineer, DevOps Engineer"
+    },
+    {
+      "name": "Putkisto DevOps Oy",
+      "position": "DevOps Engineer"
+    },
+    {
+      "name": "Battlegames Helsinki",
+      "position": "DevOps Engineer / System Administrator"
+    },
+    {
+      "name": "Kiertotalo IT Oy",
+      "position": "Systems Specialist / Solutions Consultant"
+    },
+    {
+      "name": "Datapiste Oy",
+      "position": "Systems Specialist / Solutions Consultant"
+    },
+    {
+      "name": "Ruutu Productions Oy",
+      "position": "UI Tester"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Server, cloud and infrastructure",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Terraform",
+        "Kubernetes",
+        "Cybersecurity"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "AWS",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Azure",
+          "years": 2,
+          "yearsText": "2 years"
+        },
+        {
+          "name": "GCP",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Terraform",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Kubernetes",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Cybersecurity",
+          "years": 5,
+          "yearsText": "5 years"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Python",
+        "Javascript / Node JS",
+        "GO",
+        "Java",
+        "Relational databases (PostgreSQL, MySQL etc.)",
+        "Timeseries databases (InfluxDB etc.)",
+        "Document databases (DynamoDB, MongoDB etc.)"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Python",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "Javascript / Node JS",
+          "years": 10,
+          "yearsText": "10 years"
+        },
+        {
+          "name": "GO",
+          "years": 6,
+          "yearsText": "6 years"
+        },
+        {
+          "name": "Java",
+          "years": 1,
+          "yearsText": "1 year"
+        },
+        {
+          "name": "Relational databases (PostgreSQL, MySQL etc.)",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Timeseries databases (InfluxDB etc.)",
+          "years": 1,
+          "yearsText": "1 year",
+          "note": "Table row broken in the source; year value paired by row order"
+        },
+        {
+          "name": "Document databases (DynamoDB, MongoDB etc.)",
+          "years": 5,
+          "yearsText": "5 years",
+          "note": "Table row broken in the source; year value paired by row order"
+        }
+      ]
+    },
+    {
+      "name": "Build, Test & Tools",
+      "keywords": [
+        "Git",
+        "Jenkins",
+        "Docker"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "Git",
+          "years": 8,
+          "yearsText": "8 years"
+        },
+        {
+          "name": "Jenkins",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "Docker",
+          "years": 8,
+          "yearsText": "8 years"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "JavaScript",
+        "TypeScript",
+        "ReactJS",
+        "Remix"
+      ],
+      "x-skillDetails": [
+        {
+          "name": "JavaScript",
+          "years": 8,
+          "yearsText": "8 year"
+        },
+        {
+          "name": "TypeScript",
+          "years": 5,
+          "yearsText": "5 years"
+        },
+        {
+          "name": "ReactJS",
+          "years": 7,
+          "yearsText": "7 years"
+        },
+        {
+          "name": "Remix",
+          "years": 1,
+          "yearsText": "1 year"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect - Associate",
+      "date": "2024",
+      "issuer": "AWS"
+    },
+    {
+      "name": "Certified Calico Operator: AWS Expert",
+      "date": "2021",
+      "issuer": "Tigera/Calico"
+    },
+    {
+      "name": "Certified Calico Operator: Level 1",
+      "date": "2021",
+      "issuer": "Tigera/Calico"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Security visibility tooling for the InfoSec team",
+      "entity": "Arctic Games Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "mobile game developer",
+      "roles": [
+        "Senior Software and Cloud Engineer"
+      ],
+      "startDate": "2022",
+      "x-highlight": true,
+      "description": "Responsible for developing internal Full Stack solutions and AWS infrastructure for the client's InfoSec team. Developing software for the InfoSec team to improve visibility into security findings and misconfigurations across relevant cloud platforms.",
+      "keywords": [
+        "AWS (Lambda, DynamoDB, Security Hub, Security Lake, GuardDuty, Inspector, Kinesis, API Gateway)",
+        "GCP",
+        "Terraform",
+        "Python",
+        "Node JS",
+        "GitHub Actions",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Opensearch",
+        "Remix",
+        "FastAPI"
+      ],
+      "x-note": "The highlight slide gives the role as 'Senior Software and Cloud Security Engineer', a different description and a partly different technology list; both descriptions are combined and the technology lists merged."
+    },
+    {
+      "name": "AWS infrastructure for the internal services team",
+      "entity": "Arctic Games Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "mobile game developer",
+      "roles": [
+        "Senior DevOps Engineer"
+      ],
+      "startDate": "2022",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "Responsible for designing, implementing and managing AWS infrastructure for internal services team. DevOps engineering for the client's services team.",
+      "keywords": [
+        "AWS (ECS, RDS, VPC, EC2, SSM)",
+        "Terraform",
+        "Python",
+        "Docker",
+        "GitHub Actions",
+        "Jenkins"
+      ],
+      "x-note": "The highlight slide gives the role as 'DevOps Engineer'."
+    },
+    {
+      "name": "Software and infrastructure development",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Merivoima Oyj",
+      "x-industry": "marine and energy technology",
+      "roles": [
+        "Software Developer"
+      ],
+      "startDate": "2021",
+      "endDate": "2022",
+      "x-duration": "5 months",
+      "x-highlight": true,
+      "description": "Responsible for Software development and Infrastructure development.",
+      "keywords": [
+        "Java",
+        "Kubernetes",
+        "AWS",
+        "Python",
+        "Terraform",
+        "Helm",
+        "Ansible",
+        "Docker",
+        "Go",
+        "TypeScript"
+      ],
+      "x-note": "Matched to the highlight 'Software Developer, 2021-2022' by role and dates; the highlight's technology list adds TypeScript."
+    },
+    {
+      "name": "Mobile application server environment",
+      "entity": "Hermes Health AI",
+      "x-industry": "health technology startup",
+      "roles": [
+        "Server Architect"
+      ],
+      "startDate": "2021",
+      "endDate": "2024",
+      "x-duration": "4 years",
+      "x-highlight": true,
+      "description": "Responsible for designing and maintaining mobile application server environment as a part time consultant. Cloud and server architect for health industry startup.",
+      "keywords": [
+        "AWS (VPC, ECS, RDS, API Gateway, Lambda)",
+        "Node.js",
+        "Terraform",
+        "Docker",
+        "MongoDB Atlas",
+        "CloudAMQP",
+        "GitHub Actions",
+        "JavaScript"
+      ],
+      "x-note": "Dates conflict in the source: the highlight slide says '2021-2024' (with a hidden character inside the year) while All client projects says '2021 - ongoing' with duration '4 years'. 2021–2024 was used as it matches the 4-year duration."
+    },
+    {
+      "name": "Software and infrastructure development",
+      "entity": "Merivoima Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "marine and energy technology",
+      "roles": [
+        "Software Developer / Site Reliability Engineer"
+      ],
+      "startDate": "2020",
+      "endDate": "2021",
+      "x-duration": "1 year, 2 months",
+      "description": "Responsible for Software and Infrastructure development.",
+      "keywords": [
+        "Java",
+        "Kubernetes",
+        "AWS",
+        "Python",
+        "Terraform",
+        "Helm",
+        "Ansible",
+        "Docker",
+        "Go"
+      ]
+    },
+    {
+      "name": "Serverless cloud platform and release pipelines",
+      "entity": "Undisclosed client",
+      "x-employer": "Austin Works Oy",
+      "roles": [
+        "DevOps Engineer"
+      ],
+      "startDate": "2018",
+      "endDate": "2020",
+      "x-duration": "1 year",
+      "description": "Responsible for building a serverless cloud platform and software release pipelines on AWS.",
+      "keywords": [
+        "Node.js",
+        "AWS (API Gateway, Lambda, CloudFront, S3, Cloudformation)",
+        "BitBucket pipelines",
+        "Auth0"
+      ]
+    },
+    {
+      "name": "Cloud platform and release pipelines on Azure",
+      "entity": "Azurite Data Hub",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "data platform company",
+      "roles": [
+        "DevOps Engineer"
+      ],
+      "x-duration": "9 months",
+      "description": "Responsible for building a cloud platform and software release pipelines on Azure",
+      "keywords": [
+        "Terraform",
+        "Python",
+        "Azure (AKS, Application Gateway, Event Hub)",
+        "Azure DevOps",
+        "Github Actions"
+      ]
+    },
+    {
+      "name": "DevOps consulting",
+      "entity": "Multiple clients",
+      "x-employer": "Putkisto DevOps Oy",
+      "x-industry": "DevOps consultancy",
+      "roles": [
+        "DevOps Engineer"
+      ],
+      "x-duration": "4 months",
+      "description": "DevOps Consulting projects for client organizations",
+      "keywords": [
+        "Azure (AKS)",
+        "Terraform",
+        "Docker",
+        "Python"
+      ]
+    },
+    {
+      "name": "Mobile game cloud environment and office IT",
+      "entity": "Battlegames Helsinki",
+      "x-employer": "Battlegames Helsinki",
+      "x-industry": "online game studio",
+      "roles": [
+        "DevOps Engineer / System Administrator"
+      ],
+      "startDate": "2017",
+      "endDate": "2019",
+      "x-duration": "1 year 9 months",
+      "description": "Responsible for designing and maintaining mobile game cloud environment and maintaining the office IT environment.",
+      "keywords": [
+        "AWS (VPC, EC2, ECS, Lambda, DynamoDB, Cloudformation)",
+        "Terraform",
+        "Python",
+        "Node.js",
+        "Docker",
+        "Jenkins",
+        "React"
+      ]
+    },
+    {
+      "name": "Client IT infrastructure support and workstation standards",
+      "entity": "Kiertotalo IT Oy / Datapiste Oy",
+      "x-employer": "Kiertotalo IT Oy / Datapiste Oy",
+      "x-industry": "IT services",
+      "roles": [
+        "Systems Specialist / Solutions Consultant"
+      ],
+      "startDate": "2014",
+      "endDate": "2017",
+      "x-duration": "3 years",
+      "description": "Support, management, and maintenance duties for clients IT infrastructure consisting of Windows and macOS workstations and servers. Workstation standard creation and implementation projects for customers",
+      "keywords": [
+        "Windows 7, 8, 10",
+        "Windows server 2008, 2012",
+        "Microsoft System Center Configuration Manager",
+        "Active Directory",
+        "macOS"
+      ]
+    },
+    {
+      "name": "UI testing and web design",
+      "entity": "Ruutu Productions Oy",
+      "x-employer": "Ruutu Productions Oy",
+      "x-industry": "media and software production",
+      "roles": [
+        "UI Tester"
+      ],
+      "startDate": "2011",
+      "endDate": "2014",
+      "description": "UI testing for inhouse CRM software and graphical web design",
+      "keywords": [
+        "macOS",
+        "various browsers",
+        "Jira"
+      ]
+    },
+    {
+      "name": "Helpdesk and onsite support",
+      "entity": "Multiple employers",
+      "roles": [
+        "Helpdesk / onsite support"
+      ],
+      "startDate": "2011",
+      "endDate": "2014",
+      "description": "Helpdesk and onsite support",
+      "keywords": [
+        "Windows 7, 8, 10",
+        "Windows server 2008, 2012",
+        "Active Directory",
+        "macOS"
+      ],
+      "x-note": "Source date '2011-20140' is a typo; corrected to 2011–2014."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p21",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects from 'All client projects'; merged with x-highlight. The highlight 'Software Developer 2021-2022' was matched to the direct employer project (5 months, 2021-2022), not to the earlier consultancy assignment for the same client.",
+      "Backend skill table is broken in the source: 'Timeseries databases' and 'Document databases' are in one cell with '1 year', followed by an empty cell with '5 years'. Interpreted as Timeseries databases 1 year and Document databases 5 years.",
+      "Garbled dates corrected: '2011-20140' → 2011–2014; the part-time consulting project for the health technology startup has conflicting end dates (2024 on the highlight slide with a hidden zero-width character, 'ongoing' on the project slide); 2021–2024 used.",
+      "Truncated keyword 'Cloudfron' restored as 'CloudFront'; duplicate 'Terraform' removed from the game studio project's technology list.",
+      "The part-time consulting assignment for the health technology startup has no employer named; it is not listed in work[].",
+      "Titles naming only an organization (the marine technology company, the game studio, the IT services companies, the production company) are treated as employers. The IT services title names two companies ('A / B'); both are listed in work[].",
+      "The 'AI experience' section is stored in x-keySkills.",
+      "Projects in the source have no names; short neutral names were derived from the descriptions."
+    ],
+    "x-cvYear": "2026"
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Pasi Harjula",
+    "label": "Principal Software Developer and Partner",
+    "email": "pasi.harjula@example.com",
+    "phone": "+358 40 000 1025",
+    "summary": "Pasi is an experienced Java developer with over 25 years of work history who is not afraid to take the lead role in various projects. He considers himself as a full-stack developer while still staying true to his Java roots. He’s striving to find the best solution to the problem at hand.\n\nHe has worked with AI in a few customer projects, including generative AI, text-to-speech and coding assistant tools. He is thrilled to see the benefits these bring in everyday work life. Still, an AI tool does not replace an experienced developer, but it is a useful assistant.\n\nHe loves to help people around him and improve the team efficiency with training and collaboration. His laid-back personality makes him easy to work with.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-pasi-harjula",
+        "url": "https://www.linkedin.com/in/example-pasi-harjula"
+      }
+    ],
+    "x-experienceSummary": "25+ years of business experience",
+    "x-tagline": "Good code and good teamwork are what make or break a software project. Keeping an eye on code smells, testability and refactoring belongs to the everyday work, and helping colleagues grow and learn new things is a real joy.",
+    "x-keywords": ["Java", "Groovy", "Spring Boot", "JS/TS", "React", "Databases", "Docker", "Test frameworks"],
+    "x-industries": ["Finance and Insurance", "Telecom", "Healthcare", "News and media"],
+    "x-strengths": [
+      {
+        "title": "Project lead and backend development",
+        "description": "Pasi has often taken the lead role in the developer team. He has long experience of planning and implementing backend systems with Java and great problem-solving skills."
+      },
+      {
+        "title": "Frontend curious",
+        "description": "Pasi has worked with several web-frameworks, including React, Angular and Vue. He is quick to learn and adapt to the next one and can present results fast."
+      },
+      {
+        "title": "Thorough and efficient working style",
+        "description": "Pasi pays attention to details and cleanliness. Security and quality is rooted on automation and conventions. Separation of concerns is the key when implementing and maintaining the code base."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Project lead and scrum master",
+        "description": "Pasi has taken the project lead position in several projects. He is eager to be the link between the development team and other stakeholders. He is a certified scrum master."
+      },
+      {
+        "title": "Full-stack development",
+        "description": "Pasi has extensive experience of backend Java services from different eras since 1999. He has been responsible of planning and integrating applications to other systems (SOAP, XML, MQ,…) while keeping an eye on the big picture. While Pasi’s main skills are in the backend development, he enjoys implementing new features in web applications as well."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Generative AI and coding tools",
+        "description": "Pasi has implemented a data analysis project with OpenAI JS SDK, an MCP tool for his own app and Copilot for an extensive UI refactoring task. Cursor agents can be used to boost productivity for generic tasks leaving time to think about more complex issues."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Principal Software Developer and Partner"
+    },
+    {
+      "name": "Koodikaarti Oyj"
+    },
+    {
+      "name": "Mobipub Oy"
+    },
+    {
+      "name": "Ambra Digital Oy"
+    },
+    {
+      "name": "Mobiilimylly Oy"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "keywords": ["Java / Goovy / Kotlin", "Spring / Spring Boot", "Relational DB (Postgresql, Oracle, DB2, etc…)", "ORMs (Hibernate, JPA, jOOQ, Querydsl)", "Flyway, Liquibase", "SOAP / XML / JSON"],
+      "x-skillDetails": [
+        { "name": "Java / Goovy / Kotlin", "years": 26, "yearsText": "26 years" },
+        { "name": "Spring / Spring Boot", "years": 16, "yearsText": "16 years" },
+        { "name": "Relational DB (Postgresql, Oracle, DB2, etc…)", "years": 20, "yearsText": "20 years" },
+        { "name": "ORMs (Hibernate, JPA, jOOQ, Querydsl)", "years": 15, "yearsText": "15 years" },
+        { "name": "Flyway, Liquibase", "years": 5, "yearsText": "5 years" },
+        { "name": "SOAP / XML / JSON", "years": 20, "yearsText": "20 years" }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": ["Javascript / Typescript", "React", "AngularJS", "UI libraries (Bootstrap, Tailwind)", "GraphQL"],
+      "x-skillDetails": [
+        { "name": "Javascript / Typescript", "years": 16, "yearsText": "16 years" },
+        { "name": "React", "years": 6, "yearsText": "6 years" },
+        { "name": "AngularJS", "years": 2, "yearsText": "2 years" },
+        { "name": "UI libraries (Bootstrap, Tailwind)", "years": 2, "yearsText": "2 years" },
+        { "name": "GraphQL", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Cloud, CI/CD & Tools",
+      "keywords": ["AWS, Azure", "Github Actions, Gitlab pipelines", "JIRA, Confluence", "Jenkins", "Maven, Gradle, Ant", "Docker, Kubernetes, Openshift", "Git", "Testing frameworks (Junit)", "Test automation (Selenium, Cypress, Cucumber)"],
+      "x-skillDetails": [
+        { "name": "AWS, Azure", "years": 5, "yearsText": "5 years" },
+        { "name": "Github Actions, Gitlab pipelines", "years": 2, "yearsText": "2 years" },
+        { "name": "JIRA, Confluence", "years": 12, "yearsText": "12 years" },
+        { "name": "Jenkins", "years": 15, "yearsText": "15 years" },
+        { "name": "Maven, Gradle, Ant", "years": 20, "yearsText": "20 years" },
+        { "name": "Docker, Kubernetes, Openshift", "years": 4, "yearsText": "4 years" },
+        { "name": "Git", "years": 13, "yearsText": "13 years" },
+        { "name": "Testing frameworks (Junit)", "years": 16, "yearsText": "16 years" },
+        { "name": "Test automation (Selenium, Cypress, Cucumber)", "years": 5, "yearsText": "5 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "AWS Certified Cloud Practitioner", "date": "2024", "issuer": "AWS" },
+    { "name": "Microsoft Azure AI (AI-900)", "date": "2023", "issuer": "Microsoft" },
+    { "name": "Scrum Master (PSM1)", "date": "2023", "issuer": "Scrum.org" },
+    { "name": "Sun Certified Java Programmer (SCJP)", "date": "2009", "issuer": "Sun" }
+  ],
+  "projects": [
+    {
+      "name": "Direct debit invoicing service for card payments",
+      "entity": "Kortix Oy",
+      "x-industry": "card issuing and payments fintech",
+      "roles": ["Backend developer"],
+      "description": "The team implemented a service that enables direct debit invoicing for an application stack that manages card payments. All components are deployed to AWS. Security is implemented according to DevSecOps principles. Internal libraries and conventions, automated dependency updates, code reviews, automated testing and continuous delivery are integrated across every stage of the application lifecycle.",
+      "keywords": ["Java 21", "Spring Boot", "REST", "SOAP", "Gitlab pipelines", "AWS SDK", "Gradle multimodule builds"],
+      "x-note": "No date given in the source."
+    },
+    {
+      "name": "Accounts and transactions backend services",
+      "entity": "Nordbank Oyj",
+      "x-industry": "Nordic bank",
+      "roles": ["Full Stack Developer"],
+      "startDate": "2023",
+      "endDate": "2025",
+      "x-highlight": true,
+      "description": "Nordbank Oyj is one of the largest banks in the Nordics. They have many teams working in several SAFe trains to provide and support essential business functions. Pasi is working as a full stack developer in one of the teams, in an agile development team in a SAFe environment. The team is responsible for the accounts and transactions section, developing and maintaining highly secure backend services that are used in all countries by the bank's web bank frontend applications. They also implement account origination flows to enable a seamless and quick way for the users to open new accounts of various types.",
+      "keywords": ["Java 21", "Spring Boot", "Rest", "SOAP", "Jenkins", "Cucumber", "JMeter", "AngularJS", "Typescript", "Oracle SQL", "microservices"]
+    },
+    {
+      "name": "Global B2B device-as-a-service platform",
+      "entity": "Nordlink Telecom",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "telecom operator",
+      "roles": ["Lead Developer"],
+      "startDate": "2022",
+      "x-highlight": true,
+      "description": "A global B2B service developed by the client to provide a digital engagement layer for clients to manage device-as-a-service leasing. The system is built on a microservice architecture.\n\nPasi served as a project lead, working closely with country product managers and the business owner. He was also responsible for production deployments, CI pipeline management and the release pipeline, and contributed to backend development when possible.",
+      "keywords": ["Java", "Kotlin", "Spring Boot", "AWS", "Cucumber", "Git", "Github Actions", "AngularJS"],
+      "x-note": "Date (2022) is given only on the highlight slide."
+    },
+    {
+      "name": "Patient invoicing system",
+      "entity": "Metropolitan Hospital District",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "public hospital district",
+      "roles": ["Senior Software Developer"],
+      "startDate": "2020",
+      "endDate": "2022",
+      "x-highlight": true,
+      "description": "A patient invoicing system that was built from scratch for the client to replace an older system. The system handles billions of euros worth of patient and organization invoices annually for the whole hospital district.\n\nPasi was a backend developer working with the microservices that read FHIR messages and processed them through messaging queues. Results were stored in a database. Monthly invoicing data was gathered from the database and sent to public and private clients.",
+      "keywords": ["Java", "Spring Boot", "jOOQ", "RabbitMQ", "Microsoft Azure", "JetBrains IntelliJ IDEA", "Gradle", "Kubernetes", "Minikube", "PostgreSQL", "HL7 FHIR"]
+    },
+    {
+      "name": "Internal and external development projects",
+      "entity": "Henkivakuutus Kaski",
+      "x-employer": "Koodikaarti Oyj",
+      "x-industry": "life insurance",
+      "roles": ["Full Stack Developer"],
+      "startDate": "2017",
+      "endDate": "2020",
+      "x-highlight": true,
+      "description": "Pasi worked with the client on several internal and external projects on their premises. The projects varied from internal service development to end-user targeted websites and native applications. The team worked in a SAFe environment.",
+      "keywords": ["Java", "Spring Framework", "Hibernate", "Apache Wicket", "Vue.js", "REST", "SOAP", "OpenShift", "Jenkins", "Microsoft SQL Server"]
+    },
+    {
+      "name": "Professional magazine subscription portal",
+      "entity": "Ammattilehti Oy",
+      "x-employer": "Mobipub Oy",
+      "x-industry": "professional magazine publisher",
+      "roles": ["Lead Developer"],
+      "startDate": "2014",
+      "endDate": "2016",
+      "description": "The subscription service was a publication portal for Ammattilehti Oy (later part of Aamuviesti Media Oyj) that offered digital access to professional magazines via subscription. It was built with a Grails backend and a Backbone/Marionette frontend (SPA). A PhoneGap wrapper was provided for mobile devices. Pasi led the development post-launch, focusing on backend and core frontend logic.",
+      "keywords": ["Groovy", "Grails", "Spring Boot", "Gradle", "AWS", "Javascript", "CSS", "HTML"]
+    },
+    {
+      "name": "B2B webstore",
+      "entity": "Nordlink Telecom",
+      "x-employer": "Mobipub Oy, Koodikaarti Oyj",
+      "x-industry": "telecom operator",
+      "roles": ["Developer"],
+      "startDate": "2014",
+      "endDate": "2015",
+      "description": "A B2B webstore made for the telecom operator. It has an AngularJS frontend and Spring backend. Elasticsearch is powering the search features for frontend. There are also integrations to back office systems (postage, logistics, etc.). Pasi's responsibilities included the back office integrations and other backend tasks.",
+      "keywords": ["Java", "Spring Boot", "Elasticsearch", "SQL", "Maven"],
+      "x-note": "The source title names two employers for this project."
+    },
+    {
+      "name": "Mobile news site redesign",
+      "entity": "Globalfin News",
+      "x-employer": "Mobipub Oy",
+      "x-industry": "financial news and data",
+      "roles": ["Lead Developer"],
+      "startDate": "2013",
+      "endDate": "2014",
+      "description": "Globalfin News (US) hired Mobipub Oy to redesign its news for mobile. The team built a responsive web site using a custom caching layer and tools for integrating with the client's content APIs. As lead developer for a 4–5 person team in Helsinki, Pasi was responsible for application architecture and building tools to streamline the frontend development.",
+      "keywords": ["Groovy", "Grails", "Spring Boot", "Gradle", "Javascript", "CSS", "HTML"]
+    },
+    {
+      "name": "Mobile sites and football news backend",
+      "entity": "Rede Sol TV",
+      "x-employer": "Mobipub Oy",
+      "x-industry": "TV network",
+      "roles": ["Lead Developer"],
+      "startDate": "2012",
+      "endDate": "2013",
+      "description": "Rede Sol TV, a major Brazilian TV network, partnered with Mobipub Oy to develop mobile sites for various shows and genres using a shared template library and integration with the client's content APIs. Pasi was a lead developer in a team that built a Grails-based backend for a football news project. It delivered near real-time game updates and league news using the client’s APIs.",
+      "keywords": ["Groovy", "Grails", "Spring Boot", "Gradle", "Javascript", "CSS", "HTML"]
+    },
+    {
+      "name": "Crane fleet management system",
+      "entity": "Liftmaster Oyj",
+      "x-employer": "Ambra Digital Oy",
+      "x-industry": "industrial cranes",
+      "roles": ["Developer"],
+      "startDate": "2011",
+      "endDate": "2012",
+      "description": "The client needed a fleet management system. Ambra Digital Oy built a solution that collected data from crane modems into a central database, enabling lifecycle tracking, proactive servicing, and data visualization. Pasi continued the development by integrating additional crane models and building data-driven web pages using a Grails backend.",
+      "keywords": ["Groovy", "Grails", "Spring", "SQL", "Hibernate"]
+    },
+    {
+      "name": "Technical data and manuals management system",
+      "entity": "HVAC Product Registry",
+      "x-employer": "Ambra Digital Oy",
+      "x-industry": "HVAC component registry",
+      "roles": ["Full Stack Developer"],
+      "startDate": "2009",
+      "endDate": "2010",
+      "description": "HVAC Product Registry, a Finnish HVAC component registry, needed a new system for managing technical data and manuals for industry components. Ambra Digital Oy built a Grails-based web app with a public site and an extranet for professionals. Pasi implemented shopping cart–like features for admins to manage multiple products, involving web form updates, JavaScript, and database changes.",
+      "keywords": ["Groovy", "Grails", "XML", "Hibernate", "SQL", "Javascript"]
+    },
+    {
+      "name": "Mobile content delivery platform",
+      "entity": "Tangerine Telecom UK",
+      "x-employer": "Mobiilimylly Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Software Developer"],
+      "description": "Mobiilimylly Oy supplied a mobile content delivery platform for the UK operator. Pasi integrated the platform to the operator's billing system and SMSC and handled extensive UI customizations. Later he provided second-line technical support post-launch.",
+      "keywords": ["Oracle", "JSP", "SQL", "Java", "WebLogic", "SMSC", "Java EE application servers", "XML"],
+      "x-note": "No date given in the source."
+    },
+    {
+      "name": "Content delivery platform",
+      "entity": "Polska Mobile",
+      "x-employer": "Mobiilimylly Oy",
+      "x-industry": "mobile telecom operator",
+      "roles": ["Developer"],
+      "description": "Mobiilimylly Oy deployed a content delivery platform for the Polish operator, offering ringtones and wallpapers via web, WAP, and SMS interfaces. The system ran on BEA Weblogic with an Oracle database and integrated with operator billing and SMS systems. Pasi's role focused on customizing UIs and implementing necessary client-specific integrations.",
+      "keywords": ["Oracle", "JSP", "SQL", "Java", "WebLogic", "SMSC", "Java EE application servers", "XML"],
+      "x-note": "No date given in the source."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p25",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Slide 3 (Project highlights) repeats four projects (bank, telecom operator, hospital district, life insurer); merged with x-highlight. Highlight and 'All client projects' texts were combined where they carry different details; the telecom project's date (2022) and the keyword 'Git' come from the highlight slide.",
+      "'AI Experience' item stored as x-keySkills.",
+      "Unmapped product: the name of the telecom operator's global B2B device-as-a-service platform was generalized.",
+      "The hospital district invoicing volume ('about 2 billion EUR') generalized to 'billions of euros'. The bank's 'biggest bank in the Nordics' softened to 'one of the largest banks in the Nordics'.",
+      "The project for the telecom operator's B2B webstore names two employers in the title (mobile publishing company and software consultancy).",
+      "Projects are listed column by column (left column first, then right) per slide, as in the source layout.",
+      "Skill 'Java / Goovy / Kotlin' kept with the source spelling."
+    ]
+  }
+}

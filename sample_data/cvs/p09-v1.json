@@ -1,0 +1,318 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Olli Rantasalo",
+    "label": "Principal Product Engineer and Architect, Partner",
+    "email": "olli.rantasalo@example.com",
+    "phone": "+358 40 000 1009",
+    "summary": "Olli is a Product Engineer and hands-on Architect with over 20 years of experience delivering digital services that solve real-world problems. He helps teams turn ideas into working software, from quick prototypes to scalable cloud platforms.\n\nHe focuses on building products that are useful, reliable, and maintainable. Olli has led projects across industries. He works fluently with both technical and business stakeholders, always aiming to build the right thing, not just build it well.\n\nHe cares about outcomes and takes pride in shipping products that create real value.\n\nOlli sees AI as a practical tool for solving real problems, not just a trend. While foundation models have opened new possibilities, he believes there's still a lot of untapped potential in more traditional AI and Machine Learning methods, especially when paired with domain knowledge and solid engineering. For Olli, the focus is always on using the right approach to create value, not chasing hype.\n\nOlli blends deep technical expertise with a strong product mindset. As a Product Engineer, Solution Architect, and Technical Lead, he helps teams build software that delivers real value, from concept to production.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-olli-rantasalo",
+        "url": "https://www.linkedin.com/in/example-olli-rantasalo"
+      }
+    ],
+    "x-experienceSummary": "20+ years of experience",
+    "x-tagline": "Meaningful results depend on how data is handled from the very beginning: reliable insight only appears when quality, structure and governance are designed in from the start instead of being bolted on later.",
+    "x-industries": ["Industrial Automation", "Manufacturing", "Logistics", "Telematics", "Smart Maintenance", "Content Delivery", "Gaming"],
+    "x-strengths": [
+      { "title": "Product Engineering" },
+      { "title": "Solution Architecture" },
+      { "title": "User-Centered Design" },
+      { "title": "Cross-Functional Leadership" }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Product Engineer",
+        "description": "Drives the development of scalable and maintainable digital products by aligning user needs, business goals, and technical execution. Balances hands-on coding with product thinking to deliver real value."
+      },
+      {
+        "title": "Solution Architect",
+        "description": "Designs robust software architectures that support long-term product growth. Translates complex requirements into clear technical strategies that teams can execute efficiently."
+      },
+      {
+        "title": "Technical Lead",
+        "description": "Leads cross-functional teams through all stages of product development. Ensures quality, fosters collaboration, and keeps projects on track by combining technical guidance with clear communication."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "Team Leadership",
+        "description": "Guides cross-functional teams with clarity and purpose, focusing on collaboration, accountability, and growth."
+      },
+      {
+        "title": "Stakeholder Communication",
+        "description": "Enables clear communication between technical detail and business goals, ensuring alignment and shared understanding across roles."
+      },
+      {
+        "title": "Mentoring & Coaching",
+        "description": "Supports individual growth through hands-on guidance, knowledge sharing, and a culture of continuous learning."
+      },
+      {
+        "title": "Strategic Thinking",
+        "description": "Sees the big picture by connecting product direction, architecture, and delivery to long-term business outcomes."
+      },
+      {
+        "title": "Problem Solving",
+        "description": "Tackles complexity with a pragmatic mindset by breaking down challenges and focusing on actionable solutions."
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Principal Product Engineer and Architect, Partner"
+    },
+    {
+      "name": "Kyberturva Oyj",
+      "position": "Lead Consultant",
+      "startDate": "2023",
+      "endDate": "2024"
+    },
+    {
+      "name": "Austin Works Oy"
+    },
+    {
+      "name": "Mobiilitehdas Oy",
+      "position": "Software Developer",
+      "startDate": "2007",
+      "endDate": "2011",
+      "x-note": "Source date '2007-20211' interpreted as 2007-2011."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["HTML / CSS", "JavaScript", "UI Libraries", "React", "Redux", "GraphQL", "ReactNative", "BabelJS", "Webpack", "Storybook"],
+      "x-skillDetails": [
+        { "name": "HTML / CSS", "years": 20, "yearsText": "20 years" },
+        { "name": "JavaScript", "years": 20, "yearsText": "20 years" },
+        { "name": "UI Libraries", "years": 20, "yearsText": "20 years" },
+        { "name": "React", "years": 11, "yearsText": "11 years" },
+        { "name": "Redux", "years": 5, "yearsText": "5 years" },
+        { "name": "GraphQL", "years": 3, "yearsText": "3 years" },
+        { "name": "ReactNative", "years": 2, "yearsText": "2 years" },
+        { "name": "BabelJS", "years": 8, "yearsText": "8 years" },
+        { "name": "Webpack", "years": 5, "yearsText": "5 years" },
+        { "name": "Storybook", "years": 5, "yearsText": "5 years" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["JavaScript", "Python", "C#", "Java", "GOlang"],
+      "x-skillDetails": [
+        { "name": "JavaScript", "years": 15, "yearsText": "15 years" },
+        { "name": "Python", "years": 5, "yearsText": "5 years" },
+        { "name": "C#", "years": 5, "yearsText": "5 years" },
+        { "name": "Java", "years": 2, "yearsText": "2 years" },
+        { "name": "GOlang", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "DevSecOps",
+      "keywords": ["Git", "Github Actions", "GitOps", "Docker", "Kubernetes", "ArgoCD", "Terraform"],
+      "x-skillDetails": [
+        { "name": "Git", "years": 14, "yearsText": "14 years" },
+        { "name": "Github Actions", "years": 4, "yearsText": "4 years" },
+        { "name": "GitOps", "years": 2, "yearsText": "2 years" },
+        { "name": "Docker", "years": 10, "yearsText": "10 years" },
+        { "name": "Kubernetes", "years": 7, "yearsText": "7 years" },
+        { "name": "ArgoCD", "years": 2, "yearsText": "2 years" },
+        { "name": "Terraform", "years": 4, "yearsText": "4 years" }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "keywords": ["Azure", "AWS"],
+      "x-skillDetails": [
+        { "name": "Azure", "years": 9, "yearsText": "9 years" },
+        { "name": "AWS", "years": 5, "yearsText": "5 years" }
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": ["Relational databases (PostgreSQL, MySQL)", "Document databases (CosmosDB, MongoDB)", "Key Value databases (Redis, Memcached)"],
+      "x-skillDetails": [
+        { "name": "Relational databases (PostgreSQL, MySQL)", "years": 20, "yearsText": "20 years" },
+        { "name": "Document databases (CosmosDB, MongoDB)", "years": 5, "yearsText": "5 years" },
+        { "name": "Key Value databases (Redis, Memcached)", "years": 2, "yearsText": "2 years" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Auxiliary services for games",
+      "entity": "Globalstream Entertainment",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "streaming and gaming company",
+      "roles": ["Principal Consultant"],
+      "startDate": "2025",
+      "x-highlight": true,
+      "description": "Was a part of the team building auxiliary services for the client's gaming business.",
+      "keywords": ["Java", "AWS", "Various Databases and Caching solution"]
+    },
+    {
+      "name": "Physician portal",
+      "entity": "Näkökeskus Oy",
+      "x-employer": "Kipinä Software Oy",
+      "x-industry": "optical retail and eye clinics",
+      "startDate": "2025",
+      "description": "Led the efforts on building a new physician portal service for doctors with various integrations.",
+      "keywords": ["RemixJS", "KeystoneJS", "Terraform", "Azure", "Entra ID", "Azure Container Apps", "PostgreSQL", "GitHub", "GitHub Actions"]
+    },
+    {
+      "name": "Strategic planning, solution sales and CIAM implementations",
+      "entity": "Undisclosed client",
+      "x-employer": "Kyberturva Oyj",
+      "x-industry": "cybersecurity consultancy",
+      "roles": ["Lead Consultant"],
+      "startDate": "2023",
+      "endDate": "2024",
+      "description": "Developed strategic planning initiatives, improving operational efficiency and aligning with company-wide objectives. Developed and implemented solution sales strategy and demos. Led CIAM implementation projects.",
+      "keywords": ["Python", "JavaScript", "HTML", "CSS", "React", "Auth0"],
+      "x-note": "Source title names only the employer and role; no client given."
+    },
+    {
+      "name": "Aftermarket and maintenance solutions",
+      "entity": "Trukki Europe",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "lift truck manufacturer",
+      "roles": ["Principal Architect"],
+      "startDate": "2021",
+      "endDate": "2023",
+      "x-highlight": true,
+      "description": "Led the efforts on developing solutions for aftermarket and maintenance. Worked closely with stakeholders translating the business needs into technical solutions. Ran an initiative to change the culture of measuring success from the grassroots level. As a team we made a mobile application for lift truck maintenance, innovated new ways of doing remote diagnostics and made a solution for analyzing truck telemetry data.",
+      "keywords": ["JavaScript", "HTML", "CSS", "Storybook", "TypeScript", "React", "ReactNative", "Highcharts", "NestJS", "Prisma", "TypeORM", "GraphQL", "GOLang", "Python", "Lerna", "Monorepo", "Git", "Azure", "Docker", "Kubernetes", "GitOps", "ArgoCD", "IoT", "Azure IoT Edge", "PostgreSQL (TimescaleDB)"]
+    },
+    {
+      "name": "Contract tool and self-service reporting portal",
+      "entity": "Talotekniikka Kuulas Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "building technology services",
+      "roles": ["Principal Architect"],
+      "startDate": "2016",
+      "endDate": "2019",
+      "x-highlight": true,
+      "description": "Led a team of developers and designers working on 2 solutions: A contract tool for the Nordics and a digital counterpart in a form of self-service reporting portal. Worked together with stakeholders aligning business strategy and finding cooperation partners. Worked together with building automation vendors in order to advange integration with the platform.",
+      "keywords": ["JavaScript", "HTML", "CSS", "Storybook", "TypeScript", "React", "Highcharts", "Java", "Git", "Azure", "Docker"]
+    },
+    {
+      "name": "OT data and virtual reality integration platform",
+      "entity": "Kaari Engineering",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "engineering and design consultancy",
+      "description": "Led a team of developers building a platform for integrating OT tools data with virtual reality systems and a portal with which to compare AI model inference results.",
+      "keywords": ["JavaScript", "HTML", "CSS", "React", "Highcharts", "TypeScript", "NestJS", "Git", "Azure"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Mobile web version of an online auction site",
+      "entity": "Uutistalo Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "media company",
+      "description": "Led a team of developers building the mobile (web) version of an online auction site.",
+      "keywords": ["JavaScript", "HTML", "CSS", "HapiJS", "Git", "AWS"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Map-based statistical data analysis tool",
+      "entity": "Hakemisto Oy",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "directory and digital marketing services",
+      "description": "Led a team of developers building a map-based statistical data analysis tool connected to national population register data in order to analyze regional responses to a quantitative questionnaire.",
+      "keywords": ["JavaScript", "HTML", "CSS", "Java", "Git", "AWS"],
+      "x-note": "No dates given in the source."
+    },
+    {
+      "name": "Self-service reporting portal",
+      "entity": "Liftmaster Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "industrial cranes",
+      "startDate": "2012",
+      "endDate": "2013",
+      "description": "Worked together with stakeholders in order to design and implement a self-service reporting portal.",
+      "keywords": ["JavaScript", "HTML", "CSS", "AngularJS", "Highcharts", "Java", "Git", "AWS"]
+    },
+    {
+      "name": "Digital newspaper",
+      "entity": "Uutistalo Oyj",
+      "x-employer": "Austin Works Oy",
+      "x-industry": "media company",
+      "roles": ["Senior Consultant"],
+      "startDate": "2011",
+      "endDate": "2012",
+      "x-highlight": true,
+      "description": "Worked in a team collaborating with the stakeholders building a digital newspaper – the first digital service with the same content as the printed newspaper.",
+      "keywords": ["JavaScript", "HTML", "CSS", "Git", "AWS"]
+    },
+    {
+      "name": "CMS platform for mobile sites and set-top-box media integrations",
+      "entity": "Undisclosed client",
+      "x-employer": "Mobiilitehdas Oy",
+      "x-industry": "mobile software",
+      "roles": ["Software Developer"],
+      "startDate": "2007",
+      "endDate": "2011",
+      "description": "Developed a CMS platform for .mobi sites and various media integrations for set-top-boxes.",
+      "keywords": ["DVB-T", "NGINX", "PHP", "Python", "MySQL"],
+      "x-note": "Source date '2007-20211' corrected to 2007-2011. The technology list covers this and the four following client assignments."
+    },
+    {
+      "name": "Free-to-air TV recording platform",
+      "entity": "TallennusTV",
+      "x-employer": "Mobiilitehdas Oy",
+      "x-industry": "TV recording service",
+      "roles": ["Software Developer"],
+      "description": "A platform for saving free-to-air TV channels.",
+      "keywords": ["DVB-T", "NGINX", "PHP", "Python", "MySQL"],
+      "x-note": "Listed under the Mobiilitehdas Oy 2007-2011 employment; no separate dates."
+    },
+    {
+      "name": "Mobile portal and mobile streaming service",
+      "entity": "Public Broadcaster Kaiku",
+      "x-employer": "Mobiilitehdas Oy",
+      "x-industry": "national public broadcaster",
+      "roles": ["Software Developer"],
+      "description": "The company's CMS platform was running the broadcaster's mobile portal and the mobile version of its streaming service.",
+      "keywords": ["DVB-T", "NGINX", "PHP", "Python", "MySQL"],
+      "x-note": "Listed under the Mobiilitehdas Oy 2007-2011 employment; no separate dates."
+    },
+    {
+      "name": "Mobile portal",
+      "entity": "Telelinkki Oyj",
+      "x-employer": "Mobiilitehdas Oy",
+      "x-industry": "telecom operator",
+      "roles": ["Software Developer"],
+      "description": "The company's CMS platform was running the operator's mobile portal.",
+      "keywords": ["DVB-T", "NGINX", "PHP", "Python", "MySQL"],
+      "x-note": "Listed under the Mobiilitehdas Oy 2007-2011 employment; no separate dates."
+    },
+    {
+      "name": "Free-to-air TV recording platform",
+      "entity": "Birdie Media",
+      "x-employer": "Mobiilitehdas Oy",
+      "x-industry": "golf media",
+      "roles": ["Software Developer"],
+      "description": "A platform for saving free-to-air TV channels.",
+      "keywords": ["DVB-T", "NGINX", "PHP", "Python", "MySQL"],
+      "x-note": "Listed under the Mobiilitehdas Oy 2007-2011 employment; no separate dates. The description is identical to the TV recording service entry in the source, probably a copy-paste error."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p09",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "The introductory paragraph of the 'Key Roles' section was added as the last paragraph of the summary.",
+      "A 'Discover more — read the full post' blog link on slide 1 was dropped.",
+      "The four project highlights (slide 3) duplicate projects in 'All client projects'; roles were taken from the highlights.",
+      "The employer Austin Works Oy has no position or employment dates in the source; several Austin Works Oy projects have no dates.",
+      "Mobiilitehdas Oy date '2007-20211' is a typo; interpreted as 2007-2011.",
+      "The golf media client under Mobiilitehdas Oy has the same description as the TV recording service; probably a copy-paste error in the source.",
+      "The quote on slide 1 is about data quality and governance, which does not match the rest of this product-engineering CV; possibly leftover from another person's CV."
+    ]
+  }
+}

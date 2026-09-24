@@ -1,0 +1,212 @@
+{
+  "$schema": "../schema/cv.schema.json",
+  "basics": {
+    "name": "Kalle Nurmela",
+    "label": "Principal Consultant, Architect, Team Lead, Developer",
+    "email": "kalle.nurmela@example.com",
+    "phone": "+358 40 000 1014",
+    "summary": "Kalle is a full-stack software developer and architect with over 21 years of experience. He finds learning the latest technologies intriguing, but people come first and foremost. Improving the processes requires much more than simply cranking out software.\n\nHe began his career in the telecom industry getting to be one of the early adopters of Scrum in Finland. Later he spent a significant part of his career building and improving systems critical to national security.\n\nGaming has been close to his heart since he got his first home computer as a child, and it still is his favourite pastime.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "example-kalle-nurmela",
+        "url": "https://www.linkedin.com/in/example-kalle-nurmela"
+      }
+    ],
+    "x-experienceSummary": "21 years of business experience",
+    "x-tagline": "Software is made by people and for people. Tools keep changing and parts of the work get automated, yet the way we build things must never outweigh the reason we build them.",
+    "x-keywords": ["Go", "RDBMS", "Java", "JavaScript", "Git", "Agile", "AWS", "Trust & Safety"],
+    "x-industries": ["Defence", "Gaming", "Telecom", "Bioenergy and Circular Economy"],
+    "x-strengths": [
+      {
+        "title": "It's all about people",
+        "description": "People have goals to achieve, tasks to be done and fun to be had. Software can help in all of these, but to successfully build it, we need to communicate, be curious and have empathy for each other and ourselves."
+      },
+      {
+        "title": "Live to learn",
+        "description": "As human beings, we are never truly finished with our learning. New ideas, new technologies, new challenges and new opportunities; you never know what the new day brings."
+      }
+    ],
+    "x-keyRoles": [
+      {
+        "title": "Senior SW Engineer (Trust & Safety), Arctic Games Oy",
+        "description": "Design and building of automated content moderation and Fair Play tools for mobile games; backend, user interface, database, IaC, CI."
+      },
+      {
+        "title": "Lead Developer and Project Manager, Nordic Defence Engineering Oy",
+        "description": "Complete rebuild of an operational planning system for a defence sector client. Managed architecture, budgeting, requirements and led a team of 8–10 developers."
+      }
+    ],
+    "x-keySkills": [
+      {
+        "title": "AI experience: Generative AI and Coding Tools",
+        "description": "Daily use of AI-assisted development tools, including GitHub Copilot (ChatGPT, Claude and Gemini models). Experienced in generating test cases and implementation using Copilot Agent mode. Leveraging Gemini 3 Pro for hobby game projects. Experimenting with LLMs in local environments."
+      }
+    ],
+    "x-hobbies": "Enjoys gaming and building hobby game projects."
+  },
+  "work": [
+    {
+      "name": "Kipinä Software Oy",
+      "position": "Principal Consultant, Architect, Team Lead, Developer"
+    },
+    {
+      "name": "Nordic Defence Engineering Oy",
+      "position": "Lead Developer, Project Manager"
+    },
+    {
+      "name": "Mobisoft Oyj"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["JavaScript", "Java", "TypeScript", "Node.js", "Go language", "Kotlin", "C#"],
+      "x-skillDetails": [
+        { "name": "JavaScript", "years": 18, "yearsText": "18 years" },
+        { "name": "Java", "years": 15, "yearsText": "15 years" },
+        { "name": "TypeScript", "years": 6, "yearsText": "6 years" },
+        { "name": "Node.js", "years": 4, "yearsText": "4 years" },
+        { "name": "Go language", "years": 4, "yearsText": "4 years" },
+        { "name": "Kotlin", "years": 4, "yearsText": "4 years" },
+        { "name": "C#", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": ["React", "HTML / CSS", "JavaFX", "Java Swing"],
+      "x-skillDetails": [
+        { "name": "React", "years": 6, "yearsText": "6 years" },
+        { "name": "HTML / CSS", "years": 18, "yearsText": "18 years" },
+        { "name": "JavaFX", "years": 6, "yearsText": "6 years" },
+        { "name": "Java Swing", "years": 15, "yearsText": "15 years" }
+      ]
+    },
+    {
+      "name": "Databases and Backend",
+      "keywords": ["PostgreSQL", "MySQL", "Oracle Database", "Spring Framework", "Java Enterprise Edition", ".Net Core and Entity Framework"],
+      "x-skillDetails": [
+        { "name": "PostgreSQL", "years": 7, "yearsText": "7 years" },
+        { "name": "MySQL", "years": 4, "yearsText": "4 years" },
+        { "name": "Oracle Database", "years": 14, "yearsText": "14 years" },
+        { "name": "Spring Framework", "years": 11, "yearsText": "11 years" },
+        { "name": "Java Enterprise Edition", "years": 15, "yearsText": "15 years" },
+        { "name": ".Net Core and Entity Framework", "years": 1, "yearsText": "1 year" }
+      ]
+    },
+    {
+      "name": "Platform, Build and Tools",
+      "keywords": ["Linux", "Docker", "AWS", "Terraform", "VMWare", "VirtualBox", "Git", "GitHub Actions", "Jira and Confluence", "Maven", "SVN", "Jenkins"],
+      "x-skillDetails": [
+        { "name": "Linux", "years": 21, "yearsText": "21 years" },
+        { "name": "Docker", "years": 7, "yearsText": "7 years" },
+        { "name": "AWS", "years": 4, "yearsText": "4 years" },
+        { "name": "Terraform", "years": 4, "yearsText": "4 years" },
+        { "name": "VMWare", "years": 10, "yearsText": "10 years" },
+        { "name": "VirtualBox", "years": 5, "yearsText": "5 years" },
+        { "name": "Git", "years": 9, "yearsText": "9 years" },
+        { "name": "GitHub Actions", "years": 4, "yearsText": "4 years" },
+        { "name": "Jira and Confluence", "years": 7, "yearsText": "7 years" },
+        { "name": "Maven", "years": 12, "yearsText": "12 years" },
+        { "name": "SVN", "years": 13, "yearsText": "13 years" },
+        { "name": "Jenkins", "years": 13, "yearsText": "13 years" }
+      ]
+    }
+  ],
+  "certificates": [
+    { "name": "AWS Certified Cloud Practitioner", "date": "2024", "issuer": "AWS" },
+    { "name": "Certified SAFe® 5 Product Owner/ Product Manager", "date": "2020", "issuer": "Scaled Agile" },
+    { "name": "Certified Scrum Master", "date": "2005", "issuer": "Scrum Alliance" }
+  ],
+  "projects": [
+    {
+      "name": "Trust & Safety tooling",
+      "entity": "Arctic Games Oy",
+      "x-industry": "mobile game developer",
+      "roles": ["Senior Software Engineer (Trust & Safety)"],
+      "startDate": "2021",
+      "x-highlight": true,
+      "description": "Improving the moderation processes by designing and building tools for automated content moderation and Fair Play for large-scale online mobile games. These tools help the human moderators in handling vast amounts of chat and other user-generated content that needs moderation and help in Fair Play investigations ensuring fair and equal treatment of all players. The work includes backend, UI, and AWS infrastructure.\n\nDay-to-day responsibilities include coordinating the technical planning of new products and assisting in their high-level planning aligning the technologies and implementations with business needs. Doing project management for new features. Communicating with the end users both to proactively to introduce features and fixes and reactively to support the use of current tools. Contributing to best practices on reliability and availability, and together with the rest of the team, contributing to the continuous improvement of Trust & Safety services. Working in collaboration with a multidisciplinary team of Trust & Safety specialists, data and engineering specialists, other consultants, and product and game teams.",
+      "keywords": ["AWS", "Node.js", "Express.js", "AngularJS", "React", "Tailwind", "HTML", "CSS", "TypeScript", "JavaScript", "Go", "Kotlin", "MySQL", "PostgreSQL", "DynamoDB", "SQS", "Kinesis", "EC2", "ECR", "ECS", "CloudWatch", "Kibana", "Prometheus", "Grafana", "Docker", "Terraform", "nginx", "Git", "Jira", "Confluence", "Notion"]
+    },
+    {
+      "name": "Next-generation product and warehouse management system",
+      "entity": "Teollisuussofta Oy",
+      "x-industry": "industrial software and consulting",
+      "description": "Architected next-generation product in Bioenergy and Circular Economy; led warehouse management system development and improved processes, security, and business continuity.",
+      "keywords": ["C#", ".NET Core", ".NET 5", "Entity Framework", "Angular", "MS SQL Server", "Docker", "PHP", "nginx", "Apache HTTP server"],
+      "x-note": "No dates given in the source. The title names only the company, so it is unclear whether it was a client or an employer."
+    },
+    {
+      "name": "Web UI for a training system",
+      "entity": "Defence sector client",
+      "x-employer": "Nordic Defence Engineering Oy",
+      "x-industry": "defence",
+      "startDate": "2020",
+      "endDate": "2021",
+      "description": "Designed and implemented web UI for real-time monitoring and configuration in a next generation training system for the defence sector.",
+      "keywords": ["React", "Mobx", "TypeScript", "JavaScript", "Java backend"]
+    },
+    {
+      "name": "Resource planning system renewal",
+      "entity": "Defence sector client",
+      "x-employer": "Nordic Defence Engineering Oy",
+      "x-industry": "defence",
+      "roles": ["Lead Developer", "Project Manager"],
+      "startDate": "2014",
+      "endDate": "2020",
+      "x-highlight": true,
+      "description": "The goal of the project was the renewal of a critical resource planning system. Role included architecting the new solution and leading the development both as a developer and a project manager. Coordinating a multi-site development team in a collaborative multi-vendor environment, managing deliverables and organizing feedback sessions with client representatives. A customized agile development process defined by the client was used.",
+      "keywords": ["Java", "Java EE", "Hibernate", "JavaFX", "OSGi", "Spring Framework", "Spring Boot", "Docker", "VirtualBox", "Oracle Database", "Ansible", "Git", "Javascript", "React", "M-Files", "ISO 9001:2015", "AQAP 2110 Ed. D."],
+      "x-note": "Technology lists of the highlight and the project list were combined (Ansible only in the project list; Git, JavaScript, React, M-Files and quality standards only in the highlight)."
+    },
+    {
+      "name": "Operational planning system rebuild",
+      "entity": "Defence sector client",
+      "x-employer": "Nordic Defence Engineering Oy",
+      "x-industry": "defence",
+      "roles": ["Lead Developer", "Project Manager"],
+      "startDate": "2009",
+      "endDate": "2014",
+      "x-highlight": true,
+      "description": "The scope of the project was a complete rebuild of an operational planning system for a defence sector client. Started with the initial requirements gathering phase and supported sales in technical aspects such as feasibility and cost estimations. The project used a Scrum-like process with short iterations and feedback from the client.\n\nStarted project with a small group of architects doing architectural spikes (frontend—backend—database) to prove the feasibility of the technology choices. For implementation, the team was expanded to 8–10 developers, and Kalle took on the additional responsibilities of project management including budgeting, risk management and quality management. Also, on one occasion the resolution of internal team conflict.",
+      "keywords": ["Java", "Java Swing", "JavaFX", "OSGi", "MyBatis", "Spring Framework", "PostgreSQL", "Apache Cassandra", "AQAP 2110", "SVN"]
+    },
+    {
+      "name": "Clustered GIS infrastructure and map UI",
+      "entity": "Maritime Systems Integration Oy",
+      "x-employer": "Mobisoft Oyj",
+      "x-industry": "defence systems integrator",
+      "startDate": "2007",
+      "endDate": "2009",
+      "description": "Designed clustered GIS infrastructure and Java Portlet-based web UI for map visualization and geographic data editing.",
+      "keywords": ["JavaScript", "Dojo", "Java EE", "JSR 168/286 Portlets", "JSF", "JSP", "ArcGIS Server", "GeoServer", "Oracle Database", "VMWare"]
+    },
+    {
+      "name": "Service management product for mobile operators",
+      "entity": "Nordtel Oyj",
+      "x-industry": "telecom and mobile devices",
+      "startDate": "2004",
+      "endDate": "2007",
+      "description": "Integration testing and development of service management product for mobile operators; promoted agile development methods.",
+      "keywords": ["Java", "Java EE", "Spring", "Hibernate", "FitNesse", "CruiseControl", "SVN", "Oracle Database", "Scrum"],
+      "x-note": "The title names only the company, so it is unclear whether it was a client or an employer."
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "personId": "p14",
+    "variant": "default",
+    "sourceFormat": "pptx",
+    "x-cvYear": "2025",
+    "x-conversionNotes": [
+      "Defence projects were generalized to the defence sector level; specific system types and the client were not named. Industry 'Defence (C2)' was shortened to 'Defence'.",
+      "Certificate 'Certified Scrum Master' named the trainer in the source; the trainer's name was dropped.",
+      "The 'AI experience' section was stored in x-keySkills.",
+      "The three project highlights duplicate projects in 'All client projects' and were merged into them, keeping the fuller highlight descriptions.",
+      "Two projects are titled with a company name only; it is not clear whether they were clients or employers, so they were not added to work[].",
+      "First-person text in a project description was rewritten in third person.",
+      "The detail of the first home computer and age was generalized."
+    ]
+  }
+}
