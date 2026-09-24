@@ -1,0 +1,103 @@
+# Intent: Kipinä CV bank
+
+## What and why
+
+Build a CV bank where Kipinä can manage and edit the CVs of its employees and, later, its
+subcontractors.
+
+The main output is a **downloadable PDF CV for a client**. It has to look good, be easy to
+skim and sum up what the person is good at. Kipinä's current CVs look very different from
+competitors' CVs, and that has worked in our favour. The new output has to keep that
+distinctive look.
+
+The CV data does not have to be stored or managed as documents (today the CVs are
+PowerPoint files). Structured data is preferred for storage, with document exports
+created as needed.
+
+## Success criteria
+
+- When a client asks for a CV, a salesperson can find the right person and CV version,
+  adjust it if needed, and send a polished PDF **the same day**.
+- A salesperson does all of this without writing code or editing files by hand.
+- The PDF looks like it came from Kipinä. It does not look like a generic template or
+  AI-generated filler.
+- What gets built can be developed further and actually put into use. It is not a
+  throwaway demo.
+
+## Scope and timebox
+
+The time budget is **five hours**. The whole system will not be finished in that time. It
+is fine, and expected, to write down features that were designed but not built (see
+[Considered but not built](#considered-but-not-built)).
+
+Subcontractors are a small, even marginal, part of the need and are not a focus for now.
+
+## Users and roles
+
+| Role | Who | Needs |
+|---|---|---|
+| Salesperson | Kipinä salesperson, cannot code | Find people and CV versions, adjust a CV for a client need, export a PDF quickly |
+| Expert | The Kipinä employee the CV describes | Keep their own CV(s) up to date |
+
+- Only Kipinä employees can sign in and edit. (local users fine in first iteration,
+  the point is not to spend your time budget on an Entra ID integration)
+- Subcontractors do not edit their own CVs. If their CVs are in the system, a Kipinä
+  employee maintains them.
+
+## Must have
+
+1. **Several CVs per person.** One person can have several CVs ("profiles") at the same
+   time. For example, someone who works as a project manager in one client project and as
+   a product owner in another needs a CV for each role. The test data has examples of this:
+   `p10` has 8 role-specific versions and `p03` has 2.
+2. **Speed.** It must be possible to find, personalize and send a CV on the same day the
+   need comes up.
+3. **Ease of use.** Non-technical salespeople can use it without help.
+4. **Desktop-first.** The work is done on a computer. Mobile support is not needed.
+5. **Accessibility.** Take accessibility into account both in the application and in the
+   PDF template. It is a factor to take into account, but there is no strict WCAG
+   compliance requirement.
+6. **Visual quality.** The PDF looks like Kipinä, not AI slop.
+7. **Security.** CVs contain personal data and client information that must not leak.
+   Build it as if the data were real, even though the test data is fictional.
+8. **Access control.** Only Kipinä employees have access. Subcontractors do not edit
+   their own CVs.
+9. **Machine-readability of output CVs.** Because customers use AI for vetting, the PDF
+   exports must be easy for machines to read, too.
+
+## Nice to have
+
+- **Every employee has a CV.** For example, a Slack reminder to anyone who doesn't have a
+  CV yet.
+- **Every CV stays up to date.** For example, a reminder every three months to review and
+  update your CV.
+- **Search by skills.** Keyword search, for example by technology or by client.
+
+## Non-functional requirements
+
+- **Only local dev env for now.** Deploying to cloud is not required within today's time
+  box. If you have the time to do it securely you can, but this won't gain you any extra
+  points.
+- **Expected traffic is negligble.** The expected traffic is trivial, with the amount of
+  concurrent users realistically usually 0-3 and by definition, at most 40.
+
+## Considered but not built
+
+Record here any feature that was designed or discussed but not built within the timebox,
+with a short note on the intended approach. This list is part of the deliverable.
+
+- _(to be filled in during the work)_
+
+## Test data
+
+`sample_data/` contains anonymized, realistic CV data: 28 people and 36 CV versions. See
+`sample_data/README.md` for details.
+
+- Every CV is a valid [JSON Resume](https://jsonresume.org/schema) 1.0 document. Fields
+  specific to Kipinä's template use an `x-` prefix (strengths, key roles, key skills,
+  per-technology years, testimonials, etc.). The schema is in
+  `sample_data/schema/cv.schema.json`.
+- `sample_data/index.json` lists each person, their CV versions and their primary version.
+  `meta.variant` names the purpose of each version (`default`, `PM`, `SM-PO-AI`, …).
+- All people, clients, employers and contact details are fictional. The source CVs were
+  PowerPoint files (`meta.sourceFormat: "pptx"`).
