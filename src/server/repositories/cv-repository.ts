@@ -56,7 +56,7 @@ export type SaveRevisionInput = Readonly<{
 export type SaveRevisionError = 'NOT_FOUND' | 'CONFLICT'
 
 /**
- * Storage port. The in-memory adapter backs the UI until the SQLite adapter (spec M1) replaces it.
+ * Storage port. The in-memory adapter backs the UI until the Postgres adapter (spec M1) replaces it.
  * Implementations must keep revisions append-only.
  */
 export interface CvRepository {

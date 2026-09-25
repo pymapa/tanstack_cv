@@ -90,8 +90,8 @@ with a short note on the intended approach. This list is part of the deliverable
   admin/sales/expert, a `can()` policy on every server function, and an audit log. The UI and
   server functions are built without it for now; the dev server is bound to localhost only.
   This is the next thing to build before anyone else uses the app.
-- **Persistent storage (spec M1):** SQLite + Drizzle with append-only revisions and an FTS5
-  search index. Today an in-memory store behind the same `CvRepository` interface is seeded from
+- **Persistent storage (spec M1):** PostgreSQL + Drizzle with append-only revisions and a
+  full-text search index. The local Postgres (`pnpm db:up`) and its connection pool exist. Today an in-memory store behind the same `CvRepository` interface is seeded from
   `sample_data/`, so edits are lost on restart.
 - **AI chat editing (spec §7.6, M6):** the model proposes a validated JSON patch, the user reviews
   it as diff cards and accepts or rejects each change, and the result is saved as a revision.

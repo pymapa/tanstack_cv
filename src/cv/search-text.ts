@@ -1,7 +1,7 @@
 import type { CvDocument } from './schema'
 import { skillNames } from './skills'
 
-/** Searchable columns, in ranking-weight order. Shared with the future FTS5 index (spec §7.2). */
+/** Searchable columns, in ranking-weight order. Shared with the future Postgres full-text index (spec §7.2). */
 export const SEARCH_FIELDS = [
   'name',
   'label',
