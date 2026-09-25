@@ -121,6 +121,17 @@ with a short note on the intended approach. This list is part of the deliverable
   reach the dev server, like the rest of the app for now. They should sit behind the same
   sign-in as the rest of the CV bank.
 
+- **Sign-in, rate limit and audit for CV translation.** `translateCv` and `saveTranslation` are
+  open like the other server functions. Intended approach: `cv.read` / `cv.createVariant` checks
+  and the same 20 requests per 10 minutes per user limit as `aiPropose`, with an audit row that
+  holds ids and token counts only.
+- **Keeping a translation in sync.** A saved translation is an independent CV version; later
+  edits to the original don't reach it. Intended approach: record the source CV and revision on
+  the new CV and show "The original changed since this translation" with an offer to translate
+  only the changed fields.
+- **A language field on the CV.** The language is guessed from the text. Intended approach: an
+  optional `meta.x-language` set on import and on translation, so search can filter by language.
+
 ## Test data
 
 `sample_data/` contains anonymized, realistic CV data: 28 people and 36 CV versions. See

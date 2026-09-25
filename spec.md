@@ -407,7 +407,7 @@ variants and tags**.
 4. Follow-ups refine the proposal ("keep the second sentence"). The conversation includes the
    current draft each time.
 5. Quick-action chips: "Tailor for a role…", "Shorten summary", "Fix grammar and tone",
-   "Highlight projects about…", "Translate to Finnish" [Later].
+   "Highlight projects about…". Translation is its own feature (§7.6.1).
 
 **Pipeline (`src/server/services/ai.ts`)**
 ```
@@ -455,6 +455,26 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
   The MVP shows a progress state ("Reading the CV…", "Drafting changes…") and returns the
   complete proposal. Structured output must be fully parsed and validated before anything
   is shown as applicable, so streaming only adds UX.
+
+### 7.6.1 CV translation (English ↔ Finnish) [built, provider opt-in]
+
+- The CV page has **Translate to Finnish** (or **Translate to English** when the saved CV reads
+  as Finnish). `detectCvLanguage` in `src/cv/translation.ts` guesses the language from common
+  words and ä/ö; English wins ties. It is disabled while there are unsaved changes, because it
+  translates the **saved** revision.
+- Only the text fields in `TRANSLATABLE` go to the model, as `{ id: JSON pointer, text }`
+  inside `<cv_text>` (data, not instructions). The name, contact details, client and employer
+  names, certificate names, dates and meta are never sent. Large CVs go in batches of ≈12 000
+  characters so replies stay under the output limit.
+- The reply is Zod-checked, and `applyTranslatedText` rejects any id that isn't a translatable
+  field of that CV. The result is re-validated with `CvDocument`.
+- Nothing is saved automatically. A **review screen** shows the translation in the editor, a
+  preview that switches between translation and original, and a note asking the user to check
+  it. **Save as new version** creates a new CV of the same person (variant `<variant>-fi` /
+  `-en` by default, editable, unique per person) with `source: ai`. The source CV is unchanged.
+- Providers: `AI_PROVIDER=fake` (deterministic `[FI] ` prefix; E2E uses it) or
+  `AI_PROVIDER=anthropic` with `ANTHROPIC_API_KEY` (`claudeStructured` in `src/lib/ai/claude.ts`,
+  120 s timeout). Anything else means translation is unavailable.
 
 ### 7.7 PDF output [MVP]
 
@@ -551,6 +571,8 @@ DB rows directly.
 | `listRevisions` / `diffRevisions` / `restoreRevision` | GET/GET/POST | ids | `cv.read` / `cv.read` / `cv.update` |
 | `aiPropose` | POST | `{ cvId, baseRevisionId, draft: CvDocument, message: string 1..2000, conversationId? }` | `cv.update` |
 | `aiRecordDecision` | POST | `{ aiMessageId, accepted: int[] }` | `cv.update` |
+| `translateCv` | POST | `{ cvId }` (translates the saved revision, saves nothing) | `cv.read` |
+| `saveTranslation` | POST | `{ sourceCvId, variant: string≤60, to: 'en'\|'fi', data: CvDocument }` | `cv.createVariant` |
 | `createPerson` / `updatePerson` | POST | person fields | `person.*` |
 | `upsertTag` / `setCvTags` | POST | tag fields | `tag.manage` |
 | `listUsers` / `createUser` / `disableUser` | GET/POST | user fields | `user.manage` |
