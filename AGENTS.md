@@ -60,4 +60,4 @@ Code loads them automatically; other agents should open the `SKILL.md` directly.
 | `ai-cv-edit` | The AI chat, LLM provider, prompts, or patch engine |
 | `db-migration` | Schema, migrations, indexes, or triggers |
 | `owasp-review` | Before every commit or PR, and after security-relevant changes |
-| `feature-flow` | Taking a feature end to end: branch, build, review, PR |
+| `feature-flow` | Taking a feature end to end: worktree, build, review, PR, local-test handover |
