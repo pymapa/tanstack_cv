@@ -136,39 +136,24 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
               onTranslated={onTranslated}
             />
             <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
-            <label className="flex items-center gap-2 text-sm text-ink">
-              <input
-                type="checkbox"
-                checked={hideClients}
-                onChange={(e) => {
-                  setHideClients(e.target.checked)
+            <div className="flex flex-col items-start gap-1">
+              <TemplateSelect
+                value={templateOf(draft)}
+                onChange={(template) => {
+                  setDraft({ ...draft, meta: { ...draft.meta, 'x-template': template } })
                 }}
-                data-testid="cv-hide-clients"
               />
-              Hide client names
-            </label>
-            <TemplateSelect
-              value={templateOf(draft)}
-              onChange={(template) => {
-                setDraft({ ...draft, meta: { ...draft.meta, 'x-template': template } })
-              }}
-            />
-            <div className="flex flex-col items-end">
-              <a
-                href={`/api/cvs/${cv.id}/pdf${hideClients ? '?anonymize=1' : ''}`}
-                // `download` keeps the unsaved-changes guard (beforeunload) from firing.
-                download
-                className="cta-underline text-sm text-ink"
-                data-testid="cv-download-pdf"
-                {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
-              >
-                Download PDF
-              </a>
-              {dirty && (
-                <p id="pdf-saved-note" className="mt-1 text-xs text-muted">
-                  The PDF uses the last saved version.
-                </p>
-              )}
+              <label className="flex items-center gap-2 text-sm text-ink">
+                <input
+                  type="checkbox"
+                  checked={hideClients}
+                  onChange={(e) => {
+                    setHideClients(e.target.checked)
+                  }}
+                  data-testid="cv-hide-clients"
+                />
+                Hide client names
+              </label>
             </div>
             <button
               type="button"
@@ -191,6 +176,23 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
             >
               {saveState.kind === 'saving' ? 'Saving…' : 'Save'}
             </button>
+            <div className="flex flex-col items-end">
+              <a
+                href={`/api/cvs/${cv.id}/pdf${hideClients ? '?anonymize=1' : ''}`}
+                // `download` keeps the unsaved-changes guard (beforeunload) from firing.
+                download
+                className="cta-underline text-sm text-ink"
+                data-testid="cv-download-pdf"
+                {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
+              >
+                Download PDF
+              </a>
+              {dirty && (
+                <p id="pdf-saved-note" className="mt-1 text-xs text-muted">
+                  The PDF uses the last saved version.
+                </p>
+              )}
+            </div>
           </>
         }
       />
