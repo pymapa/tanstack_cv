@@ -1,6 +1,6 @@
 ---
 name: feature-flow
-description: Take a feature from request to a pull request the user has tested. Builds the change in a git worktree on a feature branch, reviews it once with /code-review, commits, pushes, opens a draft PR, then hands over for local testing and waits for the user before marking the PR ready. Use when the user asks to build, add or implement a feature end to end.
+description: Take a feature from request to a pull request that is ready for handover. Builds the change in a git worktree on a feature branch, reviews it once with /code-review, commits, pushes, opens a draft PR, then hands the worktree over for local testing. The flow ends at the handover; it does not ask whether the feature works. Use when the user asks to build, add or implement a feature end to end.
 argument-hint: <feature description>
 ---
 
@@ -75,25 +75,21 @@ The description contains:
 - **Needs a human**: changes an agent must not make, such as network allowlist entries or
   sandbox configuration.
 
-## 6. Hand over for local testing
+## 6. Hand over
 
-The user tests the change on their own machine before the PR leaves draft. This step needs
-their input: do not mark the PR ready on your own.
+The flow is done when the worktree is ready for handover: checks pass, the branch is pushed
+and the draft PR is open. Do not ask whether the feature works and do not wait for the user.
+Testing it and marking the PR ready (`gh pr ready <number>`) is the user's call.
 
-1. Tell the user:
-   - the draft PR link and the branch name;
-   - how to get the branch locally, for example
-     `git fetch origin <branch> && git worktree add ../<short-kebab-name> <branch>`, or
-     `git switch <branch>`;
-   - what to run (`pnpm install`, `pnpm dev`, any env or data setup) and what to check,
-     taken from the PR's "How to test";
-   - anything that needs a human.
-2. Ask whether it works, using the ask-user tool if one is available, and wait for the answer.
-3. If the user reports problems or asks for changes, fix them in the same worktree, re-run
-   the checks from step 2, commit, push, and hand over again.
-4. When the user confirms it works, mark the PR ready: `gh pr ready <number>`.
-5. Remove the worktree (`git worktree remove .worktrees/<short-kebab-name>`) unless the user
-   wants to keep it. The branch stays on the remote.
+Leave the worktree in place so the user can test in it. Report to the user:
 
-Report to the user: the PR link, what was built, the review findings and how each was
-handled, and anything that needs a human.
+- the draft PR link, the branch name and the worktree path (`.worktrees/<short-kebab-name>`);
+- what to run there (`pnpm dev` on a free port, any env or data setup) and what to check,
+  taken from the PR's "How to test";
+- what was built, the review findings and how each was handled;
+- anything that needs a human.
+
+If the user later reports problems or asks for changes, fix them in the same worktree, re-run
+the checks from step 2, commit, push, and report again. When they are done with it, they can
+remove the worktree with `git worktree remove .worktrees/<short-kebab-name>`; the branch stays
+on the remote.
