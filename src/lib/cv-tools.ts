@@ -8,6 +8,8 @@ import { toolDefinition } from '@tanstack/ai'
 import { z } from 'zod'
 
 import { type Cv, readCv, readPeople, toSharedCv } from '~/lib/cv-data'
+import { buildCvLinks } from '~/lib/cv-links'
+import { getCvRepository } from '~/server/repositories/instance'
 
 /** All string and number values in a JSON value, without its keys. */
 function values(value: unknown): Array<string> {
@@ -110,4 +112,22 @@ export const getCvToolDef = toolDefinition({
 export const getCv = getCvToolDef.server(async ({ file }) => {
   const cv = await readCv(file)
   return cv ? toSharedCv(cv) : { error: `No CV version named ${file}` }
+})
+
+export const linkCvsToolDef = toolDefinition({
+  name: 'linkCvs',
+  description:
+    'Get app links for the CV versions you recommend. Returns a link to each CV and one filterUrl that opens the search page showing exactly these CVs. Use these URLs as they are; never write CV links yourself.',
+  inputSchema: z.object({
+    files: z
+      .array(z.string().max(40))
+      .min(1)
+      .max(20)
+      .describe('CV version file names from searchPeople, best match first, e.g. ["p10-v3.json"]'),
+  }),
+})
+
+export const linkCvs = linkCvsToolDef.server(async ({ files }) => {
+  const [people, repo] = await Promise.all([readPeople(), getCvRepository()])
+  return buildCvLinks(people, repo.listSearchable(), files)
 })
