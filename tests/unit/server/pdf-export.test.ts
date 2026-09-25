@@ -29,7 +29,7 @@ describe('toExportDocument', () => {
   })
 
   it('should remove contact details when they are not included', () => {
-    const doc = toExportDocument(cv, { includeContact: false })
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: false })
 
     expect(doc.basics.email).toBeUndefined()
     expect(doc.basics.phone).toBeUndefined()
@@ -37,12 +37,26 @@ describe('toExportDocument', () => {
   })
 
   it('should keep contact details when they are included', () => {
-    expect(toExportDocument(cv, { includeContact: true }).basics.email).toBe('anna@example.com')
+    expect(toExportDocument(cv, { includeContact: true, anonymizeClients: false }).basics.email).toBe(
+      'anna@example.com',
+    )
   })
 
   it('should never export internal conversion notes', () => {
-    const json = JSON.stringify(toExportDocument(cv, { includeContact: true }))
+    const json = JSON.stringify(toExportDocument(cv, { includeContact: true, anonymizeClients: false }))
 
     expect(json).not.toContain('internal')
+  })
+
+  it('should replace client names with industries when anonymizing', () => {
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: true })
+
+    expect(JSON.stringify(doc)).not.toContain('Example Bank')
+  })
+
+  it('should keep client names when not anonymizing', () => {
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: false })
+
+    expect(doc.projects[0]?.entity).toBe('Example Bank')
   })
 })

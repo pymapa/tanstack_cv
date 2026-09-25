@@ -1,3 +1,4 @@
+import { anonymizeClients } from '~/cv/anonymize'
 import type { CvDocument } from '~/cv/schema'
 import { skillNames } from '~/cv/skills'
 import { err, ok, type Result } from '~/lib/result'
@@ -21,14 +22,17 @@ export const pdfFileName = (fullName: string, variant: string, now: Date): strin
     .join('_')
     .concat('.pdf')
 
+export type ExportOptions = CvRenderOptions & Readonly<{ anonymizeClients: boolean }>
+
 /** The JSON that goes to clients: no internal notes, contact details only on request. */
-export const toExportDocument = (cv: CvDocument, options: CvRenderOptions): CvDocument => {
+export const toExportDocument = (cv: CvDocument, options: ExportOptions): CvDocument => {
   const { email: _email, phone: _phone, profiles: _profiles, url: _url, ...basicsWithoutContact } = cv.basics
   const { 'x-conversionNotes': _notes, ...meta } = cv.meta
+  const clientFacing = options.anonymizeClients ? anonymizeClients(cv) : cv
   return {
-    ...cv,
+    ...clientFacing,
     basics: options.includeContact ? cv.basics : basicsWithoutContact,
-    projects: cv.projects.map(({ 'x-note': _note, ...project }) => project),
+    projects: clientFacing.projects.map(({ 'x-note': _note, ...project }) => project),
     ...(cv.work === undefined ? {} : { work: cv.work.map(({ 'x-note': _note, ...work }) => work) }),
     meta,
   }
@@ -39,7 +43,7 @@ export type PdfExport = Readonly<{ bytes: Uint8Array; fileName: string }>
 export const exportCvPdf = async (
   repo: CvRepository,
   cvId: string,
-  options: CvRenderOptions,
+  options: ExportOptions,
   now: Date = new Date(),
 ): Promise<Result<PdfExport, 'NOT_FOUND'>> => {
   const cv = repo.getCv(cvId)

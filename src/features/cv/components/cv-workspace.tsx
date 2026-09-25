@@ -2,6 +2,7 @@ import { useBlocker } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppHeaderView } from '~/components/app-header'
 import { Container } from '~/components/container'
+import { anonymizeClients } from '~/cv/anonymize'
 import type { CvDocument } from '~/cv/schema'
 import { detectCvLanguage } from '~/cv/translation'
 import { CvEditor } from '~/features/editor/cv-editor'
@@ -46,6 +47,7 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
   const [naming, setNaming] = useState(false)
+  const [hideClients, setHideClients] = useState(false)
 
   // A new revision arrived from the server. If it's the one this workspace just saved, `base`
   // already points at it: keep the draft, which may hold edits typed during the save. Otherwise
@@ -102,6 +104,8 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
     [onRestore, onRefresh, base.id],
   )
 
+  const previewCv = useMemo(() => (hideClients ? anonymizeClients(draft) : draft), [hideClients, draft])
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') {
@@ -130,9 +134,20 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
               onTranslated={onTranslated}
             />
             <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
+            <label className="flex items-center gap-2 text-sm text-ink">
+              <input
+                type="checkbox"
+                checked={hideClients}
+                onChange={(e) => {
+                  setHideClients(e.target.checked)
+                }}
+                data-testid="cv-hide-clients"
+              />
+              Hide client names
+            </label>
             <div className="flex flex-col items-end">
               <a
-                href={`/api/cvs/${cv.id}/pdf`}
+                href={`/api/cvs/${cv.id}/pdf${hideClients ? '?anonymize=1' : ''}`}
                 // `download` keeps the unsaved-changes guard (beforeunload) from firing.
                 download
                 className="cta-underline text-sm text-ink"
@@ -209,7 +224,7 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
           <section aria-label="PDF preview" className="flex min-h-0 flex-col bg-mist">
             <h2 className="eyebrow px-8 pb-2 pt-4">Preview</h2>
             <div className="min-h-0 flex-1 px-8">
-              <CvPreview cv={draft} />
+              <CvPreview cv={previewCv} />
             </div>
           </section>
         </div>

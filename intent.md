@@ -105,6 +105,11 @@ with a short note on the intended approach. This list is part of the deliverable
   the same name dialog and copies the last saved revision, plus the optional `title`.
 - **Export options dialog:** a contact-details toggle (the API supports `?contact=1`), section
   toggles, and a project limit so long CVs fit the cover page.
+- **Complete client-name anonymisation.** **Hide client names** replaces each project's client with
+  its industry in the preview, the PDF, and `cv.json`. Client names written in project names,
+  descriptions, or testimonials stay. Intended approach: a per-project "never name this client"
+  flag (a schema change), and a pre-export warning that lists free text that still contains a
+  client name from the same CV.
 - **Staleness reminders:** a "needs review" dashboard and Slack reminders (spec §7.10).
 - **Final answer when the chatbot's loop guard stops it.** The guard in
   `src/lib/ai/loop-guard.ts` ends the run after too many turns or repeated identical tool

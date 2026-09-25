@@ -86,3 +86,13 @@ test.describe('History', () => {
     await expect(page.getByText(`Restored revision ${String(before)}`)).toBeVisible()
   })
 })
+
+test.describe('Client names', () => {
+  test('should hide client names in the preview and the PDF link when asked', async ({ page }) => {
+    const cv = await openCvOf(page, 'Jussi Peltonen')
+
+    await page.getByRole('checkbox', { name: 'Hide client names' }).check()
+
+    await expect(cv.downloadPdf).toHaveAttribute('href', /\?anonymize=1$/)
+  })
+})

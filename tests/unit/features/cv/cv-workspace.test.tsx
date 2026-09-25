@@ -345,6 +345,19 @@ describe('CvWorkspace', () => {
     expect(screen.getByRole('button', { name: 'Translate to Finnish' })).toBeDisabled()
   })
 
+  describe('client names in the PDF', () => {
+    it('should add the anonymize option to the PDF link when client names are hidden', async () => {
+      const { user } = setup()
+
+      await user.click(screen.getByRole('checkbox', { name: 'Hide client names' }))
+
+      expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+        'href',
+        '/api/cvs/cv-1/pdf?anonymize=1',
+      )
+    })
+  })
+
   describe('restore a revision', () => {
     const withHistory = (): CvView => {
       const base = view('rev-2')
