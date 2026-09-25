@@ -1,9 +1,9 @@
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import type { CvDocument } from '~/cv/schema'
+import type { CvDocument, CvTemplateId } from '~/cv/schema'
 import { CvHtmlDocument } from './cv-document'
 
-export type CvRenderOptions = Readonly<{ includeContact: boolean }>
+export type CvRenderOptions = Readonly<{ includeContact: boolean; template?: CvTemplateId }>
 
 /** Client exports default to no contact details (spec §7.7). */
 export const DEFAULT_RENDER_OPTIONS: CvRenderOptions = { includeContact: false }

@@ -8,12 +8,14 @@ import { detectCvLanguage } from '~/cv/translation'
 import { CvEditor } from '~/features/editor/cv-editor'
 import { validateCv } from '~/features/editor/validation'
 import { TranslateButton } from '~/features/translation/components/translate-button'
+import { templateOf } from '~/pdf/template/templates'
 import type { CreateCvVariantResult, SaveCvResult, TranslateCvResult } from '~/server/functions/cv'
 import type { CvView } from '~/server/repositories/cv-repository'
 import type { TranslationDraft } from '~/server/services/cv-translation'
 import { CvPreview } from './cv-preview'
 import { RevisionList } from './revision-list'
 import { SaveAsVersionDialog } from './save-as-version-dialog'
+import { TemplateSelect } from './template-select'
 import { UnsavedChangesDialog } from './unsaved-changes-dialog'
 
 export type SaveRequest = Readonly<{ baseRevisionId: string; data: CvDocument }>
@@ -145,6 +147,12 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onT
               />
               Hide client names
             </label>
+            <TemplateSelect
+              value={templateOf(draft)}
+              onChange={(template) => {
+                setDraft({ ...draft, meta: { ...draft.meta, 'x-template': template } })
+              }}
+            />
             <div className="flex flex-col items-end">
               <a
                 href={`/api/cvs/${cv.id}/pdf${hideClients ? '?anonymize=1' : ''}`}

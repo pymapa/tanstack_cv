@@ -26,10 +26,6 @@ const FONTS = [
 ].join('\n')
 
 const BASE = `
-/* Pages are full-bleed sideways (horizontal padding lives on the content). Only the first page
-   drops its top margin so the cover band touches the edge; overflow pages keep normal margins. */
-@page { size: A4; margin: ${p.marginTop} 0 ${p.marginBottom}; }
-@page :first { margin-top: 0; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body { margin: 0; font-family: 'CV Sans', 'Noto Sans', Arial, sans-serif; font-size: ${s.body}; line-height: 1.45; color: ${c.ink}; background: ${c.white}; }
@@ -117,10 +113,36 @@ strong { font-weight: 500; }
 @media screen {
   html { background: ${c.mist}; }
   body { background: ${c.mist}; padding: 8mm 0; }
-  .page { width: 210mm; margin: 0 auto 8mm; box-shadow: 0 0 0 1px ${c.line}, 0 1px 3px rgb(43 43 43 / 0.08); }
-  .page--cover { min-height: 297mm; }
-  .page--body { padding: ${p.marginTop} ${p.marginX} ${p.marginBottom}; min-height: 297mm; }
+  .page { width: var(--page-width); margin: 0 auto 8mm; box-shadow: 0 0 0 1px ${c.line}, 0 1px 3px rgb(43 43 43 / 0.08); }
+  .page--cover { min-height: var(--page-height); }
+  .page--body { padding: ${p.marginTop} ${p.marginX} ${p.marginBottom}; min-height: var(--page-height); }
 }
 `
 
-export const CV_STYLES = `${FONTS}\n${BASE}`
+/* Pages are full-bleed sideways (horizontal padding lives on the content). Only the first page
+   drops its top margin so the cover band touches the edge; overflow pages keep normal margins. */
+const PORTRAIT = `
+@page { size: A4 portrait; margin: ${p.marginTop} 0 ${p.marginBottom}; }
+@page :first { margin-top: 0; }
+:root { --page-width: 210mm; --page-height: 297mm; }
+`
+
+/* Keep the band one page tall: stretching it with the grid row repeats it on the cover's overflow page. */
+const LANDSCAPE = `
+@page { size: A4 landscape; margin: ${p.marginTop} 0 ${p.marginBottom}; }
+@page :first { margin: 0; }
+:root { --page-width: 297mm; --page-height: 210mm; }
+
+.page--cover { display: grid; grid-template-columns: 105mm 1fr; align-items: start; min-height: var(--page-height); }
+.band { height: var(--page-height); padding: 14mm 10mm 14mm ${p.marginX}; }
+.band h1 { font-size: 40pt; }
+.band__tagline { max-width: none; }
+.cover-body { padding: 14mm ${p.marginX} 12mm 12mm; gap: 7mm; }
+
+.page--body .section { display: grid; grid-template-columns: 52mm 1fr; column-gap: ${p.gutter}; }
+.page--body .section > h2 { margin-bottom: 0; }
+.page--body .section > :not(h2) { grid-column: 2; }
+`
+
+export const PORTRAIT_STYLES = `${FONTS}\n${BASE}\n${PORTRAIT}`
+export const LANDSCAPE_STYLES = `${FONTS}\n${BASE}\n${LANDSCAPE}`

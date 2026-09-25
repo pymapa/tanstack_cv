@@ -3,6 +3,7 @@ import type { CvDocument } from '~/cv/schema'
 import { skillNames } from '~/cv/skills'
 import { err, ok, type Result } from '~/lib/result'
 import { renderCvHtml, type CvRenderOptions } from '~/pdf/template/render-html'
+import { templateOf } from '~/pdf/template/templates'
 import type { CvRepository } from '../repositories/cv-repository'
 import { renderPdf } from '../pdf/render'
 
@@ -24,10 +25,10 @@ export const pdfFileName = (fullName: string, variant: string, now: Date): strin
 
 export type ExportOptions = CvRenderOptions & Readonly<{ anonymizeClients: boolean }>
 
-/** The JSON that goes to clients: no internal notes, contact details only on request. */
+/** The JSON that goes to clients: no internal notes or layout choice, contact details only on request. */
 export const toExportDocument = (cv: CvDocument, options: ExportOptions): CvDocument => {
   const { email: _email, phone: _phone, profiles: _profiles, url: _url, ...basicsWithoutContact } = cv.basics
-  const { 'x-conversionNotes': _notes, ...meta } = cv.meta
+  const { 'x-conversionNotes': _notes, 'x-template': _template, ...meta } = cv.meta
   const clientFacing = options.anonymizeClients ? anonymizeClients(cv) : cv
   return {
     ...clientFacing,
@@ -50,7 +51,7 @@ export const exportCvPdf = async (
   if (cv === null) return err('NOT_FOUND')
   const doc = toExportDocument(cv.revision.data, options)
   const topSkills = doc.skills.flatMap(skillNames).slice(0, 12)
-  const bytes = await renderPdf(renderCvHtml(doc, options), {
+  const bytes = await renderPdf(renderCvHtml(doc, { ...options, template: templateOf(cv.revision.data) }), {
     title: `${doc.basics.name} – ${doc.basics.label} – Kipinä CV`,
     subject: `CV of ${doc.basics.name} (${cv.variant})`,
     keywords: topSkills,

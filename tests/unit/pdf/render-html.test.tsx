@@ -168,4 +168,17 @@ describe('renderCvHtml', () => {
     expect(html).not.toMatch(/border-left/)
     expect(bodyOf(html).match(/class="grid-mark"/g)).toHaveLength(1)
   })
+
+  it('should lay pages out as A4 portrait when no template is given', () => {
+    const html = renderCvHtml(buildCv())
+
+    expect(html).toMatch(/@page \{ size: A4 portrait;/)
+  })
+
+  it('should lay pages out as A4 landscape when the landscape template is given', () => {
+    const html = renderCvHtml(buildCv(), { includeContact: false, template: 'kipina-landscape' })
+
+    expect(html).toMatch(/@page \{ size: A4 landscape;/)
+    expect(html).not.toMatch(/size: A4 portrait/)
+  })
 })

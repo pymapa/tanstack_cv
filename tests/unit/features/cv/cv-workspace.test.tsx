@@ -87,6 +87,31 @@ describe('CvWorkspace', () => {
     expect(screen.getByRole('main')).not.toContainElement(screen.getByRole('banner'))
   })
 
+  it('should offer the PDF templates in the header with portrait selected by default', () => {
+    setup()
+    const select = within(screen.getByRole('banner')).getByRole('combobox', { name: 'Template' })
+
+    expect(select).toHaveValue('kipina-portrait')
+    expect(
+      within(select)
+        .getAllByRole('option')
+        .map((o) => o.textContent),
+    ).toEqual(['Portrait (A4)', 'Landscape (A4)'])
+  })
+
+  it('should save the chosen template as part of the CV', async () => {
+    const { user, onSave } = setup()
+
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Template' }), 'Landscape (A4)')
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+
+    expect(onSave).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({ meta: expect.objectContaining({ 'x-template': 'kipina-landscape' }) }),
+      }),
+    )
+  })
+
   it('should show unsaved changes after an edit', async () => {
     const { user } = setup()
     expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()

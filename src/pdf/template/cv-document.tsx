@@ -5,7 +5,7 @@ import { Cover } from './sections/cover'
 import { EducationAndCertificates, Languages, WorkHistory } from './sections/history'
 import { ProjectHighlights, ProjectHistory } from './sections/projects'
 import { Skills } from './sections/skills'
-import { CV_STYLES } from './styles'
+import { CV_TEMPLATES, DEFAULT_TEMPLATE } from './templates'
 
 type Props = Readonly<{ cv: CvDocument; options: CvRenderOptions }>
 
@@ -53,7 +53,7 @@ export function CvHtmlDocument({ cv, options }: Props) {
       <head>
         <meta charSet="utf-8" />
         <title>{`${cv.basics.name} – ${cv.basics.label} – Kipinä CV`}</title>
-        <style>{CV_STYLES}</style>
+        <style>{CV_TEMPLATES[options.template ?? DEFAULT_TEMPLATE].styles}</style>
       </head>
       <body>
         <CvDocumentView cv={cv} options={options} />

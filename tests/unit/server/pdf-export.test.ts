@@ -25,7 +25,7 @@ describe('toExportDocument', () => {
       profiles: [{ network: 'LinkedIn', url: 'https://example.com/anna' }],
     },
     projects: [buildProject({ 'x-note': 'internal conversion note' })],
-    meta: { 'x-conversionNotes': ['internal'] },
+    meta: { 'x-conversionNotes': ['internal'], 'x-template': 'kipina-landscape' },
   })
 
   it('should remove contact details when they are not included', () => {
@@ -58,5 +58,9 @@ describe('toExportDocument', () => {
     const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: false })
 
     expect(doc.projects[0]?.entity).toBe('Example Bank')
+  })
+
+  it('should not export the template choice', () => {
+    expect(toExportDocument(cv, { includeContact: true, anonymizeClients: false }).meta['x-template']).toBeUndefined()
   })
 })

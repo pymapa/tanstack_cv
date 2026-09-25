@@ -1,7 +1,9 @@
 import { PDFDict, PDFDocument, PDFHexString, PDFName } from 'pdf-lib'
 import { chromium, type Browser } from 'playwright'
 import { afterAll, describe, expect, it, vi } from 'vitest'
+import { renderCvHtml } from '~/pdf/template/render-html'
 import { closePdfRenderer, createPdfRenderer, renderPdf } from '~/server/pdf/render'
+import { buildCv } from '../fixtures/cv'
 
 const HTML = `<!doctype html><html lang="en"><head><title>Anna Example – CV</title></head>
 <body><h1>Anna Example</h1><h2>Project highlights</h2><p>Payments platform renewal</p></body></html>`
@@ -50,6 +52,21 @@ describe('renderPdf', () => {
     // Rendering succeeds offline; the script never runs (JS disabled), so the title stays ours.
     expect((await PDFDocument.load(bytes)).getTitle()).toBe(meta.title)
   }, 30_000)
+  it.each([
+    { template: 'kipina-portrait', landscape: false },
+    { template: 'kipina-landscape', landscape: true },
+  ] as const)(
+    'should print $template pages in its orientation',
+    async ({ template, landscape }) => {
+      const html = renderCvHtml(buildCv(), { includeContact: false, template })
+
+      const pdf = await PDFDocument.load(await renderPdf(html, meta))
+      const { width, height } = pdf.getPage(0).getSize()
+
+      expect(width > height).toBe(landscape)
+    },
+    30_000,
+  )
 })
 
 describe('createPdfRenderer', () => {
