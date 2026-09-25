@@ -19,6 +19,14 @@ export function AppHeader() {
           >
             Search
           </Link>
+          <Link
+            to="/cvs/new"
+            className="border-b-2 border-transparent py-5 uppercase tracking-[0.04em] text-ink no-underline hover:border-line"
+            activeProps={{ className: '!border-lime' }}
+            data-testid="nav-new-cv"
+          >
+            New CV
+          </Link>
         </nav>
         <div className="ml-auto flex items-center gap-3 text-sm text-muted">
           <PixelGrid size={14} />

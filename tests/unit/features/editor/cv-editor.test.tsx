@@ -13,16 +13,19 @@ function Harness({
   initial,
   issues = [],
   spy,
+  nameEditable = false,
 }: {
   initial: CvDocument
   issues?: EditorIssue[]
   spy: (cv: CvDocument) => void
+  nameEditable?: boolean
 }) {
   const [value, setValue] = useState(initial)
   return (
     <CvEditor
       value={value}
       issues={issues}
+      nameEditable={nameEditable}
       onChange={(next) => {
         spy(next)
         setValue(next)
@@ -142,5 +145,15 @@ describe('CvEditor', () => {
     const projects = screen.getByRole('region', { name: /Projects/ })
 
     expect(within(projects).getByText(/Use YYYY/)).toBeInTheDocument()
+  })
+
+  it('should let the user type the name when the name is editable', async () => {
+    const spy = vi.fn<(cv: CvDocument) => void>()
+    render(<Harness initial={buildCv({ basics: { name: '' } })} spy={spy} nameEditable />)
+
+    await userEvent.type(screen.getByLabelText('Name'), 'Mia')
+
+    expect(screen.getByLabelText('Name')).not.toHaveAttribute('readonly')
+    expect(spy.mock.calls.at(-1)?.[0].basics.name).toBe('Mia')
   })
 })

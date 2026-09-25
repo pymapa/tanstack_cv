@@ -25,7 +25,27 @@ const toBase64 = (bytes: Uint8Array) => {
 
 const tooLarge = (file: File, limit: string) => err(`${file.name} is too large. The limit is ${limit}.`)
 
-export const toWorkSpecPart = async (file: File): Promise<Result<ContentPart, string>> => {
+/** Tags that wrap an attached text file, so the model reads it as data. */
+export type AttachmentTag = 'work_spec' | 'old_cv'
+
+const CONTACT_DETAILS = [
+  /[\p{L}\p{N}._%+-]+@[\p{L}\p{N}-]+(?:\.[\p{L}\p{N}-]+)+/gu,
+  /\b(?:https?:\/\/|www\.)\S+/giu,
+  // Phone numbers start with + or a leading 0, so year ranges like "2015-2020" stay.
+  /(?<![\p{L}\p{N}])(?:\+|\(?0)[\d\s()-]{6,}\d/gu,
+]
+
+/** Strips until none is left: one pass would let `</old_</old_cv>cv>` rebuild the tag. */
+const withoutClosingTag = (text: string, tag: AttachmentTag): string => {
+  const stripped = text.replaceAll(`</${tag}>`, '')
+  return stripped === text ? text : withoutClosingTag(stripped, tag)
+}
+
+/** A text CV's contact details aren't needed to fill in the form, so they aren't sent to the model. */
+const withoutContactDetails = (text: string) =>
+  CONTACT_DETAILS.reduce((result, pattern) => result.replace(pattern, '[contact removed]'), text)
+
+export const toAttachmentPart = async (file: File, tag: AttachmentTag): Promise<Result<ContentPart, string>> => {
   if (isPdf(file)) {
     if (file.size > MAX_PDF_BYTES) return tooLarge(file, '4 MB')
     const bytes = new Uint8Array(await file.arrayBuffer())
@@ -40,11 +60,14 @@ export const toWorkSpecPart = async (file: File): Promise<Result<ContentPart, st
   }
   if (isText(file)) {
     if (file.size > MAX_TEXT_BYTES) return tooLarge(file, '100 KB')
-    const text = (await file.text()).replaceAll('</work_spec>', '')
-    return ok({ type: 'text', content: `<work_spec filename="${safeName(file.name)}">\n${text}\n</work_spec>` })
+    const raw = withoutClosingTag(await file.text(), tag)
+    const text = tag === 'old_cv' ? withoutContactDetails(raw) : raw
+    return ok({ type: 'text', content: `<${tag} filename="${safeName(file.name)}">\n${text}\n</${tag}>` })
   }
   return err(`${file.name} is not a PDF, .txt or .md file.`)
 }
+
+export const toWorkSpecPart = (file: File) => toAttachmentPart(file, 'work_spec')
 
 export const MAX_DOCUMENTS = 3
 const MAX_PDF_BASE64_LENGTH = Math.ceil(MAX_PDF_BYTES / 3) * 4
@@ -75,14 +98,15 @@ export const checkAttachments = (messages: unknown): Result<void, string> => {
   return ok(undefined)
 }
 
-const WORK_SPEC_OPENING = /^<work_spec filename="([^"]*)">/
+const ATTACHMENT_OPENING = /^<(?:work_spec|old_cv) filename="([^"]*)">/
 
-/** The file name of an attached work spec part, or null when the part is not an attachment. */
+/** The file name of an attached file part, or null when the part is not an attachment. */
 export const attachmentName = (
   part: Readonly<{ type: string; metadata?: unknown; content?: unknown }>,
 ): string | null => {
   if (part.type === 'document') return (part.metadata as { filename?: string } | undefined)?.filename ?? 'Document'
-  if (part.type === 'text' && typeof part.content === 'string') return WORK_SPEC_OPENING.exec(part.content)?.[1] ?? null
+  if (part.type === 'text' && typeof part.content === 'string')
+    return ATTACHMENT_OPENING.exec(part.content)?.[1] ?? null
   return null
 }
 

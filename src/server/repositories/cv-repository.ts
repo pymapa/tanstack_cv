@@ -55,6 +55,13 @@ export type SaveRevisionInput = Readonly<{
 
 export type SaveRevisionError = 'NOT_FOUND' | 'CONFLICT'
 
+export type CreatePersonInput = Readonly<{ data: CvDocument; authorName: string }>
+
+export type CreatedPerson = Readonly<{ personId: string; cvId: string }>
+
+/** Every two-digit legacy id (`meta.personId`, `^p[0-9]{2}$`) is taken. */
+export type CreatePersonError = 'ID_EXHAUSTED'
+
 /**
  * Storage port. The in-memory adapter backs the UI until the Postgres adapter (spec M1) replaces it.
  * Implementations must keep revisions append-only.
@@ -64,4 +71,6 @@ export interface CvRepository {
   getPerson(personId: string): PersonView | null
   getCv(cvId: string): CvView | null
   saveRevision(input: SaveRevisionInput): Result<CvRevision, SaveRevisionError>
+  /** Creates an employee from `data.basics.name` whose primary CV is `data`. The server sets `meta`. */
+  createPerson(input: CreatePersonInput): Result<CreatedPerson, CreatePersonError>
 }

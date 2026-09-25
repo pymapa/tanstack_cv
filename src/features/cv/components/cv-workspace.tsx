@@ -1,6 +1,7 @@
 import { Link, useBlocker } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Container } from '~/components/container'
+import { sameCv } from '~/cv/draft'
 import type { CvDocument } from '~/cv/schema'
 import { CvEditor } from '~/features/editor/cv-editor'
 import { validateCv } from '~/features/editor/validation'
@@ -25,8 +26,6 @@ type SaveState =
   | { kind: 'saved'; revisionNumber: number }
   | { kind: 'conflict' }
   | { kind: 'error' }
-
-const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
 export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)

@@ -55,12 +55,14 @@ export const getCvFn = createServerFn({ method: 'GET' })
     return cv
   })
 
+const LimitedCvDocument = CvDocument.refine((doc) => JSON.stringify(doc).length <= MAX_DOCUMENT_BYTES, {
+  message: 'The CV is too large',
+})
+
 const SaveInput = z.strictObject({
   cvId: Id,
   baseRevisionId: Id,
-  data: CvDocument.refine((doc) => JSON.stringify(doc).length <= MAX_DOCUMENT_BYTES, {
-    message: 'The CV is too large',
-  }),
+  data: LimitedCvDocument,
   message: z.string().trim().max(200).optional(),
 })
 
@@ -75,4 +77,15 @@ export const saveCvRevisionFn = createServerFn({ method: 'POST' })
     return result.ok
       ? { ok: true, revisionId: result.value.id, revisionNumber: result.value.number }
       : { ok: false, error: result.error }
+  })
+
+export type CreateCvResult = { ok: true; cvId: string } | { ok: false; error: 'ID_EXHAUSTED' }
+
+/** Creates a new person with this CV as their first, primary version. The server sets `meta`. */
+export const createCvFn = createServerFn({ method: 'POST' })
+  .validator(z.strictObject({ data: LimitedCvDocument }))
+  .handler(async ({ data }): Promise<CreateCvResult> => {
+    const repo = await getCvRepository()
+    const result = repo.createPerson({ data: data.data, authorName: 'Local user' })
+    return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
   })

@@ -202,3 +202,17 @@ describe('CvChatWidget saved history', () => {
     })
   })
 })
+
+describe('CvChatWidget on pages with their own agent', () => {
+  it('should hide the widget but keep the conversation for when it is shown again', async () => {
+    const history = fakeHistory(saved)
+    const { rerender } = render(<CvChatWidget history={history} hidden />)
+
+    expect(screen.queryByRole('button', { name: 'Open CV assistant' })).not.toBeInTheDocument()
+    rerender(<CvChatWidget history={history} />)
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Open CV assistant' }))
+
+    expect(await screen.findByText('Try Aino Example.')).toBeInTheDocument()
+    expect(history.load).toHaveBeenCalledTimes(1)
+  })
+})
