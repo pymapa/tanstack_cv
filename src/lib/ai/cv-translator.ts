@@ -21,13 +21,22 @@ export type CvTranslator = (
   signal: AbortSignal,
 ) => Promise<Result<readonly TextSegment[], TranslatorError>>
 
+/**
+ * The shape the model must return. No length or size limits: Anthropic structured outputs
+ * reject `maxLength` / `maxItems` with a 400, and the adapter sends the schema as-is.
+ */
+export const TranslationFormat = z.strictObject({
+  segments: z.array(z.strictObject({ id: z.string(), text: z.string() })),
+})
+
+/** The same shape with limits, checked on our side before the reply is used. */
 export const TranslationOutput = z.strictObject({
   segments: z.array(z.strictObject({ id: z.string().max(300), text: z.string().max(5000) })).max(2000),
 })
 
 /** One structured-output model call. Returns the raw output; the caller validates it. */
 export type StructuredCompletion = (
-  request: Readonly<{ system: string; user: string; schema: typeof TranslationOutput; signal: AbortSignal }>,
+  request: Readonly<{ system: string; user: string; schema: typeof TranslationFormat; signal: AbortSignal }>,
 ) => Promise<Result<unknown, 'AI_UNAVAILABLE'>>
 
 export const TRANSLATION_SYSTEM_PROMPT = `You translate the text of a Kipinä consultant CV between English and Finnish.
@@ -87,7 +96,7 @@ export const createLlmTranslator =
       const reply = await complete({
         system: TRANSLATION_SYSTEM_PROMPT,
         user: userTurn(from, to, batch),
-        schema: TranslationOutput,
+        schema: TranslationFormat,
         signal: batchSignal,
       })
       const parsed = reply.ok ? TranslationOutput.safeParse(reply.value) : null

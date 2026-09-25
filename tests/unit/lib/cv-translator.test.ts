@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
+import { z } from 'zod'
 import {
   TRANSLATION_SYSTEM_PROMPT,
   chunkSegments,
@@ -65,6 +66,24 @@ describe('createLlmTranslator', () => {
     expect(request?.user).toContain('from English to Finnish')
     expect(request?.user).toMatch(/^[\s\S]*<cv_text>[\s\S]*<\/cv_text>$/)
     expect(request?.user.match(/<\/cv_text>/g)).toHaveLength(1)
+  })
+
+  it('should send the model a schema without length or size limits, which structured outputs reject', async () => {
+    const complete = reply({ segments: [] })
+
+    await createLlmTranslator(complete)({ from: 'en', to: 'fi', segments }, signal)
+
+    const schema = JSON.stringify(z.toJSONSchema(vi.mocked(complete).mock.calls[0]?.[0].schema ?? z.never()))
+    expect(schema).not.toMatch(/maxLength|minLength|maxItems|minItems|maximum|minimum/)
+  })
+
+  it('should still reject a reply over the limits', async () => {
+    const translate = createLlmTranslator(reply({ segments: [{ id: '/basics/label', text: 'x'.repeat(5001) }] }))
+
+    expect(await translate({ from: 'en', to: 'fi', segments }, signal)).toEqual({
+      ok: false,
+      error: 'AI_INVALID_OUTPUT',
+    })
   })
 
   it('should return the translated segments from the model', async () => {
