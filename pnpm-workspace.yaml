@@ -1,0 +1,6 @@
+# Supply-chain hardening (spec §9.1 A03)
+# Don't install versions published less than 24 h ago.
+minimumReleaseAge: 1440
+# Only these packages may run install scripts.
+onlyBuiltDependencies:
+  - esbuild

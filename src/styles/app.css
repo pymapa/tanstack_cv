@@ -1,0 +1,93 @@
+@import 'tailwindcss' source('../');
+@import '@fontsource-variable/noto-sans';
+@import '@fontsource-variable/noto-serif';
+
+/* Kipinä brand tokens: see .claude/skills/kipina-brand/SKILL.md */
+@theme {
+  --color-ink: #2b2b2b;
+  --color-lime: #cbff2b;
+  --color-teal: #006d5e;
+  --color-mist: #f7fafc;
+  --color-line: #e3e8ec;
+  --color-muted: #5e6468;
+  --color-forest: #16392f;
+  --color-forest-deep: #0c241d;
+  --color-moss: #4c5d36;
+  --color-danger: #b42318;
+  --color-success: #067647;
+
+  --font-sans: 'Noto Sans Variable', 'Noto Sans', system-ui, sans-serif;
+  --font-serif: 'Noto Serif Variable', 'Noto Serif', Georgia, serif;
+
+  --radius-card: 6px;
+}
+
+@layer base {
+  html {
+    color: var(--color-ink);
+    background: var(--color-mist);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  /* Signature accent: one upright light-serif word inside a heading. */
+  h1 em,
+  h2 em {
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-weight: 250;
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    color: var(--color-teal);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-lime);
+    outline-offset: 1px;
+    box-shadow: 0 0 0 1px var(--color-ink);
+  }
+
+  mark {
+    background: var(--color-lime);
+    color: var(--color-ink);
+    border-radius: 2px;
+    padding: 0 0.1em;
+  }
+}
+
+@layer components {
+  /* Hero band: the deep forest green of kipina.fi's photographic hero. */
+  .hero-forest {
+    background:
+      radial-gradient(60% 90% at 78% 20%, rgb(76 93 54 / 0.55), transparent 70%),
+      radial-gradient(50% 80% at 10% 100%, rgb(0 109 94 / 0.35), transparent 70%), var(--color-forest-deep);
+    color: white;
+  }
+
+  /* Kipinä call to action: text with a lime underline bar, like "Tervetuloa Kipinälle!" on the site. */
+  .cta-underline {
+    display: inline-block;
+    padding-bottom: 0.35rem;
+    border-bottom: 3px solid var(--color-lime);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+}

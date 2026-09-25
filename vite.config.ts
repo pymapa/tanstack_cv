@@ -1,21 +1,17 @@
-import { defineConfig } from 'vite'
-import { devtools } from '@tanstack/devtools-vite'
-
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-
-import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import contentCollections from '@content-collections/vite'
+import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import viteReact from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
-const config = defineConfig({
-  resolve: { tsconfigPaths: true },
-  plugins: [
-    devtools(),
-    contentCollections(),
-    tailwindcss(),
-    tanstackStart(),
-    viteReact(),
-  ],
+export default defineConfig({
+  server: {
+    port: 3000,
+    // Local-only until auth (M2) lands: never expose the dev server on the network.
+    host: 'localhost',
+    strictPort: true,
+  },
+  resolve: {
+    tsconfigPaths: true,
+  },
+  plugins: [tailwindcss(), tanstackStart({ srcDirectory: 'src' }), viteReact()],
 })
-
-export default config
