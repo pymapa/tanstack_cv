@@ -17,7 +17,7 @@ export function AppFrame({ children }: { children: ReactNode }) {
 export function AppHeaderView({ title, actions }: { title?: HeaderTitle; actions?: ReactNode }) {
   return (
     <header className="border-b border-line bg-white">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-8">
+      <div className="mx-auto flex h-20 max-w-[1440px] items-center gap-6 px-8">
         <Link
           to="/"
           className="flex flex-none items-center no-underline"
