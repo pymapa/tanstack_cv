@@ -32,9 +32,7 @@ function RootDocument({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         <AppHeader />
-        <main id="main" className="pb-24">
-          {children}
-        </main>
+        <main id="main">{children}</main>
         <CvChatWidget />
         <HydrationMarker />
         <Scripts />

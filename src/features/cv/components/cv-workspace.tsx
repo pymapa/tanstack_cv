@@ -164,7 +164,7 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
               The PDF uses the last saved version. Save first to include your changes.
             </p>
           )}
-          <div className="min-h-0 flex-1 px-8 pb-6">
+          <div className="min-h-0 flex-1 px-8">
             <CvPreview cv={draft} />
           </div>
         </section>
