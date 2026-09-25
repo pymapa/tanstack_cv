@@ -1,5 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useCallback } from 'react'
+import { headerTitle } from '~/components/header-title'
 import { CvWorkspace, type SaveRequest } from '~/features/cv/components/cv-workspace'
 import { getCvFn, saveCvRevisionFn } from '~/server/functions/cv'
 
@@ -8,6 +9,13 @@ export const Route = createFileRoute('/cvs/$cvId')({
   head: ({ loaderData }) => ({
     meta: [{ title: `${loaderData?.person.fullName ?? 'CV'} · ${loaderData?.variant ?? ''} · Kipinä CV bank` }],
   }),
+  staticData: {
+    headerTitle: headerTitle((cv: { person: { id: string; fullName: string }; variant: string }) => ({
+      title: cv.person.fullName,
+      subtitle: cv.variant,
+      personId: cv.person.id,
+    })),
+  },
   component: CvRoute,
 })
 

@@ -1,4 +1,4 @@
-import { Link, useBlocker } from '@tanstack/react-router'
+import { useBlocker } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Container } from '~/components/container'
 import type { CvDocument } from '~/cv/schema'
@@ -87,23 +87,7 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
   return (
     <div className="flex h-[calc(100vh-4rem)] flex-col">
       <div className="border-b border-line bg-white">
-        <Container className="flex items-center gap-6 py-4">
-          <div className="min-w-0 flex-1">
-            <nav aria-label="Breadcrumb" className="text-sm">
-              <Link to="/" className="font-medium">
-                Search
-              </Link>
-              <span className="px-2 text-muted" aria-hidden="true">
-                /
-              </span>
-              <Link to="/people/$personId" params={{ personId: cv.person.id }} className="font-medium">
-                {cv.person.fullName}
-              </Link>
-            </nav>
-            <h1 className="mt-1 truncate text-3xl" tabIndex={-1}>
-              {cv.person.fullName} <span className="text-muted">· {cv.variant}</span>
-            </h1>
-          </div>
+        <Container className="flex items-center justify-end gap-6 py-3">
           <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
           <button
             type="button"

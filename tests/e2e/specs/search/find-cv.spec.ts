@@ -66,11 +66,11 @@ test.describe('search', () => {
     await expect(search.input).toHaveValue('Scrum')
   })
 
-  test('should clear the box when the Search link is clicked', async ({ page }) => {
+  test('should clear the box when the logo is clicked', async ({ page }) => {
     const search = new SearchPage(page)
     await search.goto('Scrum')
 
-    await page.getByTestId('nav-search').click()
+    await page.getByTestId('nav-home').click()
 
     await expect(page).toHaveURL(/\/$/)
     await expect(search.input).toHaveValue('')

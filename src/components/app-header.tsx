@@ -1,29 +1,41 @@
-import { Link } from '@tanstack/react-router'
-import { PixelGrid } from './pixel-grid'
+import { Link, useMatches } from '@tanstack/react-router'
+import { pickHeaderTitle, type HeaderTitle } from './header-title'
 
 export function AppHeader() {
+  const title = useMatches({ select: (matches) => pickHeaderTitle(matches) })
+  return <AppHeaderView {...(title === undefined ? {} : { title })} />
+}
+
+export function AppHeaderView({ title }: { title?: HeaderTitle }) {
   return (
     <header className="border-b border-line bg-white">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-8 px-8">
-        <Link to="/" className="flex items-center gap-3 no-underline" aria-label="Kipinä CV bank, go to search">
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-8">
+        <Link
+          to="/"
+          className="flex flex-none items-center no-underline"
+          aria-label="Kipinä CV bank, go to search"
+          data-testid="nav-home"
+        >
           <img src="/brand/kipina-logo.png" alt="Kipinä" className="h-7 w-auto" width={92} height={28} />
-          <span className="border-l border-line pl-3 text-lg font-light tracking-tight text-ink">CV bank</span>
         </Link>
-        <nav aria-label="Main" className="flex items-center gap-6 text-sm">
-          <Link
-            to="/"
-            className="border-b-2 border-transparent py-5 uppercase tracking-[0.04em] text-ink no-underline hover:border-line"
-            activeProps={{ className: '!border-lime' }}
-            activeOptions={{ exact: true, includeSearch: false }}
-            data-testid="nav-search"
-          >
-            Search
-          </Link>
-        </nav>
-        <div className="ml-auto flex items-center gap-3 text-sm text-muted">
-          <PixelGrid size={14} />
-          <span>Local development</span>
-        </div>
+        {title !== undefined && (
+          <div className="min-w-0 border-l border-line pl-6">
+            <h1 className="truncate text-xl leading-tight font-light tracking-tight" tabIndex={-1}>
+              {title.personId === undefined ? (
+                title.title
+              ) : (
+                <Link
+                  to="/people/$personId"
+                  params={{ personId: title.personId }}
+                  className="text-ink no-underline hover:underline"
+                >
+                  {title.title}
+                </Link>
+              )}
+            </h1>
+            {title.subtitle !== undefined && <p className="truncate text-sm text-muted">{title.subtitle}</p>}
+          </div>
+        )}
       </div>
     </header>
   )
