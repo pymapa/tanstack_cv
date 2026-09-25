@@ -2,9 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CvDocument } from '~/cv/schema'
 import { useDebounced } from '~/lib/use-debounced'
 import { DEFAULT_RENDER_OPTIONS, renderCvHtml, type CvRenderOptions } from '~/pdf/template/render-html'
+import { CV_TEMPLATES, templateOf } from '~/pdf/template/templates'
 
-/** A4 width at 96 dpi. The template lays pages out at this width. */
-const A4_WIDTH_PX = 794
 const PREVIEW_DEBOUNCE_MS = 300
 
 type Props = Readonly<{ cv: CvDocument; options?: CvRenderOptions }>
@@ -15,9 +14,11 @@ type Props = Readonly<{ cv: CvDocument; options?: CvRenderOptions }>
  */
 export function CvPreview({ cv, options = DEFAULT_RENDER_OPTIONS }: Props) {
   const debounced = useDebounced(cv, PREVIEW_DEBOUNCE_MS)
-  const html = useMemo(() => renderCvHtml(debounced, options), [debounced, options])
+  const template = templateOf(debounced)
+  const pageWidth = CV_TEMPLATES[template].pageWidthPx
+  const html = useMemo(() => renderCvHtml(debounced, { ...options, template }), [debounced, options, template])
   const frameBox = useRef<HTMLDivElement>(null)
-  const [box, setBox] = useState({ width: A4_WIDTH_PX, height: 800 })
+  const [box, setBox] = useState({ width: pageWidth, height: 800 })
 
   useEffect(() => {
     const el = frameBox.current
@@ -31,7 +32,7 @@ export function CvPreview({ cv, options = DEFAULT_RENDER_OPTIONS }: Props) {
     }
   }, [])
 
-  const scale = Math.min(1, box.width / A4_WIDTH_PX)
+  const scale = Math.min(1, box.width / pageWidth)
 
   return (
     <div ref={frameBox} className="relative h-full w-full overflow-hidden" data-testid="cv-preview">
@@ -41,7 +42,7 @@ export function CvPreview({ cv, options = DEFAULT_RENDER_OPTIONS }: Props) {
         srcDoc={html}
         className="absolute left-0 top-0 border-0 bg-mist"
         style={{
-          width: A4_WIDTH_PX,
+          width: pageWidth,
           height: box.height / scale,
           transform: `scale(${scale})`,
           transformOrigin: 'top left',

@@ -1,11 +1,11 @@
 import type { CvDocument } from '~/cv/schema'
 import type { CvRenderOptions } from './render-html'
-import { GridMark } from './sections/common'
+import { Colophon } from './sections/common'
 import { Cover } from './sections/cover'
 import { EducationAndCertificates, Languages, WorkHistory } from './sections/history'
 import { ProjectHighlights, ProjectHistory } from './sections/projects'
 import { Skills } from './sections/skills'
-import { CV_STYLES } from './styles'
+import type { CvTemplate } from './templates'
 
 type Props = Readonly<{ cv: CvDocument; options: CvRenderOptions }>
 
@@ -36,10 +36,7 @@ export function CvDocumentView({ cv, options }: Props) {
           <WorkHistory work={cv.work ?? []} />
           <EducationAndCertificates cv={cv} />
           <Languages languages={cv.languages ?? []} />
-          <p className="colophon">
-            <GridMark />
-            <span>Kipinä · {cv.basics.name} · CV</span>
-          </p>
+          <Colophon name={cv.basics.name} />
         </div>
       )}
     </>
@@ -47,16 +44,17 @@ export function CvDocumentView({ cv, options }: Props) {
 }
 
 /** The full standalone HTML document (no scripts, no external resources). */
-export function CvHtmlDocument({ cv, options }: Props) {
+export function CvHtmlDocument({ cv, options, template }: Props & Readonly<{ template: CvTemplate }>) {
+  const { Layout } = template
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <title>{`${cv.basics.name} – ${cv.basics.label} – Kipinä CV`}</title>
-        <style>{CV_STYLES}</style>
+        <style>{template.styles}</style>
       </head>
       <body>
-        <CvDocumentView cv={cv} options={options} />
+        <Layout cv={cv} options={options} />
       </body>
     </html>
   )

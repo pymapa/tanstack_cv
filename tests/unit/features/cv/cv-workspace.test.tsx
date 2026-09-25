@@ -55,12 +55,23 @@ const translateProps = { onTranslate: vi.fn(), onTranslated: vi.fn() }
 const setup = (
   onSave = vi.fn().mockResolvedValue({ ok: true, revisionId: 'rev-2', revisionNumber: 2 }),
   onSaveAsNew = vi.fn<() => Promise<CreateCvVariantResult>>().mockResolvedValue({ ok: true, cvId: 'cv-2' }),
+  onRestore = vi
+    .fn<() => Promise<SaveCvResult>>()
+    .mockResolvedValue({ ok: true, revisionId: 'rev-3', revisionNumber: 3 }),
+  cv: CvView = view(),
 ) => {
   const onRefresh = vi.fn()
   render(
-    <CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={onSaveAsNew} onRefresh={onRefresh} {...translateProps} />,
+    <CvWorkspace
+      cv={cv}
+      onSave={onSave}
+      onSaveAsNew={onSaveAsNew}
+      onRestore={onRestore}
+      onRefresh={onRefresh}
+      {...translateProps}
+    />,
   )
-  return { onSave, onSaveAsNew, onRefresh, user: userEvent.setup() }
+  return { onSave, onSaveAsNew, onRestore, onRefresh, user: userEvent.setup() }
 }
 
 describe('CvWorkspace', () => {
@@ -74,6 +85,38 @@ describe('CvWorkspace', () => {
     expect(header.getByRole('button', { name: 'Save as new version…' })).toBeInTheDocument()
     expect(header.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', '/api/cvs/cv-1/pdf')
     expect(screen.getByRole('main')).not.toContainElement(screen.getByRole('banner'))
+  })
+
+  it('should offer the PDF templates in the header with portrait selected by default', () => {
+    setup()
+    const select = within(screen.getByRole('banner')).getByRole('combobox', { name: 'Template' })
+
+    expect(select).toHaveValue('kipina-portrait')
+    expect(
+      within(select)
+        .getAllByRole('option')
+        .map((o) => o.textContent),
+    ).toEqual([
+      'Default (portrait A4)',
+      'Default (landscape A4)',
+      'Experimental: Sidebar (portrait A4)',
+      'Experimental: Editorial (portrait A4)',
+      'Experimental: Slides (landscape A4)',
+      'Experimental: One-page summary (portrait A4)',
+    ])
+  })
+
+  it('should save the chosen template as part of the CV', async () => {
+    const { user, onSave } = setup()
+
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Template' }), 'Default (landscape A4)')
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+
+    expect(onSave).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({ meta: expect.objectContaining({ 'x-template': 'kipina-landscape' }) }),
+      }),
+    )
   })
 
   it('should show unsaved changes after an edit', async () => {
@@ -142,7 +185,14 @@ describe('CvWorkspace', () => {
     const onRefresh = vi.fn()
     const user = userEvent.setup()
     const { rerender } = render(
-      <CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={onRefresh} {...translateProps} />,
+      <CvWorkspace
+        cv={view()}
+        onSave={onSave}
+        onSaveAsNew={vi.fn()}
+        onRestore={vi.fn()}
+        onRefresh={onRefresh}
+        {...translateProps}
+      />,
     )
     await user.type(screen.getByLabelText('Label'), ' Lead')
     await user.click(screen.getByRole('button', { name: 'Save' }))
@@ -158,6 +208,7 @@ describe('CvWorkspace', () => {
         cv={view('rev-2', saved)}
         onSave={onSave}
         onSaveAsNew={vi.fn()}
+        onRestore={vi.fn()}
         onRefresh={onRefresh}
         {...translateProps}
       />,
@@ -172,7 +223,14 @@ describe('CvWorkspace', () => {
     const onSave = vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' })
     const user = userEvent.setup()
     const { rerender } = render(
-      <CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={vi.fn()} {...translateProps} />,
+      <CvWorkspace
+        cv={view()}
+        onSave={onSave}
+        onSaveAsNew={vi.fn()}
+        onRestore={vi.fn()}
+        onRefresh={vi.fn()}
+        {...translateProps}
+      />,
     )
     await user.type(screen.getByLabelText('Label'), 'X')
     await user.click(screen.getByRole('button', { name: 'Save' }))
@@ -184,6 +242,7 @@ describe('CvWorkspace', () => {
         cv={view('rev-9', latest)}
         onSave={onSave}
         onSaveAsNew={vi.fn()}
+        onRestore={vi.fn()}
         onRefresh={vi.fn()}
         {...translateProps}
       />,
@@ -316,5 +375,61 @@ describe('CvWorkspace', () => {
     await user.type(screen.getByLabelText('Label'), ' Lead')
 
     expect(screen.getByRole('button', { name: 'Translate to Finnish' })).toBeDisabled()
+  })
+
+  describe('client names in the PDF', () => {
+    it('should add the anonymize option to the PDF link when client names are hidden', async () => {
+      const { user } = setup()
+
+      await user.click(screen.getByRole('checkbox', { name: 'Hide client names' }))
+
+      expect(screen.getByRole('link', { name: 'Download PDF' })).toHaveAttribute(
+        'href',
+        '/api/cvs/cv-1/pdf?anonymize=1',
+      )
+    })
+  })
+
+  describe('restore a revision', () => {
+    const withHistory = (): CvView => {
+      const base = view('rev-2')
+      const summary = (id: string, number: number) => ({
+        id,
+        number,
+        source: 'manual' as const,
+        message: undefined,
+        authorName: 'Tester',
+        createdAt: '2026-01-01T00:00:00.000Z',
+      })
+      return { ...base, revisions: [summary('rev-2', 2), summary('rev-1', 1)] }
+    }
+
+    const restoreFirst = async (user: ReturnType<typeof userEvent.setup>) => {
+      await user.click(screen.getByText('History (2)'))
+      await user.click(screen.getByRole('button', { name: 'Restore revision 1' }))
+      await user.click(screen.getByRole('button', { name: 'Yes, restore' }))
+    }
+
+    it('should restore against the current revision and reload the CV', async () => {
+      const { user, onRestore, onRefresh } = setup(undefined, undefined, undefined, withHistory())
+
+      await restoreFirst(user)
+
+      expect(onRestore).toHaveBeenCalledWith({ revisionId: 'rev-1', baseRevisionId: 'rev-2' })
+      expect(onRefresh).toHaveBeenCalled()
+    })
+
+    it('should explain a conflict when someone saved before the restore', async () => {
+      const { user } = setup(
+        undefined,
+        undefined,
+        vi.fn<() => Promise<SaveCvResult>>().mockResolvedValue({ ok: false, error: 'CONFLICT' }),
+        withHistory(),
+      )
+
+      await restoreFirst(user)
+
+      expect(await screen.findByRole('alert')).toHaveTextContent('Someone saved a newer version')
+    })
   })
 })

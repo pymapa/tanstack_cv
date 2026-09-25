@@ -67,3 +67,32 @@ test.describe('PDF export', () => {
     expect(response.status()).toBe(404)
   })
 })
+
+test.describe('History', () => {
+  test('should restore an earlier revision as a new revision', async ({ page }) => {
+    const cv = await openCvOf(page, 'Teemu Aaltola')
+    const original = await cv.label.inputValue()
+    const before = await cv.latestRevision()
+    await cv.setLabel('Temporary title')
+    await cv.saveWithShortcut()
+    await expect(page.getByText(`History (${String(before + 1)})`)).toBeVisible()
+
+    await page.getByText(/^History \(\d+\)$/).click()
+    await page.getByRole('button', { name: `Restore revision ${String(before)}` }).click()
+    await page.getByRole('button', { name: 'Yes, restore' }).click()
+
+    await expect(page.getByText(`History (${String(before + 2)})`)).toBeVisible()
+    await expect(cv.label).toHaveValue(original)
+    await expect(page.getByText(`Restored revision ${String(before)}`)).toBeVisible()
+  })
+})
+
+test.describe('Client names', () => {
+  test('should hide client names in the preview and the PDF link when asked', async ({ page }) => {
+    const cv = await openCvOf(page, 'Jussi Peltonen')
+
+    await page.getByRole('checkbox', { name: 'Hide client names' }).check()
+
+    await expect(cv.downloadPdf).toHaveAttribute('href', /\?anonymize=1$/)
+  })
+})

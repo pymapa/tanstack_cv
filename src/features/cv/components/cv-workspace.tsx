@@ -3,26 +3,31 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppHeaderView } from '~/components/app-header'
 import { Container } from '~/components/container'
 import { sameCv } from '~/cv/draft'
+import { anonymizeClients } from '~/cv/anonymize'
 import type { CvDocument } from '~/cv/schema'
 import { detectCvLanguage } from '~/cv/translation'
 import { CvEditor } from '~/features/editor/cv-editor'
 import { validateCv } from '~/features/editor/validation'
 import { TranslateButton } from '~/features/translation/components/translate-button'
+import { templateOf } from '~/pdf/template/templates'
 import type { CreateCvVariantResult, SaveCvResult, TranslateCvResult } from '~/server/functions/cv'
 import type { CvView } from '~/server/repositories/cv-repository'
 import type { TranslationDraft } from '~/server/services/cv-translation'
 import { CvPreview } from './cv-preview'
 import { RevisionList } from './revision-list'
 import { SaveAsVersionDialog } from './save-as-version-dialog'
+import { TemplateSelect } from './template-select'
 import { UnsavedChangesDialog } from './unsaved-changes-dialog'
 
 export type SaveRequest = Readonly<{ baseRevisionId: string; data: CvDocument }>
 export type SaveAsNewRequest = Readonly<{ variant: string; data: CvDocument }>
+export type RestoreRequest = Readonly<{ revisionId: string; baseRevisionId: string }>
 
 type Props = Readonly<{
   cv: CvView
   onSave: (request: SaveRequest) => Promise<SaveCvResult>
   onSaveAsNew: (request: SaveAsNewRequest) => Promise<CreateCvVariantResult>
+  onRestore: (request: RestoreRequest) => Promise<SaveCvResult>
   /** Reload the CV from the server: after a recorded save (history) and from the conflict banner. */
   onRefresh: () => void
   /** Machine-translates the saved revision into the other language. Saves nothing. */
@@ -38,11 +43,12 @@ type SaveState =
   | { kind: 'conflict' }
   | { kind: 'error' }
 
-export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, onTranslated }: Props) {
+export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onTranslate, onTranslated }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
   const [naming, setNaming] = useState(false)
+  const [hideClients, setHideClients] = useState(false)
 
   // A new revision arrived from the server. If it's the one this workspace just saved, `base`
   // already points at it: keep the draft, which may hold edits typed during the save. Otherwise
@@ -82,6 +88,25 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
     }
   }, [canSave, onSave, onRefresh, base.id, draft])
 
+  const restore = useCallback(
+    async (revisionId: string) => {
+      setSaveState({ kind: 'saving' })
+      try {
+        const result = await onRestore({ revisionId, baseRevisionId: base.id })
+        if (result.ok) {
+          onRefresh()
+        } else {
+          setSaveState({ kind: result.error === 'CONFLICT' ? 'conflict' : 'error' })
+        }
+      } catch {
+        setSaveState({ kind: 'error' })
+      }
+    },
+    [onRestore, onRefresh, base.id],
+  )
+
+  const previewCv = useMemo(() => (hideClients ? anonymizeClients(draft) : draft), [hideClients, draft])
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') {
@@ -110,22 +135,24 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
               onTranslated={onTranslated}
             />
             <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
-            <div className="flex flex-col items-end">
-              <a
-                href={`/api/cvs/${cv.id}/pdf`}
-                // `download` keeps the unsaved-changes guard (beforeunload) from firing.
-                download
-                className="cta-underline text-sm text-ink"
-                data-testid="cv-download-pdf"
-                {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
-              >
-                Download PDF
-              </a>
-              {dirty && (
-                <p id="pdf-saved-note" className="mt-1 text-xs text-muted">
-                  The PDF uses the last saved version.
-                </p>
-              )}
+            <div className="flex flex-col items-start gap-1">
+              <TemplateSelect
+                value={templateOf(draft)}
+                onChange={(template) => {
+                  setDraft({ ...draft, meta: { ...draft.meta, 'x-template': template } })
+                }}
+              />
+              <label className="flex items-center gap-2 text-sm text-ink">
+                <input
+                  type="checkbox"
+                  checked={hideClients}
+                  onChange={(e) => {
+                    setHideClients(e.target.checked)
+                  }}
+                  data-testid="cv-hide-clients"
+                />
+                Hide client names
+              </label>
             </div>
             <button
               type="button"
@@ -148,6 +175,23 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
             >
               {saveState.kind === 'saving' ? 'Saving…' : 'Save'}
             </button>
+            <div className="flex flex-col items-end">
+              <a
+                href={`/api/cvs/${cv.id}/pdf${hideClients ? '?anonymize=1' : ''}`}
+                // `download` keeps the unsaved-changes guard (beforeunload) from firing.
+                download
+                className="cta-underline text-sm text-ink"
+                data-testid="cv-download-pdf"
+                {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
+              >
+                Download PDF
+              </a>
+              {dirty && (
+                <p id="pdf-saved-note" className="mt-1 text-xs text-muted">
+                  The PDF uses the last saved version.
+                </p>
+              )}
+            </div>
           </>
         }
       />
@@ -180,12 +224,16 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
         <div className="grid min-h-0 flex-1 grid-cols-[minmax(520px,640px)_minmax(0,1fr)]">
           <section aria-label="Edit CV" className="min-h-0 overflow-y-auto border-r border-line bg-white px-8 py-6">
             <CvEditor value={draft} onChange={setDraft} issues={issues} />
-            <RevisionList revisions={cv.revisions} />
+            <RevisionList
+              revisions={cv.revisions}
+              onRestore={(revisionId) => void restore(revisionId)}
+              restoreDisabled={saveState.kind === 'saving'}
+            />
           </section>
           <section aria-label="PDF preview" className="flex min-h-0 flex-col bg-mist">
             <h2 className="eyebrow px-8 pb-2 pt-4">Preview</h2>
             <div className="min-h-0 flex-1 px-8">
-              <CvPreview cv={draft} />
+              <CvPreview cv={previewCv} />
             </div>
           </section>
         </div>

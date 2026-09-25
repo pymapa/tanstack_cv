@@ -72,7 +72,7 @@ export function TranslationReview({ person, sourceVariant, original, draft, onSa
   })
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col">
+    <div className="flex h-[calc(100vh-5rem)] flex-col">
       <div className="border-b border-line bg-white">
         <Container className="flex items-end gap-6 py-4">
           <div className="min-w-0 flex-1">

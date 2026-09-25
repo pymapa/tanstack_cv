@@ -68,4 +68,20 @@ describe('CvDocument schema', () => {
 
     expect(CvDocument.safeParse({ ...data, projects }).success).toBe(false)
   })
+
+  it('should accept a known template in meta.x-template with both Zod and the JSON Schema', () => {
+    const data = readJson(join(SAMPLE_DIR, 'cvs', 'p01-v1.json')) as { meta: Record<string, unknown> }
+    const withTemplate = { ...data, meta: { ...data.meta, 'x-template': 'kipina-landscape' } }
+
+    expect(CvDocument.safeParse(withTemplate).success).toBe(true)
+    expect(validateJsonSchema(withTemplate)).toBe(true)
+  })
+
+  it('should reject an unknown template in meta.x-template with both Zod and the JSON Schema', () => {
+    const data = readJson(join(SAMPLE_DIR, 'cvs', 'p01-v1.json')) as { meta: Record<string, unknown> }
+    const withTemplate = { ...data, meta: { ...data.meta, 'x-template': 'comic-sans' } }
+
+    expect(CvDocument.safeParse(withTemplate).success).toBe(false)
+    expect(validateJsonSchema(withTemplate)).toBe(false)
+  })
 })

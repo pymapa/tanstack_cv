@@ -25,11 +25,11 @@ describe('toExportDocument', () => {
       profiles: [{ network: 'LinkedIn', url: 'https://example.com/anna' }],
     },
     projects: [buildProject({ 'x-note': 'internal conversion note' })],
-    meta: { 'x-conversionNotes': ['internal'] },
+    meta: { 'x-conversionNotes': ['internal'], 'x-template': 'kipina-landscape' },
   })
 
   it('should remove contact details when they are not included', () => {
-    const doc = toExportDocument(cv, { includeContact: false })
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: false })
 
     expect(doc.basics.email).toBeUndefined()
     expect(doc.basics.phone).toBeUndefined()
@@ -37,12 +37,46 @@ describe('toExportDocument', () => {
   })
 
   it('should keep contact details when they are included', () => {
-    expect(toExportDocument(cv, { includeContact: true }).basics.email).toBe('anna@example.com')
+    expect(toExportDocument(cv, { includeContact: true, anonymizeClients: false }).basics.email).toBe(
+      'anna@example.com',
+    )
   })
 
   it('should never export internal conversion notes', () => {
-    const json = JSON.stringify(toExportDocument(cv, { includeContact: true }))
+    const json = JSON.stringify(toExportDocument(cv, { includeContact: true, anonymizeClients: false }))
 
     expect(json).not.toContain('internal')
+  })
+
+  it('should replace client names with industries when anonymizing', () => {
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: true })
+
+    expect(JSON.stringify(doc)).not.toContain('Example Bank')
+  })
+
+  it('should keep client names when not anonymizing', () => {
+    const doc = toExportDocument(cv, { includeContact: false, anonymizeClients: false })
+
+    expect(doc.projects[0]?.entity).toBe('Example Bank')
+  })
+
+  it('should not export the template choice', () => {
+    expect(toExportDocument(cv, { includeContact: true, anonymizeClients: false }).meta['x-template']).toBeUndefined()
+  })
+
+  it('should export only what the one-page summary shows', () => {
+    const withHistory = buildCv({
+      projects: [buildProject({ name: 'Star project', 'x-highlight': true }), buildProject({ name: 'Other project' })],
+      work: [{ name: 'Example Oy' }],
+    })
+
+    const doc = toExportDocument(withHistory, {
+      includeContact: false,
+      anonymizeClients: false,
+      template: 'kipina-one-page',
+    })
+
+    expect(doc.projects.map((p) => p.name)).toEqual(['Star project'])
+    expect(doc.work).toBeUndefined()
   })
 })

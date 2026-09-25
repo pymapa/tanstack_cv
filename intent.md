@@ -96,14 +96,20 @@ with a short note on the intended approach. This list is part of the deliverable
 - **AI chat editing (spec §7.6, M6):** the model proposes a validated JSON patch, the user reviews
   it as diff cards and accepts or rejects each change, and the result is saved as a revision.
   The provider is off until a human approves the data transfer (spec §9.3).
-- **History diff and restore (spec §7.5):** compare two revisions and restore an old one as a new
-  revision. The history list is built; diff and restore are not.
+- **History diff (spec §7.5):** compare two revisions side by side. Restore is built: it saves the
+  old content as a new revision. Intended approach for the diff: a pure function that lists the
+  changed fields between the selected revision and the current one.
 - **Variants, tags, primary version:** set primary, archive, and curated tags as a search
   facet (spec §7.3, §7.8). The editor's **Save as new version…** creates a variant. Intended
   approach for the rest: a "Create variant from this" action on the person page that opens
   the same name dialog and copies the last saved revision, plus the optional `title`.
 - **Export options dialog:** a contact-details toggle (the API supports `?contact=1`), section
   toggles, and a project limit so long CVs fit the cover page.
+- **Complete client-name anonymisation.** **Hide client names** replaces each project's client with
+  its industry in the preview, the PDF, and `cv.json`. Client names written in project names,
+  descriptions, or testimonials stay. Intended approach: a per-project "never name this client"
+  flag (a schema change), and a pre-export warning that lists free text that still contains a
+  client name from the same CV.
 - **Staleness reminders:** a "needs review" dashboard and Slack reminders (spec §7.10).
 - **Final answer when the chatbot's loop guard stops it.** The guard in
   `src/lib/ai/loop-guard.ts` ends the run after too many turns or repeated identical tool

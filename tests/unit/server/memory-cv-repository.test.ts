@@ -233,6 +233,71 @@ describe('memory CV repository', () => {
       expect(create(setup(), { sourceCvId: 'missing' })).toEqual({ ok: false, error: 'NOT_FOUND' })
     })
   })
+
+  describe('restoreRevision', () => {
+    const editedCv = () => {
+      const repo = setup()
+      const cvId = repo.listSearchable()[0]?.cvId ?? ''
+      const first = repo.getCv(cvId)?.revision
+      if (first === undefined) throw new Error('missing cv')
+      const data = { ...first.data, basics: { ...first.data.basics, label: 'Principal Architect' } }
+      const second = repo.saveRevision({ cvId, baseRevisionId: first.id, data, authorName: 'Tester' })
+      if (!second.ok) throw new Error('save failed')
+      return { repo, cvId, first, second: second.value }
+    }
+
+    it('should add a new revision with the content of the restored one', () => {
+      const { repo, cvId, first, second } = editedCv()
+
+      const result = repo.restoreRevision({
+        cvId,
+        revisionId: first.id,
+        baseRevisionId: second.id,
+        authorName: 'Tester',
+      })
+
+      expect(result.ok && result.value.number).toBe(3)
+      expect(result.ok && result.value.source).toBe('restore')
+      expect(result.ok && result.value.message).toBe('Restored revision 1')
+      expect(repo.getCv(cvId)?.revision.data.basics.label).toBe(first.data.basics.label)
+    })
+
+    it('should keep every earlier revision', () => {
+      const { repo, cvId, first, second } = editedCv()
+
+      repo.restoreRevision({ cvId, revisionId: first.id, baseRevisionId: second.id, authorName: 'Tester' })
+
+      expect(repo.getCv(cvId)?.revisions.map((r) => r.number)).toEqual([3, 2, 1])
+    })
+
+    it('should return CONFLICT when the base revision is stale', () => {
+      const { repo, cvId, first } = editedCv()
+
+      const result = repo.restoreRevision({
+        cvId,
+        revisionId: first.id,
+        baseRevisionId: first.id,
+        authorName: 'Tester',
+      })
+
+      expect(result).toEqual({ ok: false, error: 'CONFLICT' })
+    })
+
+    it('should return NOT_FOUND when the revision belongs to another CV', () => {
+      const { repo, cvId, second } = editedCv()
+      const otherCv = repo.listSearchable()[1]?.cvId ?? ''
+      const otherRevision = repo.getCv(otherCv)?.revision.id ?? ''
+
+      const result = repo.restoreRevision({
+        cvId,
+        revisionId: otherRevision,
+        baseRevisionId: second.id,
+        authorName: 'Tester',
+      })
+
+      expect(result).toEqual({ ok: false, error: 'NOT_FOUND' })
+    })
+  })
 })
 
 describe('memory CV repository createPerson', () => {

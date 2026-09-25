@@ -122,7 +122,15 @@ pdf-lib keeps the StructTreeRoot (test below).
 ## 6. Export options and file name
 
 - Zod `ExportOptions`: `includeContact` (default **false**), `sections` (subset, default all),
-  `maxProjects` (1..200), `paper: 'A4'`. Validated server-side on the route; audit `export` + options.
+  `maxProjects` (1..200). Validated server-side on the route; audit `export` + options.
+- The template (page size and layout) isn't an export option: it comes from the CV's
+  `meta.x-template` through the registry in `src/pdf/template/templates.ts`. To add a template,
+  add its id to `CV_TEMPLATE_IDS` in `src/cv/schema.ts` and `cv.schema.json`, then add its
+  registry entry: label, preview width, styles with their own `@page`, a `Layout` component,
+  and a `content` function. Layouts reuse the section components; keep one H1 first and DOM
+  order = reading order. A `content` function that drops data also drops it from `cv.json`.
+  To remove a template, delete its entry and id; saved CVs that use it then fail validation,
+  so move them to another template first.
 - File name `Kipina_CV_<First>_<Last>_<variant>_<YYYY-MM-DD>.pdf`: NFKD-fold to ASCII, keep
   `[A-Za-z0-9-]`, collapse to `_`, cap length; send via RFC 6266 (`filename=` + `filename*=UTF-8''`).
   Unit test with "Mäkinen", quotes, slashes, `..`, CRLF and emoji.

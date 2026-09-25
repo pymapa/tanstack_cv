@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { CvDocument } from '~/cv/schema'
+import { CV_TEMPLATE_IDS, CvDocument } from '~/cv/schema'
 import { renderCvHtml } from '~/pdf/template/render-html'
 import { buildCv, buildProject } from '../../fixtures/cv'
 
@@ -167,5 +167,65 @@ describe('renderCvHtml', () => {
 
     expect(html).not.toMatch(/border-left/)
     expect(bodyOf(html).match(/class="grid-mark"/g)).toHaveLength(1)
+  })
+
+  it('should lay pages out as A4 portrait when no template is given', () => {
+    const html = renderCvHtml(buildCv())
+
+    expect(html).toMatch(/@page \{ size: A4 portrait;/)
+  })
+
+  it('should lay pages out as A4 landscape when the landscape template is given', () => {
+    const html = renderCvHtml(buildCv(), { includeContact: false, template: 'kipina-landscape' })
+
+    expect(html).toMatch(/@page \{ size: A4 landscape;/)
+    expect(html).not.toMatch(/size: A4 portrait/)
+  })
+
+  describe.each(CV_TEMPLATE_IDS)('with the %s template', (template) => {
+    const html = renderCvHtml(sample, { includeContact: false, template })
+    const orientation = template === 'kipina-landscape' || template === 'kipina-slides' ? 'landscape' : 'portrait'
+
+    it('should have exactly one h1 and it should come first', () => {
+      const body = bodyOf(html)
+
+      expect(body.match(/<h1[\s>]/g)).toHaveLength(1)
+      expect(body.indexOf('<h1')).toBeLessThan(body.indexOf('<h2'))
+    })
+
+    it(`should lay pages out as A4 ${orientation}`, () => {
+      expect(html).toMatch(new RegExp(`@page \\{ size: A4 ${orientation};`))
+    })
+
+    it('should not contain scripts or external resources', () => {
+      expect(html).not.toMatch(/<script/i)
+      expect(bodyOf(html)).not.toMatch(/(src|href)="https?:/)
+    })
+  })
+
+  it('should put the sidebar after the name and before the profile in reading order', () => {
+    const cv = buildCv({ skills: [{ name: 'Backend' }] })
+
+    const body = bodyOf(renderCvHtml(cv, { includeContact: false, template: 'kipina-sidebar' }))
+
+    const name = body.indexOf('<h1')
+    const sidebar = body.indexOf('<aside')
+    expect(name).toBeGreaterThan(-1)
+    expect(sidebar).toBeGreaterThan(name)
+    expect(body.indexOf('>Skills<')).toBeGreaterThan(sidebar)
+    expect(body.indexOf('>Profile<')).toBeGreaterThan(body.indexOf('</aside>'))
+  })
+
+  it('should render only the profile and project highlights in the one-page summary', () => {
+    const cv = buildCv({
+      projects: [buildProject({ name: 'Star project', 'x-highlight': true }), buildProject({ name: 'Other project' })],
+      work: [{ name: 'Example Oy', position: 'Developer' }],
+    })
+
+    const body = bodyOf(renderCvHtml(cv, { includeContact: false, template: 'kipina-one-page' }))
+
+    expect(body).toContain('Star project')
+    expect(body).not.toContain('Other project')
+    expect(body).not.toContain('Example Oy')
   })
 })

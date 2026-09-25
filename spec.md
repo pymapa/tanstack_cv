@@ -110,6 +110,7 @@ Versions checked against the npm registry on **2026-09-25**. Pin exact versions 
 | Validation | Zod | 4.6.x | One schema per boundary, used for types and runtime checks |
 | Forms | TanStack Form | 1.33.x | Typed, works with Zod |
 | Styling | Tailwind CSS | 4.3.x | Fast to build with; design tokens as CSS variables |
+| UI primitives | Base UI (`@base-ui/react`) | 1.8.x | Unstyled, accessible menus and popups; we style them with the brand tokens (see §15 D12) |
 | DB | PostgreSQL (Docker `postgres:17-alpine`, `docker-compose.yml`) + Drizzle ORM (`drizzle-orm/node-postgres`) | 17.x / 0.45.x (drizzle-kit 0.31.x) | Same engine locally and when deployed, built-in full-text search, `jsonb`, transactional DDL, parameterized by default (see §15 D1) |
 | DB driver | node-postgres (`pg`) | 8.23.x | The standard Postgres client and Drizzle's `node-postgres` driver. Pure JS, no install scripts (see §15 D10) |
 | Auth | Better Auth (email + password, admin plugin) | 1.7.x | Well-tested sessions, hashing and rate limiting instead of hand-rolled crypto; has a TanStack Start integration |
@@ -506,8 +507,24 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
 - The Kipinä look must not become a generic template. **A human must supply** brand
   assets (logo SVG, fonts and license, colors, a reference CV PDF). Until then, `theme.ts`
   holds clearly labeled placeholders (see §16).
+- Templates live in a registry (`src/pdf/template/templates.ts`), one entry per
+  `meta.x-template` value. When the field is missing, `kipina-portrait` applies. The editor
+  header has a **Template** select. The choice is saved with the CV revision, and the preview
+  and PDF use it. Each entry sets its page size with CSS `@page` (which `preferCSSPageSize`
+  applies), a layout component, and a content function. The content function decides which
+  CV data the template shows, and the `cv.json` attachment holds that same data. The
+  experimental templates are for trying layouts out; remove the ones you don't keep.
+
+  | ID | Label | Layout |
+  |---|---|---|
+  | `kipina-portrait` | Default (portrait A4) | Cover band on top, then the sections in order |
+  | `kipina-landscape` | Default (landscape A4) | Cover band as a side column; body section headings in a left column |
+  | `kipina-sidebar` | Experimental: Sidebar (portrait A4) | Band on top, then expertise, skills, education, certificates, and languages in a left column next to everything else |
+  | `kipina-editorial` | Experimental: Editorial (portrait A4) | Default portrait without the green band: white cover, serif headings |
+  | `kipina-slides` | Experimental: Slides (landscape A4) | A title slide, then each section on its own page |
+  | `kipina-one-page` | Experimental: One-page summary (portrait A4) | Profile, key role and skill titles, and at most three highlights, sized for one page |
 - Export options (dialog): include contact details (default **off** for client exports),
-  sections to include, max number of projects, paper size A4.
+  sections to include, and max number of projects.
 - File name: `Kipina_CV_<First>_<Last>_<variant>_<YYYY-MM-DD>.pdf` (ASCII-folded, sanitized).
 
 **Rendering (`src/server/pdf/render.ts`)**
@@ -521,8 +538,8 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
    outline: true, preferCSSPageSize: true })`.
 4. pdf-lib post-process: set Title (`<Name> – <label> – Kipinä CV`), Author (`Kipinä`),
    Subject, Keywords (top skills), Language (`en`), CreationDate. **Attach `cv.json`**: the
-   JSON Resume export of the same revision, stripped of `meta.x-conversionNotes` and of
-   contact details unless those are included.
+   JSON Resume export of the same revision, stripped of `meta.x-conversionNotes`,
+   `meta.x-template`, and contact details unless those are included.
 5. At most 2 renders at a time (a semaphore); 15 s timeout; the context is closed in `finally`.
 
 **Serving**
@@ -813,6 +830,7 @@ human has to make them (see §16).
 | D9 | TypeScript full stack instead of a Kotlin backend | Requested stack (TanStack Start). The team's language rule prefers Kotlin for DB-heavy backends; this is a small, DB-light app | Integration with other Kipinä backend systems |
 | D11 | **`drizzle-orm` 0.45.3** (runtime) and **`drizzle-kit` 0.31.11** (dev), pinned | `drizzle-orm` builds parameterised queries and types rows from `src/db/schema.ts`. `drizzle-kit` generates the reviewed SQL migrations (`pnpm db:generate`) and applies them (`pnpm db:migrate`). Added with the saved CV assistant chat, the first table. `drizzle-kit` pulls in an old esbuild (≤ 0.24.2, GHSA-67mh-4wv8-2f99, moderate) through `@esbuild-kit`; the advisory is about esbuild's dev server, which drizzle-kit doesn't start, and it's a dev dependency only | drizzle-kit drops `@esbuild-kit` |
 | D10 | **`pg` (node-postgres)** as the driver, `@types/pg` for types | Drizzle's `node-postgres` driver builds on it. It's the most used Postgres client for Node, pure JS (`pg-native` isn't used), and its `Pool` handles the connection limit. `postgres.js` would also work but is less common | – |
+| D12 | **`@base-ui/react` 1.8.0**, pinned, for interactive primitives | The dropdown menu needs the WAI-ARIA menu pattern: focus management, arrow-key and typeahead navigation, Escape and outside-click dismissal, and collision-aware positioning. Base UI provides these unstyled, the way shadcn/ui wraps Radix, and ships one tree-shakeable package. Radix would also work but needs one package per primitive | – |
 
 ---
 

@@ -86,6 +86,21 @@ export const saveCvRevisionFn = createServerFn({ method: 'POST' })
       : { ok: false, error: result.error }
   })
 
+export const RestoreRevisionInput = z.strictObject({
+  cvId: Id,
+  revisionId: Id,
+  baseRevisionId: Id,
+})
+
+export const restoreCvRevisionFn = createServerFn({ method: 'POST' })
+  .validator(RestoreRevisionInput)
+  .handler(async ({ data }): Promise<SaveCvResult> => {
+    const result = (await getCvRepository()).restoreRevision({ ...data, authorName: 'Local user' })
+    return result.ok
+      ? { ok: true, revisionId: result.value.id, revisionNumber: result.value.number }
+      : { ok: false, error: result.error }
+  })
+
 export const CreateVariantInput = z.strictObject({
   sourceCvId: Id,
   variant: VariantName,

@@ -1,7 +1,9 @@
+import { anonymizeClients } from '~/cv/anonymize'
 import type { CvDocument } from '~/cv/schema'
 import { skillNames } from '~/cv/skills'
 import { err, ok, type Result } from '~/lib/result'
 import { renderCvHtml, type CvRenderOptions } from '~/pdf/template/render-html'
+import { DEFAULT_TEMPLATE, templateContent, templateOf } from '~/pdf/template/templates'
 import type { CvRepository } from '../repositories/cv-repository'
 import { renderPdf } from '../pdf/render'
 
@@ -21,14 +23,18 @@ export const pdfFileName = (fullName: string, variant: string, now: Date): strin
     .join('_')
     .concat('.pdf')
 
-/** The JSON that goes to clients: no internal notes, contact details only on request. */
-export const toExportDocument = (cv: CvDocument, options: CvRenderOptions): CvDocument => {
+export type ExportOptions = CvRenderOptions & Readonly<{ anonymizeClients: boolean }>
+
+/** The JSON that goes to clients: what the template shows, no internal notes or layout choice, contact details only on request. */
+export const toExportDocument = (source: CvDocument, options: ExportOptions): CvDocument => {
+  const cv = templateContent(options.template ?? DEFAULT_TEMPLATE, source)
   const { email: _email, phone: _phone, profiles: _profiles, url: _url, ...basicsWithoutContact } = cv.basics
-  const { 'x-conversionNotes': _notes, ...meta } = cv.meta
+  const { 'x-conversionNotes': _notes, 'x-template': _template, ...meta } = cv.meta
+  const clientFacing = options.anonymizeClients ? anonymizeClients(cv) : cv
   return {
-    ...cv,
+    ...clientFacing,
     basics: options.includeContact ? cv.basics : basicsWithoutContact,
-    projects: cv.projects.map(({ 'x-note': _note, ...project }) => project),
+    projects: clientFacing.projects.map(({ 'x-note': _note, ...project }) => project),
     ...(cv.work === undefined ? {} : { work: cv.work.map(({ 'x-note': _note, ...work }) => work) }),
     meta,
   }
@@ -39,14 +45,15 @@ export type PdfExport = Readonly<{ bytes: Uint8Array; fileName: string }>
 export const exportCvPdf = async (
   repo: CvRepository,
   cvId: string,
-  options: CvRenderOptions,
+  options: ExportOptions,
   now: Date = new Date(),
 ): Promise<Result<PdfExport, 'NOT_FOUND'>> => {
   const cv = repo.getCv(cvId)
   if (cv === null) return err('NOT_FOUND')
-  const doc = toExportDocument(cv.revision.data, options)
-  const topSkills = doc.skills.flatMap(skillNames).slice(0, 12)
-  const bytes = await renderPdf(renderCvHtml(doc, options), {
+  const renderOptions = { ...options, template: templateOf(cv.revision.data) }
+  const doc = toExportDocument(cv.revision.data, renderOptions)
+  const topSkills = cv.revision.data.skills.flatMap(skillNames).slice(0, 12)
+  const bytes = await renderPdf(renderCvHtml(doc, renderOptions), {
     title: `${doc.basics.name} – ${doc.basics.label} – Kipinä CV`,
     subject: `CV of ${doc.basics.name} (${cv.variant})`,
     keywords: topSkills,

@@ -119,6 +119,17 @@ export const Testimonial = z.strictObject({
   author: shortText.optional(),
 })
 
+export const CV_TEMPLATE_IDS = [
+  'kipina-portrait',
+  'kipina-landscape',
+  'kipina-sidebar',
+  'kipina-editorial',
+  'kipina-slides',
+  'kipina-one-page',
+] as const
+export const CvTemplateId = z.enum(CV_TEMPLATE_IDS)
+export type CvTemplateId = z.infer<typeof CvTemplateId>
+
 export const CvMeta = jsonObject({
   version: shortText.optional(),
   personId: z.string().regex(/^p[0-9]{2}$/),
@@ -126,6 +137,7 @@ export const CvMeta = jsonObject({
   sourceFormat: z.enum(['pptx', 'pdf']),
   'x-cvYear': z.string().regex(/^[0-9]{4}$/),
   'x-conversionNotes': list(longText).optional(),
+  'x-template': CvTemplateId.optional(),
 })
 
 export const CvDocument = jsonObject({

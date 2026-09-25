@@ -230,6 +230,17 @@
                 "type": "string"
               },
               "description": "Havaitut virheet tai tulkinnat lähdedatassa"
+            },
+            "x-template": {
+              "enum": [
+                "kipina-portrait",
+                "kipina-landscape",
+                "kipina-sidebar",
+                "kipina-editorial",
+                "kipina-slides",
+                "kipina-one-page"
+              ],
+              "description": "PDF template; missing means kipina-portrait"
             }
           }
         },

@@ -18,6 +18,7 @@ const Params = z.strictObject({
 const Query = z.object({
   download: z.enum(['0', '1']).default('1'),
   contact: z.enum(['0', '1']).default('0'),
+  anonymize: z.enum(['0', '1']).default('0'),
 })
 
 const plain = (status: number, body: string) =>
@@ -33,6 +34,7 @@ export const Route = createFileRoute('/api/cvs/$cvId/pdf')({
 
         const result = await exportCvPdf(await getCvRepository(), parsedParams.data.cvId, {
           includeContact: query.data.contact === '1',
+          anonymizeClients: query.data.anonymize === '1',
         })
         if (!result.ok) return plain(404, 'Not found')
 

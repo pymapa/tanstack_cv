@@ -55,6 +55,13 @@ export type SaveRevisionInput = Readonly<{
 
 export type SaveRevisionError = 'NOT_FOUND' | 'CONFLICT'
 
+export type RestoreRevisionInput = Readonly<{
+  cvId: string
+  revisionId: string
+  baseRevisionId: string
+  authorName: string
+}>
+
 export type CreateVariantInput = Readonly<{
   sourceCvId: string
   variant: string
@@ -91,6 +98,7 @@ export interface CvRepository {
   getPerson(personId: string): PersonView | null
   getCv(cvId: string): CvView | null
   saveRevision(input: SaveRevisionInput): Result<CvRevision, SaveRevisionError>
+  restoreRevision(input: RestoreRevisionInput): Result<CvRevision, SaveRevisionError>
   createVariant(input: CreateVariantInput): Result<CvRevision, CreateVariantError>
   /** Adds a CV version to the source CV's person. Variant names are unique per person, ignoring case. */
   createCvFrom(input: CreateCvFromInput): Result<{ cvId: string }, CreateCvError>
