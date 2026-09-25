@@ -1,6 +1,9 @@
 # Supply-chain hardening (spec §9.1 A03)
 # Don't install versions published less than 24 h ago.
 minimumReleaseAge: 1440
-# Only these packages may run install scripts.
+# Only these packages may run install scripts. pnpm 11 reads `allowBuilds`;
+# `onlyBuiltDependencies` is kept for older pnpm versions.
+allowBuilds:
+  esbuild: true
 onlyBuiltDependencies:
   - esbuild
