@@ -21,20 +21,20 @@ function values(value: unknown): Array<string> {
 
 const WORD_CHAR = /[\p{L}\p{N}]/u;
 
-const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /** Regex source matching an English word in its singular or plural form. */
 function singularOrPlural(term: string): string {
 	// Short terms are usually acronyms ("aws", "sql"): don't strip their "s".
-	if (term.length <= 3) return `${escape(term)}(?:e?s)?`;
+	if (term.length <= 3) return `${escapeRegExp(term)}(?:e?s)?`;
 	const singular = term
 		.replace(/ies$/i, "y")
 		.replace(/(s|x|z|ch|sh)es$/i, "$1")
 		.replace(/([^s])s$/i, "$1");
 	if (/[^aeiou]y$/i.test(singular)) {
-		return `${escape(singular.slice(0, -1))}(?:y|ies)`;
+		return `${escapeRegExp(singular.slice(0, -1))}(?:y|ies)`;
 	}
-	return `${escape(singular)}(?:e?s)?`;
+	return `${escapeRegExp(singular)}(?:e?s)?`;
 }
 
 /**
@@ -46,7 +46,7 @@ function singularOrPlural(term: string): string {
 function wholeWord(term: string): RegExp {
 	const wordEnd = WORD_CHAR.test(term.at(-1) ?? "");
 	const start = WORD_CHAR.test(term[0]) ? "(?<![\\p{L}\\p{N}])" : "";
-	const body = wordEnd ? singularOrPlural(term) : escape(term);
+	const body = wordEnd ? singularOrPlural(term) : escapeRegExp(term);
 	const end = wordEnd ? "(?![\\p{L}\\p{N}])" : "";
 	return new RegExp(`${start}${body}${end}`, "iu");
 }
