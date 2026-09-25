@@ -9,6 +9,28 @@ npm install
 npm run dev
 ```
 
+## Local database
+
+PostgreSQL runs in Docker (`docker-compose.yml`) and keeps its data in the `cv-db-data` volume.
+It listens on `127.0.0.1:5432` only.
+
+```bash
+npm run db:up     # start Postgres and wait until it is healthy
+npm run db:psql   # open a psql shell in the container
+npm run db:down   # stop it; the volume and its data are kept
+docker compose down -v   # stop it and delete the data
+```
+
+Server code connects through `src/lib/db` (`query`, `withTransaction`), which reads
+`DATABASE_URL` from `.env`:
+
+```env
+DATABASE_URL=postgres://cvbank:cvbank-local@localhost:5432/cvbank
+```
+
+The user, password, database and port can be changed with `POSTGRES_USER`, `POSTGRES_PASSWORD`,
+`POSTGRES_DB` and `POSTGRES_PORT` in `.env`; update `DATABASE_URL` to match.
+
 # Building For Production
 
 To build this application for production:

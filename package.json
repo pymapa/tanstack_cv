@@ -12,7 +12,10 @@
     "preview": "vite preview",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "db:up": "docker compose up -d --wait db",
+    "db:down": "docker compose down",
+    "db:psql": "docker compose exec db sh -c 'psql -U \"$POSTGRES_USER\" \"$POSTGRES_DB\"'"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
@@ -39,6 +42,7 @@
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.577.0",
     "marked": "^15.0.8",
+    "pg": "^8.23.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "streamdown": "^2.3.0",
@@ -56,6 +60,7 @@
     "@tanstack/devtools-vite": "latest",
     "@tanstack/router-cli": "^1.132.0",
     "@types/node": "^22.10.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.0.1",
