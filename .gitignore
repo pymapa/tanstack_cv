@@ -29,3 +29,7 @@ playwright-report/
 
 # Local database (personal data)
 data/
+
+# Agent worktrees (feature-flow) and Playwright MCP output (page snapshots hold CV text)
+.worktrees/
+.playwright-mcp/
