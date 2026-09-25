@@ -1,13 +1,14 @@
-# Local, per-developer Claude Code settings
-.claude/settings.local.json
-
-# Secrets / local env (already Read-denied for agents in .claude/settings.json)
-.env
-.env.*
-!.env.example
-
-# OS / editor noise
+node_modules
 .DS_Store
-.idea/
-.vscode/
-*.swp
+dist
+dist-ssr
+*.local
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+todos.json
+mcp-todos.json
