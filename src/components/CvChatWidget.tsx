@@ -33,7 +33,7 @@ export default function CvChatWidget() {
 				aria-expanded={open}
 				aria-controls={panelId}
 				aria-label={open ? "Close CV assistant" : "Open CV assistant"}
-				className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--lagoon-deep)] text-white shadow-lg transition hover:opacity-90"
+				className="flex h-14 w-14 items-center justify-center rounded-full bg-neutral-900 text-white shadow-lg transition hover:bg-neutral-700"
 			>
 				{open ? (
 					<X aria-hidden className="h-6 w-6" />
@@ -182,7 +182,7 @@ function ChatPanel({
 						type="submit"
 						disabled={!input.trim()}
 						aria-label="Send"
-						className="flex w-10 items-center justify-center rounded-xl bg-[var(--lagoon-deep)] text-white disabled:opacity-50"
+						className="flex w-10 items-center justify-center rounded-xl bg-neutral-900 text-white hover:bg-neutral-700 disabled:opacity-40"
 					>
 						<Send aria-hidden className="h-4 w-4" />
 					</button>
