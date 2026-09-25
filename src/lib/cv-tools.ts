@@ -21,24 +21,40 @@ function values(value: unknown): Array<string> {
 
 const WORD_CHAR = /[\p{L}\p{N}]/u;
 
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/** Regex source matching an English word in its singular or plural form. */
+function singularOrPlural(term: string): string {
+	// Short terms are usually acronyms ("aws", "sql"): don't strip their "s".
+	if (term.length <= 3) return `${escape(term)}(?:e?s)?`;
+	const singular = term
+		.replace(/ies$/i, "y")
+		.replace(/(s|x|z|ch|sh)es$/i, "$1")
+		.replace(/([^s])s$/i, "$1");
+	if (/[^aeiou]y$/i.test(singular)) {
+		return `${escape(singular.slice(0, -1))}(?:y|ies)`;
+	}
+	return `${escape(singular)}(?:e?s)?`;
+}
+
 /**
- * Matches `term` as a whole word with an optional plural ending, so "api"
- * matches "APIs" but "go" doesn't match "Google". A side of the term that is
- * punctuation needs no word boundary, so ".net" matches "ASP.NET".
+ * Matches `term` as a whole word in its singular or plural form, so "api"
+ * matches "APIs" and "companies" matches "company", but "go" doesn't match
+ * "Google". A side of the term that is punctuation needs no word boundary,
+ * so ".net" matches "ASP.NET".
  */
 function wholeWord(term: string): RegExp {
-	const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	const wordEnd = WORD_CHAR.test(term.at(-1) ?? "");
 	const start = WORD_CHAR.test(term[0]) ? "(?<![\\p{L}\\p{N}])" : "";
-	const end = WORD_CHAR.test(term.at(-1) ?? "")
-		? "(?:e?s)?(?![\\p{L}\\p{N}])"
-		: "";
-	return new RegExp(`${start}${escaped}${end}`, "iu");
+	const body = wordEnd ? singularOrPlural(term) : escape(term);
+	const end = wordEnd ? "(?![\\p{L}\\p{N}])" : "";
+	return new RegExp(`${start}${body}${end}`, "iu");
 }
 
 export const searchPeopleToolDef = toolDefinition({
 	name: "searchPeople",
 	description:
-		"Search Kipinä people by skill, technology, role, industry or past client. Every term must appear as a whole word (plurals included) somewhere in the person's CV. If a search finds nobody, retry with other word forms, e.g. 'banking' as well as 'bank'. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
+		"Search Kipinä people by skill, technology, role, industry or past client. Every term must appear as a whole word somewhere in the person's CV; singular and plural forms match each other, other word forms don't. If a search finds few or no people, retry with other word forms, e.g. 'banking' as well as 'bank'. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
 	inputSchema: z.object({
 		query: z
 			.string()
