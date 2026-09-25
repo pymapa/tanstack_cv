@@ -34,8 +34,10 @@ function singularOrPlural(term: string): string {
 	const stems = new Set([term]);
 	// Short terms are usually acronyms ("aws", "sql"): keep their "s".
 	if (term.length > 3) {
-		if (/s$/i.test(term)) stems.add(term.slice(0, -1));
-		if (/es$/i.test(term)) stems.add(term.slice(0, -2));
+		// Not "-ss": "sass" and "less" aren't plurals.
+		if (/[^s]s$/i.test(term)) stems.add(term.slice(0, -1));
+		// "-es" is only a plural ending after a sibilant ("boxes", "processes").
+		if (/(?:s|x|z|ch|sh)es$/i.test(term)) stems.add(term.slice(0, -2));
 		if (/ies$/i.test(term)) stems.add(`${term.slice(0, -3)}y`);
 	}
 	const forms = [...stems]
