@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as ApiCvChatRouteImport } from './routes/api.cv-chat'
 import { Route as ApiResumeChatRouteImport } from './routes/api.resume-chat'
 import { Route as DemoAiChatRouteImport } from './routes/demo/ai-chat'
 import { Route as DemoAiImageRouteImport } from './routes/demo/ai-image'
@@ -40,6 +41,11 @@ const AboutRoute = AboutRouteImport.update({
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCvChatRoute = ApiCvChatRouteImport.update({
+  id: '/api/cv-chat',
+  path: '/api/cv-chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiResumeChatRoute = ApiResumeChatRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/mcp': typeof McpRoute
+  '/api/cv-chat': typeof ApiCvChatRoute
   '/api/resume-chat': typeof ApiResumeChatRoute
   '/demo/ai-chat': typeof DemoAiChatRoute
   '/demo/ai-image': typeof DemoAiImageRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/mcp': typeof McpRoute
+  '/api/cv-chat': typeof ApiCvChatRoute
   '/api/resume-chat': typeof ApiResumeChatRoute
   '/demo/ai-chat': typeof DemoAiChatRoute
   '/demo/ai-image': typeof DemoAiImageRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/mcp': typeof McpRoute
+  '/api/cv-chat': typeof ApiCvChatRoute
   '/api/resume-chat': typeof ApiResumeChatRoute
   '/demo/ai-chat': typeof DemoAiChatRoute
   '/demo/ai-image': typeof DemoAiImageRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/mcp'
+    | '/api/cv-chat'
     | '/api/resume-chat'
     | '/demo/ai-chat'
     | '/demo/ai-image'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/mcp'
+    | '/api/cv-chat'
     | '/api/resume-chat'
     | '/demo/ai-chat'
     | '/demo/ai-image'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/mcp'
+    | '/api/cv-chat'
     | '/api/resume-chat'
     | '/demo/ai-chat'
     | '/demo/ai-image'
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   McpRoute: typeof McpRoute
+  ApiCvChatRoute: typeof ApiCvChatRoute
   ApiResumeChatRoute: typeof ApiResumeChatRoute
   DemoAiChatRoute: typeof DemoAiChatRoute
   DemoAiImageRoute: typeof DemoAiImageRoute
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cv-chat': {
+      id: '/api/cv-chat'
+      path: '/api/cv-chat'
+      fullPath: '/api/cv-chat'
+      preLoaderRoute: typeof ApiCvChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/resume-chat': {
@@ -379,6 +399,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   McpRoute: McpRoute,
+  ApiCvChatRoute: ApiCvChatRoute,
   ApiResumeChatRoute: ApiResumeChatRoute,
   DemoAiChatRoute: DemoAiChatRoute,
   DemoAiImageRoute: DemoAiImageRoute,
