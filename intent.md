@@ -108,9 +108,12 @@ with a short note on the intended approach. This list is part of the deliverable
   calls, and the reply can then end without a summary. Intended approach: when the guard
   trips, run one more model turn with tools disabled and ask for an answer from what was
   found so far.
-- **Saved chat history.** Conversations live only in the browser tab. Intended approach:
-  store them per signed-in user once sign-in exists, so a salesperson can return to a
-  client search.
+- **Saved chat history per signed-in user.** The CV assistant's chat is saved in Postgres per
+  browser (an HttpOnly cookie) and can be cleared from the panel. Intended approach: once sign-in
+  exists, use the user id as the owner key, so a salesperson gets their chat on any device. A
+  scheduled purge job would replace the purge that now runs on every save or clear. Saved chats
+  quote CVs in tool results, so `erasePerson` (not built yet) must also delete the chats that
+  mention the person's CV ids or file names.
 - **Word work specs in the chatbot.** The chat accepts PDF, `.txt`, and `.md` specs. Intended
   approach for `.docx`: extract the text on the server behind a size and type check, then send it
   as a `<work_spec>` text block like the other text files. This needs a parsing dependency.

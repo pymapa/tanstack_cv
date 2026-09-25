@@ -19,6 +19,8 @@
     "test:e2e": "playwright test",
     "db:up": "docker compose up -d --wait db",
     "db:down": "docker compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
     "db:psql": "docker compose exec db sh -c 'psql -U \"$POSTGRES_USER\" \"$POSTGRES_DB\"'"
   },
   "dependencies": {
@@ -29,6 +31,7 @@
     "@tanstack/ai-react": "0.28.0",
     "@tanstack/react-router": "1.170.39",
     "@tanstack/react-start": "1.168.58",
+    "drizzle-orm": "0.45.3",
     "lucide-react": "1.48.0",
     "pdf-lib": "1.17.1",
     "pg": "8.23.0",
@@ -54,6 +57,7 @@
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "ajv": "8.20.0",
+    "drizzle-kit": "0.31.11",
     "eslint": "9.39.5",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react-hooks": "7.1.1",

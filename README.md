@@ -18,13 +18,16 @@ restarts. There's no login yet (spec M2), so keep the dev server on localhost.
 ## Local database
 
 PostgreSQL 17 runs in Docker (`docker-compose.yml`) and keeps its data in the `cv-db-data`
-volume. It listens on `127.0.0.1:5432` only. Nothing uses it yet: the app moves from the
-in-memory store to Postgres in spec M1.
+volume. It listens on `127.0.0.1:5432` only. For now only the CV assistant's saved chat is
+stored there; CVs move from the in-memory store to Postgres in spec M1. Run `pnpm db:migrate`
+after `pnpm db:up`. Without a database the app still runs, but the chat isn't saved.
 
 ```sh
 pnpm db:up                  # start Postgres and wait until it is healthy
 pnpm db:psql                # open a psql shell in the container
 pnpm db:down                # stop it; the volume and its data are kept
+pnpm db:migrate             # apply the migrations in src/db/migrations (needs DATABASE_URL)
+pnpm db:generate            # generate a migration after changing src/db/schema.ts
 docker compose down -v      # stop it and delete the data
 ```
 
