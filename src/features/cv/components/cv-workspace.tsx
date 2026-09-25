@@ -1,5 +1,6 @@
 import { useBlocker } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { AppHeaderView } from '~/components/app-header'
 import { Container } from '~/components/container'
 import type { CvDocument } from '~/cv/schema'
 import { CvEditor } from '~/features/editor/cv-editor'
@@ -90,85 +91,92 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh }: Props) {
   const blocker = useBlocker({ shouldBlockFn: () => dirty, enableBeforeUnload: dirty, withResolver: true })
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col">
-      <div className="border-b border-line bg-white">
-        <Container className="flex items-center justify-end gap-6 py-3">
-          <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
-          <button
-            type="button"
-            onClick={() => {
-              setNaming(true)
-            }}
-            disabled={!canSaveAsNew}
-            className="rounded-card border border-line px-5 py-2.5 text-sm font-medium hover:border-ink disabled:cursor-not-allowed disabled:text-muted disabled:hover:border-line"
-            data-testid="cv-save-as-new"
-          >
-            Save as new version…
-          </button>
-          <button
-            type="button"
-            onClick={() => void save()}
-            disabled={!canSave}
-            aria-keyshortcuts="Control+S Meta+S"
-            className="rounded-card bg-ink px-6 py-2.5 text-sm font-medium text-white hover:bg-black disabled:cursor-not-allowed disabled:bg-ink/30"
-            data-testid="cv-save"
-          >
-            {saveState.kind === 'saving' ? 'Saving…' : 'Save'}
-          </button>
-        </Container>
-        {saveState.kind === 'conflict' && (
-          <Container className="pb-4">
-            <div
-              role="alert"
-              className="flex items-center gap-4 rounded-card border border-danger/30 bg-white p-4 text-sm"
-            >
-              <p className="flex-1">
-                <strong className="font-semibold">Someone saved a newer version of this CV.</strong> Your changes are
-                still here. Load the latest version to see theirs (your edits will be discarded), or copy what you need
-                first.
-              </p>
-              <button
-                type="button"
-                onClick={onRefresh}
-                className="font-medium text-teal hover:underline"
-                data-testid="cv-reload"
+    <div className="flex h-screen flex-col">
+      <AppHeaderView
+        title={{ title: cv.person.fullName, subtitle: cv.variant, personId: cv.person.id }}
+        actions={
+          <>
+            <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
+            <div className="flex flex-col items-end">
+              <a
+                href={`/api/cvs/${cv.id}/pdf`}
+                // `download` keeps the unsaved-changes guard (beforeunload) from firing.
+                download
+                className="cta-underline text-sm text-ink"
+                data-testid="cv-download-pdf"
+                {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
               >
-                Load the latest version
-              </button>
+                Download PDF
+              </a>
+              {dirty && (
+                <p id="pdf-saved-note" className="mt-1 text-xs text-muted">
+                  The PDF uses the last saved version.
+                </p>
+              )}
             </div>
-          </Container>
-        )}
-      </div>
-
-      <div className="grid min-h-0 flex-1 grid-cols-[minmax(520px,640px)_minmax(0,1fr)]">
-        <section aria-label="Edit CV" className="min-h-0 overflow-y-auto border-r border-line bg-white px-8 py-6">
-          <CvEditor value={draft} onChange={setDraft} issues={issues} />
-          <RevisionList revisions={cv.revisions} />
-        </section>
-        <section aria-label="PDF preview" className="flex min-h-0 flex-col bg-mist">
-          <div className="flex items-center justify-between px-8 pb-2 pt-4">
-            <h2 className="eyebrow">Preview</h2>
-            <a
-              href={`/api/cvs/${cv.id}/pdf`}
-              // `download` keeps the unsaved-changes guard (beforeunload) from firing.
-              download
-              className="cta-underline text-sm text-ink"
-              data-testid="cv-download-pdf"
-              {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}
+            <button
+              type="button"
+              onClick={() => {
+                setNaming(true)
+              }}
+              disabled={!canSaveAsNew}
+              className="rounded-card border border-line px-5 py-2.5 text-sm font-medium hover:border-ink disabled:cursor-not-allowed disabled:text-muted disabled:hover:border-line"
+              data-testid="cv-save-as-new"
             >
-              Download PDF
-            </a>
+              Save as new version…
+            </button>
+            <button
+              type="button"
+              onClick={() => void save()}
+              disabled={!canSave}
+              aria-keyshortcuts="Control+S Meta+S"
+              className="rounded-card bg-ink px-6 py-2.5 text-sm font-medium text-white hover:bg-black disabled:cursor-not-allowed disabled:bg-ink/30"
+              data-testid="cv-save"
+            >
+              {saveState.kind === 'saving' ? 'Saving…' : 'Save'}
+            </button>
+          </>
+        }
+      />
+      <main id="main" className="flex min-h-0 flex-1 flex-col">
+        {saveState.kind === 'conflict' && (
+          <div className="border-b border-line bg-white">
+            <Container className="py-4">
+              <div
+                role="alert"
+                className="flex items-center gap-4 rounded-card border border-danger/30 bg-white p-4 text-sm"
+              >
+                <p className="flex-1">
+                  <strong className="font-semibold">Someone saved a newer version of this CV.</strong> Your changes are
+                  still here. Load the latest version to see theirs (your edits will be discarded), or copy what you
+                  need first.
+                </p>
+                <button
+                  type="button"
+                  onClick={onRefresh}
+                  className="font-medium text-teal hover:underline"
+                  data-testid="cv-reload"
+                >
+                  Load the latest version
+                </button>
+              </div>
+            </Container>
           </div>
-          {dirty && (
-            <p id="pdf-saved-note" className="px-8 pb-2 text-xs text-muted">
-              The PDF uses the last saved version. Save first to include your changes.
-            </p>
-          )}
-          <div className="min-h-0 flex-1 px-8">
-            <CvPreview cv={draft} />
-          </div>
-        </section>
-      </div>
+        )}
+
+        <div className="grid min-h-0 flex-1 grid-cols-[minmax(520px,640px)_minmax(0,1fr)]">
+          <section aria-label="Edit CV" className="min-h-0 overflow-y-auto border-r border-line bg-white px-8 py-6">
+            <CvEditor value={draft} onChange={setDraft} issues={issues} />
+            <RevisionList revisions={cv.revisions} />
+          </section>
+          <section aria-label="PDF preview" className="flex min-h-0 flex-col bg-mist">
+            <h2 className="eyebrow px-8 pb-2 pt-4">Preview</h2>
+            <div className="min-h-0 flex-1 px-8">
+              <CvPreview cv={draft} />
+            </div>
+          </section>
+        </div>
+      </main>
 
       {naming && (
         <SaveAsVersionDialog

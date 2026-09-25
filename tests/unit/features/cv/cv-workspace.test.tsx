@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, render, screen } from '@testing-library/react'
+import { act, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 import type { CvDocument } from '~/cv/schema'
@@ -60,6 +60,18 @@ const setup = (
 }
 
 describe('CvWorkspace', () => {
+  it('should render the page header with the title and the save and export controls', () => {
+    setup()
+    const header = within(screen.getByRole('banner'))
+
+    expect(header.getByRole('heading', { level: 1, name: 'Anna Example' })).toBeInTheDocument()
+    expect(header.getByText('default')).toBeInTheDocument()
+    expect(header.getByRole('button', { name: 'Save' })).toBeInTheDocument()
+    expect(header.getByRole('button', { name: 'Save as new version…' })).toBeInTheDocument()
+    expect(header.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', '/api/cvs/cv-1/pdf')
+    expect(screen.getByRole('main')).not.toContainElement(screen.getByRole('banner'))
+  })
+
   it('should show unsaved changes after an edit', async () => {
     const { user } = setup()
     expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()

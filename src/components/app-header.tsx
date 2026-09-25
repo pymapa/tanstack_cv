@@ -1,12 +1,20 @@
 import { Link, useMatches } from '@tanstack/react-router'
-import { pickHeaderTitle, type HeaderTitle } from './header-title'
+import type { ReactNode } from 'react'
+import { pickHeaderTitle, rendersOwnHeader, type HeaderTitle } from './header-title'
 
-export function AppHeader() {
+export function AppFrame({ children }: { children: ReactNode }) {
   const title = useMatches({ select: (matches) => pickHeaderTitle(matches) })
-  return <AppHeaderView {...(title === undefined ? {} : { title })} />
+  const ownHeader = useMatches({ select: (matches) => rendersOwnHeader(matches) })
+  if (ownHeader) return children
+  return (
+    <>
+      <AppHeaderView {...(title === undefined ? {} : { title })} />
+      <main id="main">{children}</main>
+    </>
+  )
 }
 
-export function AppHeaderView({ title }: { title?: HeaderTitle }) {
+export function AppHeaderView({ title, actions }: { title?: HeaderTitle; actions?: ReactNode }) {
   return (
     <header className="border-b border-line bg-white">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-8">
@@ -36,6 +44,7 @@ export function AppHeaderView({ title }: { title?: HeaderTitle }) {
             {title.subtitle !== undefined && <p className="truncate text-sm text-muted">{title.subtitle}</p>}
           </div>
         )}
+        {actions !== undefined && <div className="ml-auto flex flex-none items-center gap-6">{actions}</div>}
       </div>
     </header>
   )

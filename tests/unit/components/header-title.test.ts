@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { headerTitle, pickHeaderTitle } from '~/components/header-title'
+import { headerTitle, pickHeaderTitle, rendersOwnHeader } from '~/components/header-title'
 
 const personTitle = headerTitle((person: { fullName: string }) => ({ title: person.fullName }))
 
@@ -22,5 +22,15 @@ describe('pickHeaderTitle', () => {
 
   it('should return nothing while the route has no loader data yet', () => {
     expect(pickHeaderTitle([{ staticData: { headerTitle: personTitle }, loaderData: undefined }])).toBeUndefined()
+  })
+})
+
+describe('rendersOwnHeader', () => {
+  it('should be true when a matched route renders its own header', () => {
+    expect(rendersOwnHeader([{ staticData: {} }, { staticData: { ownHeader: true } }])).toBe(true)
+  })
+
+  it('should be false when no matched route renders its own header', () => {
+    expect(rendersOwnHeader([{ staticData: {} }])).toBe(false)
   })
 })

@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 import { AppHeaderView } from '~/components/app-header'
@@ -44,5 +44,11 @@ describe('AppHeaderView', () => {
 
     expect(screen.getByRole('link', { name: 'Anna Example' })).toHaveAttribute('href', '/people/person-1')
     expect(screen.getByText('default')).toBeInTheDocument()
+  })
+
+  it('should render the actions inside the header', () => {
+    render(<AppHeaderView title={{ title: 'Anna Example' }} actions={<button type="button">Save</button>} />)
+
+    expect(within(screen.getByRole('banner')).getByRole('button', { name: 'Save' })).toBeInTheDocument()
   })
 })
