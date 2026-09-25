@@ -144,6 +144,7 @@ export const CvDocument = jsonObject({
 export type CvDocument = z.infer<typeof CvDocument>
 export type Basics = z.infer<typeof Basics>
 export type Skill = z.infer<typeof Skill>
+export type SkillDetail = z.infer<typeof SkillDetail>
 export type Project = z.infer<typeof Project>
 export type Work = z.infer<typeof Work>
 export type Certificate = z.infer<typeof Certificate>

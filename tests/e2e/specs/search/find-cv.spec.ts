@@ -52,4 +52,27 @@ test.describe('search', () => {
     await expect(search.status).toHaveText('0 people, 0 CVs')
     await expect(page.getByText('Nothing matches yet.')).toBeVisible()
   })
+
+  test('should restore the query in the box when going back to the search', async ({ page }) => {
+    const search = new SearchPage(page)
+    await search.goto()
+    await search.search('Scrum')
+    await expect(page).toHaveURL(/q=Scrum/)
+
+    await search.openFirstCvOf('Sami Lindroos')
+    await page.goBack()
+    await waitForApp(page)
+
+    await expect(search.input).toHaveValue('Scrum')
+  })
+
+  test('should clear the box when the Search link is clicked', async ({ page }) => {
+    const search = new SearchPage(page)
+    await search.goto('Scrum')
+
+    await page.getByTestId('nav-search').click()
+
+    await expect(page).toHaveURL(/\/$/)
+    await expect(search.input).toHaveValue('')
+  })
 })

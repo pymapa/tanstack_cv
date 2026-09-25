@@ -14,15 +14,9 @@ export const Route = createFileRoute('/cvs/$cvId')({
 function CvRoute() {
   const cv = Route.useLoaderData()
   const router = useRouter()
-  const onSave = useCallback(
-    async (request: SaveRequest) => {
-      const result = await saveCvRevisionFn({ data: { cvId: cv.id, ...request } })
-      if (result.ok) await router.invalidate()
-      return result
-    },
-    [cv.id, router],
-  )
-  const onReload = useCallback(() => void router.invalidate(), [router])
+  const onSave = useCallback((request: SaveRequest) => saveCvRevisionFn({ data: { cvId: cv.id, ...request } }), [cv.id])
+  // Refresh loader data (history, revision) only after the workspace has recorded the save.
+  const refresh = useCallback(() => void router.invalidate(), [router])
   // Remount per CV so drafts never leak between CVs.
-  return <CvWorkspace key={cv.id} cv={cv} onSave={onSave} onReload={onReload} />
+  return <CvWorkspace key={cv.id} cv={cv} onSave={onSave} onRefresh={refresh} />
 }

@@ -15,7 +15,8 @@ export type SaveRequest = Readonly<{ baseRevisionId: string; data: CvDocument }>
 type Props = Readonly<{
   cv: CvView
   onSave: (request: SaveRequest) => Promise<SaveCvResult>
-  onReload: () => void
+  /** Reload the CV from the server: after a recorded save (history) and from the conflict banner. */
+  onRefresh: () => void
 }>
 
 type SaveState =
@@ -27,18 +28,23 @@ type SaveState =
 
 const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
-export function CvWorkspace({ cv, onSave, onReload }: Props) {
+export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
 
-  // A new revision arrived from the server (after save or reload): make it the new baseline.
+  // A new revision arrived from the server. If it's the one this workspace just saved, `base`
+  // already points at it: keep the draft, which may hold edits typed during the save. Otherwise
+  // (a reload after a conflict) make it the new baseline and clear the save state.
   // Adjusted during render (not in an effect), as React recommends for prop-driven resets.
   const [seenRevisionId, setSeenRevisionId] = useState(cv.revision.id)
   if (cv.revision.id !== seenRevisionId) {
     setSeenRevisionId(cv.revision.id)
-    setBase({ id: cv.revision.id, data: cv.revision.data })
-    setDraft(cv.revision.data)
+    if (cv.revision.id !== base.id) {
+      setBase({ id: cv.revision.id, data: cv.revision.data })
+      setDraft(cv.revision.data)
+      setSaveState({ kind: 'idle' })
+    }
   }
 
   const dirty = !sameCv(draft, base.data)
@@ -49,17 +55,19 @@ export function CvWorkspace({ cv, onSave, onReload }: Props) {
     if (!canSave) return
     setSaveState({ kind: 'saving' })
     try {
+      // `draft` is this render's value: keystrokes during the request land in a newer draft and stay unsaved.
       const result = await onSave({ baseRevisionId: base.id, data: draft })
       if (result.ok) {
         setBase({ id: result.revisionId, data: draft })
         setSaveState({ kind: 'saved', revisionNumber: result.revisionNumber })
+        onRefresh()
       } else {
         setSaveState({ kind: result.error === 'CONFLICT' ? 'conflict' : 'error' })
       }
     } catch {
       setSaveState({ kind: 'error' })
     }
-  }, [canSave, onSave, base.id, draft])
+  }, [canSave, onSave, onRefresh, base.id, draft])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -121,7 +129,7 @@ export function CvWorkspace({ cv, onSave, onReload }: Props) {
               </p>
               <button
                 type="button"
-                onClick={onReload}
+                onClick={onRefresh}
                 className="font-medium text-teal hover:underline"
                 data-testid="cv-reload"
               >
@@ -142,6 +150,8 @@ export function CvWorkspace({ cv, onSave, onReload }: Props) {
             <h2 className="eyebrow">Preview</h2>
             <a
               href={`/api/cvs/${cv.id}/pdf`}
+              // `download` keeps the unsaved-changes guard (beforeunload) from firing.
+              download
               className="cta-underline text-sm text-ink"
               data-testid="cv-download-pdf"
               {...(dirty ? { 'aria-describedby': 'pdf-saved-note' } : {})}

@@ -1,4 +1,5 @@
 import type { CvDocument } from './schema'
+import { skillNames } from './skills'
 
 /** Searchable columns, in ranking-weight order. Shared with the future FTS5 index (spec §7.2). */
 export const SEARCH_FIELDS = [
@@ -83,9 +84,7 @@ export const extractFacets = (cv: CvDocument, tags: readonly string[] = []): Rea
   const { basics, skills, projects } = cv
   return {
     skillCategory: unique(compact(skills.map((s) => s.name))),
-    skill: unique(
-      compact(skills.flatMap((s) => [...(s.keywords ?? []), ...(s['x-skillDetails'] ?? []).map((d) => d.name)])),
-    ),
+    skill: unique(compact(skills.flatMap(skillNames))),
     industry: unique(compact(basics['x-industries'] ?? [])),
     role: unique(compact((basics['x-keyRoles'] ?? []).map((r) => r.title))),
     client: unique(compact(projects.map((p) => p.entity)).filter((c) => !GENERIC_CLIENTS.has(c.toLowerCase()))),

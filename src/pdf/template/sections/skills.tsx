@@ -1,4 +1,5 @@
 import type { Skill } from '~/cv/schema'
+import { skillTerms } from '~/cv/skills'
 import { Chips, Section } from './common'
 
 /** Bars are decoration next to a text label; 20+ years fills the bar. */
@@ -12,8 +13,7 @@ const yearsLabel = (years: number | null | undefined, yearsText: string | undefi
 }
 
 function SkillGroup({ skill }: { skill: Skill }) {
-  const details = skill['x-skillDetails'] ?? []
-  const keywords = skill.keywords ?? []
+  const { rows: details, keywords } = skillTerms(skill)
   return (
     <li className="skill-group">
       <h3>
@@ -37,7 +37,7 @@ function SkillGroup({ skill }: { skill: Skill }) {
           })}
         </ul>
       )}
-      {details.length === 0 && <Chips items={keywords} />}
+      <Chips items={keywords} />
     </li>
   )
 }

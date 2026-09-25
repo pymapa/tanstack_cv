@@ -120,4 +120,22 @@ describe('renderCvHtml', () => {
     expect(html.indexOf(firstHighlight?.name ?? '')).toBeGreaterThan(name)
     expect(html.indexOf(firstSkill?.name ?? '')).toBeGreaterThan(html.indexOf(firstHighlight?.name ?? ''))
   })
+
+  it('should show category keywords next to technology rows in the skills section', () => {
+    const cv = buildCv({
+      skills: [
+        {
+          name: 'Backend',
+          keywords: ['GraphQL', 'Kotlin'],
+          'x-skillDetails': [{ name: 'Kotlin', yearsText: '5 yrs' }],
+        },
+      ],
+    })
+
+    const html = renderCvHtml(cv)
+
+    expect(html).toContain('GraphQL')
+    // A keyword that already has its own row isn't repeated as a chip.
+    expect(html.match(/Kotlin/g)).toHaveLength(1)
+  })
 })

@@ -34,6 +34,12 @@ export class CvPage {
     if (await toggle.isVisible()) await toggle.click()
   }
 
+  /** The latest revision number, read from the "History (n)" summary. */
+  async latestRevision(): Promise<number> {
+    const text = await this.page.getByText(/^History \(\d+\)$/).textContent()
+    return Number(/\((\d+)\)/.exec(text ?? '')?.[1])
+  }
+
   async setLabel(value: string) {
     await this.label.fill(value)
   }

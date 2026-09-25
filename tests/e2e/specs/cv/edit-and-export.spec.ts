@@ -25,6 +25,7 @@ test.describe('CV editor', () => {
 
   test('should update the preview and save a new revision when the title changes', async ({ page }) => {
     const cv = await openCvOf(page, 'Eero Salmela')
+    const before = await cv.latestRevision()
 
     await cv.setLabel('Principal Software Developer')
     await expect(page.getByText('Unsaved changes')).toBeVisible()
@@ -32,7 +33,7 @@ test.describe('CV editor', () => {
 
     await cv.saveWithShortcut()
 
-    await expect(page.getByText(/Saved as revision 2\./)).toBeVisible()
+    await expect(page.getByText(`Saved as revision ${String(before + 1)}.`)).toBeVisible()
     await page.reload()
     await waitForApp(page)
     await expect(cv.label).toHaveValue('Principal Software Developer')

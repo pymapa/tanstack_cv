@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen, within } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { searchCvs, type SearchableCv } from '~/cv/search'
@@ -90,5 +90,22 @@ describe('SearchPage', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Clear filters' }))
 
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ industry: [], skill: [] }))
+  })
+
+  it('should keep characters typed while the previous search is still loading', async () => {
+    const onChange = vi.fn()
+    const results = searchCvs(entries, { q: '', facets: {} })
+    const user = userEvent.setup()
+    const { rerender } = render(<SearchPage results={results} search={EMPTY_SEARCH} onChange={onChange} />)
+    const box = screen.getByRole('searchbox')
+    await user.type(box, 'azure')
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith({ q: 'azure' })
+    })
+
+    await user.type(box, ' dev')
+    rerender(<SearchPage results={results} search={{ ...EMPTY_SEARCH, q: 'azure' }} onChange={onChange} />)
+
+    expect(box).toHaveValue('azure dev')
   })
 })

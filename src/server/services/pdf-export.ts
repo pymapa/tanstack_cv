@@ -1,4 +1,5 @@
 import type { CvDocument } from '~/cv/schema'
+import { skillNames } from '~/cv/skills'
 import { err, ok, type Result } from '~/lib/result'
 import { renderCvHtml, type CvRenderOptions } from '~/pdf/template/render-html'
 import type { CvRepository } from '../repositories/cv-repository'
@@ -44,7 +45,7 @@ export const exportCvPdf = async (
   const cv = repo.getCv(cvId)
   if (cv === null) return err('NOT_FOUND')
   const doc = toExportDocument(cv.revision.data, options)
-  const topSkills = doc.skills.flatMap((s) => s.keywords ?? []).slice(0, 12)
+  const topSkills = doc.skills.flatMap(skillNames).slice(0, 12)
   const bytes = await renderPdf(renderCvHtml(doc, options), {
     title: `${doc.basics.name} – ${doc.basics.label} – Kipinä CV`,
     subject: `CV of ${doc.basics.name} (${cv.variant})`,

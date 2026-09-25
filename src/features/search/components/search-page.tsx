@@ -11,23 +11,21 @@ const DEBOUNCE_MS = 150
 type Props = Readonly<{
   results: SearchResult
   search: SearchParams
+  /** Query for the box when the page mounts. Defaults to `search.q`. */
+  initialQuery?: string
   onChange: (patch: SearchParamsPatch) => void
 }>
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
 
-export function SearchPage({ results, search, onChange }: Props) {
+export function SearchPage({ results, search, initialQuery = search.q, onChange }: Props) {
   const inputId = useId()
-  const [draft, setDraft] = useState(search.q)
+  const [draft, setDraft] = useState(initialQuery)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // Keep the box in sync when the URL changes (back/forward, shared links).
-  // Adjusting state during render is React's recommended pattern for this.
-  const [syncedQ, setSyncedQ] = useState(search.q)
-  if (search.q !== syncedQ) {
-    setSyncedQ(search.q)
-    setDraft(search.q)
-  }
+  // The box owns the query: it only reads `search.q` on mount. The route remounts this page on
+  // navigation that doesn't come from the page itself (links, back/forward; see routes/index.tsx),
+  // so the URL catching up with an older debounced query can never overwrite newer typing.
 
   useEffect(() => {
     if (draft === search.q) return

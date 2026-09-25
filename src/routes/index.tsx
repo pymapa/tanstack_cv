@@ -1,4 +1,4 @@
-import { createFileRoute, stripSearchParams } from '@tanstack/react-router'
+import { createFileRoute, stripSearchParams, useLocation } from '@tanstack/react-router'
 import { useCallback } from 'react'
 import { SearchPage } from '~/features/search/components/search-page'
 import { EMPTY_SEARCH, facetsOf, searchParamsSchema, type SearchParamsPatch } from '~/features/search/search-params'
@@ -22,5 +22,19 @@ function SearchRoute() {
     (patch: SearchParamsPatch) => void navigate({ search: (prev) => ({ ...prev, ...patch }), replace: true }),
     [navigate],
   )
-  return <SearchPage results={results} search={search} onChange={onChange} />
+  // The page updates the URL with `replace`, which keeps the history index. Any other navigation
+  // (a link, back/forward) lands on a different index and remounts the page, so the search box
+  // re-reads the query from the URL. The box's own typing is never overwritten.
+  // Both come from the location, which updates as soon as navigation starts (`search` from the
+  // match lags until the loader finishes).
+  const { historyIndex, initialQuery } = useLocation({
+    select: (location) => ({
+      historyIndex: location.state.__TSR_index,
+      initialQuery: searchParamsSchema.parse(location.search).q,
+    }),
+    structuralSharing: true,
+  })
+  return (
+    <SearchPage key={historyIndex} initialQuery={initialQuery} results={results} search={search} onChange={onChange} />
+  )
 }

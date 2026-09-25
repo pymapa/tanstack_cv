@@ -1,8 +1,9 @@
 // @vitest-environment jsdom
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import type { CvDocument } from '~/cv/schema'
+import type { SaveCvResult } from '~/server/functions/cv'
 import { CvWorkspace } from '~/features/cv/components/cv-workspace'
 import type { CvView } from '~/server/repositories/cv-repository'
 import { buildCv } from '../../../fixtures/cv'
@@ -31,16 +32,16 @@ vi.mock('~/features/editor/validation', () => ({
 }))
 vi.mock('~/features/cv/components/cv-preview', () => ({ CvPreview: () => <div>preview</div> }))
 
-const view = (): CvView => ({
+const view = (revisionId = 'rev-1', data: CvDocument = buildCv()): CvView => ({
   id: 'cv-1',
   person: { id: 'person-1', fullName: 'Anna Example' },
   variant: 'default',
   isPrimary: true,
   revision: {
-    id: 'rev-1',
+    id: revisionId,
     cvId: 'cv-1',
     number: 1,
-    data: buildCv(),
+    data,
     source: 'import',
     message: undefined,
     authorName: 'Import',
@@ -50,9 +51,9 @@ const view = (): CvView => ({
 })
 
 const setup = (onSave = vi.fn().mockResolvedValue({ ok: true, revisionId: 'rev-2', revisionNumber: 2 })) => {
-  const onReload = vi.fn()
-  render(<CvWorkspace cv={view()} onSave={onSave} onReload={onReload} />)
-  return { onSave, onReload, user: userEvent.setup() }
+  const onRefresh = vi.fn()
+  render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
+  return { onSave, onRefresh, user: userEvent.setup() }
 }
 
 describe('CvWorkspace', () => {
@@ -90,14 +91,14 @@ describe('CvWorkspace', () => {
   })
 
   it('should explain a conflict and offer to reload when someone saved first', async () => {
-    const { user, onReload } = setup(vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' }))
+    const { user, onRefresh } = setup(vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' }))
     await user.type(screen.getByLabelText('Label'), 'X')
 
     await user.click(screen.getByRole('button', { name: 'Save' }))
 
     expect(await screen.findByRole('alert')).toHaveTextContent('Someone saved a newer version')
     await user.click(screen.getByRole('button', { name: 'Load the latest version' }))
-    expect(onReload).toHaveBeenCalled()
+    expect(onRefresh).toHaveBeenCalled()
   })
 
   it('should block saving and say why when the CV has problems', async () => {
@@ -114,5 +115,43 @@ describe('CvWorkspace', () => {
     setup()
 
     expect(screen.getByRole('button', { name: 'Save' })).toBeDisabled()
+  })
+
+  it('should keep edits typed while a save is in flight', async () => {
+    let finish: (result: SaveCvResult) => void = () => undefined
+    const onSave = vi.fn(() => new Promise<SaveCvResult>((resolve) => (finish = resolve)))
+    const onRefresh = vi.fn()
+    const user = userEvent.setup()
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
+    await user.type(screen.getByLabelText('Label'), ' Lead')
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+
+    await user.type(screen.getByLabelText('Label'), ' More')
+    await act(async () => {
+      finish({ ok: true, revisionId: 'rev-2', revisionNumber: 2 })
+      await Promise.resolve()
+    })
+    const saved = buildCv({ basics: { label: 'Software Architect Lead' } })
+    rerender(<CvWorkspace cv={view('rev-2', saved)} onSave={onSave} onRefresh={onRefresh} />)
+
+    expect(onRefresh).toHaveBeenCalledTimes(1)
+    expect(screen.getByLabelText('Label')).toHaveValue('Software Architect Lead More')
+    expect(screen.getByText('Unsaved changes')).toBeInTheDocument()
+  })
+
+  it('should clear the conflict and show the latest version after reloading', async () => {
+    const onSave = vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' })
+    const user = userEvent.setup()
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={vi.fn()} />)
+    await user.type(screen.getByLabelText('Label'), 'X')
+    await user.click(screen.getByRole('button', { name: 'Save' }))
+    await screen.findByRole('alert')
+
+    const latest = buildCv({ basics: { label: 'Saved elsewhere' } })
+    rerender(<CvWorkspace cv={view('rev-9', latest)} onSave={onSave} onRefresh={vi.fn()} />)
+
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    expect(screen.getByLabelText('Label')).toHaveValue('Saved elsewhere')
+    expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()
   })
 })
