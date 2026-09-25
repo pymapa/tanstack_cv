@@ -110,6 +110,7 @@ Versions checked against the npm registry on **2026-09-25**. Pin exact versions 
 | Validation | Zod | 4.6.x | One schema per boundary, used for types and runtime checks |
 | Forms | TanStack Form | 1.33.x | Typed, works with Zod |
 | Styling | Tailwind CSS | 4.3.x | Fast to build with; design tokens as CSS variables |
+| UI primitives | Base UI (`@base-ui/react`) | 1.8.x | Unstyled, accessible menus and popups; we style them with the brand tokens (see §15 D12) |
 | DB | PostgreSQL (Docker `postgres:17-alpine`, `docker-compose.yml`) + Drizzle ORM (`drizzle-orm/node-postgres`) | 17.x / 0.45.x (drizzle-kit 0.31.x) | Same engine locally and when deployed, built-in full-text search, `jsonb`, transactional DDL, parameterized by default (see §15 D1) |
 | DB driver | node-postgres (`pg`) | 8.23.x | The standard Postgres client and Drizzle's `node-postgres` driver. Pure JS, no install scripts (see §15 D10) |
 | Auth | Better Auth (email + password, admin plugin) | 1.7.x | Well-tested sessions, hashing and rate limiting instead of hand-rolled crypto; has a TanStack Start integration |
@@ -810,6 +811,7 @@ human has to make them (see §16).
 | D9 | TypeScript full stack instead of a Kotlin backend | Requested stack (TanStack Start). The team's language rule prefers Kotlin for DB-heavy backends; this is a small, DB-light app | Integration with other Kipinä backend systems |
 | D11 | **`drizzle-orm` 0.45.3** (runtime) and **`drizzle-kit` 0.31.11** (dev), pinned | `drizzle-orm` builds parameterised queries and types rows from `src/db/schema.ts`. `drizzle-kit` generates the reviewed SQL migrations (`pnpm db:generate`) and applies them (`pnpm db:migrate`). Added with the saved CV assistant chat, the first table. `drizzle-kit` pulls in an old esbuild (≤ 0.24.2, GHSA-67mh-4wv8-2f99, moderate) through `@esbuild-kit`; the advisory is about esbuild's dev server, which drizzle-kit doesn't start, and it's a dev dependency only | drizzle-kit drops `@esbuild-kit` |
 | D10 | **`pg` (node-postgres)** as the driver, `@types/pg` for types | Drizzle's `node-postgres` driver builds on it. It's the most used Postgres client for Node, pure JS (`pg-native` isn't used), and its `Pool` handles the connection limit. `postgres.js` would also work but is less common | – |
+| D12 | **`@base-ui/react` 1.8.0**, pinned, for interactive primitives | The dropdown menu needs the WAI-ARIA menu pattern: focus management, arrow-key and typeahead navigation, Escape and outside-click dismissal, and collision-aware positioning. Base UI provides these unstyled, the way shadcn/ui wraps Radix, and ships one tree-shakeable package. Radix would also work but needs one package per primitive | – |
 
 ---
 
