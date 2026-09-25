@@ -111,8 +111,8 @@ Answer each item pass, fail or n/a for the scope. Any fail becomes a finding.
 - **LLM10 unbounded consumption:** rate limit of 20 requests per 10 min per user, `max_tokens` 16000,
   a 60 s timeout, 2 retries, token counts stored. `stop_reason` (`refusal`, `max_tokens`) is
   checked before reading output.
-- **Gate:** `anthropic` is never the default; only `AI_PROVIDER` + `ANTHROPIC_API_KEY` in `.env.local`
-  after human DPA approval (§9.3) enable it. Tests and E2E use `fake`.
+- **Gate:** only `ANTHROPIC_API_KEY` in `.env.local`, set by a human after DPA approval (§9.3),
+  turns Claude on. Tests and E2E never call it (`AI_PROVIDER=fake` / fakes).
 
 ## 5. Personal-data checks
 
@@ -169,7 +169,7 @@ Report findings in this table, highest severity first, then the A01–A10 pass/f
 ## Incident path (a real vulnerability in committed or shipped code)
 
 1. **Assess:** what data and which roles, since which commit (`git log -S`), whether it is exploitable locally.
-2. **Contain:** disable the feature or route, set `AI_PROVIDER=fake`, revoke sessions,
+2. **Contain:** disable the feature or route, unset `ANTHROPIC_API_KEY`, revoke sessions,
    and rotate `BETTER_AUTH_SECRET` or the API key if exposed. A leaked secret is rotated,
    not just removed from git.
 3. **Fix:** a root-cause fix on a `fix/` branch, with a regression test that failed first.

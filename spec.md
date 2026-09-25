@@ -448,9 +448,9 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
     `cache_control` breakpoint after the static system prompt. `max_tokens` 16000, 60 s
     timeout, 2 SDK retries. Map typed SDK errors (`RateLimitError`, `APIConnectionError`, …)
     to `AiError`.
-- **Turned on only when a human sets** `AI_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` in
-  `.env.local`. With the provider off, the chat tab explains that AI is unavailable. See
-  §9.3 for the data-protection preconditions.
+- **Turned on only when a human sets** `ANTHROPIC_API_KEY` in `.env.local`; the chat and CV
+  translation (§7.6.1) both use Claude then. Without a key, AI features say they are
+  unavailable. See §9.3 for the data-protection preconditions.
 - Streaming [Later]: stream `reply` tokens with `client.messages.stream()` for a chat feel.
   The MVP shows a progress state ("Reading the CV…", "Drafting changes…") and returns the
   complete proposal. Structured output must be fully parsed and validated before anything
@@ -639,10 +639,10 @@ events).
 
 - CVs are personal data. The legal basis is legitimate interest or contract with the
   employee, which is Kipinä's call to document.
-- **Using an external LLM is a data transfer.** `AI_PROVIDER=anthropic` may only be turned on
-  after a human confirms: (1) a DPA with Anthropic covers this use, (2) the region/retention
-  settings are acceptable, (3) employees are informed. Until then the `fake` provider is the
-  only one in use. This is required by `AGENTS.md`.
+- **Using an external LLM is a data transfer.** `ANTHROPIC_API_KEY` may only be set after a
+  human confirms: (1) a DPA with Anthropic covers this use, (2) the region/retention settings
+  are acceptable, (3) employees are informed. Tests and E2E never call the model; they use
+  fakes. This is required by `AGENTS.md`.
 - Data minimization (§7.6) strips contact details before any call. `x-conversionNotes`
   and tags are never sent.
 - Never log prompts or model outputs. Store token counts only. `ai_message.content` is in
@@ -740,9 +740,9 @@ without a test that failed first. Name tests `should <behavior> when <condition>
 DATABASE_URL=postgres://cvbank:cvbank-local@localhost:5432/cvbank   # matches docker-compose.yml defaults
 BETTER_AUTH_SECRET=            # >= 32 random bytes, e.g. `openssl rand -base64 48`
 BETTER_AUTH_URL=http://localhost:3000
-AI_PROVIDER=fake               # fake | anthropic (anthropic requires human approval, §9.3)
+AI_PROVIDER=                   # optional: fake forces the offline fake translator (E2E)
 AI_EFFORT=medium               # low | medium | high
-ANTHROPIC_API_KEY=             # only when AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=             # turns Claude on for chat + translation (human approval, §9.3)
 PDF_MAX_CONCURRENCY=2
 ```
 Real values go in `.env.local` (gitignored). `src/server/env.ts` parses them with Zod at
@@ -807,7 +807,8 @@ human has to make them (see §16).
 1. **Brand assets:** logo (SVG), font files + license, color palette and a reference PDF of
    today's CV look. They're needed to make the template look like Kipinä (intent: "not AI slop").
 2. **LLM approval:** a DPA with Anthropic (or another provider), region and retention
-   settings, and a decision on whether employees must opt in. Until then `AI_PROVIDER=fake`.
+   settings, and a decision on whether employees must opt in. Until then, leave
+   `ANTHROPIC_API_KEY` unset.
 3. **Sandbox network** (`kits/kipina-cv/spec.yaml`, human-only): allow `registry.npmjs.org`,
    `playwright.azureedge.net` / `cdn.playwright.dev` (Chromium download) and, only if (2) is
    approved, `api.anthropic.com`.
