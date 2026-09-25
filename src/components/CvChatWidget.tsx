@@ -85,12 +85,10 @@ function ChatPanel({
 			onKeyDown={(e) => {
 				if (e.key === "Escape") onClose();
 			}}
-			className="flex h-[32rem] [&[hidden]]:hidden max-h-[calc(100vh-7rem)] w-[26rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--header-bg)] shadow-2xl backdrop-blur-lg"
+			className="flex h-[32rem] [&[hidden]]:hidden max-h-[calc(100vh-7rem)] w-[26rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-black shadow-2xl"
 		>
-			<header className="border-b border-[var(--line)] px-4 py-3">
-				<h2 className="m-0 text-base font-semibold text-[var(--sea-ink)]">
-					CV assistant
-				</h2>
+			<header className="border-b border-neutral-200 px-4 py-3">
+				<h2 className="m-0 text-base font-semibold text-black">CV assistant</h2>
 			</header>
 
 			<div
@@ -98,7 +96,7 @@ function ChatPanel({
 				className="flex flex-1 flex-col gap-3 overflow-y-auto p-4"
 			>
 				{messages.length === 0 && (
-					<p className="m-0 text-sm text-[var(--sea-ink-soft)]">
+					<p className="m-0 text-sm text-neutral-700">
 						Ask who fits a client need, for example "Who has led agile teams in
 						insurance?"
 					</p>
@@ -110,7 +108,7 @@ function ChatPanel({
 						className={cn(
 							"max-w-[85%] rounded-xl p-3 text-sm",
 							message.role === "user"
-								? "self-end bg-[var(--chip-bg)]"
+								? "self-end bg-neutral-100"
 								: "self-start",
 						)}
 					>
@@ -128,10 +126,7 @@ function ChatPanel({
 							}
 							if (part.type === "tool-call") {
 								return (
-									<p
-										key={part.id}
-										className="m-0 italic text-[var(--sea-ink-soft)]"
-									>
+									<p key={part.id} className="m-0 italic text-neutral-700">
 										{TOOL_LABELS[part.name] ?? part.name}…
 									</p>
 								);
@@ -141,7 +136,7 @@ function ChatPanel({
 					</article>
 				))}
 				{isLoading && (
-					<p className="m-0 flex items-center gap-2 text-sm text-[var(--sea-ink-soft)]">
+					<p className="m-0 flex items-center gap-2 text-sm text-neutral-700">
 						<Loader2 aria-hidden className="h-4 w-4 animate-spin" />
 						Thinking…
 					</p>
@@ -156,7 +151,7 @@ function ChatPanel({
 
 			<form
 				onSubmit={submit}
-				className="flex gap-2 border-t border-[var(--line)] p-3"
+				className="flex gap-2 border-t border-neutral-200 p-3"
 			>
 				<label htmlFor={`${id}-input`} className="sr-only">
 					Message
@@ -171,14 +166,14 @@ function ChatPanel({
 					}}
 					rows={2}
 					placeholder="Ask about people, skills or clients…"
-					className="flex-1 resize-none rounded-xl border border-[var(--line)] bg-transparent p-2 text-sm"
+					className="flex-1 resize-none rounded-xl border border-neutral-300 bg-white p-2 text-sm text-black placeholder:text-neutral-500"
 				/>
 				{isLoading ? (
 					<button
 						type="button"
 						onClick={stop}
 						aria-label="Stop"
-						className="flex w-10 items-center justify-center rounded-xl border border-[var(--line)]"
+						className="flex w-10 items-center justify-center rounded-xl border border-neutral-300 text-black"
 					>
 						<Square aria-hidden className="h-4 w-4" />
 					</button>
