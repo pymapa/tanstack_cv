@@ -12,6 +12,14 @@ type StoredCv = Readonly<{ id: string; personId: string; variant: string; revisi
 /** Import time isn't a real edit date, so imported-and-untouched CVs report null. */
 const lastEditedAt = (rev: CvRevision): string | null => (rev.source === 'import' ? null : rev.createdAt)
 
+const MAX_LEGACY_NUMBER = 99
+
+const nextLegacyId = (people: Iterable<StoredPerson>): string | null => {
+  const numbers = [...people].map((p) => Number(p.legacyId.slice(1))).filter(Number.isInteger)
+  const next = Math.max(0, ...numbers) + 1
+  return next > MAX_LEGACY_NUMBER ? null : `p${String(next).padStart(2, '0')}`
+}
+
 const current = (cv: StoredCv): CvRevision => {
   const last = cv.revisions.at(-1)
   if (last === undefined) throw new Error(`CV ${cv.id} has no revisions`)
@@ -137,6 +145,40 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
       }
       cvs.set(cvId, { ...cv, revisions: [...cv.revisions, revision] })
       return ok(revision)
+    },
+
+    createPerson: ({ data, authorName }) => {
+      const legacyId = nextLegacyId(people.values())
+      if (legacyId === null) return err('ID_EXHAUSTED')
+      const now = clock()
+      const personId = idGen()
+      const cvId = idGen()
+      const { 'x-conversionNotes': _notes, ...clientMeta } = data.meta
+      const document: CvDocument = {
+        ...data,
+        meta: {
+          ...clientMeta,
+          personId: legacyId,
+          variant: 'default',
+          // The schema has no "created in the app" format yet (see intent.md, Considered but not built).
+          sourceFormat: 'pdf',
+          'x-cvYear': String(now.getUTCFullYear()),
+        },
+      }
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: 1,
+        data: document,
+        source: 'manual',
+        message: 'Created',
+        authorName,
+        createdAt: now.toISOString(),
+      }
+      people.set(personId, { id: personId, legacyId, fullName: data.basics.name, employmentType: 'employee' })
+      cvs.set(cvId, { id: cvId, personId, variant: 'default', revisions: [revision] })
+      primaryByPerson.set(personId, cvId)
+      return ok({ personId, cvId })
     },
 
     restoreRevision: ({ cvId, revisionId, baseRevisionId, authorName }) => {

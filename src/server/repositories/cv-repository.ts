@@ -82,6 +82,12 @@ export type CreateCvFromInput = Readonly<{
 export type CreateCvError = 'NOT_FOUND' | 'VARIANT_TAKEN'
 
 export type CreateVariantError = 'NOT_FOUND' | 'VARIANT_TAKEN'
+export type CreatePersonInput = Readonly<{ data: CvDocument; authorName: string }>
+
+export type CreatedPerson = Readonly<{ personId: string; cvId: string }>
+
+/** Every two-digit legacy id (`meta.personId`, `^p[0-9]{2}$`) is taken. */
+export type CreatePersonError = 'ID_EXHAUSTED'
 
 /**
  * Storage port. The in-memory adapter backs the UI until the Postgres adapter (spec M1) replaces it.
@@ -96,4 +102,6 @@ export interface CvRepository {
   createVariant(input: CreateVariantInput): Result<CvRevision, CreateVariantError>
   /** Adds a CV version to the source CV's person. Variant names are unique per person, ignoring case. */
   createCvFrom(input: CreateCvFromInput): Result<{ cvId: string }, CreateCvError>
+  /** Creates an employee from `data.basics.name` whose primary CV is `data`. The server sets `meta`. */
+  createPerson(input: CreatePersonInput): Result<CreatedPerson, CreatePersonError>
 }

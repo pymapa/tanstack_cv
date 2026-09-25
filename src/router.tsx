@@ -11,3 +11,10 @@ export function getRouter() {
     scrollRestoration: true,
   })
 }
+
+declare module '@tanstack/react-router' {
+  interface StaticDataRouteOption {
+    /** The page has its own agent, so the floating CV assistant is hidden there. */
+    hideCvAssistant?: boolean
+  }
+}

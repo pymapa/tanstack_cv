@@ -10,14 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiCvBuilderChatRouteImport } from './routes/api.cv-builder-chat'
 import { Route as ApiCvChatRouteImport } from './routes/api.cv-chat'
 import { Route as CvsCvIdRouteImport } from './routes/cvs.$cvId'
+import { Route as CvsNewRouteImport } from './routes/cvs.new'
 import { Route as PeoplePersonIdRouteImport } from './routes/people.$personId'
 import { Route as ApiCvsCvIdPdfRouteImport } from './routes/api/cvs.$cvId.pdf'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCvBuilderChatRoute = ApiCvBuilderChatRouteImport.update({
+  id: '/api/cv-builder-chat',
+  path: '/api/cv-builder-chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiCvChatRoute = ApiCvChatRouteImport.update({
@@ -28,6 +35,11 @@ const ApiCvChatRoute = ApiCvChatRouteImport.update({
 const CvsCvIdRoute = CvsCvIdRouteImport.update({
   id: '/cvs/$cvId',
   path: '/cvs/$cvId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CvsNewRoute = CvsNewRouteImport.update({
+  id: '/cvs/new',
+  path: '/cvs/new',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PeoplePersonIdRoute = PeoplePersonIdRouteImport.update({
@@ -43,23 +55,29 @@ const ApiCvsCvIdPdfRoute = ApiCvsCvIdPdfRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/cv-builder-chat': typeof ApiCvBuilderChatRoute
   '/api/cv-chat': typeof ApiCvChatRoute
   '/cvs/$cvId': typeof CvsCvIdRoute
+  '/cvs/new': typeof CvsNewRoute
   '/people/$personId': typeof PeoplePersonIdRoute
   '/api/cvs/$cvId/pdf': typeof ApiCvsCvIdPdfRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/cv-builder-chat': typeof ApiCvBuilderChatRoute
   '/api/cv-chat': typeof ApiCvChatRoute
   '/cvs/$cvId': typeof CvsCvIdRoute
+  '/cvs/new': typeof CvsNewRoute
   '/people/$personId': typeof PeoplePersonIdRoute
   '/api/cvs/$cvId/pdf': typeof ApiCvsCvIdPdfRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/cv-builder-chat': typeof ApiCvBuilderChatRoute
   '/api/cv-chat': typeof ApiCvChatRoute
   '/cvs/$cvId': typeof CvsCvIdRoute
+  '/cvs/new': typeof CvsNewRoute
   '/people/$personId': typeof PeoplePersonIdRoute
   '/api/cvs/$cvId/pdf': typeof ApiCvsCvIdPdfRoute
 }
@@ -67,30 +85,38 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/api/cv-builder-chat'
     | '/api/cv-chat'
     | '/cvs/$cvId'
+    | '/cvs/new'
     | '/people/$personId'
     | '/api/cvs/$cvId/pdf'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/cv-builder-chat'
     | '/api/cv-chat'
     | '/cvs/$cvId'
+    | '/cvs/new'
     | '/people/$personId'
     | '/api/cvs/$cvId/pdf'
   id:
     | '__root__'
     | '/'
+    | '/api/cv-builder-chat'
     | '/api/cv-chat'
     | '/cvs/$cvId'
+    | '/cvs/new'
     | '/people/$personId'
     | '/api/cvs/$cvId/pdf'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiCvBuilderChatRoute: typeof ApiCvBuilderChatRoute
   ApiCvChatRoute: typeof ApiCvChatRoute
   CvsCvIdRoute: typeof CvsCvIdRoute
+  CvsNewRoute: typeof CvsNewRoute
   PeoplePersonIdRoute: typeof PeoplePersonIdRoute
   ApiCvsCvIdPdfRoute: typeof ApiCvsCvIdPdfRoute
 }
@@ -102,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cv-builder-chat': {
+      id: '/api/cv-builder-chat'
+      path: '/api/cv-builder-chat'
+      fullPath: '/api/cv-builder-chat'
+      preLoaderRoute: typeof ApiCvBuilderChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/cv-chat': {
@@ -116,6 +149,13 @@ declare module '@tanstack/react-router' {
       path: '/cvs/$cvId'
       fullPath: '/cvs/$cvId'
       preLoaderRoute: typeof CvsCvIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cvs/new': {
+      id: '/cvs/new'
+      path: '/cvs/new'
+      fullPath: '/cvs/new'
+      preLoaderRoute: typeof CvsNewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/people/$personId': {
@@ -137,8 +177,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiCvBuilderChatRoute: ApiCvBuilderChatRoute,
   ApiCvChatRoute: ApiCvChatRoute,
   CvsCvIdRoute: CvsCvIdRoute,
+  CvsNewRoute: CvsNewRoute,
   PeoplePersonIdRoute: PeoplePersonIdRoute,
   ApiCvsCvIdPdfRoute: ApiCvsCvIdPdfRoute,
 }

@@ -366,6 +366,15 @@ variants and tags**.
   opens a dialog that asks for the name, then opens the new version.
 - Salespeople and admins can create a person (employee or subcontractor) with an empty CV
   skeleton.
+- **New CV** (`/cvs/new`, header link): creates a new employee and their first CV. The page has
+  the CV builder chat, the form and the live preview. The user drops an old CV (PDF, `.txt`,
+  `.md`) into the chat, and the **CV builder agent** (`/api/cv-builder-chat`) fills in the form
+  and asks a few questions to bring the CV close to the Kipinä style. Its tools (`readDraft`,
+  `updateDraft`, `checkBrand` in `src/lib/ai/cv-builder-tools.ts`) run in the browser on the
+  draft only: the agent can't save, search, or read other CVs, and can't set contact details or
+  `meta`. The user reviews the form and clicks **Create CV** (`createCvFn`). The server sets
+  `meta` (next free `pNN`, `default` variant, current year). The floating CV bank assistant is
+  hidden on this page, so there is one agent per page.
 
 ### 7.4 CV editor [MVP]
 

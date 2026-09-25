@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Scripts, createRootRoute, useMatches } from '@tanstack/react-router'
 import { useEffect, type ReactNode } from 'react'
 import { AppFrame } from '~/components/app-header'
 import CvChatWidget from '~/components/CvChatWidget'
@@ -19,6 +19,8 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: ReactNode }) {
+  // Pages with their own agent (the CV builder) hide the CV bank chat, one agent per page.
+  const hideCvAssistant = useMatches({ select: (matches) => matches.some((m) => m.staticData.hideCvAssistant) })
   return (
     <html lang="en">
       <head>
@@ -32,7 +34,7 @@ function RootDocument({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         <AppFrame>{children}</AppFrame>
-        <CvChatWidget />
+        <CvChatWidget hidden={hideCvAssistant} />
         <HydrationMarker />
         <Scripts />
       </body>

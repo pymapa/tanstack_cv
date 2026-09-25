@@ -152,3 +152,14 @@ export const saveTranslationFn = createServerFn({ method: 'POST' })
     const result = saveTranslation({ repo: await getCvRepository() }, { ...data, authorName: 'Local user' })
     return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
   })
+
+export type CreateCvResult = { ok: true; cvId: string } | { ok: false; error: 'ID_EXHAUSTED' }
+
+/** Creates a new person with this CV as their first, primary version. The server sets `meta`. */
+export const createCvFn = createServerFn({ method: 'POST' })
+  .validator(z.strictObject({ data: BoundedCvDocument }))
+  .handler(async ({ data }): Promise<CreateCvResult> => {
+    const repo = await getCvRepository()
+    const result = repo.createPerson({ data: data.data, authorName: 'Local user' })
+    return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
+  })

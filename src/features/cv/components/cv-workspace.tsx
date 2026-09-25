@@ -2,6 +2,7 @@ import { useBlocker } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppHeaderView } from '~/components/app-header'
 import { Container } from '~/components/container'
+import { sameCv } from '~/cv/draft'
 import { anonymizeClients } from '~/cv/anonymize'
 import type { CvDocument } from '~/cv/schema'
 import { detectCvLanguage } from '~/cv/translation'
@@ -41,8 +42,6 @@ type SaveState =
   | { kind: 'saved'; revisionNumber: number }
   | { kind: 'conflict' }
   | { kind: 'error' }
-
-const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
 export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onTranslate, onTranslated }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)

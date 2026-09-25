@@ -142,6 +142,29 @@ with a short note on the intended approach. This list is part of the deliverable
   only the changed fields.
 - **A language field on the CV.** The language is guessed from the text. Intended approach: an
   optional `meta.x-language` set on import and on translation, so search can filter by language.
+- **PowerPoint and Word CVs in the CV builder.** Kipinä's old CVs are mostly `.pptx`, but the
+  builder reads PDF, `.txt` and `.md` only. Intended approach: extract the text on the server behind
+  a size and type check and send it as an `<old_cv>` block, like the `.docx` work specs above. This
+  needs a parsing dependency.
+- **A source format for CVs made in the app.** `meta.sourceFormat` only allows `pptx` or `pdf`, so
+  new CVs get `pdf`. Intended approach: add `app` to the enum in `src/cv/schema.ts` and
+  `sample_data/schema/cv.schema.json`.
+- **New CVs in the CV bank chat.** The CV bank agent's tools read `sample_data/` from disk, so it
+  can't find people created in the app. Intended approach: read people and CVs through
+  `CvRepository` like the rest of the app.
+- **New CV for an existing person.** "New CV" always creates a new person. Intended approach: the
+  "Create variant" action from spec §7.3, which can open the same builder with the person set.
+- **Style check in the form.** The builder agent uses `checkBrand`, but the user doesn't see its
+  findings. Intended approach: a small "Style check" list above the Create CV button, linked to
+  the fields.
+- **Contact details in PDF old CVs.** Text old CVs lose emails, phone numbers and links before
+  they're sent, but a PDF goes to the model as it is. Intended approach: extract the PDF text on the
+  server, remove contact details the same way, and send it as an `<old_cv>` block.
+- **Old CV sent once per turn.** Each builder tool call is a round trip that re-sends the whole
+  conversation, the old CV included. Intended approach: send the file once (Anthropic Files API or
+  a server-side text copy) and use prompt caching for the rest.
+- **Saved CV builder chat.** The builder chat lasts as long as the page. Intended approach: the
+  saved-chat store of the CV assistant, keyed by the draft once drafts are saved.
 
 ## Test data
 

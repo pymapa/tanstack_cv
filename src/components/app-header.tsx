@@ -44,7 +44,17 @@ export function AppHeaderView({ title, actions }: { title?: HeaderTitle; actions
             {title.subtitle !== undefined && <p className="truncate text-sm text-muted">{title.subtitle}</p>}
           </div>
         )}
-        {actions !== undefined && <div className="ml-auto flex flex-none items-center gap-6">{actions}</div>}
+        <div className="ml-auto flex flex-none items-center gap-6">
+          {actions}
+          <Link
+            to="/cvs/new"
+            className="border-b-2 border-transparent py-5 text-sm uppercase tracking-[0.04em] text-ink no-underline hover:border-line"
+            activeProps={{ className: '!border-lime' }}
+            data-testid="nav-new-cv"
+          >
+            New CV
+          </Link>
+        </div>
       </div>
     </header>
   )

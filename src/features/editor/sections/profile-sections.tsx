@@ -1,9 +1,11 @@
 import type { TitledItem } from '~/cv/schema'
+import { useEditor } from '../editor-context'
 import { ChipsField, TextArea, TextField } from '../fields'
 import { ListSection } from '../list-section'
 import { Section, SectionIntro } from '../section'
 
 export function BasicsSection() {
+  const { nameEditable } = useEditor()
   return (
     <Section
       title="Basics & summary"
@@ -22,8 +24,8 @@ export function BasicsSection() {
         <TextField
           path={['basics', 'name']}
           label="Name"
-          hint="Names are changed by an admin."
-          readOnly
+          {...(nameEditable ? {} : { hint: 'Names are changed by an admin.' })}
+          readOnly={!nameEditable}
           className="col-span-2"
         />
         <TextField path={['basics', 'label']} label="Title" className="col-span-2" />

@@ -7,6 +7,8 @@ type EditorContextValue = Readonly<{
   cv: CvDocument
   set: (path: Path, value: unknown) => void
   issues: readonly EditorIssue[]
+  /** Only a new CV lets the user type the name; otherwise an admin changes it. */
+  nameEditable: boolean
 }>
 
 const EditorContext = createContext<EditorContextValue | null>(null)

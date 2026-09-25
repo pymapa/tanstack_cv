@@ -299,3 +299,65 @@ describe('memory CV repository', () => {
     })
   })
 })
+
+describe('memory CV repository createPerson', () => {
+  const seededWith = (legacyIds: readonly string[]) =>
+    createMemoryCvRepository(
+      legacyIds.map((legacyId) => ({
+        legacyId,
+        fullName: `Person ${legacyId}`,
+        versions: [{ document: buildCv({ meta: { personId: legacyId } }), isPrimary: true }],
+      })),
+      { clock, idGen },
+    )
+  const newCv = buildCv({
+    basics: { name: 'Mia Newcomer', label: 'Data Engineer' },
+    meta: { personId: 'p01', variant: 'hacked', sourceFormat: 'pptx', 'x-cvYear': '1999', 'x-conversionNotes': ['x'] },
+  })
+
+  it('should create a person whose primary CV is revision 1 of the given data', () => {
+    const repo = seededWith(['p07', 'p03'])
+
+    const result = repo.createPerson({ data: newCv, authorName: 'Tester' })
+
+    if (!result.ok) throw new Error(result.error)
+    const person = repo.getPerson(result.value.personId)
+    expect(person).toMatchObject({ fullName: 'Mia Newcomer', legacyId: 'p08', employmentType: 'employee' })
+    expect(person?.cvs).toEqual([
+      expect.objectContaining({ id: result.value.cvId, variant: 'default', isPrimary: true }),
+    ])
+    const cv = repo.getCv(result.value.cvId)
+    expect(cv?.revision).toMatchObject({ number: 1, source: 'manual', authorName: 'Tester', message: 'Created' })
+    expect(cv?.revision.data.basics).toEqual(newCv.basics)
+  })
+
+  it('should set meta on the server, ignoring the client values', () => {
+    const repo = seededWith(['p07'])
+
+    const result = repo.createPerson({ data: newCv, authorName: 'Tester' })
+
+    if (!result.ok) throw new Error(result.error)
+    expect(repo.getCv(result.value.cvId)?.revision.data.meta).toEqual({
+      personId: 'p08',
+      variant: 'default',
+      sourceFormat: 'pdf',
+      'x-cvYear': '2026',
+    })
+  })
+
+  it('should make the new CV searchable', () => {
+    const repo = seededWith(['p07'])
+
+    repo.createPerson({ data: newCv, authorName: 'Tester' })
+
+    expect(repo.listSearchable().map((s) => s.personName)).toContain('Mia Newcomer')
+  })
+
+  it('should fail with ID_EXHAUSTED when no two-digit person id is left', () => {
+    const repo = seededWith(['p99'])
+
+    const result = repo.createPerson({ data: newCv, authorName: 'Tester' })
+
+    expect(result).toEqual({ ok: false, error: 'ID_EXHAUSTED' })
+  })
+})

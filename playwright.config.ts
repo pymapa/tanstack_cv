@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 
 const PORT = 3200
-const ADDS_CVS = /translate\.spec\.ts$/
+const ADDS_CVS = /(translate|create-cv)\.spec\.ts$/
 const desktop = { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } }
 
 export default defineConfig({
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   projects: [
     { name: 'chromium', use: desktop, testIgnore: ADDS_CVS },
-    // Specs that add CVs to the shared store run last, so counts in the other specs stay exact.
+    // Specs that add CVs or people to the shared store run last, so counts in the other specs stay exact.
     { name: 'adds-cvs', use: desktop, testMatch: ADDS_CVS, dependencies: ['chromium'] },
   ],
   webServer: {
