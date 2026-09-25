@@ -358,9 +358,11 @@ variants and tags**.
 - `/people/$personId`: person header, list of CV versions (variant, title, last updated,
   reviewed, primary badge), and actions: open, **Create variant from this**, duplicate,
   set as primary, archive.
-- **Create variant**: copies the current revision into a new `cv` with a new `variant` name
-  (Zod: 1–40 chars, `[A-Za-z0-9 -]`). Revision 1 has `source: duplicate` and records where
-  it came from in its message.
+- **Create variant**: copies the editor's draft (unsaved edits included) into a new `cv` with
+  a new `variant` name (Zod: 1–40 chars, `[A-Za-z0-9 -]`, unique per person ignoring case).
+  The source CV keeps its last saved revision. Revision 1 has `source: duplicate` and records
+  where it came from in its message. In the editor, **Save as new version…** next to **Save**
+  opens a dialog that asks for the name, then opens the new version.
 - Salespeople and admins can create a person (employee or subcontractor) with an empty CV
   skeleton.
 - **New CV** (`/cvs/new`, header link): creates a new employee and their first CV. The page has
@@ -417,7 +419,7 @@ variants and tags**.
 4. Follow-ups refine the proposal ("keep the second sentence"). The conversation includes the
    current draft each time.
 5. Quick-action chips: "Tailor for a role…", "Shorten summary", "Fix grammar and tone",
-   "Highlight projects about…", "Translate to Finnish" [Later].
+   "Highlight projects about…". Translation is its own feature (§7.6.1).
 
 **Pipeline (`src/server/services/ai.ts`)**
 ```
@@ -458,13 +460,34 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
     `cache_control` breakpoint after the static system prompt. `max_tokens` 16000, 60 s
     timeout, 2 SDK retries. Map typed SDK errors (`RateLimitError`, `APIConnectionError`, …)
     to `AiError`.
-- **Turned on only when a human sets** `AI_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` in
-  `.env.local`. With the provider off, the chat tab explains that AI is unavailable. See
-  §9.3 for the data-protection preconditions.
+- **Turned on only when a human sets** `ANTHROPIC_API_KEY` in `.env.local`; the chat and CV
+  translation (§7.6.1) both use Claude then. Without a key, AI features say they are
+  unavailable. See §9.3 for the data-protection preconditions.
 - Streaming [Later]: stream `reply` tokens with `client.messages.stream()` for a chat feel.
   The MVP shows a progress state ("Reading the CV…", "Drafting changes…") and returns the
   complete proposal. Structured output must be fully parsed and validated before anything
   is shown as applicable, so streaming only adds UX.
+
+### 7.6.1 CV translation (English ↔ Finnish) [built, provider opt-in]
+
+- The CV page has **Translate to Finnish** (or **Translate to English** when the saved CV reads
+  as Finnish). `detectCvLanguage` in `src/cv/translation.ts` guesses the language from common
+  words and ä/ö; English wins ties. It is disabled while there are unsaved changes, because it
+  translates the **saved** revision.
+- Only the text fields in `TRANSLATABLE` go to the model, as `{ id: JSON pointer, text }`
+  inside `<cv_text>` (data, not instructions). The name, contact details, client and employer
+  names, certificate names, dates and meta are never sent. Large CVs go in batches of ≈12 000
+  characters so replies stay under the output limit.
+- The reply is Zod-checked, and `applyTranslatedText` rejects any id that isn't a translatable
+  field of that CV. The result is re-validated with `CvDocument`.
+- Nothing is saved automatically. A **review screen** shows the translation in the editor, a
+  preview that switches between translation and original, and a note asking the user to check
+  it. **Save as new version** creates a new CV of the same person (variant `<variant>-fi` /
+  `-en` by default, editable, unique per person) with `source: ai`. The source CV is unchanged.
+- Provider: the same Claude setup as the chat. Claude (`claudeStructured` in
+  `src/lib/ai/claude.ts`, 120 s timeout) is used whenever `ANTHROPIC_API_KEY` is set; without a
+  key, translation is unavailable. `AI_PROVIDER=fake` overrides it with a deterministic `[FI] `
+  prefix for E2E and offline work.
 
 ### 7.7 PDF output [MVP]
 
@@ -556,11 +579,13 @@ DB rows directly.
 | `getPerson` | GET | `{ personId: uuid }` | `cv.read` |
 | `getCv` | GET | `{ cvId: uuid, revisionId?: uuid }` | `cv.read` |
 | `saveCvRevision` | POST | `{ cvId, baseRevisionId, data: CvDocument, message?: string≤200 }` | `cv.update` |
-| `createCvVariant` | POST | `{ sourceCvId, variant, title? }` | `cv.createVariant` |
+| `createCvVariant` | POST | `{ sourceCvId, variant, data: CvDocument, title? }` | `cv.createVariant` |
 | `setPrimaryCv` / `archiveCv` / `markReviewed` | POST | `{ cvId }` | `cv.setPrimary` / `cv.archive` / `cv.update` |
 | `listRevisions` / `diffRevisions` / `restoreRevision` | GET/GET/POST | ids | `cv.read` / `cv.read` / `cv.update` |
 | `aiPropose` | POST | `{ cvId, baseRevisionId, draft: CvDocument, message: string 1..2000, conversationId? }` | `cv.update` |
 | `aiRecordDecision` | POST | `{ aiMessageId, accepted: int[] }` | `cv.update` |
+| `translateCv` | POST | `{ cvId }` (translates the saved revision, saves nothing) | `cv.read` |
+| `saveTranslation` | POST | `{ sourceCvId, variant: string≤60, to: 'en'\|'fi', data: CvDocument }` | `cv.createVariant` |
 | `createPerson` / `updatePerson` | POST | person fields | `person.*` |
 | `upsertTag` / `setCvTags` | POST | tag fields | `tag.manage` |
 | `listUsers` / `createUser` / `disableUser` | GET/POST | user fields | `user.manage` |
@@ -626,10 +651,10 @@ events).
 
 - CVs are personal data. The legal basis is legitimate interest or contract with the
   employee, which is Kipinä's call to document.
-- **Using an external LLM is a data transfer.** `AI_PROVIDER=anthropic` may only be turned on
-  after a human confirms: (1) a DPA with Anthropic covers this use, (2) the region/retention
-  settings are acceptable, (3) employees are informed. Until then the `fake` provider is the
-  only one in use. This is required by `AGENTS.md`.
+- **Using an external LLM is a data transfer.** `ANTHROPIC_API_KEY` may only be set after a
+  human confirms: (1) a DPA with Anthropic covers this use, (2) the region/retention settings
+  are acceptable, (3) employees are informed. Tests and E2E never call the model; they use
+  fakes. This is required by `AGENTS.md`.
 - Data minimization (§7.6) strips contact details before any call. `x-conversionNotes`
   and tags are never sent.
 - Never log prompts or model outputs. Store token counts only. `ai_message.content` is in
@@ -728,9 +753,9 @@ without a test that failed first. Name tests `should <behavior> when <condition>
 DATABASE_URL=postgres://cvbank:cvbank-local@localhost:5432/cvbank   # matches docker-compose.yml defaults
 BETTER_AUTH_SECRET=            # >= 32 random bytes, e.g. `openssl rand -base64 48`
 BETTER_AUTH_URL=http://localhost:3000
-AI_PROVIDER=fake               # fake | anthropic (anthropic requires human approval, §9.3)
+AI_PROVIDER=                   # optional: fake forces the offline fake translator (E2E)
 AI_EFFORT=medium               # low | medium | high
-ANTHROPIC_API_KEY=             # only when AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=             # turns Claude on for chat + translation (human approval, §9.3)
 PDF_MAX_CONCURRENCY=2
 ```
 Real values go in `.env.local` (gitignored). `src/server/env.ts` parses them with Zod at
@@ -796,7 +821,8 @@ human has to make them (see §16).
 1. **Brand assets:** logo (SVG), font files + license, color palette and a reference PDF of
    today's CV look. They're needed to make the template look like Kipinä (intent: "not AI slop").
 2. **LLM approval:** a DPA with Anthropic (or another provider), region and retention
-   settings, and a decision on whether employees must opt in. Until then `AI_PROVIDER=fake`.
+   settings, and a decision on whether employees must opt in. Until then, leave
+   `ANTHROPIC_API_KEY` unset.
 3. **Sandbox network** (`kits/kipina-cv/spec.yaml`, human-only): allow `registry.npmjs.org`,
    `playwright.azureedge.net` / `cdn.playwright.dev` (Chromium download) and, only if (2) is
    approved, `api.anthropic.com`.

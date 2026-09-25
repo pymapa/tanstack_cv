@@ -5,7 +5,7 @@ import { NewCvWorkspace } from '~/features/cv/components/new-cv-workspace'
 import { createCvFn } from '~/server/functions/cv'
 
 export const Route = createFileRoute('/cvs/new')({
-  staticData: { hideCvAssistant: true },
+  staticData: { hideCvAssistant: true, ownHeader: true },
   head: () => ({ meta: [{ title: 'New CV · Kipinä CV bank' }] }),
   component: NewCvRoute,
 })

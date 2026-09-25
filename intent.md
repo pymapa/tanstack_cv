@@ -98,8 +98,10 @@ with a short note on the intended approach. This list is part of the deliverable
   The provider is off until a human approves the data transfer (spec §9.3).
 - **History diff and restore (spec §7.5):** compare two revisions and restore an old one as a new
   revision. The history list is built; diff and restore are not.
-- **Variants, tags, primary version:** "Create variant from this", set primary, archive, and
-  curated tags as a search facet (spec §7.3, §7.8).
+- **Variants, tags, primary version:** set primary, archive, and curated tags as a search
+  facet (spec §7.3, §7.8). The editor's **Save as new version…** creates a variant. Intended
+  approach for the rest: a "Create variant from this" action on the person page that opens
+  the same name dialog and copies the last saved revision, plus the optional `title`.
 - **Export options dialog:** a contact-details toggle (the API supports `?contact=1`), section
   toggles, and a project limit so long CVs fit the cover page.
 - **Staleness reminders:** a "needs review" dashboard and Slack reminders (spec §7.10).
@@ -124,6 +126,16 @@ with a short note on the intended approach. This list is part of the deliverable
   reach the dev server, like the rest of the app for now. They should sit behind the same
   sign-in as the rest of the CV bank.
 
+- **Sign-in, rate limit and audit for CV translation.** `translateCv` and `saveTranslation` are
+  open like the other server functions. Intended approach: `cv.read` / `cv.createVariant` checks
+  and the same 20 requests per 10 minutes per user limit as `aiPropose`, with an audit row that
+  holds ids and token counts only.
+- **Keeping a translation in sync.** A saved translation is an independent CV version; later
+  edits to the original don't reach it. Intended approach: record the source CV and revision on
+  the new CV and show "The original changed since this translation" with an offer to translate
+  only the changed fields.
+- **A language field on the CV.** The language is guessed from the text. Intended approach: an
+  optional `meta.x-language` set on import and on translation, so search can filter by language.
 - **PowerPoint and Word CVs in the CV builder.** Kipinä's old CVs are mostly `.pptx`, but the
   builder reads PDF, `.txt` and `.md` only. Intended approach: extract the text on the server behind
   a size and type check and send it as an `<old_cv>` block, like the `.docx` work specs above. This
@@ -139,7 +151,6 @@ with a short note on the intended approach. This list is part of the deliverable
 - **Style check in the form.** The builder agent uses `checkBrand`, but the user doesn't see its
   findings. Intended approach: a small "Style check" list above the Create CV button, linked to
   the fields.
-
 - **Contact details in PDF old CVs.** Text old CVs lose emails, phone numbers and links before
   they're sent, but a PDF goes to the model as it is. Intended approach: extract the PDF text on the
   server, remove contact details the same way, and send it as an `<old_cv>` block.

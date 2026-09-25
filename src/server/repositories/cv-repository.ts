@@ -55,6 +55,26 @@ export type SaveRevisionInput = Readonly<{
 
 export type SaveRevisionError = 'NOT_FOUND' | 'CONFLICT'
 
+export type CreateVariantInput = Readonly<{
+  sourceCvId: string
+  variant: string
+  data: CvDocument
+  authorName: string
+}>
+
+export type CreateCvFromInput = Readonly<{
+  /** The new CV belongs to this CV's person and inherits its app-managed meta. */
+  sourceCvId: string
+  variant: string
+  data: CvDocument
+  source: RevisionSource
+  message: string
+  authorName: string
+}>
+
+export type CreateCvError = 'NOT_FOUND' | 'VARIANT_TAKEN'
+
+export type CreateVariantError = 'NOT_FOUND' | 'VARIANT_TAKEN'
 export type CreatePersonInput = Readonly<{ data: CvDocument; authorName: string }>
 
 export type CreatedPerson = Readonly<{ personId: string; cvId: string }>
@@ -71,6 +91,9 @@ export interface CvRepository {
   getPerson(personId: string): PersonView | null
   getCv(cvId: string): CvView | null
   saveRevision(input: SaveRevisionInput): Result<CvRevision, SaveRevisionError>
+  createVariant(input: CreateVariantInput): Result<CvRevision, CreateVariantError>
+  /** Adds a CV version to the source CV's person. Variant names are unique per person, ignoring case. */
+  createCvFrom(input: CreateCvFromInput): Result<{ cvId: string }, CreateCvError>
   /** Creates an employee from `data.basics.name` whose primary CV is `data`. The server sets `meta`. */
   createPerson(input: CreatePersonInput): Result<CreatedPerson, CreatePersonError>
 }

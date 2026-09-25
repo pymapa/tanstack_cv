@@ -1,7 +1,7 @@
-import { Link, useBlocker } from '@tanstack/react-router'
+import { useBlocker } from '@tanstack/react-router'
 import { useId, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { ChatPanel } from '~/components/chat-panel'
-import { Container } from '~/components/container'
+import { AppHeaderView } from '~/components/app-header'
 import { emptyCv, sameCv } from '~/cv/draft'
 import type { CvDocument } from '~/cv/schema'
 import { CvEditor } from '~/features/editor/cv-editor'
@@ -107,39 +107,31 @@ export function NewCvWorkspace({ cvYear, onCreate, onCreated }: Props) {
   const status = statusText(issues, createState)
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col">
-      <div className="border-b border-line bg-white">
-        <Container className="flex items-center gap-6 py-4">
-          <div className="min-w-0 flex-1">
-            <nav aria-label="Breadcrumb" className="text-sm">
-              <Link to="/" className="font-medium">
-                Search
-              </Link>
-            </nav>
-            <h1 className="mt-1 truncate text-3xl" tabIndex={-1}>
-              New CV
-            </h1>
-          </div>
-          <p
-            role="status"
-            aria-live="polite"
-            className={`text-sm ${createState.kind === 'error' ? 'text-danger' : 'text-muted'}`}
-          >
-            {status}
-          </p>
-          <button
-            type="button"
-            onClick={() => void create()}
-            disabled={!canCreate}
-            className="rounded-card bg-ink px-6 py-2.5 text-sm font-medium text-white hover:bg-black disabled:cursor-not-allowed disabled:bg-ink/30"
-            data-testid="cv-create"
-          >
-            {createState.kind === 'creating' ? 'Creating…' : 'Create CV'}
-          </button>
-        </Container>
-      </div>
-
-      <div className="grid min-h-0 flex-1 grid-cols-[minmax(320px,380px)_minmax(480px,600px)_minmax(0,1fr)]">
+    <div className="flex h-screen flex-col">
+      <AppHeaderView
+        title={{ title: 'New CV' }}
+        actions={
+          <>
+            <p
+              role="status"
+              aria-live="polite"
+              className={`text-sm ${createState.kind === 'error' ? 'text-danger' : 'text-muted'}`}
+            >
+              {status}
+            </p>
+            <button
+              type="button"
+              onClick={() => void create()}
+              disabled={!canCreate}
+              className="rounded-card bg-ink px-6 py-2.5 text-sm font-medium text-white hover:bg-black disabled:cursor-not-allowed disabled:bg-ink/30"
+              data-testid="cv-create"
+            >
+              {createState.kind === 'creating' ? 'Creating…' : 'Create CV'}
+            </button>
+          </>
+        }
+      />
+      <main id="main" className="grid min-h-0 flex-1 grid-cols-[minmax(320px,380px)_minmax(480px,600px)_minmax(0,1fr)]">
         <ChatPanel
           id={chatId}
           title="CV builder"
@@ -167,7 +159,7 @@ export function NewCvWorkspace({ cvYear, onCreate, onCreated }: Props) {
             <CvPreview cv={draft} />
           </div>
         </section>
-      </div>
+      </main>
 
       {blocker.status === 'blocked' && <UnsavedChangesDialog onStay={blocker.reset} onLeave={blocker.proceed} />}
     </div>

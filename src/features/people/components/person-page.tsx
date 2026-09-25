@@ -8,25 +8,10 @@ export function PersonPage({ person }: { person: PersonView }) {
   const primary = person.cvs.find((cv) => cv.isPrimary) ?? person.cvs[0]
   return (
     <Container className="pt-10">
-      <nav aria-label="Breadcrumb" className="text-sm">
-        <Link to="/" className="font-medium">
-          Search
-        </Link>
-        <span className="px-2 text-muted" aria-hidden="true">
-          /
-        </span>
-        <span aria-current="page" className="text-muted">
-          {person.fullName}
-        </span>
-      </nav>
-
-      <header className="mt-6 flex items-end justify-between gap-8 border-b border-line pb-8">
+      <header className="flex items-end justify-between gap-8 border-b border-line pb-8">
         <div>
           <p className="eyebrow">{person.employmentType === 'employee' ? 'Kipinä employee' : 'Subcontractor'}</p>
-          <h1 className="mt-2 text-5xl" tabIndex={-1}>
-            {person.fullName}
-          </h1>
-          {primary !== undefined && <p className="mt-3 text-lg text-muted">{primary.label}</p>}
+          {primary !== undefined && <p className="mt-2 text-2xl font-light tracking-tight">{primary.label}</p>}
         </div>
         {primary !== undefined && (
           <Link

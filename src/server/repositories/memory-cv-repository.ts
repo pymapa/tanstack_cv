@@ -87,6 +87,8 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
 
   const cvsOf = (personId: string): StoredCv[] => [...cvs.values()].filter((cv) => cv.personId === personId)
 
+  const sameVariant = (a: string, b: string): boolean => a.trim().toLowerCase() === b.trim().toLowerCase()
+
   return {
     listSearchable: () =>
       [...cvs.values()].map((cv): SearchableCv => {
@@ -177,6 +179,49 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
       cvs.set(cvId, { id: cvId, personId, variant: 'default', revisions: [revision] })
       primaryByPerson.set(personId, cvId)
       return ok({ personId, cvId })
+    },
+
+    createVariant: ({ sourceCvId, variant, data, authorName }) => {
+      const source = cvs.get(sourceCvId)
+      if (source === undefined) return err('NOT_FOUND')
+      const name = variant.trim()
+      if (cvsOf(source.personId).some((cv) => sameVariant(cv.variant, name))) return err('VARIANT_TAKEN')
+      const head = current(source)
+      const cvId = idGen()
+      const managed = keepManagedFields(head.data, data)
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: 1,
+        data: { ...managed, meta: { ...managed.meta, variant: name } },
+        source: 'duplicate',
+        message: `Created from ${source.variant}, revision ${String(head.number)}`,
+        authorName,
+        createdAt: clock().toISOString(),
+      }
+      cvs.set(cvId, { id: cvId, personId: source.personId, variant: name, revisions: [revision] })
+      return ok(revision)
+    },
+
+    createCvFrom: ({ sourceCvId, variant, data, source, message, authorName }) => {
+      const origin = cvs.get(sourceCvId)
+      if (origin === undefined) return err('NOT_FOUND')
+      const taken = cvsOf(origin.personId).some((cv) => cv.variant.toLowerCase() === variant.toLowerCase())
+      if (taken) return err('VARIANT_TAKEN')
+      const cvId = idGen()
+      const withManaged = keepManagedFields(current(origin).data, data)
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: 1,
+        data: { ...withManaged, meta: { ...withManaged.meta, variant } },
+        source,
+        message,
+        authorName,
+        createdAt: clock().toISOString(),
+      }
+      cvs.set(cvId, { id: cvId, personId: origin.personId, variant, revisions: [revision] })
+      return ok({ cvId })
     },
   }
 }

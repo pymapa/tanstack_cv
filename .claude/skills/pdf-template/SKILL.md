@@ -15,11 +15,13 @@ AI filler), be skimmable in 30 seconds, and be machine-readable, because clients
   before anything else. One H1 (name), H2 per section, H3 per project/role.
 - **Real type scale** from `theme.ts` (e.g. 9.5 / 11 / 14 / 20 / 32 pt), not ad-hoc sizes. Body
   ≥ 9pt, line-height ~1.4, measure ≤ ~80 characters.
-- **One accent color**, used sparingly (section rules, highlight marker, bars). Everything else is
+- **One accent color**, used sparingly (the cover summary underline, the quote marker). Everything else is
   ink + neutral grays. No gradients, drop shadows, stock icons, emojis or clip-art.
 - **Consistent grid**: fixed page margins, one column gutter, spacing only from `theme.space.*`.
   Generous whitespace beats cramming; cut content (max-projects option) before shrinking type.
-- **Restrained chips** for keywords/industries: small, outline or light tint, no rainbow colors.
+- **Editorial grid, not boxes**: a narrow left rail (dates, group names) and a wide content
+  column. One ink rule per section, no dividers between items, no left accent borders, no
+  meter bars, no pill chips. Keywords are inline text lists separated by middle dots.
 - **Concrete content.** The template never adds filler ("passionate team player"); empty sections
   are omitted, not padded. Wording belongs to the CV data, not the template.
 - **Brand:** follow the `kipina-brand` skill (palette and type taken from kipina.fi). Tokens live
@@ -43,8 +45,8 @@ Section order (spec §7.7, follows today's PowerPoint CV):
    `options.includeContact`.
 2. **Project highlights**: `projects` with `x-highlight: true` — name, client (`entity`),
    `x-industry`, roles, dates, technologies (`keywords`).
-3. **Skills**: `skills[]` categories; per-technology years (`x-skillDetails`) as bars **plus a
-   text label** ("6 yrs"), never bar or color alone.
+3. **Skills**: `skills[]` categories; per-technology years (`x-skillDetails`) as a text label
+   next to the name ("Kotlin 6 yrs"), never bars.
 4. **Project history**, **Work history**, **Education & certificates**, **Languages**.
 
 Dates: render `startDate–endDate` ("2019–2022", missing end = "present"); fall back to

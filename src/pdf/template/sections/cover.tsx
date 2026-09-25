@@ -1,7 +1,7 @@
 import logo from '../../../../public/brand/kipina-logo.png?inline'
 import type { CvDocument } from '~/cv/schema'
 import type { CvRenderOptions } from '../render-html'
-import { Chips, Section, present } from './common'
+import { Entry, InlineList, Section, present } from './common'
 
 type Props = Readonly<{ cv: CvDocument; options: CvRenderOptions }>
 
@@ -48,9 +48,9 @@ export function Cover({ cv, options }: Props) {
 
         {strengths.length > 0 && (
           <Section title="In a nutshell">
-            <ul className="cards">
+            <ul className="strengths">
               {strengths.map((s) => (
-                <li key={s.title} className="card card--bar">
+                <li key={s.title}>
                   <h3>{s.title}</h3>
                   {s.description !== undefined && <p>{s.description}</p>}
                 </li>
@@ -68,18 +68,18 @@ export function Cover({ cv, options }: Props) {
 
         {(keywords.length > 0 || industries.length > 0) && (
           <Section title="Expertise">
-            {keywords.length > 0 && (
-              <div className="chip-group">
-                <p className="chip-group__label">Focus areas</p>
-                <Chips items={keywords} />
-              </div>
-            )}
-            {industries.length > 0 && (
-              <div className="chip-group">
-                <p className="chip-group__label">Industries</p>
-                <Chips items={industries} tint />
-              </div>
-            )}
+            <ul className="entries">
+              {keywords.length > 0 && (
+                <Entry aside="Focus areas">
+                  <InlineList items={keywords} />
+                </Entry>
+              )}
+              {industries.length > 0 && (
+                <Entry aside="Industries">
+                  <InlineList items={industries} />
+                </Entry>
+              )}
+            </ul>
           </Section>
         )}
 
@@ -106,12 +106,12 @@ function TitledList({
   items: ReadonlyArray<{ title: string; description?: string | undefined }>
 }) {
   return (
-    <Section title={title}>
+    <Section title={title} className="section--minor">
       <ul className="item-list">
         {items.map((item) => (
           <li key={item.title}>
             <strong>{item.title}</strong>
-            {item.description !== undefined && <span className="muted"> · {item.description}</span>}
+            {item.description !== undefined && <span className="muted">{item.description}</span>}
           </li>
         ))}
       </ul>

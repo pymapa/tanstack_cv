@@ -1,19 +1,7 @@
 import { expect, test } from '@playwright/test'
 import { PDFDocument, PDFName } from 'pdf-lib'
 import { expectNoSeriousA11yViolations } from '../../fixtures/a11y'
-import { waitForApp } from '../../fixtures/app'
-import { CvPage } from '../../pages/cv.page'
-import { SearchPage } from '../../pages/search.page'
-
-const openCvOf = async (page: import('@playwright/test').Page, name: string) => {
-  const search = new SearchPage(page)
-  await search.goto(name)
-  await search.openFirstCvOf(name)
-  const cv = new CvPage(page)
-  await expect(cv.heading).toContainText(name)
-  await waitForApp(page)
-  return cv
-}
+import { openCvOf, waitForApp } from '../../fixtures/app'
 
 test.describe('CV editor', () => {
   test('should show the live preview and pass accessibility checks', async ({ page }) => {
