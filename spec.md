@@ -241,7 +241,7 @@ All ids are UUIDv7 (time-sortable, not guessable), stored as `uuid` and generate
 | Table | Columns (key ones) | Notes |
 |---|---|---|
 | `user`, `session`, `account`, `verification` | Better Auth standard + `role` (`admin`/`sales`/`expert`), `personId` (nullable FK), `disabledAt` | Sign-up turned off; users created by admin/CLI |
-| `person` | `id`, `legacyId`, `fullName`, `employmentType` (`employee`/`subcontractor`), `primaryCvId`, `createdAt`, `updatedAt`, `archivedAt` | |
+| `person` | `id`, `legacyId`, `fullName`, `employmentType` (`employee`/`subcontractor`), `primaryCvId`, `createdAt`, `updatedAt`, `archivedAt` | Unique index on `legacyId` (people created in the app have none) |
 | `cv` | `id`, `personId`, `variant` (e.g. `default`, `PM`), `title`, `currentRevisionId`, `reviewedAt`, `createdAt`, `updatedAt`, `archivedAt` | Partial unique index on (`personId`, `variant`) `WHERE archived_at IS NULL` |
 | `cv_revision` | `id`, `cvId`, `number` (1..n), `data` (`jsonb`), `dataSha256` (of the canonical JSON text, computed by the app), `source` (`import`/`manual`/`ai`/`restore`/`duplicate`), `message`, `authorId`, `aiMessageId`, `createdAt` | **Append-only.** A `BEFORE UPDATE OR DELETE` trigger raises an exception unless the transaction has set `SET LOCAL app.allow_erase = 'on'`, which only `person.erase` does. Unique (`cvId`, `number`) |
 | `tag`, `cv_tag` | `tag.name` unique case-insensitively (unique index on `lower(name)`), `color` | Curated labels such as "Security clearance", "Available Q4" |
@@ -262,9 +262,13 @@ Rules:
   `idle_in_transaction_session_timeout=10s`, so a stuck query or transaction can't hold locks.
   Foreign keys are always enforced in Postgres.
 - Postgres keeps deleted rows as dead tuples until `VACUUM`, and there is no equivalent of
-  SQLite's `secure_delete`. After `erasePerson` commits, the service runs
-  `VACUUM` on the affected tables. Physical overwriting on disk isn't guaranteed, so disk
-  encryption of the dev machine (and encrypted storage when deployed) is assumed.
+  SQLite's `secure_delete`. After `erasePerson` commits, the service runs `VACUUM` on the
+  affected tables on a dedicated connection with `statement_timeout = 0` (not the pool's 5 s),
+  as the table owner (with the [Later] app role, grant it `MAINTAIN` on those tables, Postgres
+  17+). The erase itself has already succeeded. If the vacuum fails, that's logged and audited
+  (`erase.vacuum_failed`, no personal data) and `pnpm db:vacuum` retries it. Physical
+  overwriting on disk isn't guaranteed, so disk encryption of the dev machine (and encrypted
+  storage when deployed) is assumed.
 - Locally the data lives in the `cv-db-data` Docker volume. Postgres listens on `127.0.0.1`
   only, and the credentials come from the environment (§13). [Later] A migration-owner role and
   a separate app role without DDL rights.
@@ -273,7 +277,10 @@ Rules:
 
 `pnpm db:import` reads `sample_data/index.json` and `sample_data/cvs/*.json`, validates each
 CV, and creates `person` + `cv` + revision 1 (`source: import`). It sets `person.primaryCvId`
-from `index.json`. It's idempotent (`INSERT … ON CONFLICT` on `legacyId` + `variant`) and runs in one transaction. Anything that fails
+from `index.json`. It runs in one transaction and is idempotent: the person is upserted with
+`INSERT … ON CONFLICT (legacy_id)`, and a CV is only created when that person has no `cv`
+with the same `variant`, **archived or not** (looked up inside the transaction; the partial
+unique index only covers live CVs). Existing CVs are left untouched. Anything that fails
 validation aborts the whole import with a readable report. Nothing is imported partially.
 
 ---
@@ -315,8 +322,8 @@ variants and tags**.
 
 **Engine (`src/server/services/search.ts`)**
 - PostgreSQL **full-text search**: `cv_search.document` is a `tsvector` built with a custom
-  text search configuration `cv_simple` (the `simple` parser and dictionary plus the
-  `unaccent` extension, so "Makinen" matches "Mäkinen", and no English stemming mangles names
+  text search configuration `cv_simple` (a copy of `simple` with `word`, `hword` and
+  `hword_part` mapped to `unaccent, simple`, from the `unaccent` extension, so "Makinen" matches "Mäkinen", and no English stemming mangles names
   or technology terms). The migration creates the extension and the configuration.
 - Weights: Postgres has four (`A`–`D`), so columns are grouped with `setweight`:
   `A` name · `B` label, variant, skills, roles · `C` keywords, clients, industries · `D` body
@@ -324,12 +331,17 @@ variants and tags**.
   `{0.1, 0.3, 0.6, 1.0}` (D, C, B, A), so a match on the name ranks above a match on a project
   description.
 - **tsquery injection prevention (A05):** raw user input never goes into `to_tsquery`. The
-  query string is split into ≤ 10 terms of ≤ 64 characters. Every character that isn't a
-  letter or digit (`\p{L}\p{N}`) splits the term, so tsquery operators (`&`, `|`, `!`, `<->`,
-  `:`, `*`, `(`, `)`, `'`) can't get through. Each remaining term becomes a prefix match
-  (`term:*`), the terms are joined with `&`, and the result is passed to
-  `to_tsquery('cv_simple', $1)` as a bound parameter. Unit tests cover every operator above,
-  quotes, backslashes and empty input.
+  app normalizes the query to **NFC** (so decomposed input such as `a` + U+0308 becomes `ä`),
+  splits it on whitespace into ≤ 10 terms of ≤ 64 characters, and passes the joined terms as a
+  bound parameter to a SQL function `cv_prefix_query(text) RETURNS tsquery` (created by the
+  search migration). The function lets **Postgres tokenize** the input with
+  `to_tsvector('cv_simple', $1)`, which gives operators no meaning and keeps the parser's
+  tokens whole (`node.js`, `asp.net`, `c#` → `c`), then quotes each lexeme as a tsquery
+  literal (`'lexeme':*`, inner `'` doubled, `\` escaped) and joins them with `&`. The same
+  parser builds the index, so query and document tokens always line up. Tests (integration,
+  real Postgres) cover `&`, `|`, `!`, `<->`, `:`, `*`, `(`, `)`, quotes, backslashes, empty
+  input, decomposed `Mäkinen`, and `Node.js` / `ASP.NET` / `Vue.js` matching CVs that
+  mention them.
 - Snippets come from `ts_headline('cv_simple', body, query, …)` with private-use sentinel
   characters as `StartSel`/`StopSel`. The UI splits on them and renders `<mark>` elements with
   React, never as HTML.
