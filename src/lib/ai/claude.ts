@@ -8,7 +8,7 @@ import { ANTHROPIC_MODELS, createAnthropicChat } from "@tanstack/ai-anthropic";
 
 export type ClaudeModel = (typeof ANTHROPIC_MODELS)[number];
 
-export const DEFAULT_CLAUDE_MODEL: ClaudeModel = "claude-opus-5";
+export const DEFAULT_CLAUDE_MODEL: ClaudeModel = "claude-haiku-4-5";
 
 function isClaudeModel(value: string): value is ClaudeModel {
 	return (ANTHROPIC_MODELS as ReadonlyArray<string>).includes(value);
