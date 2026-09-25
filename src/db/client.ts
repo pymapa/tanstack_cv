@@ -3,9 +3,14 @@
  *
  * Connects with `DATABASE_URL`; see "Local database" in README.md for the local value.
  */
+import { drizzle, type NodePgDatabase } from 'drizzle-orm/node-postgres'
 import pg from 'pg'
+import * as schema from './schema'
+
+export type Db = NodePgDatabase<typeof schema>
 
 let pool: pg.Pool | undefined
+let database: Db | undefined
 
 const getPool = (): pg.Pool => {
   if (pool) return pool
@@ -29,6 +34,12 @@ const getPool = (): pg.Pool => {
   })
   pool = created
   return created
+}
+
+/** The Drizzle query builder on the shared pool. Drizzle parameterises every value. */
+export const getDb = (): Db => {
+  database ??= drizzle(getPool(), { schema })
+  return database
 }
 
 /** Runs one parameterised statement. Pass values as `params`, never inside `text`. */
@@ -69,5 +80,6 @@ export const withTransaction = async <T>(fn: (client: pg.PoolClient) => Promise<
 export const closeDb = async (): Promise<void> => {
   const ending = pool
   pool = undefined
+  database = undefined
   await ending?.end()
 }

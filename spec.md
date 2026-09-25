@@ -247,6 +247,7 @@ All ids are UUIDv7 (time-sortable, not guessable), stored as `uuid` and generate
 | `tag`, `cv_tag` | `tag.name` unique case-insensitively (unique index on `lower(name)`), `color` | Curated labels such as "Security clearance", "Available Q4" |
 | `cv_facet` | `cvId`, `kind` (`skill`/`skillCategory`/`industry`/`role`/`client`/`keyword`/`variant`), `value`, `valueNorm` | Rebuilt from the current revision on every save. Index on (`kind`, `valueNorm`) |
 | `cv_search` | `cvId` (PK), `personId`, `document` (`tsvector`), `body` (plain text for snippets) (§7.2) | Rebuilt from the current revision on every save. GIN index on `document` |
+| `assistant_chat` | `id`, `ownerKey` (unique), `messages` (`jsonb`), `createdAt`, `updatedAt` | The CV assistant widget's saved chat, one per owner, replaced on each save. `ownerKey` is a random per-browser id in an HttpOnly cookie (`cv_chat_owner`) until M2, then the user id. Attachments are stored as file-name placeholders only. Rows not updated for 90 days are deleted on every save or clear and never returned. Index on `updatedAt` for that purge |
 | `ai_conversation` | `id`, `cvId`, `userId`, `createdAt` | One per CV per user per session |
 | `ai_message` | `id`, `conversationId`, `role`, `content`, `proposal` (`jsonb`), `status` (`proposed`/`applied`/`rejected`/`invalid`/`failed`), `inputTokens`, `outputTokens`, `createdAt` | Kept for 90 days, then purged by a job ([Later]; the MVP documents it) |
 | `audit_event` | `id`, `at`, `actorId`, `action`, `targetType`, `targetId`, `outcome` (`allowed`/`denied`/`error`), `requestId`, `meta` (`jsonb`, **never CV content**) | Append-only (same trigger pattern as `cv_revision`; erase may only pseudonymize). Logs reads, exports, edits, AI calls, logins and denials |
@@ -624,9 +625,10 @@ events).
   and tags are never sent.
 - Never log prompts or model outputs. Store token counts only. `ai_message.content` is in
   the local DB and falls under the 90-day retention rule.
-- Right to erasure: `erasePerson` hard-deletes the person, CVs, revisions, AI messages and
-  tags, and pseudonymizes audit rows (`targetId` kept, no name). It requires an admin and
-  typing the full name to confirm.
+- Right to erasure: `erasePerson` hard-deletes the person, CVs, revisions, AI messages, saved
+  assistant chats that mention the person (`assistant_chat` rows whose `messages` contain one of
+  their CV ids or file names, since tool results quote CVs) and tags, and pseudonymizes audit
+  rows (`targetId` kept, no name). It requires an admin and typing the full name to confirm.
 - Exports default to **no contact details**.
 
 ### 9.4 Threat model (short)
@@ -775,6 +777,7 @@ human has to make them (see §16).
 | D7 | **TypeScript 6.0** instead of 7.0 | `typescript-eslint` 8.70 supports `<6.1`, and type-aware lint matters more than TS 7's compile speed | typescript-eslint supports TS 7 |
 | D8 | Our own RFC 6902 subset instead of `fast-json-patch` | That library hasn't been updated since 2021 and has had prototype-pollution issues. We need 3 operations and an allowlist, about 80 lines of tested code | – |
 | D9 | TypeScript full stack instead of a Kotlin backend | Requested stack (TanStack Start). The team's language rule prefers Kotlin for DB-heavy backends; this is a small, DB-light app | Integration with other Kipinä backend systems |
+| D11 | **`drizzle-orm` 0.45.3** (runtime) and **`drizzle-kit` 0.31.11** (dev), pinned | `drizzle-orm` builds parameterised queries and types rows from `src/db/schema.ts`. `drizzle-kit` generates the reviewed SQL migrations (`pnpm db:generate`) and applies them (`pnpm db:migrate`). Added with the saved CV assistant chat, the first table. `drizzle-kit` pulls in an old esbuild (≤ 0.24.2, GHSA-67mh-4wv8-2f99, moderate) through `@esbuild-kit`; the advisory is about esbuild's dev server, which drizzle-kit doesn't start, and it's a dev dependency only | drizzle-kit drops `@esbuild-kit` |
 | D10 | **`pg` (node-postgres)** as the driver, `@types/pg` for types | Drizzle's `node-postgres` driver builds on it. It's the most used Postgres client for Node, pure JS (`pg-native` isn't used), and its `Pool` handles the connection limit. `postgres.js` would also work but is less common | – |
 
 ---

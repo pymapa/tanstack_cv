@@ -22,7 +22,8 @@ afterEach(() => {
 
 const openChat = async () => {
   const user = userEvent.setup()
-  render(<CvChatWidget />)
+  const history = { load: () => Promise.resolve([]), save: () => Promise.resolve(), clear: () => Promise.resolve() }
+  render(<CvChatWidget history={history} />)
   await user.click(screen.getByRole('button', { name: 'Open CV assistant' }))
   return user
 }

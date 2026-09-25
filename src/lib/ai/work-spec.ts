@@ -74,3 +74,20 @@ export const checkAttachments = (messages: unknown): Result<void, string> => {
   }
   return ok(undefined)
 }
+
+const WORK_SPEC_OPENING = /^<work_spec filename="([^"]*)">/
+
+/** The file name of an attached work spec part, or null when the part is not an attachment. */
+export const attachmentName = (
+  part: Readonly<{ type: string; metadata?: unknown; content?: unknown }>,
+): string | null => {
+  if (part.type === 'document') return (part.metadata as { filename?: string } | undefined)?.filename ?? 'Document'
+  if (part.type === 'text' && typeof part.content === 'string') return WORK_SPEC_OPENING.exec(part.content)?.[1] ?? null
+  return null
+}
+
+/** A text part that stands in for an attachment whose content is not kept. */
+export const workSpecPlaceholder = (filename: string) => ({
+  type: 'text' as const,
+  content: `<work_spec filename="${safeName(filename)}">\n(The file is not kept in the saved chat.)\n</work_spec>`,
+})

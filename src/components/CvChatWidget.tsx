@@ -1,12 +1,14 @@
 import type { ContentPart } from '@tanstack/ai'
 import { createChatClientOptions, fetchServerSentEvents, useChat } from '@tanstack/ai-react'
-import { FileText, Loader2, MessageCircle, Paperclip, Send, Square, X } from 'lucide-react'
+import { FileText, Loader2, MessageCircle, Paperclip, Send, Square, Trash2, X } from 'lucide-react'
 import { useEffect, useId, useRef, useState } from 'react'
 import { Streamdown } from 'streamdown'
 
 import { chatMarkdownComponents } from '~/components/chat-link'
+import { type StoredMessage, toStoredMessages } from '~/lib/ai/chat-history'
 import { withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
-import { toWorkSpecPart, WORK_SPEC_ACCEPT } from '~/lib/ai/work-spec'
+import { attachmentName, toWorkSpecPart, WORK_SPEC_ACCEPT } from '~/lib/ai/work-spec'
+import { clearChatHistoryFn, getChatHistoryFn, saveChatHistoryFn } from '~/server/functions/chat-history'
 
 const chatOptions = createChatClientOptions({
   connection: fetchServerSentEvents('/api/cv-chat'),
@@ -22,16 +24,21 @@ const DEFAULT_WORK_SPEC_REQUEST = 'Find suitable CVs for this work spec.'
 
 type Attachment = Readonly<{ name: string; part: ContentPart }>
 
-const attachmentName = (part: { type: string; metadata?: unknown; content?: unknown }): string | null => {
-  if (part.type === 'document') return (part.metadata as { filename?: string } | undefined)?.filename ?? 'Document'
-  if (part.type === 'text' && typeof part.content === 'string') {
-    return /^<work_spec filename="([^"]*)">/.exec(part.content)?.[1] ?? null
-  }
-  return null
+/** Where the conversation is saved between visits. Injected so tests don't need a server. */
+export type ChatHistory = Readonly<{
+  load: () => Promise<StoredMessage[]>
+  save: (messages: StoredMessage[]) => Promise<void>
+  clear: () => Promise<void>
+}>
+
+const serverChatHistory: ChatHistory = {
+  load: () => getChatHistoryFn(),
+  save: (messages) => saveChatHistoryFn({ data: { messages } }),
+  clear: () => clearChatHistoryFn(),
 }
 
 /** CV assistant chat, floating in the bottom-right corner of every page. */
-export default function CvChatWidget() {
+export default function CvChatWidget({ history = serverChatHistory }: { history?: ChatHistory }) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
 
@@ -40,6 +47,7 @@ export default function CvChatWidget() {
       {/* Hidden rather than unmounted, so the conversation survives closing. */}
       <ChatPanel
         id={panelId}
+        history={history}
         open={open}
         onClose={() => {
           setOpen(false)
@@ -61,12 +69,27 @@ export default function CvChatWidget() {
   )
 }
 
-function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: () => void }) {
+function ChatPanel({
+  id,
+  history,
+  open,
+  onClose,
+}: {
+  id: string
+  history: ChatHistory
+  open: boolean
+  onClose: () => void
+}) {
   const [input, setInput] = useState('')
   const [attachments, setAttachments] = useState<ReadonlyArray<Attachment>>([])
   const [attachError, setAttachError] = useState<string | null>(null)
   const [dragging, setDragging] = useState(false)
-  const { messages, sendMessage, isLoading, stop, error } = useChat(chatOptions)
+  const [historyError, setHistoryError] = useState<string | null>(null)
+  const [confirmingClear, setConfirmingClear] = useState(false)
+  const { messages, sendMessage, isLoading, stop, error, setMessages, clear } = useChat(chatOptions)
+  const [historyState, setHistoryState] = useState<'loading' | 'ready' | 'unavailable'>('loading')
+  const wasLoading = useRef(false)
+  const pendingSave = useRef<Promise<void>>(Promise.resolve())
   const endRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -81,6 +104,56 @@ function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: 
   useEffect(() => {
     if (open) inputRef.current?.focus()
   }, [open])
+
+  // Restore the saved conversation once. Sending waits for this, so nothing overwrites it.
+  useEffect(() => {
+    let cancelled = false
+    history.load().then(
+      (saved) => {
+        if (cancelled) return
+        // Stored parts are the UI parts minus attachment content, so they render and resend as-is.
+        if (saved.length > 0) setMessages(saved as Parameters<typeof setMessages>[0])
+        setHistoryState('ready')
+      },
+      () => {
+        if (cancelled) return
+        // Keep chatting, but don't save: that would replace the chat that failed to load.
+        setHistoryState('unavailable')
+        setHistoryError("Saved chats aren't available right now.")
+      },
+    )
+    return () => {
+      cancelled = true
+    }
+  }, [history, setMessages])
+
+  // Save when an answer has finished (or was stopped).
+  useEffect(() => {
+    if (wasLoading.current && !isLoading && historyState === 'ready') {
+      pendingSave.current = history.save(toStoredMessages(messages)).then(
+        () => {
+          setHistoryError(null)
+        },
+        () => {
+          setHistoryError("This chat couldn't be saved.")
+        },
+      )
+    }
+    wasLoading.current = isLoading
+  }, [history, historyState, isLoading, messages])
+
+  const clearChat = async () => {
+    try {
+      // A save still in flight would otherwise write the chat back after the delete.
+      await pendingSave.current
+      await history.clear()
+      clear()
+      setHistoryError(null)
+    } catch {
+      setHistoryError("The saved chat couldn't be deleted. Try again.")
+    }
+    setConfirmingClear(false)
+  }
 
   useEffect(() => {
     if (!open) return
@@ -98,7 +171,7 @@ function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: 
     if (messages.length) endRef.current?.scrollIntoView({ block: 'end' })
   }, [messages])
 
-  const canSend = input.trim() !== '' || attachments.length > 0
+  const canSend = historyState !== 'loading' && (input.trim() !== '' || attachments.length > 0)
 
   const submit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -137,8 +210,45 @@ function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: 
         dragging ? 'border-2 border-dashed border-teal' : 'border-neutral-200'
       }`}
     >
-      <header className="border-b border-neutral-200 px-4 py-3">
+      <header className="flex min-h-14 items-center justify-between gap-2 border-b border-neutral-200 px-4 py-2">
         <h2 className="m-0 text-base font-semibold text-black">CV assistant</h2>
+        {confirmingClear ? (
+          <div role="group" aria-label="Clear this chat?" className="flex items-center gap-2 text-sm">
+            <span>Clear this chat?</span>
+            <button
+              type="button"
+              onClick={() => {
+                void clearChat()
+              }}
+              className="rounded-lg bg-ink px-3 py-1 text-white"
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setConfirmingClear(false)
+              }}
+              className="rounded-lg border border-neutral-300 px-3 py-1 text-black"
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
+          messages.length > 0 &&
+          !isLoading && (
+            <button
+              type="button"
+              onClick={() => {
+                setConfirmingClear(true)
+              }}
+              className="flex items-center gap-1 rounded-lg px-2 py-1 text-sm text-neutral-700 hover:bg-neutral-100"
+            >
+              <Trash2 aria-hidden className="h-4 w-4" />
+              Clear chat
+            </button>
+          )
+        )}
       </header>
 
       <div aria-live="polite" className="flex flex-1 flex-col gap-3 overflow-y-auto p-4">
@@ -196,6 +306,11 @@ function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: 
           <p className="m-0 flex items-center gap-2 text-sm text-neutral-700">
             <Loader2 aria-hidden className="h-4 w-4 animate-spin" />
             Thinking…
+          </p>
+        )}
+        {historyError !== null && (
+          <p role="alert" className="m-0 text-sm text-red-700">
+            {historyError}
           </p>
         )}
         {error && (

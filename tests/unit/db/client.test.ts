@@ -52,7 +52,7 @@ class FakePool extends EventEmitter {
 
 vi.mock('pg', () => ({ default: { Pool: FakePool } }))
 
-const { closeDb, query, withTransaction } = await import('~/db/client')
+const { closeDb, getDb, query, withTransaction } = await import('~/db/client')
 
 const lastPool = (): FakePool => {
   const pool = FakePool.created.at(-1)
@@ -161,5 +161,19 @@ describe('closeDb', () => {
 
     expect(first.ended).toBe(true)
     expect(FakePool.created).toHaveLength(2)
+  })
+})
+
+describe('getDb', () => {
+  it('should share the pool with query', async () => {
+    await query('SELECT 1')
+
+    getDb()
+
+    expect(FakePool.created).toHaveLength(1)
+  })
+
+  it('should return the same Drizzle instance on every call', () => {
+    expect(getDb()).toBe(getDb())
   })
 })
