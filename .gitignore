@@ -5,6 +5,7 @@
 .env
 .env.*
 !.env.example
+node_modules
 
 # OS / editor noise
 .DS_Store
