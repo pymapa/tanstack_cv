@@ -19,16 +19,26 @@ function values(value: unknown): Array<string> {
 	return [];
 }
 
-/** Matches `term` as a whole word, so "go" doesn't match "Google". */
+const WORD_CHAR = /[\p{L}\p{N}]/u;
+
+/**
+ * Matches `term` as a whole word with an optional plural ending, so "api"
+ * matches "APIs" but "go" doesn't match "Google". A side of the term that is
+ * punctuation needs no word boundary, so ".net" matches "ASP.NET".
+ */
 function wholeWord(term: string): RegExp {
 	const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-	return new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, "iu");
+	const start = WORD_CHAR.test(term[0]) ? "(?<![\\p{L}\\p{N}])" : "";
+	const end = WORD_CHAR.test(term.at(-1) ?? "")
+		? "(?:e?s)?(?![\\p{L}\\p{N}])"
+		: "";
+	return new RegExp(`${start}${escaped}${end}`, "iu");
 }
 
 export const searchPeopleToolDef = toolDefinition({
 	name: "searchPeople",
 	description:
-		"Search Kipinä people by skill, technology, role, industry or past client. Every term must appear as a whole word somewhere in the person's CV. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
+		"Search Kipinä people by skill, technology, role, industry or past client. Every term must appear as a whole word (plurals included) somewhere in the person's CV. If a search finds nobody, retry with other word forms, e.g. 'banking' as well as 'bank'. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
 	inputSchema: z.object({
 		query: z
 			.string()
