@@ -9,6 +9,15 @@ node_modules
 
 # OS / editor noise
 .DS_Store
-.idea/
-.vscode/
-*.swp
+dist
+dist-ssr
+*.local
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+todos.json
+mcp-todos.json
