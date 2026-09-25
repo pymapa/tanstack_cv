@@ -5,6 +5,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { Streamdown } from 'streamdown'
 
 import { chatMarkdownComponents } from '~/components/chat-link'
+import { withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
 import { toWorkSpecPart, WORK_SPEC_ACCEPT } from '~/lib/ai/work-spec'
 
 const chatOptions = createChatClientOptions({
@@ -155,7 +156,7 @@ function ChatPanel({ id, open, onClose }: { id: string; open: boolean; onClose: 
               message.role === 'user' ? 'self-end bg-neutral-100' : 'self-start'
             }`}
           >
-            {message.parts.map((part, index) => {
+            {withoutRepeatedToolCalls(message.parts).map((part, index) => {
               const fileName = message.role === 'user' ? attachmentName(part) : null
               if (fileName !== null) {
                 return (
