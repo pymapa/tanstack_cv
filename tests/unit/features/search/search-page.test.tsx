@@ -43,7 +43,7 @@ const entries: SearchableCv[] = [
 
 const renderPage = (search: SearchParams = EMPTY_SEARCH) => {
   const onChange = vi.fn()
-  const results = searchCvs(entries, { q: search.q, facets: search })
+  const results = searchCvs(entries, { q: search.q, facets: search, cvIds: search.cv })
   render(<SearchPage results={results} search={search} onChange={onChange} />)
   return { onChange }
 }
@@ -90,6 +90,22 @@ describe('SearchPage', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Clear filters' }))
 
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ industry: [], skill: [] }))
+  })
+
+  it('should show only the suggested CVs and offer to show all when cv ids are in the URL', async () => {
+    const { onChange } = renderPage({ ...EMPTY_SEARCH, cv: ['cv-2'] })
+
+    expect(screen.getByRole('status')).toHaveTextContent('1 person, 1 CV')
+    expect(screen.getByText(/Showing 1 CV suggested by the CV assistant/)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Show all CVs' }))
+
+    expect(onChange).toHaveBeenCalledWith({ cv: [] })
+  })
+
+  it('should not mention suggested CVs when no cv ids are in the URL', () => {
+    renderPage()
+
+    expect(screen.queryByText(/suggested by the CV assistant/)).not.toBeInTheDocument()
   })
 
   it('should keep characters typed while the previous search is still loading', async () => {

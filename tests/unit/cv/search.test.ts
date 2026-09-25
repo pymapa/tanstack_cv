@@ -150,4 +150,17 @@ describe('searchCvs', () => {
 
     expect(result.people[0]?.cvs.map((c) => c.cvId)).toEqual(['cv-anna-pm'])
   })
+
+  it('should return only the listed CVs when cvIds is set', () => {
+    const result = searchCvs(ALL, { q: '', facets: {}, cvIds: ['cv-anna-pm', 'cv-bob'] })
+
+    expect(result.people.flatMap((p) => p.cvs.map((c) => c.cvId)).sort()).toEqual(['cv-anna-pm', 'cv-bob'])
+    expect(result.totalCvs).toBe(2)
+  })
+
+  it('should return every CV when cvIds is empty', () => {
+    const result = searchCvs(ALL, { q: '', facets: {}, cvIds: [] })
+
+    expect(result.totalCvs).toBe(3)
+  })
 })

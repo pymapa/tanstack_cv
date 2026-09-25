@@ -140,6 +140,21 @@ export function SearchPage({ results, search, initialQuery = search.q, onChange 
                 {plural(results.people.length, 'person', 'people')}, {plural(results.totalCvs, 'CV', 'CVs')}
               </p>
             </div>
+            {search.cv.length > 0 && (
+              <div className="mb-4 flex items-center justify-between gap-4 rounded-card border border-line px-4 py-3 text-sm">
+                <p>Showing {plural(search.cv.length, 'CV', 'CVs')} suggested by the CV assistant.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange({ cv: [] })
+                  }}
+                  className="font-medium text-teal hover:underline"
+                  data-testid="show-all-cvs"
+                >
+                  Show all CVs
+                </button>
+              </div>
+            )}
             {results.people.length === 0 ? <EmptyState /> : <ResultList people={results.people} />}
           </section>
         </div>

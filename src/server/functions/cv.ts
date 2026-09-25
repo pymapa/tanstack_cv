@@ -29,6 +29,7 @@ const FacetInput = z.strictObject(
 export const SearchInput = z.strictObject({
   q: z.string().max(200),
   facets: FacetInput,
+  cvIds: z.array(Id).max(20).optional(),
 })
 
 export const searchCvsFn = createServerFn({ method: 'GET' })

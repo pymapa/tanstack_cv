@@ -2,6 +2,16 @@ import { z } from 'zod'
 import { FACET_KINDS, type FacetKind } from '~/cv/search-text'
 
 const facet = z.array(z.string().max(100)).max(20).default([]).catch([])
+const cvIds = z
+  .array(
+    z
+      .string()
+      .max(64)
+      .regex(/^[0-9a-f-]+$/),
+  )
+  .max(20)
+  .default([])
+  .catch([])
 
 /** URL search params for `/`. Every field degrades to a default instead of throwing. */
 export const searchParamsSchema = z.object({
@@ -13,6 +23,7 @@ export const searchParamsSchema = z.object({
   client: facet,
   variant: facet,
   tag: facet,
+  cv: cvIds,
 })
 
 export type SearchParams = z.infer<typeof searchParamsSchema>
@@ -27,6 +38,7 @@ export const EMPTY_SEARCH: SearchParams = {
   client: [],
   variant: [],
   tag: [],
+  cv: [],
 }
 
 export const facetsOf = (search: SearchParams): Record<FacetKind, string[]> =>

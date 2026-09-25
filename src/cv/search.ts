@@ -32,7 +32,7 @@ export type SearchableCv = Readonly<{
 }>
 
 export type FacetSelection = Partial<Record<FacetKind, readonly string[] | undefined>>
-export type SearchQuery = Readonly<{ q: string; facets: FacetSelection }>
+export type SearchQuery = Readonly<{ q: string; facets: FacetSelection; cvIds?: readonly string[] | undefined }>
 
 export type SnippetSegment = Readonly<{ text: string; match: boolean }>
 export type FacetCount = Readonly<{ key: string; value: string; count: number }>
@@ -179,7 +179,9 @@ const countFacets = (items: readonly Indexed[]): SearchResult['facets'] => {
 
 export const searchCvs = (entries: readonly SearchableCv[], query: SearchQuery): SearchResult => {
   const terms = parseQuery(query.q)
+  const onlyCvIds = query.cvIds?.length ? new Set(query.cvIds) : null
   const scored = entries
+    .filter((entry) => onlyCvIds === null || onlyCvIds.has(entry.cvId))
     .map(indexEntry)
     .map((indexed) => ({ indexed, score: scoreEntry(indexed, terms) }))
     .filter((s): s is { indexed: Indexed; score: number } => s.score !== null)

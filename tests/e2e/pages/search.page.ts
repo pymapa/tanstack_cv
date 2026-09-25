@@ -17,6 +17,15 @@ export class SearchPage {
     await waitForApp(this.page)
   }
 
+  async gotoSuggested(cvIds: readonly string[]) {
+    await this.page.goto(`/?cv=${encodeURIComponent(JSON.stringify(cvIds))}`)
+    await waitForApp(this.page)
+  }
+
+  get showAllCvs(): Locator {
+    return this.page.getByTestId('show-all-cvs')
+  }
+
   async search(query: string) {
     await this.input.fill(query)
   }

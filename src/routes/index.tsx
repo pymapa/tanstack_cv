@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({
   validateSearch: searchParamsSchema,
   // Keep URLs short: drop params that equal their defaults (e.g. `?q=` and empty facets).
   search: { middlewares: [stripSearchParams(EMPTY_SEARCH)] },
-  loaderDeps: ({ search }) => ({ q: search.q, facets: facetsOf(search) }),
+  loaderDeps: ({ search }) => ({ q: search.q, facets: facetsOf(search), cvIds: search.cv }),
   loader: ({ deps }) => searchCvsFn({ data: deps }),
   head: () => ({ meta: [{ title: 'Search · Kipinä CV bank' }] }),
   component: SearchRoute,
