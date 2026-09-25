@@ -136,22 +136,18 @@ describe('createLlmTranslator cancellation', () => {
 })
 
 describe('selectCvTranslator', () => {
-  it('should be off unless AI_PROVIDER is set', () => {
-    expect(selectCvTranslator({ provider: undefined, claudeConfigured: true })).toBeNull()
-  })
-
-  it('should use the fake translator when AI_PROVIDER is fake', () => {
-    expect(selectCvTranslator({ provider: 'fake', claudeConfigured: false })).toBe(fakeTranslator)
-  })
-
-  it('should be off when AI_PROVIDER is anthropic but no API key is set', () => {
-    expect(selectCvTranslator({ provider: 'anthropic', claudeConfigured: false })).toBeNull()
-  })
-
-  it('should use Claude when AI_PROVIDER is anthropic and a key is set', () => {
-    const translator = selectCvTranslator({ provider: 'anthropic', claudeConfigured: true })
+  it('should use Claude when an API key is set, like the chat', () => {
+    const translator = selectCvTranslator({ provider: undefined, claudeConfigured: true })
 
     expect(translator).not.toBeNull()
     expect(translator).not.toBe(fakeTranslator)
+  })
+
+  it('should be off when no API key is set', () => {
+    expect(selectCvTranslator({ provider: undefined, claudeConfigured: false })).toBeNull()
+  })
+
+  it('should use the fake translator when AI_PROVIDER is fake, even with a key (tests and offline work)', () => {
+    expect(selectCvTranslator({ provider: 'fake', claudeConfigured: true })).toBe(fakeTranslator)
   })
 })

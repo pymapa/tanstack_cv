@@ -5,8 +5,8 @@
  * contact details, client names or meta). Two implementations:
  * - `fakeTranslator`: deterministic, no network, prefixes each text with `[FI] ` / `[EN] `.
  *   Used in tests, E2E and dev with `AI_PROVIDER=fake`.
- * - the LLM translator, which calls Claude through `claudeStructured` in `./claude`. It is only
- *   selected when a human sets `AI_PROVIDER=anthropic` and an API key (spec §9.3).
+ * - the LLM translator, which calls Claude through `claudeStructured` in `./claude`. It is used
+ *   when `ANTHROPIC_API_KEY` is set, like the chat.
  */
 import { z } from 'zod'
 import { LANGUAGE_NAMES, type CvLanguage, type TextSegment } from '~/cv/translation'
@@ -106,10 +106,14 @@ export const createLlmTranslator =
 
 type TranslatorConfig = Readonly<{ provider: string | undefined; claudeConfigured: boolean }>
 
-/** The translator for this environment, or null when AI is off. */
+/**
+ * The translator for this environment, or null when AI is off. Claude is used whenever
+ * `ANTHROPIC_API_KEY` is set, the same rule as the chat. `AI_PROVIDER=fake` overrides it
+ * for E2E and offline work.
+ */
 export const selectCvTranslator = ({ provider, claudeConfigured }: TranslatorConfig): CvTranslator | null => {
   if (provider === 'fake') return fakeTranslator
-  if (provider === 'anthropic' && claudeConfigured) {
+  if (claudeConfigured) {
     return createLlmTranslator(async (request) => (await import('./claude')).claudeStructured(request))
   }
   return null

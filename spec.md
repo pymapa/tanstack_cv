@@ -472,9 +472,10 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
   preview that switches between translation and original, and a note asking the user to check
   it. **Save as new version** creates a new CV of the same person (variant `<variant>-fi` /
   `-en` by default, editable, unique per person) with `source: ai`. The source CV is unchanged.
-- Providers: `AI_PROVIDER=fake` (deterministic `[FI] ` prefix; E2E uses it) or
-  `AI_PROVIDER=anthropic` with `ANTHROPIC_API_KEY` (`claudeStructured` in `src/lib/ai/claude.ts`,
-  120 s timeout). Anything else means translation is unavailable.
+- Provider: the same Claude setup as the chat. Claude (`claudeStructured` in
+  `src/lib/ai/claude.ts`, 120 s timeout) is used whenever `ANTHROPIC_API_KEY` is set; without a
+  key, translation is unavailable. `AI_PROVIDER=fake` overrides it with a deterministic `[FI] `
+  prefix for E2E and offline work.
 
 ### 7.7 PDF output [MVP]
 
