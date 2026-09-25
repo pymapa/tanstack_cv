@@ -160,5 +160,26 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
       cvs.set(cvId, { id: cvId, personId: source.personId, variant: name, revisions: [revision] })
       return ok(revision)
     },
+
+    createCvFrom: ({ sourceCvId, variant, data, source, message, authorName }) => {
+      const origin = cvs.get(sourceCvId)
+      if (origin === undefined) return err('NOT_FOUND')
+      const taken = cvsOf(origin.personId).some((cv) => cv.variant.toLowerCase() === variant.toLowerCase())
+      if (taken) return err('VARIANT_TAKEN')
+      const cvId = idGen()
+      const withManaged = keepManagedFields(current(origin).data, data)
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: 1,
+        data: { ...withManaged, meta: { ...withManaged.meta, variant } },
+        source,
+        message,
+        authorName,
+        createdAt: clock().toISOString(),
+      }
+      cvs.set(cvId, { id: cvId, personId: origin.personId, variant, revisions: [revision] })
+      return ok({ cvId })
+    },
   }
 }

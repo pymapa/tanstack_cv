@@ -10,6 +10,10 @@ export class CvPage {
   readonly saveAsNew: Locator
   readonly versionDialog: Locator
   readonly versionName: Locator
+  readonly translate: Locator
+  readonly translationVariant: Locator
+  readonly saveTranslation: Locator
+  readonly discardTranslation: Locator
 
   constructor(private readonly page: Page) {
     this.heading = page.getByRole('heading', { level: 1 })
@@ -21,10 +25,24 @@ export class CvPage {
     this.saveAsNew = page.getByTestId('cv-save-as-new')
     this.versionDialog = page.getByRole('dialog', { name: 'Save as new version' })
     this.versionName = page.getByTestId('cv-version-name')
+    this.translate = page.getByTestId('cv-translate')
+    this.translationVariant = page.getByTestId('translation-variant')
+    this.saveTranslation = page.getByTestId('translation-save')
+    this.discardTranslation = page.getByTestId('translation-discard')
   }
 
   previewHeading(): Locator {
     return this.preview.getByRole('heading', { level: 1 })
+  }
+
+  /** The "Translation / Original" preview switch on the translation review screen. */
+  previewVersion(name: 'Translation' | 'Original'): Locator {
+    return this.page.getByRole('group', { name: 'Preview version' }).getByRole('button', { name })
+  }
+
+  /** The CV title on the preview's cover. */
+  previewTitle(): Locator {
+    return this.preview.locator('.band__label')
   }
 
   previewText(text: string): Locator {

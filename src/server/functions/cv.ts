@@ -1,11 +1,17 @@
 import { notFound } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
+import { getRequest } from '@tanstack/react-start/server'
 import { z } from 'zod'
 import { CvDocument } from '~/cv/schema'
 import { VariantName } from '~/cv/variant'
 import { searchCvs } from '~/cv/search'
 import { FACET_KINDS } from '~/cv/search-text'
+import { CV_LANGUAGES, MAX_VARIANT_LENGTH } from '~/cv/translation'
+import { isClaudeConfigured } from '~/lib/ai/claude'
+import { selectCvTranslator } from '~/lib/ai/cv-translator'
+import type { CreateCvError } from '../repositories/cv-repository'
 import { getCvRepository } from '../repositories/instance'
+import { saveTranslation, translateCv, type TranslateCvError, type TranslationDraft } from '../services/cv-translation'
 
 /*
  * SECURITY TODO (spec M2): these functions have no authentication or authorization yet.
@@ -92,5 +98,42 @@ export const createCvVariantFn = createServerFn({ method: 'POST' })
   .validator(CreateVariantInput)
   .handler(async ({ data }): Promise<CreateCvVariantResult> => {
     const result = (await getCvRepository()).createVariant({ ...data, authorName: 'Local user' })
+    return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
+  })
+
+export type TranslateCvResult = { ok: true; draft: TranslationDraft } | { ok: false; error: TranslateCvError }
+
+/** POST: calls the translator (an LLM when a human has turned it on). Saves nothing. */
+export const translateCvFn = createServerFn({ method: 'POST' })
+  .validator(z.strictObject({ cvId: Id }))
+  .handler(async ({ data }): Promise<TranslateCvResult> => {
+    // Stop the model calls when the user cancels or leaves the page.
+    const { signal } = getRequest()
+    const translator = selectCvTranslator({
+      provider: process.env.AI_PROVIDER?.trim(),
+      claudeConfigured: isClaudeConfigured(),
+    })
+    const result = await translateCv({ repo: await getCvRepository(), translator, signal }, data)
+    return result.ok ? { ok: true, draft: result.value } : { ok: false, error: result.error }
+  })
+
+export const SaveTranslationInput = z.strictObject({
+  sourceCvId: Id,
+  variant: z
+    .string()
+    .trim()
+    .min(1)
+    .max(MAX_VARIANT_LENGTH)
+    .regex(/^[\p{L}\p{N} ._()-]+$/u),
+  to: z.enum(CV_LANGUAGES),
+  data: BoundedCvDocument,
+})
+
+export type SaveTranslationResult = { ok: true; cvId: string } | { ok: false; error: CreateCvError }
+
+export const saveTranslationFn = createServerFn({ method: 'POST' })
+  .validator(SaveTranslationInput)
+  .handler(async ({ data }): Promise<SaveTranslationResult> => {
+    const result = saveTranslation({ repo: await getCvRepository() }, { ...data, authorName: 'Local user' })
     return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
   })

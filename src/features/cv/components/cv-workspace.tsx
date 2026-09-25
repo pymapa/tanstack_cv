@@ -3,10 +3,13 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppHeaderView } from '~/components/app-header'
 import { Container } from '~/components/container'
 import type { CvDocument } from '~/cv/schema'
+import { detectCvLanguage } from '~/cv/translation'
 import { CvEditor } from '~/features/editor/cv-editor'
 import { validateCv } from '~/features/editor/validation'
-import type { CreateCvVariantResult, SaveCvResult } from '~/server/functions/cv'
+import { TranslateButton } from '~/features/translation/components/translate-button'
+import type { CreateCvVariantResult, SaveCvResult, TranslateCvResult } from '~/server/functions/cv'
 import type { CvView } from '~/server/repositories/cv-repository'
+import type { TranslationDraft } from '~/server/services/cv-translation'
 import { CvPreview } from './cv-preview'
 import { RevisionList } from './revision-list'
 import { SaveAsVersionDialog } from './save-as-version-dialog'
@@ -21,6 +24,10 @@ type Props = Readonly<{
   onSaveAsNew: (request: SaveAsNewRequest) => Promise<CreateCvVariantResult>
   /** Reload the CV from the server: after a recorded save (history) and from the conflict banner. */
   onRefresh: () => void
+  /** Machine-translates the saved revision into the other language. Saves nothing. */
+  onTranslate: () => Promise<TranslateCvResult>
+  /** Called with the translation, which the user then reviews. */
+  onTranslated: (draft: TranslationDraft) => void
 }>
 
 type SaveState =
@@ -32,7 +39,7 @@ type SaveState =
 
 const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
-export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh }: Props) {
+export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, onTranslated }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
@@ -54,6 +61,7 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh }: Props) {
 
   const dirty = !sameCv(draft, base.data)
   const issues = useMemo(() => validateCv(draft), [draft])
+  const savedLanguage = useMemo(() => detectCvLanguage(base.data), [base.data])
   const canSave = dirty && issues.length === 0 && saveState.kind !== 'saving'
   const canSaveAsNew = issues.length === 0 && saveState.kind !== 'saving'
 
@@ -96,6 +104,12 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh }: Props) {
         title={{ title: cv.person.fullName, subtitle: cv.variant, personId: cv.person.id }}
         actions={
           <>
+            <TranslateButton
+              language={savedLanguage}
+              unsavedChanges={dirty}
+              onTranslate={onTranslate}
+              onTranslated={onTranslated}
+            />
             <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
             <div className="flex flex-col items-end">
               <a

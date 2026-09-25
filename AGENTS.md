@@ -9,9 +9,10 @@ See `intent.md` for what we are building and why, and `spec.md` for how. When th
 - Treat all CV data as real personal data: never send it to external services, paste it
   into URLs, or add network calls that upload it.
   - The **only** exception is the LLM provider module
-    (`src/lib/ai/claude.ts`). It stays off unless a human sets
-    `AI_PROVIDER=anthropic` (spec §9.3). Agents must never enable it, add a key, or add
-    another provider or outbound call. Tests and dev use the `fake` provider.
+    (`src/lib/ai/claude.ts`). It is on only when a human has set `ANTHROPIC_API_KEY`
+    (spec §9.3); the chat and CV translation both use it then. Agents must never enable it,
+    add a key, or add another provider or outbound call. Automated tests and E2E never call
+    it: they use fakes (`AI_PROVIDER=fake` forces the fake translator).
   - Never put CV content in logs, error messages, URLs, commit messages, or test snapshots.
     Build test data with the `buildCv()` factories and invented names.
 - Do not edit `sbxenv.yaml` or anything under `kits/`. They configure the agent sandbox and

@@ -1,7 +1,9 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { CvWorkspace, type SaveAsNewRequest, type SaveRequest } from '~/features/cv/components/cv-workspace'
-import { createCvVariantFn, getCvFn, saveCvRevisionFn } from '~/server/functions/cv'
+import { TranslationReview, type SaveTranslationRequest } from '~/features/translation/components/translation-review'
+import { createCvVariantFn, getCvFn, saveCvRevisionFn, saveTranslationFn, translateCvFn } from '~/server/functions/cv'
+import type { TranslationDraft } from '~/server/services/cv-translation'
 
 export const Route = createFileRoute('/cvs/$cvId')({
   loader: ({ params }) => getCvFn({ data: { cvId: params.cvId } }),
@@ -14,7 +16,14 @@ export const Route = createFileRoute('/cvs/$cvId')({
 
 function CvRoute() {
   const cv = Route.useLoaderData()
+  // Remount per CV so drafts and translations never leak between CVs.
+  return <CvPage key={cv.id} />
+}
+
+function CvPage() {
+  const cv = Route.useLoaderData()
   const router = useRouter()
+  const [translation, setTranslation] = useState<TranslationDraft | null>(null)
   const onSave = useCallback((request: SaveRequest) => saveCvRevisionFn({ data: { cvId: cv.id, ...request } }), [cv.id])
   const navigate = Route.useNavigate()
   const onSaveAsNew = useCallback(
@@ -27,6 +36,39 @@ function CvRoute() {
   )
   // Refresh loader data (history, revision) only after the workspace has recorded the save.
   const refresh = useCallback(() => void router.invalidate(), [router])
-  // Remount per CV so drafts never leak between CVs.
-  return <CvWorkspace key={cv.id} cv={cv} onSave={onSave} onSaveAsNew={onSaveAsNew} onRefresh={refresh} />
+  const onTranslate = useCallback(() => translateCvFn({ data: { cvId: cv.id } }), [cv.id])
+  const onSaveTranslation = useCallback(
+    (request: SaveTranslationRequest) => saveTranslationFn({ data: { sourceCvId: cv.id, ...request } }),
+    [cv.id],
+  )
+  const onTranslationSaved = useCallback(
+    (cvId: string) => void navigate({ to: '/cvs/$cvId', params: { cvId } }),
+    [navigate],
+  )
+
+  if (translation !== null) {
+    return (
+      <TranslationReview
+        person={cv.person}
+        sourceVariant={cv.variant}
+        original={cv.revision.data}
+        draft={translation}
+        onSave={onSaveTranslation}
+        onSaved={onTranslationSaved}
+        onDiscard={() => {
+          setTranslation(null)
+        }}
+      />
+    )
+  }
+  return (
+    <CvWorkspace
+      cv={cv}
+      onSave={onSave}
+      onSaveAsNew={onSaveAsNew}
+      onRefresh={refresh}
+      onTranslate={onTranslate}
+      onTranslated={setTranslation}
+    />
+  )
 }

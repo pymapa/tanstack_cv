@@ -76,10 +76,11 @@ interface ProposeInput { system: string; cv: MinimizedCv; history: readonly Chat
 interface LlmProvider { propose(i: ProposeInput, s: AbortSignal):
   Promise<Result<{ proposal: Proposal; usage: { inputTokens: number; outputTokens: number } }, AiError>> }
 ```
-Selection in `env.ts`: `AI_PROVIDER` = `fake` (**default** in dev, test and E2E) | `anthropic`.
-`anthropic` is only ever set by a **human** in `.env.local`, after DPA/region/retention approval
-and employee notice (§9.3, §16.2). Never flip it, never add `api.anthropic.com` to sandbox
-config (`kits/` is human-only — propose it instead). When off, the chat tab says AI is unavailable.
+Selection: Claude is on when `ANTHROPIC_API_KEY` is set (the chat and CV translation both
+check `isClaudeConfigured()`); `AI_PROVIDER=fake` forces the fake (E2E, offline). The key is
+only ever set by a **human** in `.env.local`, after DPA/region/retention approval and employee
+notice (§9.3, §16.2). Never set it, never add `api.anthropic.com` to sandbox config (`kits/` is
+human-only — propose it instead). Without a key, AI features say they are unavailable.
 
 **`fake` provider** — deterministic, no network, rule-based on the lower-cased message:
 - `shorten summary[ to N sentences]` → `replace /basics/summary` with the first N (default 3)
