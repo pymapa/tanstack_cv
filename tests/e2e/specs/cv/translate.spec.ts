@@ -24,7 +24,7 @@ test.describe('CV translation', () => {
     await expect(cv.translationVariant).toHaveValue('default-fi')
     await cv.saveTranslation.click()
 
-    await expect(cv.heading).toContainText('default-fi')
+    await expect(cv.versionTitle('default-fi')).toBeVisible()
     await waitForApp(page)
     await expect(cv.label).toHaveValue('Ohjelmistokehittäjä')
   })

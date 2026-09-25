@@ -7,6 +7,9 @@ export class CvPage {
   readonly label: Locator
   readonly preview: FrameLocator
   readonly downloadPdf: Locator
+  readonly saveAsNew: Locator
+  readonly versionDialog: Locator
+  readonly versionName: Locator
   readonly translate: Locator
   readonly translationVariant: Locator
   readonly saveTranslation: Locator
@@ -19,6 +22,9 @@ export class CvPage {
     this.label = page.getByTestId('field-basics-label')
     this.preview = page.frameLocator('iframe[title="CV preview"]')
     this.downloadPdf = page.getByTestId('cv-download-pdf')
+    this.saveAsNew = page.getByTestId('cv-save-as-new')
+    this.versionDialog = page.getByRole('dialog', { name: 'Save as new version' })
+    this.versionName = page.getByTestId('cv-version-name')
     this.translate = page.getByTestId('cv-translate')
     this.translationVariant = page.getByTestId('translation-variant')
     this.saveTranslation = page.getByTestId('translation-save')
@@ -64,5 +70,15 @@ export class CvPage {
 
   async saveWithShortcut() {
     await this.page.keyboard.press('ControlOrMeta+s')
+  }
+
+  versionTitle(name: string): Locator {
+    return this.page.getByRole('banner').getByText(name, { exact: true })
+  }
+
+  async saveAsNewVersion(name: string) {
+    await this.saveAsNew.click()
+    await this.versionName.fill(name)
+    await this.page.getByTestId('cv-version-create').click()
   }
 }

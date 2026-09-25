@@ -3,6 +3,7 @@ import { createServerFn } from '@tanstack/react-start'
 import { getRequest } from '@tanstack/react-start/server'
 import { z } from 'zod'
 import { CvDocument } from '~/cv/schema'
+import { VariantName } from '~/cv/variant'
 import { searchCvs } from '~/cv/search'
 import { FACET_KINDS } from '~/cv/search-text'
 import { CV_LANGUAGES, MAX_VARIANT_LENGTH } from '~/cv/translation'
@@ -61,12 +62,14 @@ export const getCvFn = createServerFn({ method: 'GET' })
     return cv
   })
 
+const BoundedCvDocument = CvDocument.refine((doc) => JSON.stringify(doc).length <= MAX_DOCUMENT_BYTES, {
+  message: 'The CV is too large',
+})
+
 const SaveInput = z.strictObject({
   cvId: Id,
   baseRevisionId: Id,
-  data: CvDocument.refine((doc) => JSON.stringify(doc).length <= MAX_DOCUMENT_BYTES, {
-    message: 'The CV is too large',
-  }),
+  data: BoundedCvDocument,
   message: z.string().trim().max(200).optional(),
 })
 
@@ -81,6 +84,21 @@ export const saveCvRevisionFn = createServerFn({ method: 'POST' })
     return result.ok
       ? { ok: true, revisionId: result.value.id, revisionNumber: result.value.number }
       : { ok: false, error: result.error }
+  })
+
+export const CreateVariantInput = z.strictObject({
+  sourceCvId: Id,
+  variant: VariantName,
+  data: BoundedCvDocument,
+})
+
+export type CreateCvVariantResult = { ok: true; cvId: string } | { ok: false; error: 'NOT_FOUND' | 'VARIANT_TAKEN' }
+
+export const createCvVariantFn = createServerFn({ method: 'POST' })
+  .validator(CreateVariantInput)
+  .handler(async ({ data }): Promise<CreateCvVariantResult> => {
+    const result = (await getCvRepository()).createVariant({ ...data, authorName: 'Local user' })
+    return result.ok ? { ok: true, cvId: result.value.cvId } : { ok: false, error: result.error }
   })
 
 export type TranslateCvResult = { ok: true; draft: TranslationDraft } | { ok: false; error: TranslateCvError }
@@ -108,7 +126,7 @@ export const SaveTranslationInput = z.strictObject({
     .max(MAX_VARIANT_LENGTH)
     .regex(/^[\p{L}\p{N} ._()-]+$/u),
   to: z.enum(CV_LANGUAGES),
-  data: SaveInput.shape.data,
+  data: BoundedCvDocument,
 })
 
 export type SaveTranslationResult = { ok: true; cvId: string } | { ok: false; error: CreateCvError }

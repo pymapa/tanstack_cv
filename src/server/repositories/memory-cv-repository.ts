@@ -79,6 +79,8 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
 
   const cvsOf = (personId: string): StoredCv[] => [...cvs.values()].filter((cv) => cv.personId === personId)
 
+  const sameVariant = (a: string, b: string): boolean => a.trim().toLowerCase() === b.trim().toLowerCase()
+
   return {
     listSearchable: () =>
       [...cvs.values()].map((cv): SearchableCv => {
@@ -134,6 +136,28 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
         createdAt: clock().toISOString(),
       }
       cvs.set(cvId, { ...cv, revisions: [...cv.revisions, revision] })
+      return ok(revision)
+    },
+
+    createVariant: ({ sourceCvId, variant, data, authorName }) => {
+      const source = cvs.get(sourceCvId)
+      if (source === undefined) return err('NOT_FOUND')
+      const name = variant.trim()
+      if (cvsOf(source.personId).some((cv) => sameVariant(cv.variant, name))) return err('VARIANT_TAKEN')
+      const head = current(source)
+      const cvId = idGen()
+      const managed = keepManagedFields(head.data, data)
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: 1,
+        data: { ...managed, meta: { ...managed.meta, variant: name } },
+        source: 'duplicate',
+        message: `Created from ${source.variant}, revision ${String(head.number)}`,
+        authorName,
+        createdAt: clock().toISOString(),
+      }
+      cvs.set(cvId, { id: cvId, personId: source.personId, variant: name, revisions: [revision] })
       return ok(revision)
     },
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { theme } from '../theme'
 
-/** Small 3×3 logo-grid marker in front of section headings. Decorative. */
+/** Small 3×3 logo-grid marker. Decorative. */
 export function GridMark() {
   return (
     <span className="grid-mark" aria-hidden="true">
@@ -15,25 +15,29 @@ export function GridMark() {
 export function Section({ title, children, className }: { title: string; children: ReactNode; className?: string }) {
   return (
     <section className={className === undefined ? 'section' : `section ${className}`}>
-      <div className="section__head">
-        <GridMark />
-        <h2>{title}</h2>
-      </div>
+      <h2>{title}</h2>
       {children}
     </section>
   )
 }
 
-export function Chips({ items, tint = false }: { items: readonly string[]; tint?: boolean }) {
+export function InlineList({ items }: { items: readonly string[] }) {
   if (items.length === 0) return null
   return (
-    <ul className="chips">
+    <ul className="inline-list">
       {items.map((item) => (
-        <li key={item} className={tint ? 'chip chip--tint' : 'chip'}>
-          {item}
-        </li>
+        <li key={item}>{item}</li>
       ))}
     </ul>
+  )
+}
+
+export function Entry({ aside, children }: { aside?: ReactNode; children: ReactNode }) {
+  return (
+    <li className="entry">
+      <div className="entry__aside">{aside}</div>
+      <div className="entry__body">{children}</div>
+    </li>
   )
 }
 

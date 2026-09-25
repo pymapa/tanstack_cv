@@ -1,8 +1,8 @@
-import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
+import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
-import { CvWorkspace, type SaveRequest } from '~/features/cv/components/cv-workspace'
+import { CvWorkspace, type SaveAsNewRequest, type SaveRequest } from '~/features/cv/components/cv-workspace'
 import { TranslationReview, type SaveTranslationRequest } from '~/features/translation/components/translation-review'
-import { getCvFn, saveCvRevisionFn, saveTranslationFn, translateCvFn } from '~/server/functions/cv'
+import { createCvVariantFn, getCvFn, saveCvRevisionFn, saveTranslationFn, translateCvFn } from '~/server/functions/cv'
 import type { TranslationDraft } from '~/server/services/cv-translation'
 
 export const Route = createFileRoute('/cvs/$cvId')({
@@ -10,6 +10,7 @@ export const Route = createFileRoute('/cvs/$cvId')({
   head: ({ loaderData }) => ({
     meta: [{ title: `${loaderData?.person.fullName ?? 'CV'} · ${loaderData?.variant ?? ''} · Kipinä CV bank` }],
   }),
+  staticData: { ownHeader: true },
   component: CvRoute,
 })
 
@@ -22,10 +23,17 @@ function CvRoute() {
 function CvPage() {
   const cv = Route.useLoaderData()
   const router = useRouter()
-  const navigate = useNavigate()
   const [translation, setTranslation] = useState<TranslationDraft | null>(null)
-
   const onSave = useCallback((request: SaveRequest) => saveCvRevisionFn({ data: { cvId: cv.id, ...request } }), [cv.id])
+  const navigate = Route.useNavigate()
+  const onSaveAsNew = useCallback(
+    async (request: SaveAsNewRequest) => {
+      const result = await createCvVariantFn({ data: { sourceCvId: cv.id, ...request } })
+      if (result.ok) void navigate({ to: '/cvs/$cvId', params: { cvId: result.cvId }, ignoreBlocker: true })
+      return result
+    },
+    [cv.id, navigate],
+  )
   // Refresh loader data (history, revision) only after the workspace has recorded the save.
   const refresh = useCallback(() => void router.invalidate(), [router])
   const onTranslate = useCallback(() => translateCvFn({ data: { cvId: cv.id } }), [cv.id])
@@ -54,6 +62,13 @@ function CvPage() {
     )
   }
   return (
-    <CvWorkspace cv={cv} onSave={onSave} onRefresh={refresh} onTranslate={onTranslate} onTranslated={setTranslation} />
+    <CvWorkspace
+      cv={cv}
+      onSave={onSave}
+      onSaveAsNew={onSaveAsNew}
+      onRefresh={refresh}
+      onTranslate={onTranslate}
+      onTranslated={setTranslation}
+    />
   )
 }

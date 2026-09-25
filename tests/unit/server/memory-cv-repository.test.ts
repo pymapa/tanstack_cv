@@ -98,6 +98,84 @@ describe('memory CV repository', () => {
     expect(result).toEqual({ ok: false, error: 'NOT_FOUND' })
   })
 
+  describe('createVariant', () => {
+    const sourceOf = (repo: ReturnType<typeof setup>) => {
+      const cvId = repo.listSearchable()[0]?.cvId ?? ''
+      const source = repo.getCv(cvId)
+      if (source === null) throw new Error('missing cv')
+      return source
+    }
+
+    it('should add a new CV version for the same person from the given data', () => {
+      const repo = setup()
+      const source = sourceOf(repo)
+      const data = { ...source.revision.data, basics: { ...source.revision.data.basics, label: 'Client Architect' } }
+
+      const result = repo.createVariant({ sourceCvId: source.id, variant: 'Client X', data, authorName: 'Tester' })
+
+      if (!result.ok) throw new Error(result.error)
+      const created = repo.getCv(result.value.cvId)
+      expect(created?.person.id).toBe(source.person.id)
+      expect(created?.variant).toBe('Client X')
+      expect(created?.isPrimary).toBe(false)
+      expect(created?.revision).toMatchObject({ number: 1, source: 'duplicate', authorName: 'Tester' })
+      expect(created?.revision.data.basics.label).toBe('Client Architect')
+      expect(created?.revision.data.meta.variant).toBe('Client X')
+      expect(repo.getPerson(source.person.id)?.cvs.map((c) => c.variant)).toEqual(['default', 'Client X', 'PM'])
+    })
+
+    it('should record the source version in the revision message', () => {
+      const repo = setup()
+      const source = sourceOf(repo)
+
+      const result = repo.createVariant({
+        sourceCvId: source.id,
+        variant: 'Client X',
+        data: source.revision.data,
+        authorName: 'Tester',
+      })
+
+      if (!result.ok) throw new Error(result.error)
+      expect(repo.getCv(result.value.cvId)?.revision.message).toBe('Created from default, revision 1')
+    })
+
+    it('should leave the source CV unchanged', () => {
+      const repo = setup()
+      const source = sourceOf(repo)
+      const data = { ...source.revision.data, basics: { ...source.revision.data.basics, label: 'Client Architect' } }
+
+      repo.createVariant({ sourceCvId: source.id, variant: 'Client X', data, authorName: 'Tester' })
+
+      expect(repo.getCv(source.id)).toEqual(source)
+    })
+
+    it('should keep app-managed meta fields from the source CV', () => {
+      const repo = setup()
+      const source = sourceOf(repo)
+      const tampered = { ...source.revision.data, meta: { ...source.revision.data.meta, personId: 'p01' } }
+
+      const result = repo.createVariant({ sourceCvId: source.id, variant: 'Client X', data: tampered, authorName: 'T' })
+
+      if (!result.ok) throw new Error(result.error)
+      expect(repo.getCv(result.value.cvId)?.revision.data.meta.personId).toBe('p99')
+    })
+
+    it.each(['PM', 'pm', ' PM '])('should return VARIANT_TAKEN when the person already has "%s"', (variant) => {
+      const repo = setup()
+      const source = sourceOf(repo)
+
+      const result = repo.createVariant({ sourceCvId: source.id, variant, data: source.revision.data, authorName: 'T' })
+
+      expect(result).toEqual({ ok: false, error: 'VARIANT_TAKEN' })
+    })
+
+    it('should return NOT_FOUND when the source CV does not exist', () => {
+      const result = setup().createVariant({ sourceCvId: 'x', variant: 'Client X', data: buildCv(), authorName: 'T' })
+
+      expect(result).toEqual({ ok: false, error: 'NOT_FOUND' })
+    })
+  })
+
   describe('createCvFrom', () => {
     const create = (
       repo: ReturnType<typeof setup>,

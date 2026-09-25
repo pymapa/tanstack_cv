@@ -358,9 +358,11 @@ variants and tags**.
 - `/people/$personId`: person header, list of CV versions (variant, title, last updated,
   reviewed, primary badge), and actions: open, **Create variant from this**, duplicate,
   set as primary, archive.
-- **Create variant**: copies the current revision into a new `cv` with a new `variant` name
-  (Zod: 1–40 chars, `[A-Za-z0-9 -]`). Revision 1 has `source: duplicate` and records where
-  it came from in its message.
+- **Create variant**: copies the editor's draft (unsaved edits included) into a new `cv` with
+  a new `variant` name (Zod: 1–40 chars, `[A-Za-z0-9 -]`, unique per person ignoring case).
+  The source CV keeps its last saved revision. Revision 1 has `source: duplicate` and records
+  where it came from in its message. In the editor, **Save as new version…** next to **Save**
+  opens a dialog that asks for the name, then opens the new version.
 - Salespeople and admins can create a person (employee or subcontractor) with an empty CV
   skeleton.
 
@@ -568,7 +570,7 @@ DB rows directly.
 | `getPerson` | GET | `{ personId: uuid }` | `cv.read` |
 | `getCv` | GET | `{ cvId: uuid, revisionId?: uuid }` | `cv.read` |
 | `saveCvRevision` | POST | `{ cvId, baseRevisionId, data: CvDocument, message?: string≤200 }` | `cv.update` |
-| `createCvVariant` | POST | `{ sourceCvId, variant, title? }` | `cv.createVariant` |
+| `createCvVariant` | POST | `{ sourceCvId, variant, data: CvDocument, title? }` | `cv.createVariant` |
 | `setPrimaryCv` / `archiveCv` / `markReviewed` | POST | `{ cvId }` | `cv.setPrimary` / `cv.archive` / `cv.update` |
 | `listRevisions` / `diffRevisions` / `restoreRevision` | GET/GET/POST | ids | `cv.read` / `cv.read` / `cv.update` |
 | `aiPropose` | POST | `{ cvId, baseRevisionId, draft: CvDocument, message: string 1..2000, conversationId? }` | `cv.update` |
