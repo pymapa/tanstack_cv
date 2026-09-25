@@ -15,6 +15,32 @@ pnpm test:e2e                           # Playwright E2E + axe (starts its own s
 The app currently reads CVs from `sample_data/` into memory. Edits last until the server
 restarts. There's no login yet (spec M2), so keep the dev server on localhost.
 
+## Local database
+
+PostgreSQL 17 runs in Docker (`docker-compose.yml`) and keeps its data in the `cv-db-data`
+volume. It listens on `127.0.0.1:5432` only. Nothing uses it yet: the app moves from the
+in-memory store to Postgres in spec M1.
+
+```sh
+pnpm db:up                  # start Postgres and wait until it is healthy
+pnpm db:psql                # open a psql shell in the container
+pnpm db:down                # stop it; the volume and its data are kept
+docker compose down -v      # stop it and delete the data
+```
+
+Server code connects through `src/db/client.ts` (`query`, `withTransaction`), which reads
+`DATABASE_URL` (spec §13):
+
+```env
+DATABASE_URL=postgres://cvbank:cvbank-local@localhost:5432/cvbank
+```
+
+The user, password, database and port can be changed with `POSTGRES_USER`, `POSTGRES_PASSWORD`,
+`POSTGRES_DB` and `POSTGRES_PORT`, which `docker compose` reads from the shell or from `.env`;
+update `DATABASE_URL` to match. Postgres only reads the user, password and database when it
+creates the volume, so changing them later also needs `docker compose down -v`, which deletes
+the data.
+
 ## Running agents in a sandbox
 
 Coding agents run unattended in [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/)

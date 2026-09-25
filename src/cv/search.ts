@@ -10,7 +10,7 @@ import {
 } from './search-text'
 
 /**
- * In-memory search over CV documents. Same semantics the SQLite FTS5 index will have (spec §7.2):
+ * In-memory search over CV documents. Same semantics the Postgres full-text index will have (spec §7.2):
  * every term must prefix-match (AND), field-weighted ranking, OR within a facet, AND across facets.
  * Pure: no I/O, no globals.
  */

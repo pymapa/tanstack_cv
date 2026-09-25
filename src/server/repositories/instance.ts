@@ -6,7 +6,7 @@ import { createMemoryCvRepository } from './memory-cv-repository'
 
 /**
  * Process-wide repository. TEMPORARY: an in-memory store seeded from sample_data/ on first use.
- * Edits last until the dev server restarts. Replaced by the SQLite adapter in spec M1.
+ * Edits last until the dev server restarts. Replaced by the Postgres adapter in spec M1.
  * Kept on globalThis so Vite HMR doesn't re-seed (and change every id) on each edit.
  */
 const globalStore = globalThis as typeof globalThis & { __cvRepository?: Promise<CvRepository> }
