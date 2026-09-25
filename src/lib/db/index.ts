@@ -38,6 +38,11 @@ export async function withTransaction<T>(
 ): Promise<T> {
 	const client = await getPool().connect();
 	let brokenConnection: Error | undefined;
+	// The pool stops listening for errors on a checked-out client; an unhandled one would crash the server.
+	const onError = (error: Error) => {
+		brokenConnection = error;
+	};
+	client.on("error", onError);
 	try {
 		await client.query("BEGIN");
 		const result = await fn(client);
@@ -48,10 +53,11 @@ export async function withTransaction<T>(
 			await client.query("ROLLBACK");
 		} catch (rollbackError) {
 			// Keep the original error; the connection is unusable, so the pool must discard it.
-			brokenConnection = rollbackError as Error;
+			brokenConnection ??= rollbackError as Error;
 		}
 		throw error;
 	} finally {
+		client.off("error", onError);
 		client.release(brokenConnection);
 	}
 }
