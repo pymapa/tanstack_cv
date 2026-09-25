@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
+import CvChatWidget from '../components/CvChatWidget'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
@@ -45,9 +46,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Header />
         {children}
         <Footer />
+        <CvChatWidget />
         <TanStackDevtools
           config={{
-            position: 'bottom-right',
+            // Bottom-right is taken by the CV assistant.
+            position: 'bottom-left',
           }}
           plugins={[
             {
