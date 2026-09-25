@@ -5,7 +5,7 @@ import { getIn, pathKey, type Path } from './update'
 export const SHORT_LIMIT = 300
 export const LONG_LIMIT = 5000
 
-const INPUT =
+export const INPUT =
   'w-full rounded-[5px] border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-muted/70 ' +
   'hover:border-ink/40 aria-[invalid=true]:border-danger read-only:bg-mist read-only:text-muted'
 

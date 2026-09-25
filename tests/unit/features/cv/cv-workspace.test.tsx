@@ -1,9 +1,9 @@
 // @vitest-environment jsdom
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeAll, describe, expect, it, vi } from 'vitest'
 import type { CvDocument } from '~/cv/schema'
-import type { SaveCvResult } from '~/server/functions/cv'
+import type { CreateCvVariantResult, SaveCvResult } from '~/server/functions/cv'
 import { CvWorkspace } from '~/features/cv/components/cv-workspace'
 import type { CvView } from '~/server/repositories/cv-repository'
 import { buildCv } from '../../../fixtures/cv'
@@ -50,10 +50,13 @@ const view = (revisionId = 'rev-1', data: CvDocument = buildCv()): CvView => ({
   revisions: [],
 })
 
-const setup = (onSave = vi.fn().mockResolvedValue({ ok: true, revisionId: 'rev-2', revisionNumber: 2 })) => {
+const setup = (
+  onSave = vi.fn().mockResolvedValue({ ok: true, revisionId: 'rev-2', revisionNumber: 2 }),
+  onSaveAsNew = vi.fn<() => Promise<CreateCvVariantResult>>().mockResolvedValue({ ok: true, cvId: 'cv-2' }),
+) => {
   const onRefresh = vi.fn()
-  render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
-  return { onSave, onRefresh, user: userEvent.setup() }
+  render(<CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={onSaveAsNew} onRefresh={onRefresh} />)
+  return { onSave, onSaveAsNew, onRefresh, user: userEvent.setup() }
 }
 
 describe('CvWorkspace', () => {
@@ -122,7 +125,7 @@ describe('CvWorkspace', () => {
     const onSave = vi.fn(() => new Promise<SaveCvResult>((resolve) => (finish = resolve)))
     const onRefresh = vi.fn()
     const user = userEvent.setup()
-    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={onRefresh} />)
     await user.type(screen.getByLabelText('Label'), ' Lead')
     await user.click(screen.getByRole('button', { name: 'Save' }))
 
@@ -132,7 +135,7 @@ describe('CvWorkspace', () => {
       await Promise.resolve()
     })
     const saved = buildCv({ basics: { label: 'Software Architect Lead' } })
-    rerender(<CvWorkspace cv={view('rev-2', saved)} onSave={onSave} onRefresh={onRefresh} />)
+    rerender(<CvWorkspace cv={view('rev-2', saved)} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={onRefresh} />)
 
     expect(onRefresh).toHaveBeenCalledTimes(1)
     expect(screen.getByLabelText('Label')).toHaveValue('Software Architect Lead More')
@@ -142,16 +145,126 @@ describe('CvWorkspace', () => {
   it('should clear the conflict and show the latest version after reloading', async () => {
     const onSave = vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' })
     const user = userEvent.setup()
-    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={vi.fn()} />)
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={vi.fn()} />)
     await user.type(screen.getByLabelText('Label'), 'X')
     await user.click(screen.getByRole('button', { name: 'Save' }))
     await screen.findByRole('alert')
 
     const latest = buildCv({ basics: { label: 'Saved elsewhere' } })
-    rerender(<CvWorkspace cv={view('rev-9', latest)} onSave={onSave} onRefresh={vi.fn()} />)
+    rerender(<CvWorkspace cv={view('rev-9', latest)} onSave={onSave} onSaveAsNew={vi.fn()} onRefresh={vi.fn()} />)
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
     expect(screen.getByLabelText('Label')).toHaveValue('Saved elsewhere')
     expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()
+  })
+
+  describe('save as new version', () => {
+    // jsdom has no <dialog> modal support.
+    beforeAll(() => {
+      HTMLDialogElement.prototype.showModal = function (this: HTMLDialogElement) {
+        this.open = true
+      }
+    })
+
+    const openDialog = async (user: ReturnType<typeof userEvent.setup>) => {
+      await user.click(screen.getByRole('button', { name: 'Save as new version…' }))
+      return screen.getByRole('dialog', { name: 'Save as new version' })
+    }
+
+    it('should ask for a name when Save as new version is clicked', async () => {
+      const { user } = setup()
+
+      await openDialog(user)
+
+      expect(screen.getByLabelText('Version name')).toHaveFocus()
+    })
+
+    it('should create a new version from the draft with the entered name', async () => {
+      const { user, onSaveAsNew } = setup()
+      await user.type(screen.getByLabelText('Label'), ' Lead')
+      await openDialog(user)
+
+      await user.type(screen.getByLabelText('Version name'), 'Client X{Enter}')
+
+      expect(onSaveAsNew).toHaveBeenCalledWith({
+        variant: 'Client X',
+        data: expect.objectContaining({ basics: expect.objectContaining({ label: 'Software Architect Lead' }) }),
+      })
+    })
+
+    it('should explain an invalid name without calling the server', async () => {
+      const { user, onSaveAsNew } = setup()
+      await openDialog(user)
+
+      await user.type(screen.getByLabelText('Version name'), 'Client/X')
+      await user.click(screen.getByRole('button', { name: 'Create version' }))
+
+      expect(screen.getByLabelText('Version name')).toHaveAccessibleDescription(
+        expect.stringContaining('Use only letters, digits, spaces, and hyphens.'),
+      )
+      expect(screen.getByLabelText('Version name')).toHaveAttribute('aria-invalid', 'true')
+      expect(onSaveAsNew).not.toHaveBeenCalled()
+    })
+
+    it('should say so when the person already has a version with that name', async () => {
+      const { user } = setup(undefined, vi.fn().mockResolvedValue({ ok: false, error: 'VARIANT_TAKEN' }))
+      await openDialog(user)
+
+      await user.type(screen.getByLabelText('Version name'), 'PM{Enter}')
+
+      expect(screen.getByLabelText('Version name')).toHaveAccessibleDescription(
+        expect.stringContaining('Anna Example already has a version with this name.'),
+      )
+    })
+
+    it('should show a generic error when creating the version fails', async () => {
+      const { user } = setup(undefined, vi.fn().mockRejectedValue(new Error('boom')))
+      await openDialog(user)
+
+      await user.type(screen.getByLabelText('Version name'), 'Client X{Enter}')
+
+      expect(screen.getByLabelText('Version name')).toHaveAccessibleDescription(
+        expect.stringContaining('Saving failed. Try again.'),
+      )
+    })
+
+    it('should close without saving when Cancel is clicked', async () => {
+      const { user, onSaveAsNew } = setup()
+      await openDialog(user)
+
+      await user.click(screen.getByRole('button', { name: 'Cancel' }))
+
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+      expect(onSaveAsNew).not.toHaveBeenCalled()
+    })
+
+    it('should not save the current version with Ctrl+S while the dialog is open', async () => {
+      const { user, onSave } = setup()
+      await user.type(screen.getByLabelText('Label'), 'X')
+      await openDialog(user)
+
+      await user.keyboard('{Control>}s{/Control}')
+
+      expect(onSave).not.toHaveBeenCalled()
+    })
+
+    it('should keep the dialog open while the version is being created', async () => {
+      const { user } = setup(undefined, vi.fn().mockReturnValue(new Promise(() => undefined)))
+      const dialog = await openDialog(user)
+
+      await user.type(screen.getByLabelText('Version name'), 'Client X{Enter}')
+      await user.keyboard('{Escape}')
+
+      expect(screen.getByRole('button', { name: 'Cancel' })).toBeDisabled()
+      expect(dialog).toBeInTheDocument()
+    })
+
+    it('should be unavailable when the CV has problems', async () => {
+      const { user } = setup()
+
+      await user.clear(screen.getByLabelText('Label'))
+
+      expect(screen.getByRole('button', { name: 'Save as new version…' })).toBeDisabled()
+    })
   })
 })

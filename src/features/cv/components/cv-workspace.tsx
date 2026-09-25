@@ -4,17 +4,20 @@ import { Container } from '~/components/container'
 import type { CvDocument } from '~/cv/schema'
 import { CvEditor } from '~/features/editor/cv-editor'
 import { validateCv } from '~/features/editor/validation'
-import type { SaveCvResult } from '~/server/functions/cv'
+import type { CreateCvVariantResult, SaveCvResult } from '~/server/functions/cv'
 import type { CvView } from '~/server/repositories/cv-repository'
 import { CvPreview } from './cv-preview'
 import { RevisionList } from './revision-list'
+import { SaveAsVersionDialog } from './save-as-version-dialog'
 import { UnsavedChangesDialog } from './unsaved-changes-dialog'
 
 export type SaveRequest = Readonly<{ baseRevisionId: string; data: CvDocument }>
+export type SaveAsNewRequest = Readonly<{ variant: string; data: CvDocument }>
 
 type Props = Readonly<{
   cv: CvView
   onSave: (request: SaveRequest) => Promise<SaveCvResult>
+  onSaveAsNew: (request: SaveAsNewRequest) => Promise<CreateCvVariantResult>
   /** Reload the CV from the server: after a recorded save (history) and from the conflict banner. */
   onRefresh: () => void
 }>
@@ -28,10 +31,11 @@ type SaveState =
 
 const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
-export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
+export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
+  const [naming, setNaming] = useState(false)
 
   // A new revision arrived from the server. If it's the one this workspace just saved, `base`
   // already points at it: keep the draft, which may hold edits typed during the save. Otherwise
@@ -50,6 +54,7 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
   const dirty = !sameCv(draft, base.data)
   const issues = useMemo(() => validateCv(draft), [draft])
   const canSave = dirty && issues.length === 0 && saveState.kind !== 'saving'
+  const canSaveAsNew = issues.length === 0 && saveState.kind !== 'saving'
 
   const save = useCallback(async () => {
     if (!canSave) return
@@ -73,14 +78,14 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') {
         e.preventDefault()
-        void save()
+        if (!naming) void save()
       }
     }
     window.addEventListener('keydown', onKey)
     return () => {
       window.removeEventListener('keydown', onKey)
     }
-  }, [save])
+  }, [save, naming])
 
   const blocker = useBlocker({ shouldBlockFn: () => dirty, enableBeforeUnload: dirty, withResolver: true })
 
@@ -89,6 +94,17 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
       <div className="border-b border-line bg-white">
         <Container className="flex items-center justify-end gap-6 py-3">
           <SaveStatus state={saveState} dirty={dirty} issueCount={issues.length} />
+          <button
+            type="button"
+            onClick={() => {
+              setNaming(true)
+            }}
+            disabled={!canSaveAsNew}
+            className="rounded-card border border-line px-5 py-2.5 text-sm font-medium hover:border-ink disabled:cursor-not-allowed disabled:text-muted disabled:hover:border-line"
+            data-testid="cv-save-as-new"
+          >
+            Save as new version…
+          </button>
           <button
             type="button"
             onClick={() => void save()}
@@ -154,6 +170,15 @@ export function CvWorkspace({ cv, onSave, onRefresh }: Props) {
         </section>
       </div>
 
+      {naming && (
+        <SaveAsVersionDialog
+          personName={cv.person.fullName}
+          onSubmit={(variant) => onSaveAsNew({ variant, data: draft })}
+          onCancel={() => {
+            setNaming(false)
+          }}
+        />
+      )}
       {blocker.status === 'blocked' && <UnsavedChangesDialog onStay={blocker.reset} onLeave={blocker.proceed} />}
     </div>
   )
