@@ -497,8 +497,14 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
 - The Kipinä look must not become a generic template. **A human must supply** brand
   assets (logo SVG, fonts and license, colors, a reference CV PDF). Until then, `theme.ts`
   holds clearly labeled placeholders (see §16).
+- Templates live in a registry (`src/pdf/template/templates.ts`), one entry per
+  `meta.x-template` value: `kipina-portrait` (A4 portrait, the default when the field is
+  missing) and `kipina-landscape` (A4 landscape, the same sections reflowed: the cover band
+  becomes a side column and body entries run in two columns). The editor header has a
+  **Template** select. The choice is saved with the CV revision, and the preview and PDF use it.
+  Each template sets its page size with CSS `@page`, which `preferCSSPageSize` applies.
 - Export options (dialog): include contact details (default **off** for client exports),
-  sections to include, max number of projects, paper size A4.
+  sections to include, and max number of projects.
 - File name: `Kipina_CV_<First>_<Last>_<variant>_<YYYY-MM-DD>.pdf` (ASCII-folded, sanitized).
 
 **Rendering (`src/server/pdf/render.ts`)**
@@ -512,8 +518,8 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
    outline: true, preferCSSPageSize: true })`.
 4. pdf-lib post-process: set Title (`<Name> – <label> – Kipinä CV`), Author (`Kipinä`),
    Subject, Keywords (top skills), Language (`en`), CreationDate. **Attach `cv.json`**: the
-   JSON Resume export of the same revision, stripped of `meta.x-conversionNotes` and of
-   contact details unless those are included.
+   JSON Resume export of the same revision, stripped of `meta.x-conversionNotes`,
+   `meta.x-template`, and contact details unless those are included.
 5. At most 2 renders at a time (a semaphore); 15 s timeout; the context is closed in `finally`.
 
 **Serving**
