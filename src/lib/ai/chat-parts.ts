@@ -10,3 +10,15 @@ export const withoutRepeatedToolCalls = <T extends Part>(parts: ReadonlyArray<T>
     return !repeated
   })
 }
+
+type Message = Readonly<{ role: string; parts: ReadonlyArray<Part> }>
+
+/**
+ * True when the latest answer ends at a tool call with no text after it: the run stopped
+ * (a limit, an error or a lost connection) before the assistant replied.
+ */
+export const endedBeforeAnswer = (messages: ReadonlyArray<Message>): boolean => {
+  const last = messages.at(-1)
+  if (last?.role !== 'assistant') return false
+  return last.parts.filter(isShown).at(-1)?.type === 'tool-call'
+}

@@ -216,3 +216,16 @@ describe('CvChatWidget on pages with their own agent', () => {
     expect(history.load).toHaveBeenCalledTimes(1)
   })
 })
+
+describe('CvChatWidget when an answer stops early', () => {
+  it('should say the assistant stopped when the saved answer ends at a tool call', async () => {
+    const stopped: StoredMessage[] = [
+      { id: 'm1', role: 'user', parts: [{ type: 'text', content: 'Who knows Kotlin?' }] },
+      { id: 'a1', role: 'assistant', parts: [{ type: 'tool-call', id: 't1', name: 'searchPeople', arguments: '{}' }] },
+    ]
+
+    await openChat(fakeHistory(stopped))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('The assistant stopped before it finished.')
+  })
+})

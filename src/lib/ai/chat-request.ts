@@ -1,4 +1,4 @@
-import { chat, toServerSentEventsResponse } from '@tanstack/ai'
+import { chat, chatParamsFromRequestBody, toServerSentEventsResponse } from '@tanstack/ai'
 
 import { claudeText, isClaudeConfigured } from '~/lib/ai/claude'
 import { loopGuard } from '~/lib/ai/loop-guard'
@@ -14,6 +14,27 @@ export type ChatAgent = Readonly<{
   /** Tools the agent may call again with the same arguments (see `loopGuard`). */
   repeatableTools?: ReadonlyArray<string>
 }>
+
+type RunParams = Readonly<Pick<ChatOptions, 'threadId' | 'runId' | 'parentRunId' | 'resume'>>
+
+/**
+ * The AG-UI run fields of a request: which run this is and, when a browser-side tool finished,
+ * the `resume` that carries its result back to the paused run. Tools are left out on purpose:
+ * they always come from the server's agent. Returns null when the body is not an agent run.
+ */
+export async function runParamsFrom(body: unknown): Promise<RunParams | null> {
+  try {
+    const { threadId, runId, parentRunId, resume } = await chatParamsFromRequestBody(body)
+    return {
+      threadId,
+      runId,
+      ...(parentRunId === undefined ? {} : { parentRunId }),
+      ...(resume === undefined ? {} : { resume }),
+    }
+  } catch {
+    return null
+  }
+}
 
 function jsonError(status: number, error: string) {
   return Response.json({ error }, { status })
@@ -37,6 +58,9 @@ export async function handleChatRequest(request: Request, agent: ChatAgent): Pro
   const attachments = checkAttachments(body.messages)
   if (!attachments.ok) return jsonError(400, attachments.error)
 
+  const run = await runParamsFrom(body)
+  if (run === null) return jsonError(400, 'The request is not a chat run.')
+
   if (!isClaudeConfigured()) {
     return jsonError(503, 'ANTHROPIC_API_KEY is not set on the server.')
   }
@@ -53,6 +77,7 @@ export async function handleChatRequest(request: Request, agent: ChatAgent): Pro
       systemPrompts: [agent.systemPrompt],
       agentLoopStrategy: loopGuard({ repeatable: agent.repeatableTools ?? [] }),
       messages: body.messages as ChatMessages,
+      ...run,
       abortController,
     })
     return toServerSentEventsResponse(stream, { abortController })

@@ -6,7 +6,7 @@ import { Streamdown } from 'streamdown'
 
 import { chatMarkdownComponents } from '~/components/chat-link'
 import { type StoredMessage, toStoredMessages } from '~/lib/ai/chat-history'
-import { withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
+import { endedBeforeAnswer, withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
 import { attachmentName, type AttachmentTag, toAttachmentPart, WORK_SPEC_ACCEPT } from '~/lib/ai/work-spec'
 
 type Attachment = Readonly<{ name: string; part: ContentPart }>
@@ -310,6 +310,11 @@ export function ChatPanel({
         {error && (
           <p role="alert" className="m-0 text-sm text-red-700">
             Something went wrong: {error.message}
+          </p>
+        )}
+        {!isLoading && !error && endedBeforeAnswer(messages) && (
+          <p role="alert" className="m-0 text-sm text-red-700">
+            The assistant stopped before it finished. Send a message to continue.
           </p>
         )}
         <div ref={endRef} />

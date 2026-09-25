@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
+import { endedBeforeAnswer, withoutRepeatedToolCalls } from '~/lib/ai/chat-parts'
 
 const call = (id: string, name: string) => ({ type: 'tool-call', id, name })
 const result = (toolCallId: string) => ({ type: 'tool-result', toolCallId })
@@ -31,5 +31,41 @@ describe('withoutRepeatedToolCalls', () => {
     const parts = [call('1', 'searchPeople'), text('Found a few.'), call('2', 'searchPeople')]
 
     expect(ids(withoutRepeatedToolCalls(parts))).toEqual(['1', 'Found a few.', '2'])
+  })
+})
+
+describe('endedBeforeAnswer', () => {
+  const user = { role: 'user', parts: [{ type: 'text', content: 'Fill in my CV' }] }
+
+  it('should be true when the last answer stops at a tool call', () => {
+    const messages = [
+      user,
+      {
+        role: 'assistant',
+        parts: [
+          { type: 'text', content: 'Reading.' },
+          { type: 'tool-call', name: 'readDraft' },
+        ],
+      },
+    ]
+
+    expect(endedBeforeAnswer(messages)).toBe(true)
+  })
+
+  it('should be false when text follows the last tool call', () => {
+    const messages = [
+      user,
+      {
+        role: 'assistant',
+        parts: [{ type: 'tool-call', name: 'readDraft' }, { type: 'tool-result' }, { type: 'text', content: 'Done.' }],
+      },
+    ]
+
+    expect(endedBeforeAnswer(messages)).toBe(false)
+  })
+
+  it('should be false before the assistant has answered', () => {
+    expect(endedBeforeAnswer([user])).toBe(false)
+    expect(endedBeforeAnswer([])).toBe(false)
   })
 })
