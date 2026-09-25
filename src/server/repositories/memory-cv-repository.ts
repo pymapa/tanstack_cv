@@ -139,6 +139,26 @@ export const createMemoryCvRepository = (seed: readonly ImportedPerson[], { cloc
       return ok(revision)
     },
 
+    restoreRevision: ({ cvId, revisionId, baseRevisionId, authorName }) => {
+      const cv = cvs.get(cvId)
+      const target = cv?.revisions.find((rev) => rev.id === revisionId)
+      if (cv === undefined || target === undefined) return err('NOT_FOUND')
+      const head = current(cv)
+      if (head.id !== baseRevisionId) return err('CONFLICT')
+      const revision: CvRevision = {
+        id: idGen(),
+        cvId,
+        number: head.number + 1,
+        data: keepManagedFields(head.data, target.data),
+        source: 'restore',
+        message: `Restored revision ${String(target.number)}`,
+        authorName,
+        createdAt: clock().toISOString(),
+      }
+      cvs.set(cvId, { ...cv, revisions: [...cv.revisions, revision] })
+      return ok(revision)
+    },
+
     createVariant: ({ sourceCvId, variant, data, authorName }) => {
       const source = cvs.get(sourceCvId)
       if (source === undefined) return err('NOT_FOUND')

@@ -96,8 +96,9 @@ with a short note on the intended approach. This list is part of the deliverable
 - **AI chat editing (spec §7.6, M6):** the model proposes a validated JSON patch, the user reviews
   it as diff cards and accepts or rejects each change, and the result is saved as a revision.
   The provider is off until a human approves the data transfer (spec §9.3).
-- **History diff and restore (spec §7.5):** compare two revisions and restore an old one as a new
-  revision. The history list is built; diff and restore are not.
+- **History diff (spec §7.5):** compare two revisions side by side. Restore is built: it saves the
+  old content as a new revision. Intended approach for the diff: a pure function that lists the
+  changed fields between the selected revision and the current one.
 - **Variants, tags, primary version:** set primary, archive, and curated tags as a search
   facet (spec §7.3, §7.8). The editor's **Save as new version…** creates a variant. Intended
   approach for the rest: a "Create variant from this" action on the person page that opens

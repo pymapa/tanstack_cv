@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { CreateVariantInput } from '~/server/functions/cv'
+import { CreateVariantInput, RestoreRevisionInput } from '~/server/functions/cv'
 import { buildCv } from '../../fixtures/cv'
 
 const valid = { sourceCvId: '0199aa00-0000-7000-8000-000000000001', variant: 'Client X', data: buildCv() }
@@ -16,5 +16,25 @@ describe('CreateVariantInput', () => {
     { case: 'a missing document', input: { sourceCvId: valid.sourceCvId, variant: 'Client X' } },
   ])('should reject $case', ({ input }) => {
     expect(CreateVariantInput.safeParse(input).success).toBe(false)
+  })
+})
+
+describe('RestoreRevisionInput', () => {
+  const restore = {
+    cvId: '0199aa00-0000-7000-8000-000000000001',
+    revisionId: '0199aa00-0000-7000-8000-000000000002',
+    baseRevisionId: '0199aa00-0000-7000-8000-000000000003',
+  }
+
+  it('should accept a CV, the revision to restore and the base revision', () => {
+    expect(RestoreRevisionInput.safeParse(restore).success).toBe(true)
+  })
+
+  it.each([
+    { case: 'a malformed revision id', input: { ...restore, revisionId: '../x' } },
+    { case: 'a missing base revision', input: { cvId: restore.cvId, revisionId: restore.revisionId } },
+    { case: 'an unknown key', input: { ...restore, data: buildCv() } },
+  ])('should reject $case', ({ input }) => {
+    expect(RestoreRevisionInput.safeParse(input).success).toBe(false)
   })
 })

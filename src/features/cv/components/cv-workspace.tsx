@@ -17,11 +17,13 @@ import { UnsavedChangesDialog } from './unsaved-changes-dialog'
 
 export type SaveRequest = Readonly<{ baseRevisionId: string; data: CvDocument }>
 export type SaveAsNewRequest = Readonly<{ variant: string; data: CvDocument }>
+export type RestoreRequest = Readonly<{ revisionId: string; baseRevisionId: string }>
 
 type Props = Readonly<{
   cv: CvView
   onSave: (request: SaveRequest) => Promise<SaveCvResult>
   onSaveAsNew: (request: SaveAsNewRequest) => Promise<CreateCvVariantResult>
+  onRestore: (request: RestoreRequest) => Promise<SaveCvResult>
   /** Reload the CV from the server: after a recorded save (history) and from the conflict banner. */
   onRefresh: () => void
   /** Machine-translates the saved revision into the other language. Saves nothing. */
@@ -39,7 +41,7 @@ type SaveState =
 
 const sameCv = (a: CvDocument, b: CvDocument): boolean => a === b || JSON.stringify(a) === JSON.stringify(b)
 
-export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, onTranslated }: Props) {
+export function CvWorkspace({ cv, onSave, onSaveAsNew, onRestore, onRefresh, onTranslate, onTranslated }: Props) {
   const [draft, setDraft] = useState<CvDocument>(cv.revision.data)
   const [base, setBase] = useState({ id: cv.revision.id, data: cv.revision.data })
   const [saveState, setSaveState] = useState<SaveState>({ kind: 'idle' })
@@ -82,6 +84,23 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
       setSaveState({ kind: 'error' })
     }
   }, [canSave, onSave, onRefresh, base.id, draft])
+
+  const restore = useCallback(
+    async (revisionId: string) => {
+      setSaveState({ kind: 'saving' })
+      try {
+        const result = await onRestore({ revisionId, baseRevisionId: base.id })
+        if (result.ok) {
+          onRefresh()
+        } else {
+          setSaveState({ kind: result.error === 'CONFLICT' ? 'conflict' : 'error' })
+        }
+      } catch {
+        setSaveState({ kind: 'error' })
+      }
+    },
+    [onRestore, onRefresh, base.id],
+  )
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -181,7 +200,11 @@ export function CvWorkspace({ cv, onSave, onSaveAsNew, onRefresh, onTranslate, o
         <div className="grid min-h-0 flex-1 grid-cols-[minmax(520px,640px)_minmax(0,1fr)]">
           <section aria-label="Edit CV" className="min-h-0 overflow-y-auto border-r border-line bg-white px-8 py-6">
             <CvEditor value={draft} onChange={setDraft} issues={issues} />
-            <RevisionList revisions={cv.revisions} />
+            <RevisionList
+              revisions={cv.revisions}
+              onRestore={(revisionId) => void restore(revisionId)}
+              restoreDisabled={saveState.kind === 'saving'}
+            />
           </section>
           <section aria-label="PDF preview" className="flex min-h-0 flex-col bg-mist">
             <h2 className="eyebrow px-8 pb-2 pt-4">Preview</h2>

@@ -67,3 +67,22 @@ test.describe('PDF export', () => {
     expect(response.status()).toBe(404)
   })
 })
+
+test.describe('History', () => {
+  test('should restore an earlier revision as a new revision', async ({ page }) => {
+    const cv = await openCvOf(page, 'Teemu Aaltola')
+    const original = await cv.label.inputValue()
+    const before = await cv.latestRevision()
+    await cv.setLabel('Temporary title')
+    await cv.saveWithShortcut()
+    await expect(page.getByText(`History (${String(before + 1)})`)).toBeVisible()
+
+    await page.getByText(/^History \(\d+\)$/).click()
+    await page.getByRole('button', { name: `Restore revision ${String(before)}` }).click()
+    await page.getByRole('button', { name: 'Yes, restore' }).click()
+
+    await expect(page.getByText(`History (${String(before + 2)})`)).toBeVisible()
+    await expect(cv.label).toHaveValue(original)
+    await expect(page.getByText(`Restored revision ${String(before)}`)).toBeVisible()
+  })
+})

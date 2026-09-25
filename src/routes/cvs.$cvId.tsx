@@ -1,8 +1,20 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useCallback, useState } from 'react'
-import { CvWorkspace, type SaveAsNewRequest, type SaveRequest } from '~/features/cv/components/cv-workspace'
+import {
+  CvWorkspace,
+  type RestoreRequest,
+  type SaveAsNewRequest,
+  type SaveRequest,
+} from '~/features/cv/components/cv-workspace'
 import { TranslationReview, type SaveTranslationRequest } from '~/features/translation/components/translation-review'
-import { createCvVariantFn, getCvFn, saveCvRevisionFn, saveTranslationFn, translateCvFn } from '~/server/functions/cv'
+import {
+  createCvVariantFn,
+  getCvFn,
+  restoreCvRevisionFn,
+  saveCvRevisionFn,
+  saveTranslationFn,
+  translateCvFn,
+} from '~/server/functions/cv'
 import type { TranslationDraft } from '~/server/services/cv-translation'
 
 export const Route = createFileRoute('/cvs/$cvId')({
@@ -25,6 +37,10 @@ function CvPage() {
   const router = useRouter()
   const [translation, setTranslation] = useState<TranslationDraft | null>(null)
   const onSave = useCallback((request: SaveRequest) => saveCvRevisionFn({ data: { cvId: cv.id, ...request } }), [cv.id])
+  const onRestore = useCallback(
+    (request: RestoreRequest) => restoreCvRevisionFn({ data: { cvId: cv.id, ...request } }),
+    [cv.id],
+  )
   const navigate = Route.useNavigate()
   const onSaveAsNew = useCallback(
     async (request: SaveAsNewRequest) => {
@@ -66,6 +82,7 @@ function CvPage() {
       cv={cv}
       onSave={onSave}
       onSaveAsNew={onSaveAsNew}
+      onRestore={onRestore}
       onRefresh={refresh}
       onTranslate={onTranslate}
       onTranslated={setTranslation}
