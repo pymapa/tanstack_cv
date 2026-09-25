@@ -30,7 +30,7 @@ test.describe('Save as new version', () => {
     await cv.versionName.fill('E2E Client X')
     await page.getByTestId('cv-version-create').click()
 
-    await expect(cv.heading).toContainText('E2E Client X')
+    await expect(cv.versionTitle('E2E Client X')).toBeVisible()
     await waitForApp(page)
     expect(page.url()).not.toBe(originalUrl)
     await expect(cv.label).toHaveValue('Cloud Architect for Client X')
@@ -42,7 +42,7 @@ test.describe('Save as new version', () => {
   test('should refuse a name the person already uses', async ({ page }) => {
     const cv = await openCv(page)
     await cv.saveAsNewVersion('E2E Duplicate')
-    await expect(cv.heading).toContainText('E2E Duplicate')
+    await expect(cv.versionTitle('E2E Duplicate')).toBeVisible()
     await waitForApp(page)
 
     await cv.saveAsNewVersion('e2e duplicate')

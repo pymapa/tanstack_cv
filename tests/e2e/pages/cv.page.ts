@@ -54,6 +54,10 @@ export class CvPage {
     await this.page.keyboard.press('ControlOrMeta+s')
   }
 
+  versionTitle(name: string): Locator {
+    return this.page.getByRole('banner').getByText(name, { exact: true })
+  }
+
   async saveAsNewVersion(name: string) {
     await this.saveAsNew.click()
     await this.versionName.fill(name)
