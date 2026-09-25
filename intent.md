@@ -103,6 +103,17 @@ with a short note on the intended approach. This list is part of the deliverable
 - **Export options dialog:** a contact-details toggle (the API supports `?contact=1`), section
   toggles, and a project limit so long CVs fit the cover page.
 - **Staleness reminders:** a "needs review" dashboard and Slack reminders (spec §7.10).
+- **Final answer when the chatbot's loop guard stops it.** The guard in
+  `src/lib/ai/loop-guard.ts` ends the run after too many turns or repeated identical tool
+  calls, and the reply can then end without a summary. Intended approach: when the guard
+  trips, run one more model turn with tools disabled and ask for an answer from what was
+  found so far.
+- **Saved chat history.** Conversations live only in the browser tab. Intended approach:
+  store them per signed-in user once sign-in exists, so a salesperson can return to a
+  client search.
+- **Sign-in for the chatbot.** The chat widget and `/api/cv-chat` are open to anyone who can
+  reach the dev server, like the rest of the app for now. They should sit behind the same
+  sign-in as the rest of the CV bank.
 
 ## Test data
 

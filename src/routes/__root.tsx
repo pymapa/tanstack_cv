@@ -2,6 +2,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { useEffect, type ReactNode } from 'react'
 import { AppHeader } from '~/components/app-header'
+import CvChatWidget from '~/components/CvChatWidget'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
@@ -34,6 +35,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <main id="main" className="pb-24">
           {children}
         </main>
+        <CvChatWidget />
         <HydrationMarker />
         <Scripts />
       </body>
