@@ -64,6 +64,7 @@ export async function withTransaction<T>(
 
 /** Closes the pool, so a one-off script can exit. */
 export async function closeDb(): Promise<void> {
-	await pool?.end();
+	const ending = pool;
 	pool = undefined;
+	await ending?.end();
 }

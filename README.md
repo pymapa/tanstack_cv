@@ -29,7 +29,9 @@ DATABASE_URL=postgres://cvbank:cvbank-local@localhost:5432/cvbank
 ```
 
 The user, password, database and port can be changed with `POSTGRES_USER`, `POSTGRES_PASSWORD`,
-`POSTGRES_DB` and `POSTGRES_PORT` in `.env`; update `DATABASE_URL` to match.
+`POSTGRES_DB` and `POSTGRES_PORT` in `.env`; update `DATABASE_URL` to match. Postgres only
+reads the user, password and database when it creates the volume, so changing them later also
+needs `docker compose down -v`, which deletes the data.
 
 # Building For Production
 
