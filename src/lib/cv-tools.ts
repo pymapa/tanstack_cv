@@ -9,10 +9,26 @@ import { z } from "zod";
 
 import { type Cv, readCv, readPeople, toSharedCv } from "#/lib/cv-data";
 
+/** All string and number values in a JSON value, without its keys. */
+function values(value: unknown): Array<string> {
+	if (typeof value === "string") return [value];
+	if (typeof value === "number") return [String(value)];
+	if (value && typeof value === "object") {
+		return Object.values(value).flatMap(values);
+	}
+	return [];
+}
+
+/** Matches `term` as a whole word, so "go" doesn't match "Google". */
+function wholeWord(term: string): RegExp {
+	const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	return new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, "iu");
+}
+
 export const searchPeopleToolDef = toolDefinition({
 	name: "searchPeople",
 	description:
-		"Search Kipinä people by skill, technology, role, industry or past client. Every term must match somewhere in the person's CV. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
+		"Search Kipinä people by skill, technology, role, industry or past client. Every term must appear as a whole word somewhere in the person's CV. Returns each matching person with their CV versions. Pass an empty query to list everyone.",
 	inputSchema: z.object({
 		query: z
 			.string()
@@ -23,7 +39,7 @@ export const searchPeopleToolDef = toolDefinition({
 });
 
 export const searchPeople = searchPeopleToolDef.server(async ({ query }) => {
-	const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+	const patterns = query.split(/\s+/).filter(Boolean).map(wholeWord);
 	const people = await readPeople();
 	const results = await Promise.all(
 		people.map(async (person) => {
@@ -31,11 +47,8 @@ export const searchPeople = searchPeopleToolDef.server(async ({ query }) => {
 				person.versions.map((v) => readCv(v.file, people)),
 			)) as Array<Cv>;
 			// Search everything the model may see, so a match here is a match in getCv.
-			const text = cvs
-				.map((cv) => JSON.stringify(toSharedCv(cv)))
-				.join(" ")
-				.toLowerCase();
-			if (!terms.every((term) => text.includes(term))) return null;
+			const text = cvs.flatMap((cv) => values(toSharedCv(cv))).join("\n");
+			if (!patterns.every((pattern) => pattern.test(text))) return null;
 			const primary =
 				cvs[person.versions.findIndex((v) => v.file === person.primary)];
 			return {
