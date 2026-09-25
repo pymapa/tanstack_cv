@@ -13,6 +13,11 @@ sbx env run                              # Claude Code
 sbx env run --env-arg agent=cursor       # Cursor
 ```
 
+## Connecting your IDE to the sandbox
+
+- [VS Code](https://docs.docker.com/ai/sandboxes/integrations/vscode/)
+- [Cursor](https://docs.docker.com/ai/sandboxes/integrations/cursor/)
+
 The agent works in its own git clone. Pull its work with:
 
 ```sh
