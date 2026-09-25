@@ -138,4 +138,34 @@ describe('renderCvHtml', () => {
     // A keyword that already has its own row isn't repeated as a chip.
     expect(html.match(/Kotlin/g)).toHaveLength(1)
   })
+  it('should show skill years as text without meter bars', () => {
+    const cv = buildCv({
+      skills: [{ name: 'Backend', 'x-skillDetails': [{ name: 'Kotlin', years: 6 }] }],
+    })
+
+    const html = bodyOf(renderCvHtml(cv))
+
+    expect(html).not.toMatch(/class="bar"/)
+    expect(html).toMatch(/Kotlin[\s\S]*6 yrs/)
+  })
+
+  it('should render keywords as inline lists instead of chips', () => {
+    const cv = buildCv({
+      basics: { 'x-keywords': ['Cloud architecture'], 'x-industries': ['Retail'] },
+      projects: [buildProject({ 'x-highlight': true, keywords: ['Terraform'] })],
+    })
+
+    const html = bodyOf(renderCvHtml(cv))
+
+    expect(html).not.toMatch(/class="chip/)
+    expect(html).toMatch(/class="inline-list"[\s\S]*Cloud architecture/)
+    expect(html).toMatch(/class="inline-list"[\s\S]*Terraform/)
+  })
+
+  it('should not use left accent borders or the grid mark on section headings', () => {
+    const html = renderCvHtml(sample)
+
+    expect(html).not.toMatch(/border-left/)
+    expect(bodyOf(html).match(/class="grid-mark"/g)).toHaveLength(1)
+  })
 })
