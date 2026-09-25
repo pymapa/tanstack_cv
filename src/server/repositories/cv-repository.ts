@@ -55,6 +55,18 @@ export type SaveRevisionInput = Readonly<{
 
 export type SaveRevisionError = 'NOT_FOUND' | 'CONFLICT'
 
+export type CreateCvFromInput = Readonly<{
+  /** The new CV belongs to this CV's person and inherits its app-managed meta. */
+  sourceCvId: string
+  variant: string
+  data: CvDocument
+  source: RevisionSource
+  message: string
+  authorName: string
+}>
+
+export type CreateCvError = 'NOT_FOUND' | 'VARIANT_TAKEN'
+
 /**
  * Storage port. The in-memory adapter backs the UI until the Postgres adapter (spec M1) replaces it.
  * Implementations must keep revisions append-only.
@@ -64,4 +76,6 @@ export interface CvRepository {
   getPerson(personId: string): PersonView | null
   getCv(cvId: string): CvView | null
   saveRevision(input: SaveRevisionInput): Result<CvRevision, SaveRevisionError>
+  /** Adds a CV version to the source CV's person. Variant names are unique per person, ignoring case. */
+  createCvFrom(input: CreateCvFromInput): Result<{ cvId: string }, CreateCvError>
 }

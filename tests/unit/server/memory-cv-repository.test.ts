@@ -97,4 +97,62 @@ describe('memory CV repository', () => {
 
     expect(result).toEqual({ ok: false, error: 'NOT_FOUND' })
   })
+
+  describe('createCvFrom', () => {
+    const create = (
+      repo: ReturnType<typeof setup>,
+      overrides: Partial<Parameters<typeof repo.createCvFrom>[0]> = {},
+    ) => {
+      const sourceCvId = repo.listSearchable()[0]?.cvId ?? ''
+      return repo.createCvFrom({
+        sourceCvId,
+        variant: 'default-fi',
+        data: buildCv({ basics: { label: 'Ohjelmistoarkkitehti' } }),
+        source: 'ai',
+        message: 'Translated to Finnish',
+        authorName: 'Tester',
+        ...overrides,
+      })
+    }
+
+    it('should add a new CV version for the same person, with one revision', () => {
+      const repo = setup()
+
+      const result = create(repo)
+
+      if (!result.ok) throw new Error(result.error)
+      const cv = repo.getCv(result.value.cvId)
+      expect(cv?.person.fullName).toBe('Anna Example')
+      expect(cv?.variant).toBe('default-fi')
+      expect(cv?.isPrimary).toBe(false)
+      expect(cv?.revision).toMatchObject({ number: 1, source: 'ai', message: 'Translated to Finnish' })
+      expect(cv?.revision.data.basics.label).toBe('Ohjelmistoarkkitehti')
+      expect(repo.getPerson(cv?.person.id ?? '')?.cvs).toHaveLength(3)
+    })
+
+    it('should take the variant and app-managed meta from the server, not the client data', () => {
+      const repo = setup()
+
+      const result = create(repo, {
+        data: buildCv({ meta: { personId: 'p01', variant: 'other', sourceFormat: 'pdf' } }),
+      })
+
+      if (!result.ok) throw new Error(result.error)
+      expect(repo.getCv(result.value.cvId)?.revision.data.meta).toMatchObject({
+        personId: 'p99',
+        variant: 'default-fi',
+        sourceFormat: 'pptx',
+      })
+    })
+
+    it('should return VARIANT_TAKEN when the person already has a CV with that name', () => {
+      const repo = setup()
+
+      expect(create(repo, { variant: 'pm' })).toEqual({ ok: false, error: 'VARIANT_TAKEN' })
+    })
+
+    it('should return NOT_FOUND when the source CV does not exist', () => {
+      expect(create(setup(), { sourceCvId: 'missing' })).toEqual({ ok: false, error: 'NOT_FOUND' })
+    })
+  })
 })

@@ -50,9 +50,11 @@ const view = (revisionId = 'rev-1', data: CvDocument = buildCv()): CvView => ({
   revisions: [],
 })
 
+const translateProps = { onTranslate: vi.fn(), onTranslated: vi.fn() }
+
 const setup = (onSave = vi.fn().mockResolvedValue({ ok: true, revisionId: 'rev-2', revisionNumber: 2 })) => {
   const onRefresh = vi.fn()
-  render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
+  render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} {...translateProps} />)
   return { onSave, onRefresh, user: userEvent.setup() }
 }
 
@@ -122,7 +124,7 @@ describe('CvWorkspace', () => {
     const onSave = vi.fn(() => new Promise<SaveCvResult>((resolve) => (finish = resolve)))
     const onRefresh = vi.fn()
     const user = userEvent.setup()
-    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} />)
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={onRefresh} {...translateProps} />)
     await user.type(screen.getByLabelText('Label'), ' Lead')
     await user.click(screen.getByRole('button', { name: 'Save' }))
 
@@ -132,7 +134,7 @@ describe('CvWorkspace', () => {
       await Promise.resolve()
     })
     const saved = buildCv({ basics: { label: 'Software Architect Lead' } })
-    rerender(<CvWorkspace cv={view('rev-2', saved)} onSave={onSave} onRefresh={onRefresh} />)
+    rerender(<CvWorkspace cv={view('rev-2', saved)} onSave={onSave} onRefresh={onRefresh} {...translateProps} />)
 
     expect(onRefresh).toHaveBeenCalledTimes(1)
     expect(screen.getByLabelText('Label')).toHaveValue('Software Architect Lead More')
@@ -142,16 +144,30 @@ describe('CvWorkspace', () => {
   it('should clear the conflict and show the latest version after reloading', async () => {
     const onSave = vi.fn().mockResolvedValue({ ok: false, error: 'CONFLICT' })
     const user = userEvent.setup()
-    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={vi.fn()} />)
+    const { rerender } = render(<CvWorkspace cv={view()} onSave={onSave} onRefresh={vi.fn()} {...translateProps} />)
     await user.type(screen.getByLabelText('Label'), 'X')
     await user.click(screen.getByRole('button', { name: 'Save' }))
     await screen.findByRole('alert')
 
     const latest = buildCv({ basics: { label: 'Saved elsewhere' } })
-    rerender(<CvWorkspace cv={view('rev-9', latest)} onSave={onSave} onRefresh={vi.fn()} />)
+    rerender(<CvWorkspace cv={view('rev-9', latest)} onSave={onSave} onRefresh={vi.fn()} {...translateProps} />)
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
     expect(screen.getByLabelText('Label')).toHaveValue('Saved elsewhere')
     expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()
+  })
+
+  it('should offer to translate the saved CV into the other language', () => {
+    setup()
+
+    expect(screen.getByRole('button', { name: 'Translate to Finnish' })).toBeEnabled()
+  })
+
+  it('should not translate while there are unsaved changes', async () => {
+    const { user } = setup()
+
+    await user.type(screen.getByLabelText('Label'), ' Lead')
+
+    expect(screen.getByRole('button', { name: 'Translate to Finnish' })).toBeDisabled()
   })
 })
