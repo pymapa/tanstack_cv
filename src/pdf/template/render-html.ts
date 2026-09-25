@@ -2,6 +2,7 @@ import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import type { CvDocument, CvTemplateId } from '~/cv/schema'
 import { CvHtmlDocument } from './cv-document'
+import { CV_TEMPLATES, DEFAULT_TEMPLATE, templateContent } from './templates'
 
 export type CvRenderOptions = Readonly<{ includeContact: boolean; template?: CvTemplateId }>
 
@@ -13,5 +14,7 @@ export const DEFAULT_RENDER_OPTIONS: CvRenderOptions = { includeContact: false }
  * no scripts and no external resources. React escapes all CV text.
  */
 export function renderCvHtml(cv: CvDocument, options: CvRenderOptions = DEFAULT_RENDER_OPTIONS): string {
-  return `<!doctype html>${renderToStaticMarkup(createElement(CvHtmlDocument, { cv, options }))}`
+  const id = options.template ?? DEFAULT_TEMPLATE
+  const document = createElement(CvHtmlDocument, { cv: templateContent(id, cv), options, template: CV_TEMPLATES[id] })
+  return `<!doctype html>${renderToStaticMarkup(document)}`
 }

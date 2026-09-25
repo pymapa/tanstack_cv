@@ -12,6 +12,15 @@ export function GridMark() {
   )
 }
 
+export function Colophon({ name }: { name: string }) {
+  return (
+    <p className="colophon">
+      <GridMark />
+      <span>Kipinä · {name} · CV</span>
+    </p>
+  )
+}
+
 export function Section({ title, children, className }: { title: string; children: ReactNode; className?: string }) {
   return (
     <section className={className === undefined ? 'section' : `section ${className}`}>

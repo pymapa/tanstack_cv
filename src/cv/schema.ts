@@ -119,7 +119,14 @@ export const Testimonial = z.strictObject({
   author: shortText.optional(),
 })
 
-export const CV_TEMPLATE_IDS = ['kipina-portrait', 'kipina-landscape'] as const
+export const CV_TEMPLATE_IDS = [
+  'kipina-portrait',
+  'kipina-landscape',
+  'kipina-sidebar',
+  'kipina-editorial',
+  'kipina-slides',
+  'kipina-one-page',
+] as const
 export const CvTemplateId = z.enum(CV_TEMPLATE_IDS)
 export type CvTemplateId = z.infer<typeof CvTemplateId>
 

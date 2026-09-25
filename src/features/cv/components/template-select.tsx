@@ -12,7 +12,7 @@ export function TemplateSelect({ value, onChange }: Props) {
         onChange={(e) => {
           onChange(CvTemplateId.parse(e.target.value))
         }}
-        className="rounded-card border border-line bg-white px-3 py-2.5 text-sm text-ink hover:border-ink"
+        className="max-w-72 rounded-card border border-line bg-white px-3 py-2.5 text-sm text-ink hover:border-ink"
         data-testid="cv-template"
       >
         {CV_TEMPLATE_IDS.map((id) => (

@@ -3,7 +3,7 @@ import { chromium, type Browser } from 'playwright'
 import { afterAll, describe, expect, it, vi } from 'vitest'
 import { renderCvHtml } from '~/pdf/template/render-html'
 import { closePdfRenderer, createPdfRenderer, renderPdf } from '~/server/pdf/render'
-import { buildCv } from '../fixtures/cv'
+import { buildCv, buildProject } from '../fixtures/cv'
 
 const HTML = `<!doctype html><html lang="en"><head><title>Anna Example – CV</title></head>
 <body><h1>Anna Example</h1><h2>Project highlights</h2><p>Payments platform renewal</p></body></html>`
@@ -55,6 +55,10 @@ describe('renderPdf', () => {
   it.each([
     { template: 'kipina-portrait', landscape: false },
     { template: 'kipina-landscape', landscape: true },
+    { template: 'kipina-sidebar', landscape: false },
+    { template: 'kipina-editorial', landscape: false },
+    { template: 'kipina-slides', landscape: true },
+    { template: 'kipina-one-page', landscape: false },
   ] as const)(
     'should print $template pages in its orientation',
     async ({ template, landscape }) => {
@@ -67,6 +71,28 @@ describe('renderPdf', () => {
     },
     30_000,
   )
+
+  it('should start each section on its own page in the slides template', async () => {
+    const cv = buildCv({
+      skills: [{ name: 'Backend' }],
+      projects: [buildProject({ 'x-highlight': true })],
+      work: [{ name: 'Example Oy' }],
+    })
+    const pages = async (template: 'kipina-landscape' | 'kipina-slides') =>
+      (
+        await PDFDocument.load(await renderPdf(renderCvHtml(cv, { includeContact: false, template }), meta))
+      ).getPageCount()
+
+    expect(await pages('kipina-slides')).toBeGreaterThan(await pages('kipina-landscape'))
+  }, 60_000)
+
+  it('should fit a short CV on one page in the one-page summary', async () => {
+    const cv = buildCv({ projects: [buildProject({ 'x-highlight': true }), buildProject({ 'x-highlight': true })] })
+
+    const html = renderCvHtml(cv, { includeContact: false, template: 'kipina-one-page' })
+
+    expect((await PDFDocument.load(await renderPdf(html, meta))).getPageCount()).toBe(1)
+  }, 30_000)
 })
 
 describe('createPdfRenderer', () => {

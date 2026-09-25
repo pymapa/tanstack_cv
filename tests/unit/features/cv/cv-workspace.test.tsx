@@ -96,13 +96,20 @@ describe('CvWorkspace', () => {
       within(select)
         .getAllByRole('option')
         .map((o) => o.textContent),
-    ).toEqual(['Portrait (A4)', 'Landscape (A4)'])
+    ).toEqual([
+      'Default (portrait A4)',
+      'Default (landscape A4)',
+      'Experimental: Sidebar (portrait A4)',
+      'Experimental: Editorial (portrait A4)',
+      'Experimental: Slides (landscape A4)',
+      'Experimental: One-page summary (portrait A4)',
+    ])
   })
 
   it('should save the chosen template as part of the CV', async () => {
     const { user, onSave } = setup()
 
-    await user.selectOptions(screen.getByRole('combobox', { name: 'Template' }), 'Landscape (A4)')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Template' }), 'Default (landscape A4)')
     await user.click(screen.getByRole('button', { name: 'Save' }))
 
     expect(onSave).toHaveBeenCalledWith(

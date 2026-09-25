@@ -63,4 +63,20 @@ describe('toExportDocument', () => {
   it('should not export the template choice', () => {
     expect(toExportDocument(cv, { includeContact: true, anonymizeClients: false }).meta['x-template']).toBeUndefined()
   })
+
+  it('should export only what the one-page summary shows', () => {
+    const withHistory = buildCv({
+      projects: [buildProject({ name: 'Star project', 'x-highlight': true }), buildProject({ name: 'Other project' })],
+      work: [{ name: 'Example Oy' }],
+    })
+
+    const doc = toExportDocument(withHistory, {
+      includeContact: false,
+      anonymizeClients: false,
+      template: 'kipina-one-page',
+    })
+
+    expect(doc.projects.map((p) => p.name)).toEqual(['Star project'])
+    expect(doc.work).toBeUndefined()
+  })
 })

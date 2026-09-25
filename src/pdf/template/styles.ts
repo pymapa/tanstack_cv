@@ -144,5 +144,8 @@ const LANDSCAPE = `
 .page--body .section > :not(h2) { grid-column: 2; }
 `
 
-export const PORTRAIT_STYLES = `${FONTS}\n${BASE}\n${PORTRAIT}`
-export const LANDSCAPE_STYLES = `${FONTS}\n${BASE}\n${LANDSCAPE}`
+export const composeStyles = (...parts: readonly string[]): string => [FONTS, BASE, ...parts].join('\n')
+
+export const PORTRAIT_PAGE = PORTRAIT
+export const PORTRAIT_STYLES = composeStyles(PORTRAIT)
+export const LANDSCAPE_STYLES = composeStyles(LANDSCAPE)
