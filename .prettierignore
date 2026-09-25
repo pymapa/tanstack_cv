@@ -1,0 +1,12 @@
+node_modules
+.output
+dist
+coverage
+src/routeTree.gen.ts
+pnpm-lock.yaml
+sample_data
+*.md
+# Human-owned sandbox config: never reformat (AGENTS.md)
+sbxenv.yaml
+kits/
+.claude/

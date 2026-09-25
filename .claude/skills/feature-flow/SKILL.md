@@ -26,8 +26,9 @@ report where you stopped and why.
 
 1. Read `intent.md` and the code the feature touches. Keep to what was asked.
 2. Implement the feature, matching the style of the code around it.
-3. Run the project's checks and fix what the change broke: `npm run check` (Biome), and
-   `npx tsc --noEmit`. Errors that were there before the change are not in scope, but mention
+3. Run the project's checks and fix what the change broke: `pnpm verify` (typecheck, ESLint,
+   Prettier, unit + integration tests, `pnpm audit`), plus `pnpm test:e2e` when the change
+   touches a user flow. Errors that were there before the change are not in scope, but mention
    them in the PR.
 4. If part of the feature was designed but not built, add it to **Considered but not built**
    in `intent.md` with a short note on the intended approach.

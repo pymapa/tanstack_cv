@@ -1,5 +1,5 @@
-# Local PostgreSQL for development. Start with `npm run db:up`.
-# Data persists in the `cv-db-data` volume; `npm run db:down` keeps it,
+# Local PostgreSQL for development. Start with `pnpm db:up`.
+# Data persists in the `cv-db-data` volume; `pnpm db:down` keeps it,
 # `docker compose down -v` deletes it.
 services:
   db:
@@ -10,11 +10,11 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-cvbank}
     ports:
       # Loopback only: the database holds personal data and must not be reachable from the network.
-      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+      - '127.0.0.1:${POSTGRES_PORT:-5432}:5432'
     volumes:
       - cv-db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      test: ['CMD-SHELL', 'pg_isready -h 127.0.0.1 -U $${POSTGRES_USER} -d $${POSTGRES_DB}']
       interval: 2s
       timeout: 3s
       retries: 15

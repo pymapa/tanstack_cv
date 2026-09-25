@@ -1,19 +1,13 @@
-import { createRouter as createTanStackRouter } from '@tanstack/react-router'
+import { createRouter } from '@tanstack/react-router'
+import { ErrorView, NotFoundView } from './components/status-views'
 import { routeTree } from './routeTree.gen'
 
 export function getRouter() {
-  const router = createTanStackRouter({
+  return createRouter({
     routeTree,
-    scrollRestoration: true,
     defaultPreload: 'intent',
-    defaultPreloadStaleTime: 0,
+    defaultErrorComponent: ErrorView,
+    defaultNotFoundComponent: NotFoundView,
+    scrollRestoration: true,
   })
-
-  return router
-}
-
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: ReturnType<typeof getRouter>
-  }
 }

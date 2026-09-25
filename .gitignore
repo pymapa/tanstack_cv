@@ -5,19 +5,27 @@
 .env
 .env.*
 !.env.example
-node_modules
+*.local
 
 # OS / editor noise
 .DS_Store
-dist
-dist-ssr
-*.local
-.env
-.nitro
-.tanstack
-.wrangler
-.output
-.vinxi
+.idea/
+*.swp
+
+# Build / deps / test output
+node_modules/
+dist/
+dist-ssr/
+.output/
+.nitro/
+.tanstack/
+.vinxi/
+.wrangler/
 __unconfig*
-todos.json
-mcp-todos.json
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# Local database (personal data)
+data/

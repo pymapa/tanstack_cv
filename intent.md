@@ -86,6 +86,23 @@ Subcontractors are a small, even marginal, part of the need and are not a focus 
 Record here any feature that was designed or discussed but not built within the timebox,
 with a short note on the intended approach. This list is part of the deliverable.
 
+- **Authentication and access control (spec M2):** Better Auth with local users, roles
+  admin/sales/expert, a `can()` policy on every server function, and an audit log. The UI and
+  server functions are built without it for now; the dev server is bound to localhost only.
+  This is the next thing to build before anyone else uses the app.
+- **Persistent storage (spec M1):** SQLite + Drizzle with append-only revisions and an FTS5
+  search index. Today an in-memory store behind the same `CvRepository` interface is seeded from
+  `sample_data/`, so edits are lost on restart.
+- **AI chat editing (spec §7.6, M6):** the model proposes a validated JSON patch, the user reviews
+  it as diff cards and accepts or rejects each change, and the result is saved as a revision.
+  The provider is off until a human approves the data transfer (spec §9.3).
+- **History diff and restore (spec §7.5):** compare two revisions and restore an old one as a new
+  revision. The history list is built; diff and restore are not.
+- **Variants, tags, primary version:** "Create variant from this", set primary, archive, and
+  curated tags as a search facet (spec §7.3, §7.8).
+- **Export options dialog:** a contact-details toggle (the API supports `?contact=1`), section
+  toggles, and a project limit so long CVs fit the cover page.
+- **Staleness reminders:** a "needs review" dashboard and Slack reminders (spec §7.10).
 - **Final answer when the chatbot's loop guard stops it.** The guard in
   `src/lib/ai/loop-guard.ts` ends the run after too many turns or repeated identical tool
   calls, and the reply can then end without a summary. Intended approach: when the guard
