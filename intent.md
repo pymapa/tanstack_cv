@@ -111,6 +111,12 @@ with a short note on the intended approach. This list is part of the deliverable
 - **Saved chat history.** Conversations live only in the browser tab. Intended approach:
   store them per signed-in user once sign-in exists, so a salesperson can return to a
   client search.
+- **Word work specs in the chatbot.** The chat accepts PDF, `.txt`, and `.md` specs. Intended
+  approach for `.docx`: extract the text on the server behind a size and type check, then send it
+  as a `<work_spec>` text block like the other text files. This needs a parsing dependency.
+- **Request size cap on `/api/cv-chat`.** Attachments are checked after the body is parsed, so a
+  huge body is still read into memory. Intended approach: reject bodies over about 20 MB by
+  `Content-Length` and by counting streamed bytes, before parsing.
 - **Sign-in for the chatbot.** The chat widget and `/api/cv-chat` are open to anyone who can
   reach the dev server, like the rest of the app for now. They should sit behind the same
   sign-in as the rest of the CV bank.

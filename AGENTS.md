@@ -9,7 +9,7 @@ See `intent.md` for what we are building and why, and `spec.md` for how. When th
 - Treat all CV data as real personal data: never send it to external services, paste it
   into URLs, or add network calls that upload it.
   - The **only** exception is the LLM provider module
-    (`src/server/ai/providers/anthropic.ts`). It stays off unless a human sets
+    (`src/lib/ai/claude.ts`). It stays off unless a human sets
     `AI_PROVIDER=anthropic` (spec §9.3). Agents must never enable it, add a key, or add
     another provider or outbound call. Tests and dev use the `fake` provider.
   - Never put CV content in logs, error messages, URLs, commit messages, or test snapshots.
