@@ -43,7 +43,7 @@ If this skill and the spec disagree, the spec wins. Fix this file afterwards.
 | `meta.sourceFormat` | `pptx` \| `pdf` | Not rendered (app-managed) |
 | `meta.x-cvYear` | CV year `^[0-9]{4}$` | Not rendered |
 | `meta.x-conversionNotes` | Source errors / interpretations (string[]) | Never rendered, never exported, never sent to AI |
-| `meta.x-template` | PDF template id (`kipina-portrait` \| `kipina-landscape`); missing = portrait | Chooses the page layout; not in the `cv.json` export |
+| `meta.x-template` | PDF template id (`CV_TEMPLATE_IDS`, list in spec §7.7); missing = `kipina-portrait` | Chooses the page layout; not in the `cv.json` export |
 | `meta.language` (new, §6.1) | `"en"` default, `"fi"` [Later] | PDF Language metadata |
 
 **Every object is strict** (`z.strictObject`). An unknown field, standard or `x-`, fails

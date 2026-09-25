@@ -43,7 +43,7 @@ Additional fields from the Kipinä template are in fields prefixed with `x-`:
 | `x-testimonials` | testimonials (rewritten) |
 | `meta.personId`, `variant`, `sourceFormat`, `x-cvYear` | version information |
 | `meta.x-conversionNotes` | errors found in the source data and interpretations made |
-| `meta.x-template` | PDF template: `kipina-portrait` (default) or `kipina-landscape` |
+| `meta.x-template` | PDF template id, see spec §7.7; missing means `kipina-portrait` |
 
 ## Notes for testers
 

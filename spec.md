@@ -499,11 +499,21 @@ input: { cvId, baseRevisionId, draft: CvDocument, message: string(1..2000), conv
   assets (logo SVG, fonts and license, colors, a reference CV PDF). Until then, `theme.ts`
   holds clearly labeled placeholders (see §16).
 - Templates live in a registry (`src/pdf/template/templates.ts`), one entry per
-  `meta.x-template` value: `kipina-portrait` (A4 portrait, the default when the field is
-  missing) and `kipina-landscape` (A4 landscape, the same sections reflowed: the cover band
-  becomes a side column and body entries run in two columns). The editor header has a
-  **Template** select. The choice is saved with the CV revision, and the preview and PDF use it.
-  Each template sets its page size with CSS `@page`, which `preferCSSPageSize` applies.
+  `meta.x-template` value. When the field is missing, `kipina-portrait` applies. The editor
+  header has a **Template** select. The choice is saved with the CV revision, and the preview
+  and PDF use it. Each entry sets its page size with CSS `@page` (which `preferCSSPageSize`
+  applies), a layout component, and a content function. The content function decides which
+  CV data the template shows, and the `cv.json` attachment holds that same data. The
+  experimental templates are for trying layouts out; remove the ones you don't keep.
+
+  | ID | Label | Layout |
+  |---|---|---|
+  | `kipina-portrait` | Default (portrait A4) | Cover band on top, then the sections in order |
+  | `kipina-landscape` | Default (landscape A4) | Cover band as a side column; body section headings in a left column |
+  | `kipina-sidebar` | Experimental: Sidebar (portrait A4) | Band on top, then expertise, skills, education, certificates, and languages in a left column next to everything else |
+  | `kipina-editorial` | Experimental: Editorial (portrait A4) | Default portrait without the green band: white cover, serif headings |
+  | `kipina-slides` | Experimental: Slides (landscape A4) | A title slide, then each section on its own page |
+  | `kipina-one-page` | Experimental: One-page summary (portrait A4) | Profile, key role and skill titles, and at most three highlights, sized for one page |
 - Export options (dialog): include contact details (default **off** for client exports),
   sections to include, and max number of projects.
 - File name: `Kipina_CV_<First>_<Last>_<variant>_<YYYY-MM-DD>.pdf` (ASCII-folded, sanitized).
