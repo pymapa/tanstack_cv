@@ -33,3 +33,6 @@ data/
 # Agent worktrees (feature-flow) and Playwright MCP output (page snapshots hold CV text)
 .worktrees/
 .playwright-mcp/
+
+# The project uses pnpm (pnpm-lock.yaml); keep npm from adding a second lockfile
+package-lock.json
